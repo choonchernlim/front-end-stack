@@ -26,30 +26,31 @@
     "reinstall": "npm cache clear && rimraf node_modules && npm install"
   },
   "devDependencies": {
-    "babel-cli": "^6.3.17",                 // Babel - cli commands
-    "babel-core": "^6.1.4",                 // Babel - core
-    "babel-loader": "^6.1.0",               // Babel - loader for transpiling
-    "babel-preset-es2015": "^6.1.4",        // Babel - ES6 preset
-    "babel-preset-react": "^6.3.13",        // Babel - React preset
-    "babel-preset-stage-0": "^6.1.2",       // Babel - ES7+ preset
-    "chai": "^3.5.0",                       // expect()
-    "isparta": "^4.0.0",                    // Code coverage for ES6 and for creating result file for Jenkins
-    "mocha": "^2.4.5",                      // Test framework
-    "mocha-junit-reporter": "^1.9.1",       // Creating JUnit result file for Jenkins
-    "react-addons-test-utils": "^0.14.5",   // Testing React components
-    "redux-devtools": "^3.0.2",             // Redux dev tools
-    "rimraf": "^2.5.1",                     // rm -rf for both Unix and Windows world
-    "webpack": "^1.9.10"                    // Webpack
+    "babel-cli": "^6.3.17",                     // Babel - cli commands
+    "babel-core": "^6.1.4",                     // Babel - core
+    "babel-loader": "^6.1.0",                   // Babel - loader for transpiling
+    "babel-plugin-transform-runtime": "^6.4.3", // To activate Babel runtime
+    "babel-preset-es2015": "^6.1.4",            // Babel runtime
+    "babel-preset-es2015": "^6.1.4",            // Babel - ES6 preset
+    "babel-preset-react": "^6.3.13",            // Babel - React preset
+    "babel-preset-stage-0": "^6.1.2",           // Babel - ES7+ preset
+    "babel-runtime": "^6.3.19",                 // Babel - runtime polyfill
+    "chai": "^3.5.0",                           // expect()
+    "isparta": "^4.0.0",                        // Code coverage for ES6 and for creating result file for Jenkins
+    "mocha": "^2.4.5",                          // Test framework
+    "mocha-junit-reporter": "^1.9.1",           // Creating JUnit result file for Jenkins
+    "react-addons-test-utils": "^0.14.5",       // Testing React components
+    "redux-devtools": "^3.0.2",                 // Redux dev tools
+    "rimraf": "^2.5.1",                         // rm -rf for both Unix and Windows world
+    "webpack": "^1.9.10"                        // Webpack
   },
   "dependencies": {
-    "babel-polyfill": "^6.1.4",             // Emulate full ES6 env
-    "babel-runtime": "^6.0.14",             // Babel runtime
-    "immutable": "^3.7.6",                  // Immutable objects
-    "react": "^0.14.0",                     // React - core
-    "react-dom": "^0.14.0",                 // React - DOM
-    "react-immutable-proptypes": "^1.5.1",  // React - protypes that works with Immutable.js
-    "react-redux": "^4.0.0",                // React - Redux integration
-    "redux": "^3.0.2"                       // Redux
+    "immutable": "^3.7.6",                      // Immutable objects
+    "react": "^0.14.0",                         // React - core
+    "react-dom": "^0.14.0",                     // React - DOM
+    "react-immutable-proptypes": "^1.5.1",      // React - protypes that works with Immutable.js
+    "react-redux": "^4.0.0",                    // React - Redux integration
+    "redux": "^3.0.2"                           // Redux
   }
 }
 ```
