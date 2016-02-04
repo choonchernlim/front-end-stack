@@ -1,0 +1,48 @@
+{
+  "name": "test-redux",
+  "private": true,
+  "config": {
+    "src_dir": "src/",
+    "test_dir": "test/",
+    "bundle_dir": "dist/",
+    "report_dir": "reports/",
+    "mocha_opts": "--recursive --compilers js:babel-core/register"
+  },
+  "scripts": {
+    "test": "mocha $npm_package_config_test_dir $npm_package_config_mocha_opts",
+    "test:watch": "npm test -- --watch",
+    "build": "webpack --progress --colors",
+    "build:watch": "clear && webpack --progress --colors --watch",
+    "ci:clean": "clear && rimraf $npm_package_config_report_dir",
+    "ci:coverage": "isparta cover --root $npm_package_config_src_dir --include-all-sources --report text --report cobertura --dir $npm_package_config_report_dir _mocha -- $npm_package_config_test_dir $npm_package_config_mocha_opts",
+    "ci:test": "npm test -- --reporter mocha-junit-reporter --reporter-options mochaFile=$npm_package_config_report_dir/test-results.xml",
+    "ci": "npm run ci:clean && npm run ci:test && npm run ci:coverage",
+    "reinstall": "npm cache clear && rimraf node_modules && npm install"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.3.17",
+    "babel-core": "^6.1.4",
+    "babel-loader": "^6.1.0",
+    "babel-plugin-transform-runtime": "^6.4.3",
+    "babel-preset-es2015": "^6.1.4",
+    "babel-preset-react": "^6.3.13",
+    "babel-preset-stage-0": "^6.1.2",
+    "babel-runtime": "^6.3.19",
+    "chai": "^3.5.0",
+    "isparta": "^4.0.0",
+    "mocha": "^2.4.5",
+    "mocha-junit-reporter": "^1.9.1",
+    "react-addons-test-utils": "^0.14.5",
+    "redux-devtools": "^3.0.2",
+    "rimraf": "^2.5.1",
+    "webpack": "^1.9.10"
+  },
+  "dependencies": {
+    "immutable": "^3.7.6",
+    "react": "^0.14.0",
+    "react-dom": "^0.14.0",
+    "react-immutable-proptypes": "^1.5.1",
+    "react-redux": "^4.0.0",
+    "redux": "^3.0.2"
+  }
+}
