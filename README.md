@@ -1,4 +1,4 @@
-# test-redux
+# front-end-stack
 
 
 # package.json
