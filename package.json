@@ -17,7 +17,7 @@
     "ci:coverage": "isparta cover --root $npm_package_config_src_dir --include-all-sources --report text --report cobertura --dir $npm_package_config_report_dir _mocha -- $npm_package_config_test_dir $npm_package_config_mocha_opts",
     "ci:test": "npm test -- --reporter mocha-junit-reporter --reporter-options mochaFile=$npm_package_config_report_dir/test-results.xml",
     "ci": "npm run ci:clean && npm run ci:test && npm run ci:coverage",
-    "reinstall": "npm cache clear && rimraf node_modules && npm install"
+    "reinstall": "npm cache clean && rimraf node_modules && npm install"
   },
   "devDependencies": {
     "babel-cli": "^6.3.17",
