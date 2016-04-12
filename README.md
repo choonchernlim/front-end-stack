@@ -19,7 +19,7 @@ Project template for building epic single-page app using modern front-end stack.
 |Redux                    |One-way data flow, inspired by Flux pattern                                         |
 |Saga                     |Side Effects middleware using ES6 Generator                                         |
 |Immutable                |Data as immutable objects                                                           |
-|Material UI              |UI components, adhering to [Google Material Design](https://www.google.com/design/spec/material-design/introduction.htm) spec|
+|Material UI              |UI components, adhering to [Google Material Design](https://www.google.com/design/spec/material-design/introduction.htm)|
 |Radium and Radium Grid   |Inline CSS and grid layout                                                          |
 |Webpack                  |Module bundler                                                                      |
 |Babel                    |Transpiling ES6+ to ES5 to maximize cross browser compatibility                     |
