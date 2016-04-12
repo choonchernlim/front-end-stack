@@ -69,7 +69,7 @@
     "radium-grid": "2.0.0",
     "react": "15.0.1",
     "react-dom": "15.0.1",
-    "react-redux": "4.4.2",
+    "react-redux": "4.4.3",
     "react-router": "2.1.1",
     "react-router-redux": "4.0.2",
     "react-tap-event-plugin": "1.0.0",
