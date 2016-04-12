@@ -19,11 +19,11 @@ Project template for building epic single-page app using modern front-end stack.
 |Redux                    |One-way data flow, inspired by Flux pattern                                         |
 |Saga                     |Side Effects middleware using ES6 Generator                                         |
 |Immutable                |Data as immutable objects                                                           |
-|Material UI              |UI components, adhering to Google Material Design spec                              |
+|Material UI              |UI components, adhering to [Google Material Design](https://www.google.com/design/spec/material-design/introduction.htm) spec|
 |Radium and Radium Grid   |Inline CSS and grid layout                                                          |
 |Webpack                  |Module bundler                                                                      |
 |Babel                    |Transpiling ES6+ to ES5 to maximize cross browser compatibility                     |
-|ESLint                   |Validate JavaScript, adhering to Airbnb's JavaScript Style Guide                    |
+|ESLint                   |Validate JavaScript, adhering to [Airbnb's JavaScript style guide](https://github.com/airbnb/javascript)|
 
 If you are using IntelliJ product (ex: IDEA, WebStorm, etc), please use [intellij-config](https://github.com/choonchernlim/intellij-config) to configure JavaScript code formatter.
 
