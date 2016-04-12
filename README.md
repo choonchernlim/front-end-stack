@@ -10,7 +10,7 @@ _"Sometimes if you want to see a change for the better, you have to take things 
 
 ## Introduction
 
-Project template for building single-page app using modern front-end stack.
+Project template for building epic single-page app using modern front-end stack.
 
 |Library                  |What and Why                                                                        |
 |-------------------------|------------------------------------------------------------------------------------|
