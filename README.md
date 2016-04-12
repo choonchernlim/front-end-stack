@@ -105,7 +105,7 @@ Notes:-
 |react-tap-event-plugin                   |UI - Required by material-ui to listen for touch events                             |
 |redux                                    |Redux - Core                                                                        |
 |redux-saga                               |Redux - Side Effects middleware                                                     |
-|roboto-fontface                          |Roboto font to comply with Google Material Design spec                              |
+|roboto-fontface                          |Roboto font, adhering to Google Material Design spec                                |
 
 ## Project Structure
 
@@ -116,9 +116,9 @@ Notes:-
 │   ├── fonts                   
 │   ├── img                     
 │   └── js                      
-├── node_modules                -> Installed Node.js modules
+├── node_modules                -> Installed modules dir
 │   └── ...                     
-├── reports                     -> Generated reports for Jenkins
+├── reports                     -> Reports dir - Generated reports for Jenkins
 │   └── ...                     
 ├── src                         -> Source dir
 │   ├── img                     
@@ -143,7 +143,7 @@ Notes:-
 
 _"You want to be extra rigorous about making the best possible thing you can. Find everything that’s wrong with it and fix it. Seek negative feedback, particularly from friends." -- Elon Musk_
 
-Special thanks to the following individuals for making this project template better:-
+Special thanks to the following individuals for improving my sloppy work:-
 
 * Cory Cray
 * Jason Thiesse
