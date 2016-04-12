@@ -1,40 +1,25 @@
-'use strict';
+const baseConfig = require('./webpack.base.config');
+const webpack = require('webpack');
 
-var path = require( 'path' );
-var webpack = require( 'webpack' );
-var packageJson = require( './package.json' );
-var entryPath = path.join( __dirname, packageJson.config.src_dir + '/index.js' );
-var outputDir = path.join( __dirname, packageJson.config.bundle_dir );
-var vendors = Object.keys( packageJson.dependencies );
+module.exports = Object.assign({}, baseConfig, {
+  devtool: 'eval',
 
-console.log( "Entry Path  : " + entryPath );
-console.log( "Output Dir  : " + outputDir );
-console.log( "Vendors     : " + vendors );
+  // Include comments with information about the modules to complement devtool="eval"
+  // https://github.com/webpack/docs/wiki/build-performance#sourcemaps
+  output: Object.assign({}, baseConfig.output, { pathinfo: true }),
 
-module.exports = {
-    devtool : 'inline-source-map',
+  devServer: {
+    // Enable history API fallback so HTML5 History API based
+    // routing works. This is a good default that will come
+    // in handy in more complicated setups.
+    historyApiFallback: true,
+    hot: true,
+    inline: true,
+    progress: true,
 
-    entry : {
-        app    : entryPath,
-        vendor : vendors
-    },
+    // Display only errors to reduce the amount of output.
+    stats: 'errors-only'
+  },
 
-    output : {
-        path     : outputDir,
-        filename : 'app.js'
-    },
-
-    module : {
-        loaders : [
-            {
-                test    : /\.js$/,
-                loader  : 'babel',
-                exclude : /node_modules/
-            }
-        ]
-    },
-
-    plugins : [
-        new webpack.optimize.CommonsChunkPlugin( 'vendor', 'vendor.js' )
-    ]
-};
+  plugins: baseConfig.plugins.concat(new webpack.HotModuleReplacementPlugin())
+});

@@ -1,0 +1,43 @@
+{
+  // using Airbnb's rule
+  "extends": "airbnb",
+  // to handle ES7's static properties in React component
+  // https://github.com/yannickcr/eslint-plugin-react/issues/43
+  "parser": "babel-eslint",
+  // overriding certain rules because it drives me nuts
+  "rules": {
+    // no trailing comma in multi-line object literal or array
+    "comma-dangle": [
+      2,
+      "never"
+    ],
+    // allow `else` on new line
+    // http://eslint.org/docs/rules/brace-style
+    "brace-style": [
+      "error",
+      "stroustrup"
+    ],
+    // allow uppercase functions from ImmutableJS
+    "new-cap": [
+      2,
+      {
+        "capIsNewExceptions": [
+          "Immutable.List",
+          "Immutable.Stack",
+          "Immutable.Map",
+          "Immutable.OrderedMap",
+          "Immutable.Set",
+          "Immutable.OrderedSet",
+          "Immutable.Record",
+          "List",
+          "Stack",
+          "Map",
+          "OrderedMap",
+          "Set",
+          "OrderedSet",
+          "Record"
+        ]
+      }
+    ]
+  }
+}

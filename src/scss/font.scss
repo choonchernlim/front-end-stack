@@ -1,0 +1,28 @@
+// `roboto-fontface` includes bunch of font extensions, which slows down build time and increases the project size.
+// So, modified mixin to include only woff and woff2 files.
+
+$roboto-font-path: '~roboto-fontface/fonts';
+
+@mixin roboto-font($type, $weight, $style) {
+  @font-face {
+    font-family: 'Roboto';
+    src: local('Roboto #{$type}'),
+    local('Roboto-#{$type}'),
+    url('#{$roboto-font-path}/Roboto-#{$type}.woff2') format('woff2'),
+    url('#{$roboto-font-path}/Roboto-#{$type}.woff') format('woff');
+    font-weight: $weight;
+    font-style: $style;
+  }
+}
+
+@mixin roboto-font-pair($type, $weight) {
+  @include roboto-font($type, $weight, normal);
+  @include roboto-font(#{$type}Italic, $weight, italic);
+}
+
+@include roboto-font-pair('Thin', 100);
+@include roboto-font-pair('Light', 300);
+@include roboto-font-pair('Regular', 400);
+@include roboto-font-pair('Medium', 500);
+@include roboto-font-pair('Bold', 700);
+@include roboto-font-pair('Black', 900);
