@@ -71,8 +71,8 @@ If you are using IntelliJ product (ex: IDEA, WebStorm, etc), please use [intelli
 |file-loader                              |Webpack - File loader                                                               |
 |image-webpack-loader                     |Webpack - Image loader and handling compression                                     |
 |isparta                                  |Code coverage for ES6 and for creating result file for Jenkins                      |
-|jsdom                                    |Test - JS test framework                                                            |
-|mocha                                    |Test - Creating JUnit result file for Jenkins                                       |
+|jsdom                                    |Test - A JavaScript implementation of the WHATWG DOM and HTML standards             |
+|mocha                                    |Test - JS test framework                                                            |
 |mocha-junit-reporter                     |Test - Creating JUnit result file for Jenkins                                       |
 |nock                                     |Test - HTTP mocking and expectations library                                        |
 |node-sass                                |Webpack - Required by SASS loader                                                   |
