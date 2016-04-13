@@ -1,5 +1,6 @@
 const baseConfig = require('./webpack.base.config');
 const webpack = require('webpack');
+const packageJson = require('./package.json');
 
 module.exports = Object.assign({}, baseConfig, {
   devtool: 'eval',
@@ -9,6 +10,8 @@ module.exports = Object.assign({}, baseConfig, {
   output: Object.assign({}, baseConfig.output, { pathinfo: true }),
 
   devServer: {
+    contentBase: packageJson.config.dist_dir_path,
+
     // Enable history API fallback so HTML5 History API based
     // routing works. This is a good default that will come
     // in handy in more complicated setups.

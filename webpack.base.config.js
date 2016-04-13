@@ -1,15 +1,17 @@
 const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const autoprefixer = require('autoprefixer');
 const packageJson = require('./package.json');
 
-const appPath = path.join(__dirname, packageJson.config.src_dir, '/js/app/index.js');
-const outputPath = path.join(__dirname, packageJson.config.dist_dir);
-const publicPath = path.join(packageJson.config.context_root, '/', packageJson.config.dist_dir);
+const srcPath = path.join(__dirname, packageJson.config.src_dir_path);
+const distPath = path.join(__dirname, packageJson.config.dist_dir_path);
+const appPath = path.join(srcPath, '/js/app/index.js');
+const distUri = packageJson.config.dist_uri;
 
-console.log('App Path    :', appPath);
-console.log('Output Path :', outputPath);
-console.log('Public Path :', publicPath);
+console.log('App Path  :', appPath);
+console.log('Dist Path :', distPath);
+console.log('Dist URI  :', distUri);
 
 module.exports = {
   entry: {
@@ -19,9 +21,9 @@ module.exports = {
   // `publicPath` must begin with context root to ensure font paths in CSS and
   // image paths renders correctly
   output: {
-    path: outputPath,
+    path: distPath,
     filename: 'js/app.js',
-    publicPath
+    publicPath: distUri
   },
 
   module: {
@@ -62,7 +64,12 @@ module.exports = {
     // So your styles are no longer inlined into the javascript, but separate in a css
     // bundle file (styles.css). If your total stylesheet volume is big, it will be faster
     // because the stylesheet bundle is loaded in parallel to the javascript bundle.
-    new ExtractTextPlugin('css/app.css')
+    new ExtractTextPlugin('css/app.css'),
+
+    new HtmlWebpackPlugin({
+      template: path.join(srcPath, '/index.html'),
+      favicon: path.join(srcPath, '/favicon.png')
+    })
   ],
 
   // create vendor prefixes to maximize compatibility. Recommended by Google:

@@ -69,6 +69,7 @@ If you are using IntelliJ product (ex: IDEA, WebStorm, etc), please use [intelli
 |eslint-plugin-react                      |ESLint - React specific linting rules                                               |
 |extract-text-webpack-plugin              |Webpack - Separate out inlined CSS from JS files                                    |
 |file-loader                              |Webpack - File loader                                                               |
+|html-webpack-plugin                      |Webpack - Generates `index.html` using hash filenames for max caching               |
 |image-webpack-loader                     |Webpack - Image loader and handling compression                                     |
 |isparta                                  |Code coverage for ES6 and for creating result file for Jenkins                      |
 |jsdom                                    |Test - A JavaScript implementation of the WHATWG DOM and HTML standards             |
@@ -115,7 +116,9 @@ Notes:-
 │   ├── css                     
 │   ├── fonts                   
 │   ├── img                     
-│   └── js                      
+│   ├── js                     
+│   ├── favicon.png                     
+│   └── index.html              -> Entry page        
 ├── node_modules                -> Installed modules dir
 │   └── ...                     
 ├── reports                     -> Reports dir - Generated reports for Jenkins
@@ -123,14 +126,15 @@ Notes:-
 ├── src                         -> Source dir
 │   ├── img                     
 │   ├── js                      
-│   └── scss                    
+│   ├── scss
+│   ├── favicon.png                     
+│   └── index.html              -> Template entry page        
 ├── test                        -> Test dir
 │   └── ...                     
 ├── .babelrc                    -> Babel configuration
 ├── .eslintrc                   -> ESLint configuration
 ├── .gitignore                  -> Git ignore list
 ├── CHANGELOG.md                -> Change logs
-├── index.html                  -> Main entry page
 ├── LICENSE.md                  -> License, if needed
 ├── package.json                -> NPM scripts and dependencies
 ├── README.md                   -> Readme file for the app
