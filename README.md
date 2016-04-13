@@ -36,13 +36,13 @@ If you are using IntelliJ product (ex: IDEA, WebStorm, etc), please use [intelli
 |posttest                                 |Run ESLint on test files                                                            |
 |build                                    |Build development bundle (uncompressed JS and CSS)                                  |
 |build:watch                              |Build and watch development bundle                                                  |
-|build:production                         |Build production bundle (compressed JS and CSS)                                     |
+|build:production                         |Clean dist dir before building production bundle (compressed JS and CSS)            |
 |ci:clean                                 |Remove report dir                                                                   |
 |ci:coverage                              |Run code coverage                                                                   |
 |ci:test                                  |Run test and generate result file                                                   |
 |ci                                       |Run `ci:clean`, `ci:test` and `ci:coverage`                                         |
 |reinstall                                |Clear npm cache, remove `node_module` and install from `package.json`               |
-|start                                    |Start Node.js Express server                                                        |
+|start                                    |Start Node.js Express server with Hot Module Replacement                            |
                                                                                                                                
 ## Dev Dependencies                            
                                                                                                                                
@@ -69,7 +69,7 @@ If you are using IntelliJ product (ex: IDEA, WebStorm, etc), please use [intelli
 |eslint-plugin-react                      |ESLint - React specific linting rules                                               |
 |extract-text-webpack-plugin              |Webpack - Separate out inlined CSS from JS files                                    |
 |file-loader                              |Webpack - File loader                                                               |
-|html-webpack-plugin                      |Webpack - Generates `index.html` using hash filenames for max caching               |
+|html-webpack-plugin                      |Webpack - Generates `index.html` using hash filenames for cache busting             |
 |image-webpack-loader                     |Webpack - Image loader and handling compression                                     |
 |isparta                                  |Code coverage for ES6 and for creating result file for Jenkins                      |
 |jsdom                                    |Test - A JavaScript implementation of the WHATWG DOM and HTML standards             |

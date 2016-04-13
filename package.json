@@ -6,7 +6,6 @@
     "test_dir_path": "test/",
     "dist_dir_path": "dist/",
     "report_dir_path": "reports/",
-    "dist_uri": "/dist",
     "mocha_opts": "--recursive --compilers js:babel-core/register"
   },
   "scripts": {

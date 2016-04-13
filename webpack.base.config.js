@@ -7,23 +7,18 @@ const packageJson = require('./package.json');
 const srcPath = path.join(__dirname, packageJson.config.src_dir_path);
 const distPath = path.join(__dirname, packageJson.config.dist_dir_path);
 const appPath = path.join(srcPath, '/js/app/index.js');
-const distUri = packageJson.config.dist_uri;
 
 console.log('App Path  :', appPath);
 console.log('Dist Path :', distPath);
-console.log('Dist URI  :', distUri);
 
 module.exports = {
   entry: {
     app: appPath
   },
 
-  // `publicPath` must begin with context root to ensure font paths in CSS and
-  // image paths renders correctly
   output: {
     path: distPath,
-    filename: 'js/app.js',
-    publicPath: distUri
+    filename: 'js/app.[hash].js'
   },
 
   module: {
@@ -47,12 +42,12 @@ module.exports = {
       },
       {
         test: /\.woff(2)?$/,
-        loader: 'url?limit=10000&minetype=application/octet-stream&name=fonts/[name].[ext]'
+        loader: 'url?limit=10000&minetype=application/octet-stream&name=fonts/[name].[hash].[ext]'
       },
       {
         test: /\.(jpe?g|png|gif)$/i,
         loaders: [
-          'file?hash=sha512&digest=hex&name=img/[name].[ext]',
+          'file?hash=sha512&digest=hex&name=img/[name].[hash].[ext]',
           'image-webpack?bypassOnDebug&optimizationLevel=7&interlaced=false'
         ]
       }
@@ -64,9 +59,11 @@ module.exports = {
     // So your styles are no longer inlined into the javascript, but separate in a css
     // bundle file (styles.css). If your total stylesheet volume is big, it will be faster
     // because the stylesheet bundle is loaded in parallel to the javascript bundle.
-    new ExtractTextPlugin('css/app.css'),
+    new ExtractTextPlugin('css/app.[chunkhash].css'),
 
+    // Generates `index.html`
     new HtmlWebpackPlugin({
+      title: packageJson.name,
       template: path.join(srcPath, '/index.html'),
       favicon: path.join(srcPath, '/favicon.png')
     })
