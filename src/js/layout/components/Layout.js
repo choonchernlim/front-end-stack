@@ -53,8 +53,6 @@ export default class extends React.Component {
 
   handleToggle = () => this.setState({ open: !this.state.open });
 
-  handleTitleClick = () => browserHistory.push('/');
-
   render() {
     return (
       <StyleRoot>
@@ -64,29 +62,50 @@ export default class extends React.Component {
           title="front-end-stack"
           style={style.appBar.base}
           titleStyle={style.appBar.title}
-          onTitleTouchTap={this.handleTitleClick}
+          onTitleTouchTap={() => browserHistory.push('/')}
           onLeftIconButtonTouchTap={this.handleToggle}
           iconStyleRight={style.appBar.iconRight}
           iconElementRight={<Avatar src={userImage} />}
         />
 
         <LeftNav open={this.state.open} containerStyle={style.leftNav}>
-          <MenuItem href="/" leftIcon={<HomeIcon />}>Home</MenuItem>
-          <MenuItem href="/look-and-feel" leftIcon={<DevicesIcon />}>Look and Feel</MenuItem>
-          <MenuItem href="/chuck-norris" leftIcon={<MoodIcon />}>Chuck Norris</MenuItem>
-          <MenuItem href="/todo-manager" leftIcon={<AssignmentIcon />}>Todo Manager</MenuItem>
+
+          <MenuItem
+            onTouchTap={() => browserHistory.push('/')}
+            leftIcon={<HomeIcon />}
+          >Home</MenuItem>
+
+          <MenuItem
+            onTouchTap={() => browserHistory.push('/look-and-feel')}
+            leftIcon={<DevicesIcon />}
+          >Look and Feel</MenuItem>
+
+          <MenuItem
+            onTouchTap={() => browserHistory.push('/chuck-norris')}
+            leftIcon={<MoodIcon />}
+          >Chuck Norris</MenuItem>
+
+          <MenuItem
+            onTouchTap={() => browserHistory.push('/todo-manager')}
+            leftIcon={<AssignmentIcon />}
+          >Todo Manager</MenuItem>
+
           <Divider />
+
           <Subheader>External Links</Subheader>
+
           <MenuItem
             href="https://github.com/choonchernlim/front-end-stack"
             leftIcon={<BugReportIcon />}
           >Github
           </MenuItem>
+
           <MenuItem
             href="https://myshittycode.com/"
             leftIcon={<SchoolIcon />}
           >My Shitty Code
           </MenuItem>
+
         </LeftNav>
 
         <Grid>
