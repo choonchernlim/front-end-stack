@@ -1,5 +1,6 @@
 import { Style, StyleRoot } from 'radium';
 import { Grid, Cell } from 'radium-grid';
+import { browserHistory } from 'react-router';
 import React from 'react';
 import baseStyle from '../../common/styles';
 import getMuiTheme from 'material-ui/lib/styles/getMuiTheme';
@@ -17,7 +18,7 @@ import DevicesIcon from 'material-ui/lib/svg-icons/device/devices';
 import MoodIcon from 'material-ui/lib/svg-icons/social/mood';
 import userImage from '../../../img/user.jpg';
 import style from '../styles';
-import { browserHistory } from 'react-router';
+import { name } from '../../../../package.json';
 
 // combine `large` and `xlarge` breakpoints
 const largeGrid = [Grid.defaultProps.breakpoints.large, Grid.defaultProps.breakpoints.xlarge]
@@ -59,7 +60,7 @@ export default class extends React.Component {
         <Style rules={baseStyle.global} />
 
         <AppBar
-          title="front-end-stack"
+          title={name}
           style={style.appBar.base}
           titleStyle={style.appBar.title}
           onTitleTouchTap={() => browserHistory.push('/')}

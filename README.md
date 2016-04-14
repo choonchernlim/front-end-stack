@@ -92,13 +92,14 @@ Project template for building epic single-page app using modern front-end stack.
 |image-webpack-loader                     |Webpack - Image loader and handling compression                                     |
 |isparta                                  |Code coverage for ES6 and for creating result file for Jenkins                      |
 |jsdom                                    |Test - A JavaScript implementation of the WHATWG DOM and HTML standards             |
+|json-loader                              |Webpack - JSON loader                                                               |
 |mocha                                    |Test - JS test framework                                                            |
 |mocha-junit-reporter                     |Test - Creating JUnit result file for Jenkins                                       |
 |nock                                     |Test - HTTP mocking and expectations library                                        |
 |node-sass                                |Webpack - Required by SASS loader                                                   |
 |postcss-loader                           |Webpack - Post CSS loader to run autoprefixer                                       |
 |react-addons-test-utils                  |Test - Utils for testing React components                                           |
-|rimraf                                   |Util - rm -rf for both Unix and Windows world                                       |
+|rimraf                                   |Util - `rm -rf` for both Unix and Windows world                                     |
 |sass-loader                              |Webpack - SASS loader                                                               |
 |style-loader                             |Webpack - Style loader                                                              |
 |url-loader                               |Webpack - URL loader                                                                |

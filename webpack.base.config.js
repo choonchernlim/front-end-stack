@@ -45,6 +45,10 @@ module.exports = {
         loader: 'url?limit=10000&minetype=application/octet-stream&name=fonts/[name].[hash].[ext]'
       },
       {
+        test: /\.json$/,
+        loader: 'json'
+      },
+      {
         test: /\.(jpe?g|png|gif)$/i,
         loaders: [
           'file?hash=sha512&digest=hex&name=img/[name].[hash].[ext]',
