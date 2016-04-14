@@ -25,7 +25,26 @@ Project template for building epic single-page app using modern front-end stack.
 |Babel                    |Transpiling ES6+ to ES5 to maximize cross browser compatibility                     |
 |ESLint                   |Validate JavaScript, adhering to [Airbnb's JavaScript style guide](https://github.com/airbnb/javascript)|
 
-If you are using IntelliJ product (ex: IDEA, WebStorm, etc), please use [intellij-config](https://github.com/choonchernlim/intellij-config) to configure JavaScript code formatter.
+## Getting Started
+
+* If you are using IntelliJ product (ex: IDEA, WebStorm, etc)...
+    * Use [intellij-config](https://github.com/choonchernlim/intellij-config) to configure JavaScript code formatter.
+    * Enable "ESLint" in your IDE, which will pick up `.eslintrc` from the project and enforce it.
+
+* Clone or download/unzip this project template.
+
+* Run `npm install` to install dependencies.
+
+* To start app development, run `npm start`.
+    * This script will start webpack-dev-server.
+    * Open a browser and visit `http://localhost:8080`.
+    * When you modify the source code, the configured Hot Module Deployment will automatically refresh the browser content.
+
+* To package for production, run `npm run build:production`. 
+    * This script will clean the distribution directory and create minified bundle files.
+
+* To configure as Jenkins job, run `npm run ci`.
+    * This script will create test result and code coverage files.
 
 ## NPM Scripts
 

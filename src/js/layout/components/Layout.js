@@ -97,7 +97,7 @@ export default class extends React.Component {
           <MenuItem
             href="https://github.com/choonchernlim/front-end-stack"
             leftIcon={<BugReportIcon />}
-          >Github
+          >GitHub
           </MenuItem>
 
           <MenuItem
