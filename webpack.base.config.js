@@ -1,31 +1,39 @@
 const path = require('path');
+const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const autoprefixer = require('autoprefixer');
 const packageJson = require('./package.json');
 
+const vendors = Object.keys(packageJson.dependencies);
 const srcPath = path.join(__dirname, packageJson.config.src_dir_path);
 const distPath = path.join(__dirname, packageJson.config.dist_dir_path);
 const appPath = path.join(srcPath, '/js/app/index.js');
 
+console.log('Vendors   :', vendors.join());
 console.log('App Path  :', appPath);
 console.log('Dist Path :', distPath);
 
 module.exports = {
   entry: {
-    app: appPath
+    app: appPath,
+    vendor: vendors
   },
 
+  // Using `chunkhash` instead of `hash` to ensure `vendor` and `app` have different
+  // computed hash. This allows `vendor` file to have longer term cache on user's browser
+  // until the vendor dependencies get updated
   output: {
     path: distPath,
-    filename: 'js/app.[hash].js'
+    filename: 'js/[name].[chunkhash].js',
+    chunkFilename: 'js/[name].[chunkhash].js'
   },
 
   module: {
     preLoaders: [
       {
         test: /\.js?$/,
-        loaders: ['eslint'],
+        loader: 'eslint',
         exclude: /node_modules/
       }
     ],
@@ -59,6 +67,9 @@ module.exports = {
   },
 
   plugins: [
+    // Split vendors from app
+    new webpack.optimize.CommonsChunkPlugin({ name: 'vendor' }),
+
     // It moves every require("style.css") in entry chunks into a separate css output file.
     // So your styles are no longer inlined into the javascript, but separate in a css
     // bundle file (styles.css). If your total stylesheet volume is big, it will be faster

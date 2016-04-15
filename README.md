@@ -38,7 +38,7 @@ Project template for building epic single-page app using modern front-end stack.
 * To start app development, run `npm start`.
     * This script will start webpack-dev-server.
     * Open a browser and visit `http://localhost:8080`.
-    * When you modify the source code, the configured Hot Module Deployment will automatically refresh the browser content.
+    * When you modify the source code, the configured Hot Module Replacement will automatically refresh the browser content.
 
 * To package for production, run `npm run build:production`. 
     * This script will clean the distribution directory and create minified bundle files.
@@ -100,6 +100,7 @@ Project template for building epic single-page app using modern front-end stack.
 |postcss-loader                           |Webpack - Post CSS loader to run autoprefixer                                       |
 |react-addons-test-utils                  |Test - Utils for testing React components                                           |
 |rimraf                                   |Util - `rm -rf` for both Unix and Windows world                                     |
+|roboto-fontface                          |Roboto font, adhering to Google Material Design spec                                |
 |sass-loader                              |Webpack - SASS loader                                                               |
 |style-loader                             |Webpack - Style loader                                                              |
 |url-loader                               |Webpack - URL loader                                                                |
@@ -126,7 +127,6 @@ Notes:-
 |react-tap-event-plugin                   |UI - Required by material-ui to listen for touch events                             |
 |redux                                    |Redux - Core                                                                        |
 |redux-saga                               |Redux - Side Effects middleware                                                     |
-|roboto-fontface                          |Roboto font, adhering to Google Material Design spec                                |
 
 ## Project Structure
 
