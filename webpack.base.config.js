@@ -10,9 +10,14 @@ const srcPath = path.join(__dirname, packageJson.config.src_dir_path);
 const distPath = path.join(__dirname, packageJson.config.dist_dir_path);
 const appPath = path.join(srcPath, '/js/app/index.js');
 
+// make sure the context root has trailing slash
+const contextRoot = path.join(packageJson.config.context_root, '/');
+
+console.log('------------------------------');
 console.log('Vendors   :', vendors.join());
 console.log('App Path  :', appPath);
 console.log('Dist Path :', distPath);
+console.log('------------------------------');
 
 module.exports = {
   entry: {
@@ -25,8 +30,8 @@ module.exports = {
   // until the vendor dependencies get updated
   output: {
     path: distPath,
-    publicPath: '/',
-    filename: 'js/[name].[chunkhash].js'
+    publicPath: contextRoot,
+    filename: 'assets/js/[name].[chunkhash].js'
   },
 
   module: {
@@ -50,7 +55,7 @@ module.exports = {
       },
       {
         test: /\.woff(2)?$/,
-        loader: 'url?limit=10000&minetype=application/octet-stream&name=fonts/[name].[hash].[ext]'
+        loader: 'url?limit=10000&minetype=application/octet-stream&name=assets/font/[name].[hash].[ext]'
       },
       {
         test: /\.json$/,
@@ -59,7 +64,7 @@ module.exports = {
       {
         test: /\.(jpe?g|png|gif)$/i,
         loaders: [
-          'file?hash=sha512&digest=hex&name=img/[name].[hash].[ext]',
+          'file?hash=sha512&digest=hex&name=assets/img/[name].[hash].[ext]',
           'image-webpack?bypassOnDebug&optimizationLevel=7&interlaced=false'
         ]
       }
@@ -74,13 +79,13 @@ module.exports = {
     // So your styles are no longer inlined into the javascript, but separate in a css
     // bundle file (styles.css). If your total stylesheet volume is big, it will be faster
     // because the stylesheet bundle is loaded in parallel to the javascript bundle.
-    new ExtractTextPlugin('css/app.[chunkhash].css'),
+    new ExtractTextPlugin('assets/css/app.[chunkhash].css'),
 
     // Generates `index.html`
     new HtmlWebpackPlugin({
       title: packageJson.name,
       template: path.join(srcPath, '/index.html'),
-      favicon: path.join(srcPath, '/favicon.png')
+      favicon: path.join(srcPath, '/img/favicon.png')
     })
   ],
 

@@ -1,40 +1,26 @@
 const baseConfig = require('./webpack.base.config');
+const path = require('path');
 const webpack = require('webpack');
-const packageJson = require('./package.json');
+const CleanPlugin = require('clean-webpack-plugin');
 
 module.exports = Object.assign({}, baseConfig, {
-  devtool: 'eval',
+  plugins: baseConfig.plugins.concat(
+    // Instead of cleaning the whole dist dir, clean only assets/ dir between builds for 2 reasons:-
+    // 1. Only assets/ dir will contain hashed filenames
+    // 2. When used in typical JEE app, dist dir will also contain WEB-INF/ and we don't want this
+    //    plugin to wipe that dir off
+    new CleanPlugin(path.join(baseConfig.output.path, '/assets')),
 
-  output: {
-    path: baseConfig.output.path,
-    publicPath: baseConfig.output.publicPath,
+    // Minify JS without source map and suppress any warnings.
+    new webpack.optimize.UglifyJsPlugin({
+      sourceMap: false,
+      compress: {
+        warnings: false
+      }
+    }),
 
-    // When using `chunkhash` on filenames, webpack-dev-server throws an error:-
-    // "Cannot use [chunkhash] for chunk in 'js/[name].[chunkhash].js' (use [hash] instead)"
-    // So, instead of using `hash`, removed hash from filenames to speed up performance
-    // https://medium.com/@okonetchnikov/long-term-caching-of-static-assets-with-webpack-1ecb139adb95#.kbk0zei4k
-    filename: 'js/[name].js',
-
-    // Include comments with information about the modules to complement devtool="eval"
-    // https://github.com/webpack/docs/wiki/build-performance#sourcemaps
-    pathinfo: true
-  },
-
-  devServer: {
-    contentBase: packageJson.config.dist_dir_path,
-
-    // Enable history API fallback so HTML5 History API based
-    // routing works. This is a good default that will come
-    // in handy in more complicated setups.
-    historyApiFallback: true,
-
-    hot: true,
-    inline: true,
-    progress: true,
-
-    // Display only errors to reduce the amount of output.
-    stats: 'errors-only'
-  },
-
-  plugins: baseConfig.plugins.concat(new webpack.HotModuleReplacementPlugin())
+    // Prevents the inclusion of duplicate code into bundle and instead applies a copy
+    // of the function at runtime, which results smaller file size
+    new webpack.optimize.DedupePlugin()
+  )
 });

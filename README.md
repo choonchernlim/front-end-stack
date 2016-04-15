@@ -40,7 +40,7 @@ Project template for building epic single-page app using modern front-end stack.
     * Open a browser and visit `http://localhost:8080`.
     * When you modify the source code, the configured Hot Module Replacement will automatically refresh the browser content.
 
-* To package for production, run `npm run build:production`. 
+* To package for production, run `npm run build`. 
     * This script will clean the distribution directory and create minified bundle files.
 
 * To configure as Jenkins job, run `npm run ci`.
@@ -53,9 +53,7 @@ Project template for building epic single-page app using modern front-end stack.
 |test                                     |Run tests and run `posttest`                                                        |
 |test:watch                               |Run and watch tests                                                                 |
 |posttest                                 |Run ESLint on test files                                                            |
-|build                                    |Build development bundle (uncompressed JS and CSS)                                  |
-|build:watch                              |Build and watch development bundle                                                  |
-|build:production                         |Clean dist dir before building production bundle (compressed JS and CSS)            |
+|build                                    |Build production bundle (compressed cache busting asset files)                      |
 |ci:clean                                 |Remove report dir                                                                   |
 |ci:coverage                              |Run code coverage                                                                   |
 |ci:test                                  |Run test and generate result file                                                   |
@@ -133,12 +131,13 @@ Notes:-
 ```
 .
 ├── dist                        -> Distribution dir
-│   ├── css                     
-│   ├── fonts                   
-│   ├── img                     
-│   ├── js                     
-│   ├── favicon.png                     
-│   └── index.html              -> Entry page        
+│   ├── assets
+│   │   ├── css
+│   │   ├── font
+│   │   ├── img
+│   │   └── js
+│   ├── favicon.png
+│   ├── index.html
 ├── node_modules                -> Installed modules dir
 │   └── ...                     
 ├── reports                     -> Reports dir - Generated reports for Jenkins
@@ -147,7 +146,6 @@ Notes:-
 │   ├── img                     
 │   ├── js                      
 │   ├── scss
-│   ├── favicon.png                     
 │   └── index.html              -> Template entry page        
 ├── test                        -> Test dir
 │   └── ...                     
@@ -159,8 +157,8 @@ Notes:-
 ├── package.json                -> NPM scripts and dependencies
 ├── README.md                   -> Readme file for the app
 ├── webpack.base.config.js      -> Common webpack config
-├── webpack.config.js           -> Development webpack config
-└── webpack.prod.config.js      -> Production webpack config
+├── webpack.config.js           -> Production webpack config
+└── webpack.dev.config.js       -> Development webpack config
 ```
 
 ## Acknowledgement

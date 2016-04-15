@@ -2,6 +2,7 @@
   "name": "front-end-stack",
   "private": true,
   "config": {
+    "context_root": "/",
     "src_dir_path": "src/",
     "test_dir_path": "test/",
     "dist_dir_path": "dist/",
@@ -13,14 +14,12 @@
     "test:watch": "npm test -- --watch",
     "posttest": "eslint $npm_package_config_test_dir_path",
     "build": "webpack --progress --colors",
-    "build:watch": "webpack --progress --colors --watch",
-    "build:production": "webpack --config webpack.prod.config.js --progress --colors",
     "ci:clean": "rimraf $npm_package_config_report_dir_path",
     "ci:coverage": "isparta cover --root $npm_package_config_src_dir_path --include-all-sources --report text --report cobertura --dir $npm_package_config_report_dir_path _mocha -- $npm_package_config_test_dir_path $npm_package_config_mocha_opts",
     "ci:test": "npm test -- --reporter mocha-junit-reporter --reporter-options mochaFile=$npm_package_config_report_dir_path/test-results.xml",
     "ci": "npm run ci:clean && npm run ci:test && npm run ci:coverage",
     "reinstall": "npm cache clean && rimraf node_modules && npm install",
-    "start": "webpack-dev-server"
+    "start": "webpack-dev-server --config webpack.dev.config.js "
   },
   "devDependencies": {
     "autoprefixer": "6.3.6",
