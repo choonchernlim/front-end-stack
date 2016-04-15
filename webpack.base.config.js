@@ -25,8 +25,8 @@ module.exports = {
   // until the vendor dependencies get updated
   output: {
     path: distPath,
-    filename: 'js/[name].[chunkhash].js',
-    chunkFilename: 'js/[name].[chunkhash].js'
+    publicPath: '/',
+    filename: 'js/[name].[chunkhash].js'
   },
 
   module: {

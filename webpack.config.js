@@ -7,13 +7,13 @@ module.exports = Object.assign({}, baseConfig, {
 
   output: {
     path: baseConfig.output.path,
+    publicPath: baseConfig.output.publicPath,
 
     // When using `chunkhash` on filenames, webpack-dev-server throws an error:-
     // "Cannot use [chunkhash] for chunk in 'js/[name].[chunkhash].js' (use [hash] instead)"
     // So, instead of using `hash`, removed hash from filenames to speed up performance
     // https://medium.com/@okonetchnikov/long-term-caching-of-static-assets-with-webpack-1ecb139adb95#.kbk0zei4k
     filename: 'js/[name].js',
-    chunkFilename: 'js/[name].js',
 
     // Include comments with information about the modules to complement devtool="eval"
     // https://github.com/webpack/docs/wiki/build-performance#sourcemaps
