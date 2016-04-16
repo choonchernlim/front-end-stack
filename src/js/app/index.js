@@ -23,9 +23,9 @@ ReactDOM.render(
     <Router history={history}>
       <Route path="/" component={Layout}>
         <IndexRoute component={Home} />
-        <Route path="/look-and-feel" component={LookAndFeel} />
-        <Route path="/chuck-norris" component={ChuckNorris} />
-        <Route path="/todo-manager" component={TodoManager} />
+        <Route path="look-and-feel" component={LookAndFeel} />
+        <Route path="chuck-norris" component={ChuckNorris} />
+        <Route path="todo-manager" component={TodoManager} />
       </Route>
     </Router>
   </Provider>,

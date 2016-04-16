@@ -77,17 +77,17 @@ export default class extends React.Component {
           >Home</MenuItem>
 
           <MenuItem
-            onTouchTap={() => browserHistory.push('/look-and-feel')}
+            onTouchTap={() => browserHistory.push('look-and-feel')}
             leftIcon={<DevicesIcon />}
           >Look and Feel</MenuItem>
 
           <MenuItem
-            onTouchTap={() => browserHistory.push('/chuck-norris')}
+            onTouchTap={() => browserHistory.push('chuck-norris')}
             leftIcon={<MoodIcon />}
           >Chuck Norris</MenuItem>
 
           <MenuItem
-            onTouchTap={() => browserHistory.push('/todo-manager')}
+            onTouchTap={() => browserHistory.push('todo-manager')}
             leftIcon={<AssignmentIcon />}
           >Todo Manager</MenuItem>
 
