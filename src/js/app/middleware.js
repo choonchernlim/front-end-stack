@@ -1,11 +1,11 @@
 import { applyMiddleware } from 'redux';
 import createSagaMiddleware from 'redux-saga';
-import chuckNorrisSaga from '../chuck-norris';
+import sagas from './saga';
 
 const sagaMiddleware = createSagaMiddleware();
 
 export default applyMiddleware(sagaMiddleware);
 
-export function* runSagaMiddleware() {
-  sagaMiddleware.run(chuckNorrisSaga);
-}
+export const runSagaMiddleware = () => {
+  sagas.forEach(saga => sagaMiddleware.run(saga));
+};

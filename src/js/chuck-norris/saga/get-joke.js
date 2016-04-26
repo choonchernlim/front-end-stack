@@ -9,6 +9,6 @@ export function* getJokeAsync() {
   yield put({ type: 'SAVE_JOKE', value: json.value.joke });
 }
 
-export default function* getJoke() {
+export default function*() {
   yield* takeEvery('GET_JOKE', getJokeAsync);
 }

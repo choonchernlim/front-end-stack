@@ -1,3 +1,3 @@
 export reducer from './reducers';
-export middleware from './middleware';
+export saga from './saga';
 export component from './components/ChuckNorris';
