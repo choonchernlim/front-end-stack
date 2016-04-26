@@ -1,6 +1,5 @@
 import { Style, StyleRoot } from 'radium';
 import { Grid, Cell } from 'radium-grid';
-import { browserHistory } from 'react-router';
 import React from 'react';
 import baseStyle from '../../common/styles';
 import getMuiTheme from 'material-ui/lib/styles/getMuiTheme';
@@ -36,6 +35,12 @@ export default class extends React.Component {
     children: React.PropTypes.element.isRequired
   };
 
+  // to get router to work
+  // https://github.com/davezuko/react-redux-starter-kit/issues/695
+  static contextTypes = {
+    router: React.PropTypes.object
+  };
+
   constructor(props) {
     super(props);
     this.state = { open: true, mql };
@@ -63,7 +68,7 @@ export default class extends React.Component {
           title={name}
           style={style.appBar.base}
           titleStyle={style.appBar.title}
-          onTitleTouchTap={() => browserHistory.push('/')}
+          onTitleTouchTap={() => this.context.router.push('/')}
           onLeftIconButtonTouchTap={this.handleToggle}
           iconStyleRight={style.appBar.iconRight}
           iconElementRight={<Avatar src={userImage} />}
@@ -72,22 +77,22 @@ export default class extends React.Component {
         <LeftNav open={this.state.open} containerStyle={style.leftNav}>
 
           <MenuItem
-            onTouchTap={() => browserHistory.push('/')}
+            onTouchTap={() => this.context.router.push('/')}
             leftIcon={<HomeIcon />}
           >Home</MenuItem>
 
           <MenuItem
-            onTouchTap={() => browserHistory.push('look-and-feel')}
+            onTouchTap={() => this.context.router.push('look-and-feel')}
             leftIcon={<DevicesIcon />}
           >Look and Feel</MenuItem>
 
           <MenuItem
-            onTouchTap={() => browserHistory.push('chuck-norris')}
+            onTouchTap={() => this.context.router.push('chuck-norris')}
             leftIcon={<MoodIcon />}
           >Chuck Norris</MenuItem>
 
           <MenuItem
-            onTouchTap={() => browserHistory.push('todo-manager')}
+            onTouchTap={() => this.context.router.push('todo-manager')}
             leftIcon={<AssignmentIcon />}
           >Todo Manager</MenuItem>
 

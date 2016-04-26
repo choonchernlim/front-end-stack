@@ -64,6 +64,7 @@
     "webpack-dev-server": "1.14.1"
   },
   "dependencies": {
+    "history": "2.1.0",
     "immutable": "3.8.1",
     "isomorphic-fetch": "2.2.1",
     "material-ui": "0.15.0-alpha.2",

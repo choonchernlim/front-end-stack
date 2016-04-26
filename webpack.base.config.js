@@ -82,10 +82,7 @@ module.exports = {
     new ExtractTextPlugin('assets/css/app.[chunkhash].css'),
 
     // Generates `index.html`
-    // `contextRoot` is required to set `base.href` to ensure react router works with app
-    // containing context root
     new HtmlWebpackPlugin({
-      contextRoot,
       title: packageJson.name,
       template: path.join(srcPath, '/index.html'),
       favicon: path.join(srcPath, '/img/favicon.png')

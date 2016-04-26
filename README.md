@@ -113,6 +113,7 @@ Notes:-
 
 |Dependency                               |Description                                                                         |
 |-----------------------------------------|------------------------------------------------------------------------------------|
+|history                                  |Managing browser history                                                            |
 |immutable                                |Creating Immutable objects                                                          |
 |isomorphic-fetch                         |Isomorphic WHATWG Fetch API                                                         |
 |material-ui                              |UI - Google's material design UI components built with React                        |
