@@ -35,5 +35,4 @@ module.exports = Object.assign({}, baseConfig, {
     // of the function at runtime, which results smaller file size
     new webpack.optimize.DedupePlugin()
   )
-})
-;
+});

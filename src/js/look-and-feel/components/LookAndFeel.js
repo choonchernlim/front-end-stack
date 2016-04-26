@@ -19,53 +19,56 @@ export default () => (
       sollicitudin sem. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere
       cubilia Curae; Quisque vitae massa at erat pharetra auctor id vel nisl. Fusce id dapibus
       lacus. Nulla sit amet lorem sapien. Praesent non massa nisl. Nam volutpat ac orci at
-      mattis.</p>
+      mattis.
+    </p>
 
     <h2>Heading 2</h2>
 
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sed sodales ipsum, ut
-      sollicitudin sem.</p>
+      sollicitudin sem.
+    </p>
 
     <h3>Heading 3</h3>
 
     <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere
       cubilia Curae; Quisque vitae massa at erat pharetra auctor id vel nisl. Fusce id dapibus
-      lacus.</p>
+      lacus.
+    </p>
 
     <h1>Material UI</h1>
 
     <h2>Text Field</h2>
 
     <TextField hintText="Text Field" />
-    { ' ' }
+    {' '}
     <TextField hintText="Text Field (Disabled)" disabled />
-    { ' ' }
+    {' '}
     <TextField hintText="Text Field with Error Message" errorText="This field is required" />
 
     <h2>Raised Button</h2>
 
     <RaisedButton label="Primary" primary />
-    { ' ' }
+    {' '}
     <RaisedButton label="Secondary" secondary />
-    { ' ' }
+    {' '}
     <RaisedButton label="Default" />
-    { ' ' }
+    {' '}
     <RaisedButton label="Disabled" disabled />
 
     <h2>Checkbox</h2>
 
     <Checkbox label="Unchecked" />
-    { ' ' }
+    {' '}
     <Checkbox label="Checked" defaultChecked />
-    { ' ' }
+    {' '}
     <Checkbox label="Disabled" disabled />
 
     <h2>Radio Button</h2>
 
     <RadioButton label="Unchecked" />
-    { ' ' }
+    {' '}
     <RadioButton label="Checked" checked />
-    { ' ' }
+    {' '}
     <RadioButton label="Disabled" disabled />
 
   </Container>

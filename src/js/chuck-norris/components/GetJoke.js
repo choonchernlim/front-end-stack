@@ -5,7 +5,7 @@ import RaisedButton from 'material-ui/lib/raised-button';
 
 let GetJoke = ({ joke, onGetJokeClick }) => (
   <div>
-    <RaisedButton primary label="Get Joke" onClick={ onGetJokeClick } />
+    <RaisedButton primary label="Get Joke" onClick={onGetJokeClick} />
     <h2><span dangerouslySetInnerHTML={{ __html: joke }} /></h2>
   </div>
 );
