@@ -34,7 +34,7 @@
     "babel-preset-stage-0": "6.5.0",
     "chai": "3.5.0",
     "chai-as-promised": "5.3.0",
-    "clean-webpack-plugin": "0.1.8",
+    "clean-webpack-plugin": "0.1.9",
     "css-loader": "0.23.1",
     "eslint": "2.8.0",
     "eslint-config-airbnb": "8.0.0",
