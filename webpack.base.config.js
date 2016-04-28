@@ -6,17 +6,12 @@ const packageJson = require('./package.json');
 
 const vendors = Object.keys(packageJson.dependencies);
 const srcPath = path.join(__dirname, packageJson.config.src_dir_path);
-const distPath = path.join(__dirname, packageJson.config.dist_dir_path);
 
 const appPath = path.join(srcPath, '/js/app/index.js');
-
-// make sure the dist URI has trailing slash
-const distUri = path.join(packageJson.config.dist_uri, '/');
 
 console.log('------------------------------');
 console.log('Vendors   :', vendors.join());
 console.log('App Path  :', appPath);
-console.log('Dist Path :', distPath);
 console.log('------------------------------');
 
 // Base options for HtmlWebpackPlugin for generating `index.html`
@@ -32,15 +27,6 @@ const webpackOptions = {
   entry: {
     app: appPath,
     vendor: vendors
-  },
-
-  // Using `chunkhash` instead of `hash` to ensure `vendor` and `app` have different
-  // computed hash. This allows `vendor` file to have longer term cache on user's browser
-  // until the vendor dependencies get updated
-  output: {
-    path: distPath,
-    publicPath: distUri,
-    filename: 'js/[name].[chunkhash].js'
   },
 
   module: {

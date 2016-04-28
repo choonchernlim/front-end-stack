@@ -1,13 +1,16 @@
 const baseConfig = require('./webpack.base.config');
+const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const packageJson = require('./package.json');
+
+const distPath = path.join(__dirname, packageJson.config.dist_dir_path);
 
 module.exports = Object.assign({}, baseConfig.webpackOptions, {
   devtool: 'eval',
 
   output: {
-    path: baseConfig.webpackOptions.output.path,
+    path: distPath,
 
     // webpack-dev-server hosts directly from http://localhost:8080.
     // So, instead of relying on user-specified context root, hardcode as /
@@ -25,7 +28,7 @@ module.exports = Object.assign({}, baseConfig.webpackOptions, {
   },
 
   devServer: {
-    contentBase: packageJson.config.dist_dir_path,
+    contentBase: distPath,
 
     // Enable history API fallback so HTML5 History API based
     // routing works. This is a good default that will come

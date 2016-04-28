@@ -5,12 +5,27 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanPlugin = require('clean-webpack-plugin');
 const packageJson = require('./package.json');
 
+const distPath = path.join(__dirname, packageJson.config.dist_dir_path);
+
 module.exports = Object.assign({}, baseConfig.webpackOptions, {
+
+  output: {
+    path: distPath,
+
+    // Make sure there is a trailing slash
+    publicPath: path.join(packageJson.config.dist_uri, '/'),
+
+    // Using `chunkhash` instead of `hash` to ensure `vendor` and `app` have different
+    // computed hash. This allows `vendor` file to have longer term cache on user's browser
+    // until the vendor dependencies get updated
+    filename: 'js/[name].[chunkhash].js'
+  },
+
   plugins: baseConfig.webpackOptions.plugins.concat(
-    // Instead of cleaning whole dist dir between builds, clean only dirs that may contain hashed
-    // filenames
+    // Instead of cleaning whole dist dir between builds, clean only dirs that may contain
+    // hashed filenames
     new CleanPlugin(['css', 'font', 'img', 'js'], {
-      root: baseConfig.webpackOptions.output.path
+      root: distPath
     }),
 
     // Minify JS without source map and suppress any warnings.
