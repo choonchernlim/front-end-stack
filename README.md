@@ -133,11 +133,10 @@ Notes:-
 ```
 .
 ├── dist                        -> Distribution dir
-│   ├── assets
-│   │   ├── css
-│   │   ├── font
-│   │   ├── img
-│   │   └── js
+│   ├── css
+│   ├── font
+│   ├── img
+│   ├── js
 │   ├── favicon.png
 │   ├── index.html
 ├── node_modules                -> Installed modules dir
@@ -145,6 +144,7 @@ Notes:-
 ├── reports                     -> Reports dir - Generated reports for Jenkins
 │   └── ...                     
 ├── src                         -> Source dir
+│   ├── html                     
 │   ├── img                     
 │   ├── js                      
 │   ├── scss

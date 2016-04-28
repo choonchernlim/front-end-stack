@@ -1,17 +1,14 @@
 const baseConfig = require('./webpack.base.config');
 const path = require('path');
 const webpack = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanPlugin = require('clean-webpack-plugin');
+const packageJson = require('./package.json');
 
-module.exports = Object.assign({}, baseConfig, {
-  plugins: baseConfig.plugins.concat(
-    // Instead of cleaning the whole dist dir, clean only assets/ dir between builds for 2 reasons:-
-    // 1. Only assets/ dir will contain hashed filenames
-    // 2. When used in typical JEE app, dist dir will also contain WEB-INF/ and we don't want this
-    //    plugin to wipe that dir off
-    new CleanPlugin(['assets'], {
-      root: baseConfig.output.path
-    }),
+module.exports = Object.assign({}, baseConfig.webpackOptions, {
+  plugins: baseConfig.webpackOptions.plugins.concat(
+    // Clean dist dir
+    new CleanPlugin([baseConfig.webpackOptions.output.path]),
 
     // Minify JS without source map and suppress any warnings.
     new webpack.optimize.UglifyJsPlugin({
@@ -33,6 +30,11 @@ module.exports = Object.assign({}, baseConfig, {
 
     // Prevents the inclusion of duplicate code into bundle and instead applies a copy
     // of the function at runtime, which results smaller file size
-    new webpack.optimize.DedupePlugin()
+    new webpack.optimize.DedupePlugin(),
+
+    // Generates `index.html` at the location specified by the user
+    new HtmlWebpackPlugin(Object.assign({}, baseConfig.htmlWebpackPluginOptions, {
+      filename: path.join(__dirname, packageJson.config.entry_file_path)
+    }))
   )
 });

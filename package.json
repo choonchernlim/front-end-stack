@@ -6,6 +6,7 @@
     "src_dir_path": "src/",
     "test_dir_path": "test/",
     "dist_dir_path": "dist/",
+    "entry_file_path": "dist/index.html",
     "report_dir_path": "reports/",
     "mocha_opts": "--recursive --compilers js:babel-core/register"
   },
