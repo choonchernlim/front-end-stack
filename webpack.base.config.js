@@ -10,8 +10,8 @@ const distPath = path.join(__dirname, packageJson.config.dist_dir_path);
 
 const appPath = path.join(srcPath, '/js/app/index.js');
 
-// make sure the context root has trailing slash
-const contextRoot = path.join(packageJson.config.context_root, '/');
+// make sure the dist URI has trailing slash
+const distUri = path.join(packageJson.config.dist_uri, '/');
 
 console.log('------------------------------');
 console.log('Vendors   :', vendors.join());
@@ -39,7 +39,7 @@ const webpackOptions = {
   // until the vendor dependencies get updated
   output: {
     path: distPath,
-    publicPath: contextRoot,
+    publicPath: distUri,
     filename: 'js/[name].[chunkhash].js'
   },
 
