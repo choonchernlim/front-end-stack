@@ -7,8 +7,13 @@ const packageJson = require('./package.json');
 
 module.exports = Object.assign({}, baseConfig.webpackOptions, {
   plugins: baseConfig.webpackOptions.plugins.concat(
-    // Clean dist dir
-    new CleanPlugin([baseConfig.webpackOptions.output.path]),
+    // Instead of cleaning whole dist dir, clean only certain dirs between builds for 2 reasons:-
+    // 1. Only css/, font/, img/ and js/ dir will contain hashed filenames
+    // 2. When used in typical JEE app, dist dir will also contain WEB-INF/ and we don't want this
+    //    plugin to wipe that dir off
+    new CleanPlugin(['css', 'font', 'img', 'js'], {
+      root: baseConfig.webpackOptions.output.path
+    }),
 
     // Minify JS without source map and suppress any warnings.
     new webpack.optimize.UglifyJsPlugin({
