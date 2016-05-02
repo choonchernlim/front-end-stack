@@ -17,7 +17,7 @@
       "error",
       "stroustrup"
     ],
-    // allow uppercase functions from ImmutableJS
+    // allow uppercase functions from ImmutableJS and Radium
     "new-cap": [
       2,
       {
@@ -35,7 +35,8 @@
           "OrderedMap",
           "Set",
           "OrderedSet",
-          "Record"
+          "Record",
+          "Radium"
         ]
       }
     ]
