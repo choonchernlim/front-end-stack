@@ -12,18 +12,23 @@ _"Sometimes if you want to see a change for the better, you have to take things 
 
 Project template for building epic single-page app using modern front-end stack.
 
-|Library                  |What and Why                                                                        |
-|-------------------------|------------------------------------------------------------------------------------|
-|ES6+                     |ES5 is a thing of the past                                                          |
-|React                    |Handling view layer                                                                 |
-|Redux                    |One-way data flow, inspired by Flux pattern                                         |
-|Saga                     |Side Effects middleware using ES6 Generator                                         |
-|Immutable                |Data as immutable objects                                                           |
-|Material UI              |UI components, adhering to [Google Material Design](https://www.google.com/design/spec/material-design/introduction.htm)|
-|Radium and Radium Grid   |Inline CSS and grid layout                                                          |
-|Webpack                  |Module bundler                                                                      |
-|Babel                    |Transpiling ES6+ to ES5 to maximize cross browser compatibility                     |
-|ESLint                   |Validate JavaScript, adhering to [Airbnb's JavaScript style guide](https://github.com/airbnb/javascript)|
+|Library                                                                        |What and Why                                                             |
+|-------------------------------------------------------------------------------|-------------------------------------------------------------------------|
+|[NPM](https://www.npmjs.com/)                                                  |JavaScript package manager                                               |
+|[Node.js](https://nodejs.org)                                                  |Event-driven I/O server-side JavaScript environment (for app dev)        |
+|[Webpack](https://webpack.github.io/) 	                                        |Module bundler                                                           |
+|[Webpack Dev Server](https://github.com/webpack/webpack-dev-server)            |Live reloading server (for app dev)                                      |
+|[ES6](http://www.ecma-international.org/ecma-262/6.0/) and ES7                 |Latest and greatest JavaScript language                                  |
+|[Babel](https://babeljs.io/) 	                                                |Transpiles ES6+ to ES5 to maximize cross browser compatibility           |                   
+|[React](https://facebook.github.io/react/)                                     |Handles view layer                                                       |
+|[Redux](https://github.com/reactjs/redux)                                      |One-way data flow, inspired by Flux pattern                              |
+|[Saga](https://github.com/yelouafi/redux-saga) 	                            |Side Effects middleware using ES6 Generator                              |
+|[Immutable](https://facebook.github.io/immutable-js/) 	                        |Creates immutable objects                                                |
+|[Material UI](http://www.material-ui.com/) 	                                |UI components, adhering to [Google Material Design](https://www.google.com/design/spec/material-design/introduction.htm)|     
+|[Radium](https://github.com/FormidableLabs/radium) and [Radium Grid](https://github.com/FormidableLabs/radium-grid)|Inline CSS and grid layout           |
+|[ESLint](https://github.com/eslint/eslint) 	                                |Validates JavaScript, adhering to [Airbnb's JavaScript style guide](https://github.com/airbnb/javascript) |                    
+|[Mocha](https://mochajs.org/) 	                                                |JavaScript test framework                                                |   
+
 
 ## Getting Started
 
