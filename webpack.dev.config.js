@@ -12,9 +12,8 @@ module.exports = Object.assign({}, baseConfig.webpackOptions, {
   output: {
     path: distPath,
 
-    // webpack-dev-server hosts directly from http://localhost:8080.
-    // So, instead of relying on user-specified context root, hardcode as /
-    publicPath: '/',
+    // webpack-dev-server hosts directly from context root instead of dist uri
+    publicPath: packageJson.config.context_root,
 
     // When using `chunkhash` on filenames, webpack-dev-server throws an error:-
     // "Cannot use [chunkhash] for chunk in 'js/[name].[chunkhash].js' (use [hash] instead)"
@@ -30,17 +29,25 @@ module.exports = Object.assign({}, baseConfig.webpackOptions, {
   devServer: {
     contentBase: distPath,
 
-    // Enable history API fallback so HTML5 History API based
-    // routing works. This is a good default that will come
-    // in handy in more complicated setups.
-    historyApiFallback: true,
+    // redirects 404s to context root
+    historyApiFallback: {
+      index: packageJson.config.context_root
+    },
 
     hot: true,
     inline: true,
     progress: true,
 
     // Display only errors to reduce the amount of output.
-    stats: 'errors-only'
+    stats: 'errors-only',
+
+    // Server side proxy when `/api/*` is called
+    proxy: {
+      '/api/*': {
+        target: `https://localhost:8443${packageJson.config.context_root}`,
+        secure: false
+      }
+    }
   },
 
   plugins: baseConfig.webpackOptions.plugins.concat([
