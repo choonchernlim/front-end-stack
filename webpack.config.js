@@ -25,7 +25,8 @@ module.exports = Object.assign({}, baseConfig.webpackOptions, {
     // Instead of cleaning whole dist dir between builds, clean only dirs that may contain
     // hashed filenames
     new CleanPlugin(['css', 'font', 'img', 'js'], {
-      root: distPath
+      root: distPath,
+      verbose: false
     }),
 
     // Minify JS without source map and suppress any warnings.

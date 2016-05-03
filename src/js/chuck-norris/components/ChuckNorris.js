@@ -8,7 +8,7 @@ const ChuckNorris = () => (
   <Container>
     <h1>Chuck Norris</h1>
 
-    <p>This view demonstrates the use of Saga, Side Effects middleware.</p>
+    <p>This view demonstrates the use of Saga, an implementation of Side Effects middleware.</p>
     <Grid>
       <Cell width="6/12">
         <GetJoke />
