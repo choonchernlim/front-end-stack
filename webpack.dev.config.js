@@ -41,10 +41,10 @@ module.exports = Object.assign({}, baseConfig.webpackOptions, {
     // Display only errors to reduce the amount of output.
     stats: 'errors-only',
 
-    // Server side proxy when `/api/*` is called
+    // Server side proxy when `<context_root>/api/*` is called
     proxy: {
-      '/api/*': {
-        target: `https://localhost:8443${packageJson.config.context_root}`,
+      [path.join(packageJson.config.context_root, '/api/*')]: {
+        target: 'https://localhost:8443',
         secure: false
       }
     }
