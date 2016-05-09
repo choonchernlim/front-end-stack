@@ -1,9 +1,9 @@
 import React from 'react';
 import Container from '../../common/components/Container';
-import RaisedButton from 'material-ui/lib/raised-button';
-import TextField from 'material-ui/lib/text-field';
-import Checkbox from 'material-ui/lib/checkbox';
-import RadioButton from 'material-ui/lib/radio-button';
+import RaisedButton from 'material-ui/RaisedButton';
+import TextField from 'material-ui/TextField';
+import Checkbox from 'material-ui/Checkbox';
+import RadioButton from 'material-ui/RadioButton';
 
 export default () => (
   <Container>

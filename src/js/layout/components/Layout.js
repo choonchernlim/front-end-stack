@@ -2,19 +2,19 @@ import { Style, StyleRoot } from 'radium';
 import { Grid, Cell } from 'radium-grid';
 import React from 'react';
 import baseStyle from '../../common/styles';
-import getMuiTheme from 'material-ui/lib/styles/getMuiTheme';
-import AppBar from 'material-ui/lib/app-bar';
-import LeftNav from 'material-ui/lib/left-nav';
-import MenuItem from 'material-ui/lib/menus/menu-item';
-import Avatar from 'material-ui/lib/avatar';
-import Divider from 'material-ui/lib/divider';
-import Subheader from 'material-ui/lib/Subheader';
-import HomeIcon from 'material-ui/lib/svg-icons/action/home';
-import AssignmentIcon from 'material-ui/lib/svg-icons/action/assignment';
-import BugReportIcon from 'material-ui/lib/svg-icons/action/bug-report';
-import SchoolIcon from 'material-ui/lib/svg-icons/social/school';
-import DevicesIcon from 'material-ui/lib/svg-icons/device/devices';
-import MoodIcon from 'material-ui/lib/svg-icons/social/mood';
+import getMuiTheme from 'material-ui/styles/getMuiTheme';
+import AppBar from 'material-ui/AppBar';
+import Drawer from 'material-ui/Drawer';
+import MenuItem from 'material-ui/MenuItem';
+import Avatar from 'material-ui/Avatar';
+import Divider from 'material-ui/Divider';
+import Subheader from 'material-ui/Subheader';
+import HomeIcon from 'material-ui/svg-icons/action/home';
+import AssignmentIcon from 'material-ui/svg-icons/action/assignment';
+import BugReportIcon from 'material-ui/svg-icons/action/bug-report';
+import SchoolIcon from 'material-ui/svg-icons/social/school';
+import DevicesIcon from 'material-ui/svg-icons/device/devices';
+import MoodIcon from 'material-ui/svg-icons/social/mood';
 import userImage from '../../../img/user.jpg';
 import style from '../styles';
 import { name } from '../../../../package.json';
@@ -74,7 +74,7 @@ export default class extends React.Component {
           iconElementRight={<Avatar src={userImage} />}
         />
 
-        <LeftNav open={this.state.open} containerStyle={style.leftNav}>
+        <Drawer open={this.state.open} containerStyle={style.leftNav}>
 
           <MenuItem
             onTouchTap={() => this.context.router.push('/')}
@@ -112,7 +112,7 @@ export default class extends React.Component {
           >My Shitty Code
           </MenuItem>
 
-        </LeftNav>
+        </Drawer>
 
         <Grid>
           <Cell width="1" style={style.container}>{this.props.children}</Cell>
