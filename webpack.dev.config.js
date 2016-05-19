@@ -43,7 +43,12 @@ module.exports = Object.assign({}, baseConfig.webpackOptions, {
 
     // Server side proxy when `<context_root>/api/*` is called
     proxy: {
-      [path.join(packageJson.config.context_root, '/api/*')]: {
+      // `path.join(..) is used to remove possible trailing slash from the context root.
+      // However, `path` also handles platform-specific file path and turns forward slash to
+      // backslash in Windows. Since this is a proxy URI, any backslash (from Windows)
+      // need to be converted to forward slash to prevent this error:
+      // "Invalid regular expression: /^\api\(.*)\/?$/: Unmatched ')'"
+      [path.join(packageJson.config.context_root, '/api/*').replace(/\\/g, '/')]: {
         target: 'https://localhost:8443',
         secure: false
       }
