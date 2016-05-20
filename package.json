@@ -9,15 +9,15 @@
     "dist_dir_path": "dist/assets/",
     "entry_file_path": "dist/index.html",
     "report_dir_path": "reports/",
-    "mocha_opts": "--recursive --colors --compilers js:babel-core/register"
+    "mocha_opts": "--recursive --compilers js:babel-core/register"
   },
   "scripts": {
     "test": "node ./scripts/test",
     "build": "webpack",
+    "ci": "npm run ci:clean && npm run ci:test && npm run ci:coverage",
     "ci:clean": "node ./scripts/ci-clean",
     "ci:coverage": "node ./scripts/ci-coverage",
     "ci:test": "node ./scripts/ci-test",
-    "ci": "npm run ci:clean && npm run ci:test && npm run ci:coverage",
     "reinstall": "npm cache clean && rimraf node_modules && npm install",
     "start": "webpack-dev-server --config webpack.dev.config.js "
   },

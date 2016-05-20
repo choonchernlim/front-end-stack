@@ -53,17 +53,14 @@ Project template for building epic single-page app using modern front-end stack.
 
 ## NPM Scripts
 
+These scripts are cross-platform compatible.
+
 |Name                                     |Description                                                                         |
 |-----------------------------------------|------------------------------------------------------------------------------------|
-|test                                     |Run tests and run `posttest`                                                        |
-|test:watch                               |Run and watch tests                                                                 |
-|posttest                                 |Run ESLint on test files                                                            |
+|test                                     |Run tests and lint test files                                                       |
 |build                                    |Build production bundle (compressed cache busting asset files)                      |
-|ci:clean                                 |Remove report dir                                                                   |
-|ci:coverage                              |Run code coverage                                                                   |
-|ci:test                                  |Run test and generate result file                                                   |
-|ci                                       |Run `ci:clean`, `ci:test` and `ci:coverage`                                         |
-|reinstall                                |Clear npm cache, remove `node_module` and install from `package.json`               |
+|ci                                       |Remove report dir, run code coverage, run tests and generate result files for CI    |
+|reinstall                                |Clear npm cache, remove `node_module` and install modules listed in `package.json`  |
 |start                                    |Start Node.js Express server with Hot Module Replacement                            |
                                                                                                                                
 ## Dev Dependencies                            
