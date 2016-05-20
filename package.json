@@ -8,8 +8,7 @@
     "test_dir_path": "test/",
     "dist_dir_path": "dist/assets/",
     "entry_file_path": "dist/index.html",
-    "report_dir_path": "reports/",
-    "mocha_opts": "--recursive --compilers js:babel-core/register"
+    "report_dir_path": "reports/"
   },
   "scripts": {
     "test": "node ./scripts/test",

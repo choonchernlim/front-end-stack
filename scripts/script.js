@@ -1,10 +1,10 @@
 /**
- * Command executioner.
+ * Script runner.
  */
 const console = require('console');
 const exec = require('child_process').exec;
 
-module.exports = (command) => {
+const run = (command) => {
   console.log(`Executing: ${command}`);
 
   exec(command, (err, stdout, stderr) => {
@@ -20,4 +20,9 @@ module.exports = (command) => {
 
     console.log('OK');
   });
+};
+
+module.exports = {
+  run,
+  mochaOpts: '--recursive --compilers js:babel-core/register'
 };
