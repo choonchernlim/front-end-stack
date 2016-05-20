@@ -9,16 +9,14 @@
     "dist_dir_path": "dist/assets/",
     "entry_file_path": "dist/index.html",
     "report_dir_path": "reports/",
-    "mocha_opts": "--recursive --compilers js:babel-core/register"
+    "mocha_opts": "--recursive --colors --compilers js:babel-core/register"
   },
   "scripts": {
-    "test": "mocha $npm_package_config_test_dir_path $npm_package_config_mocha_opts",
-    "test:watch": "npm test -- --watch",
-    "posttest": "eslint $npm_package_config_test_dir_path",
+    "test": "node ./scripts/test",
     "build": "webpack",
-    "ci:clean": "rimraf $npm_package_config_report_dir_path",
-    "ci:coverage": "isparta cover --root $npm_package_config_src_dir_path --include-all-sources --report text --report cobertura --dir $npm_package_config_report_dir_path _mocha -- $npm_package_config_test_dir_path $npm_package_config_mocha_opts",
-    "ci:test": "npm test -- --reporter mocha-junit-reporter --reporter-options mochaFile=$npm_package_config_report_dir_path/test-results.xml",
+    "ci:clean": "node ./scripts/ci-clean",
+    "ci:coverage": "node ./scripts/ci-coverage",
+    "ci:test": "node ./scripts/ci-test",
     "ci": "npm run ci:clean && npm run ci:test && npm run ci:coverage",
     "reinstall": "npm cache clean && rimraf node_modules && npm install",
     "start": "webpack-dev-server --config webpack.dev.config.js "
