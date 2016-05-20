@@ -2,8 +2,9 @@
 
 ## 0.3.0 - 2016-06-20
 
-* `"Invalid regular expression: /^\api\(.*)\/?$/: Unmatched ')'"` with running `npm start` in Windows.
+* `Invalid regular expression: /^\api\(.*)\/?$/: Unmatched ')'` with running `npm start` in Windows.
 * Cross-platform compatible NPM script. Tested to work on Mac and Windows.
+* Updated dependency versions.
 
 ## 0.2.0 - 2016-06-11
 
