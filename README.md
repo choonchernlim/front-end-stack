@@ -134,24 +134,17 @@ Notes:-
 
 ```
 .
-├── dist                        -> Distribution dir
-│   ├── css
-│   ├── font
-│   ├── img
-│   ├── js
-│   ├── favicon.png
-│   ├── index.html
+├── dist                        -> Distribution dir - Production bundle, including index.html
+│   └── ...                     
 ├── node_modules                -> Installed modules dir
 │   └── ...                     
 ├── reports                     -> Reports dir - Generated reports for Jenkins
 │   └── ...                     
-├── src                         -> Source dir
-│   ├── html                     
-│   ├── img                     
-│   ├── js                      
-│   ├── scss
-│   └── index.html              -> Template entry page        
-├── test                        -> Test dir
+├── scripts                     -> Scripts dir - Cross-platform NPM scripts
+│   └── ...                     
+├── src                         -> Source dir - Actual source files
+│   └── ...                     
+├── test                        -> Test dir - Test files
 │   └── ...                     
 ├── .babelrc                    -> Babel configuration
 ├── .eslintrc                   -> ESLint configuration
