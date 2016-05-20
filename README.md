@@ -51,17 +51,17 @@ Project template for building epic single-page app using modern front-end stack.
 * To configure as Jenkins job, run `npm run ci`.
     * This script will create test result and code coverage files.
 
-## NPM Scripts
+## Commands
 
-These scripts are cross-platform compatible.
+These commands are cross-platform compatible.
 
-|Name                                     |Description                                                                         |
+|Command                                  |Description                                                                         |
 |-----------------------------------------|------------------------------------------------------------------------------------|
-|test                                     |Run tests and lint test files                                                       |
-|build                                    |Build production bundle (compressed cache busting asset files)                      |
-|ci                                       |Remove report dir, run code coverage, run tests and generate result files for CI    |
-|reinstall                                |Clear npm cache, remove `node_module` and install modules listed in `package.json`  |
-|start                                    |Start Node.js Express server with Hot Module Replacement                            |
+|`npm test`                               |Run tests and lint test files                                                       |
+|`npm run build`                          |Build production bundle (compressed cache busting asset files)                      |
+|`npm run ci`                             |Remove report dir, run code coverage, run tests and generate result files for CI    |
+|`npm run reinstall`                      |Clear npm cache, remove `node_module` and install modules listed in `package.json`  |
+|`npm start`                              |Start Node.js Express server with Hot Module Replacement                            |
                                                                                                                                
 ## Dev Dependencies                            
                                                                                                                                
