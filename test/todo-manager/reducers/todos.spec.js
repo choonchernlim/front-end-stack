@@ -1,4 +1,4 @@
-import { describe, it } from 'mocha';
+const { describe, it } = global;
 import { expect } from 'chai';
 import { List, fromJS } from 'immutable';
 import todos from '../../../src/js/todo-manager/reducers/todos';

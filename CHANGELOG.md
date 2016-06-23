@@ -1,5 +1,9 @@
 # Change Log
 
+## TBD
+
+* Changed `import { describe, it } from 'mocha';` to `const { describe, it } = global;` to allow `mocha --watch` to work. See https://github.com/mochajs/mocha/issues/1847.
+
 ## 0.3.0 - 2016-06-20
 
 * `"Invalid regular expression: /^\api\(.*)\/?$/: Unmatched ')'"` with running `npm start` in Windows.
