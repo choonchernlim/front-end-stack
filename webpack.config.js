@@ -4,16 +4,22 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanPlugin = require('clean-webpack-plugin');
 const packageJson = require('./package.json');
+const process = require('process');
 
 const distPath = path.join(__dirname, packageJson.config.dist_dir_path);
+
+// Use override value if exists, otherwise use the one defined in `package.json`
+const contextRoot = process.env.CONTEXT_ROOT || packageJson.config.context_root;
+
+// Make sure there is a trailing slash
+const distUri = path.join(contextRoot, packageJson.config.dist_uri, '/');
 
 module.exports = Object.assign({}, baseConfig.webpackOptions, {
 
   output: {
     path: distPath,
 
-    // Make sure there is a trailing slash
-    publicPath: path.join(packageJson.config.dist_uri, '/'),
+    publicPath: distUri,
 
     // Using `chunkhash` instead of `hash` to ensure `vendor` and `app` have different
     // computed hash. This allows `vendor` file to have longer term cache on user's browser

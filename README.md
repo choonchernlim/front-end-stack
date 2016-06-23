@@ -48,6 +48,8 @@ Project template for building epic single-page app using modern front-end stack.
 * To package for production, run `npm run build`. 
     * This script will clean the distribution directory and create minified bundle files.
 
+* To package for production with a different context root than the one defined in `package.json`, run `CONTEXT_ROOT=/new-context-root npm run build`. 
+
 * To configure as Jenkins job, run `npm run ci`.
     * This script will create test result and code coverage files.
 
@@ -58,7 +60,7 @@ These commands are cross-platform compatible.
 |Command                                  |Description                                                                         |
 |-----------------------------------------|------------------------------------------------------------------------------------|
 |`npm test`                               |Run tests and lint test files                                                       |
-|`npm run build`                          |Build production bundle (compressed cache busting asset files)                      |
+|`npm run build`                          |Build production bundle (compressed cache busting asset files).                     |
 |`npm run ci`                             |Remove report dir, run code coverage, run tests and generate result files for CI    |
 |`npm run reinstall`                      |Clear npm cache, remove `node_module` and install modules listed in `package.json`  |
 |`npm start`                              |Start Node.js Express server with Hot Module Replacement                            |
