@@ -1,4 +1,4 @@
-import { describe, it } from 'mocha';
+const { describe, it } = global;
 import React from 'react'; // eslint-disable-line no-unused-vars
 import TestUtils from 'react-addons-test-utils';
 import { expect } from 'chai';
