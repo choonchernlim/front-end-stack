@@ -5,6 +5,8 @@
 * BUG - webpack-dev-server's proxy doesn't work when the context root doesn't have a trailing slash.
 * BUG - `npm run ci` doesn't execute ESLint after executing Mocha.
 * REFACTOR - Changed `const { describe, it } = global;` back to `import { describe, it } from 'mocha';` since `mocha --watch` works now.
+* MAINTENANCE - Dependency updates.
+    * `history v3.0.0` still doesn't work with `react-router`. See https://github.com/reactjs/react-router/issues/3515
 
 ## 0.3.2- 2016-06-23
 
