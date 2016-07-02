@@ -101,6 +101,7 @@ These commands are cross-platform compatible.
 |mocha-junit-reporter                     |Test - Creating JUnit result file for Jenkins                                       |
 |nock                                     |Test - HTTP mocking and expectations library                                        |
 |node-sass                                |Webpack - Required by SASS loader                                                   |
+|nodemon                                  |Test - Monitor test files and rerun tests. Needed due to cross-platform test runner because `mocha --watch` doesn't produce run results when executed from `require('child_process').exec` |
 |postcss-loader                           |Webpack - Post CSS loader to run autoprefixer                                       |
 |react-addons-test-utils                  |Test - Utils for testing React components                                           |
 |rimraf                                   |Util - `rm -rf` for both Unix and Windows world                                     |
