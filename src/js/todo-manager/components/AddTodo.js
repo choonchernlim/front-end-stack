@@ -15,12 +15,18 @@ class AddTodo extends Component {
   constructor(props) {
     super(props);
     this.state = { value: '', error: '' };
+    this.handleInputFocus = this.handleInputFocus.bind(this);
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handleButtonClick = this.handleButtonClick.bind(this);
   }
 
   // on render, set focus on text field
   componentDidMount() {
+    this.handleInputFocus();
+  }
+
+  // triggers focus on text field
+  handleInputFocus() {
     this.todoTextField.focus();
   }
 
@@ -33,10 +39,10 @@ class AddTodo extends Component {
   handleButtonClick() {
     if (this.state.value) {
       this.props.addTodo(this.state.value);
-      this.setState({ value: '', error: '' }, () => this.todoTextField.focus());
+      this.setState({ value: '', error: '' }, () => this.handleInputFocus());
     }
     else {
-      this.setState({ error: 'Field is required' });
+      this.setState({ error: 'Field is required' }, () => this.handleInputFocus());
     }
   }
 
@@ -49,10 +55,7 @@ class AddTodo extends Component {
             // See https://facebook.github.io/react/docs/more-about-refs.html
           }
           <TextField
-            ref={ref => {
-              this.todoTextField = ref;
-              return this.todoTextField;
-            }}
+            ref={ref => (this.todoTextField = ref)}
             hintText="Enter Todo..."
             errorText={this.state.error}
             value={this.state.value}
