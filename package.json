@@ -12,6 +12,7 @@
   },
   "scripts": {
     "test": "node ./scripts/test",
+    "test:watch": "nodemon --exec 'npm test'",
     "build": "webpack",
     "ci": "npm run ci:clean && npm run ci:test && npm run ci:coverage",
     "ci:clean": "node ./scripts/ci-clean",
@@ -52,6 +53,7 @@
     "mocha-junit-reporter": "1.11.1",
     "nock": "8.0.0",
     "node-sass": "3.8.0",
+    "nodemon": "^1.9.2",
     "postcss-loader": "0.9.1",
     "react-addons-test-utils": "15.2.0",
     "rimraf": "2.5.2",
