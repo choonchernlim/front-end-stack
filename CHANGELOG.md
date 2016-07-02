@@ -3,6 +3,7 @@
 ## 0.3.3- 2016-07-01
 
 * BUG - webpack-dev-server's proxy doesn't work when the context root doesn't have a trailing slash.
+* BUG - `npm run ci` doesn't execute ESLint after executing Mocha.
 * REFACTOR - Changed `const { describe, it } = global;` back to `import { describe, it } from 'mocha';` since `mocha --watch` works now.
 
 ## 0.3.2- 2016-06-23

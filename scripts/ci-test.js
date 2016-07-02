@@ -11,4 +11,4 @@ const testDirPath = process.env.npm_package_config_test_dir_path;
 const reportDirPath = process.env.npm_package_config_report_dir_path;
 const mochaFilePath = path.join(reportDirPath, 'test-results.xml');
 
-script.run(`mocha ${testDirPath} ${mochaOpts} --reporter mocha-junit-reporter --reporter-options mochaFile=${mochaFilePath}`);
+script.run(`mocha ${testDirPath} ${mochaOpts} --reporter mocha-junit-reporter --reporter-options mochaFile=${mochaFilePath} && eslint ${testDirPath} --color`);
