@@ -59,8 +59,10 @@ These commands are cross-platform compatible.
 
 |Command                                  |Description                                                                         |
 |-----------------------------------------|------------------------------------------------------------------------------------|
-|`npm test`                               |Run tests and lint test files                                                       |
+|`npm test`                               |Run entire tests and lint entire test files                                         |
+|`npm test [./path/to/test/module]`       |Run only tests within `[./path/to/test/module]` and lint those test files           |
 |`npm test:watch`                         |Watch for changes in test files and rerun `npm test`                                |
+|`npm test:watch [./path/to/test/module]` |Watch for changes in test files and rerun `npm test [./path/to/test/module]`        |
 |`npm run build`                          |Build production bundle (compressed cache busting asset files)                      |
 |`npm run ci`                             |Remove report dir, run code coverage, run tests and generate result files for CI    |
 |`npm run reinstall`                      |Clear npm cache, remove `node_module` and install modules listed in `package.json`  |

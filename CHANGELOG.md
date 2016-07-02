@@ -2,7 +2,8 @@
 
 ## TBD - 2016-TBD
 
-* Ref Callback instead of Ref String. See `https://facebook.github.io/react/docs/more-about-refs.html`.
+* FEATURE - `npm test ./test/abc` and `npm run test:watch ./test/abc` to run (and watch) only tests within `./test/abc`.
+* REFACTUR - Ref Callback instead of Ref String. See `https://facebook.github.io/react/docs/more-about-refs.html`.
 
 ## 0.3.3 - 2016-07-01
 
