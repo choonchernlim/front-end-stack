@@ -1,4 +1,4 @@
-const { describe, it } = global;
+import { describe, it } from 'mocha';
 import fetch from 'isomorphic-fetch';
 import chai from 'chai';
 import chaiAsPromised from 'chai-as-promised';

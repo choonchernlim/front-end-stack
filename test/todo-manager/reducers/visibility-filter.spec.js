@@ -1,4 +1,4 @@
-const { describe, it } = global;
+import { describe, it } from 'mocha';
 import { expect } from 'chai';
 import visibilityFilter from '../../../src/js/todo-manager/reducers/visibility-filter';
 
