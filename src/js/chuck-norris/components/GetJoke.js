@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
-import { getJoke } from '../actions/index';
+import { getJoke } from '../actions';
 import RaisedButton from 'material-ui/RaisedButton';
 
 const GetJoke = ({ joke, onGetJokeClick }) => (
