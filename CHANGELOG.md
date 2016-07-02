@@ -1,5 +1,9 @@
 # Change Log
 
+## TBD - 2016-TBD
+
+* Ref Callback instead of Ref String. See `https://facebook.github.io/react/docs/more-about-refs.html`.
+
 ## 0.3.3 - 2016-07-01
 
 * FEATURE - `npm run test:watch` - cross-platform approach to watch for changes in test files before rerunning the tests.
