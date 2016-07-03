@@ -1,22 +1,23 @@
 import React, { PropTypes } from 'react';
 
-const Link = ({ active, children, onClick }) => {
+const Link = ({ active, filter, children, setVisibilityFilter }) => {
   if (active) {
     return <span>{children}</span>;
   }
 
-  const onClickFunc = e => {
+  const onClick = e => {
     e.preventDefault();
-    onClick();
+    setVisibilityFilter(filter);
   };
 
-  return <a href="#" onClick={onClickFunc}>{children}</a>;
+  return <a href="#" onClick={onClick}>{children}</a>;
 };
 
 Link.propTypes = {
+  filter: PropTypes.string.isRequired,
   active: PropTypes.bool.isRequired,
   children: PropTypes.node.isRequired,
-  onClick: PropTypes.func.isRequired
+  setVisibilityFilter: PropTypes.func.isRequired
 };
 
 export default Link;

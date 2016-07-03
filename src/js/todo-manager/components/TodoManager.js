@@ -4,7 +4,7 @@ import AddTodo from './AddTodo';
 import VisibleTodoList from './VisibleTodoList';
 import Container from '../../common/components/Container';
 
-const TodoManager = () => (
+export default () => (
   <Container>
     <h1>Todo Manager</h1>
 
@@ -15,5 +15,3 @@ const TodoManager = () => (
     <Footer />
   </Container>
 );
-
-export default TodoManager;
