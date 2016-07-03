@@ -1,8 +1,9 @@
+import { CHUCK_NORRIS_SAVE_JOKE } from '../actions';
+
 const joke = (state = '', action) => {
   switch (action.type) {
-    case 'SAVE_JOKE':
+    case CHUCK_NORRIS_SAVE_JOKE:
       return action.value;
-
     default:
       return state;
   }

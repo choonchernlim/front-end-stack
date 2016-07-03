@@ -1,7 +1,7 @@
 import { takeEvery } from 'redux-saga';
 import { call, put } from 'redux-saga/effects';
 import { getRandomJoke } from '../api';
-import { saveJoke } from '../actions';
+import { CHUCK_NORRIS_GET_JOKE, saveJoke } from '../actions';
 
 export function* getJokeAsync() {
   const response = yield call(getRandomJoke);
@@ -11,5 +11,5 @@ export function* getJokeAsync() {
 }
 
 export default function*() {
-  yield* takeEvery('GET_JOKE', getJokeAsync);
+  yield* takeEvery(CHUCK_NORRIS_GET_JOKE, getJokeAsync);
 }
