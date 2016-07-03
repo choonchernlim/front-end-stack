@@ -19,7 +19,7 @@
     "ci:coverage": "node ./scripts/ci-coverage",
     "ci:test": "node ./scripts/ci-test",
     "reinstall": "npm cache clean && rimraf node_modules && npm install",
-    "start": "webpack-dev-server --config webpack.dev.config.js "
+    "start": "webpack-dev-server --config webpack.dev.config.js"
   },
   "devDependencies": {
     "autoprefixer": "6.3.6",
