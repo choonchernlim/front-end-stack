@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { getJoke } from '../actions';
 import RaisedButton from 'material-ui/RaisedButton';
 
+// noinspection HtmlUnknownAttribute
 const GetJoke = ({ joke, onGetJokeClick }) => (
   <div>
     <RaisedButton primary label="Get Joke" onClick={onGetJokeClick} />
