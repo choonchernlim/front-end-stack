@@ -5,6 +5,9 @@
 * FEATURE - `npm test ./test/abc` and `npm run test:watch ./test/abc` to run (and watch) only tests within `./test/abc`.
 * FEATURE - Configured `webpack-dev-server` to prevent "No 'Access-Control-Allow-Origin' header is present on the requested resource". 
 * REFACTOR - Ref Callback instead of Ref String. See `https://facebook.github.io/react/docs/more-about-refs.html`.
+* MAINTENANCE - Dependency updates.
+    * `history v3.0.0` still doesn't work with `react-router`. See https://github.com/reactjs/react-router/issues/3515
+* MAINTENANCE - Tested with `Node.js v6.2.2`.
 
 ## 0.3.3 - 2016-07-01
 
