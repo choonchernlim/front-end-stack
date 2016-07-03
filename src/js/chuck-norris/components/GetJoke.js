@@ -4,26 +4,20 @@ import { getJoke } from '../actions';
 import RaisedButton from 'material-ui/RaisedButton';
 
 // noinspection HtmlUnknownAttribute
-const GetJoke = ({ joke, onGetJokeClick }) => (
+const GetJoke = ({ joke, onClick }) => (
   <div>
-    <RaisedButton primary label="Get Joke" onClick={onGetJokeClick} />
+    <RaisedButton primary label="Get Joke" onClick={onClick} />
     <h2><span dangerouslySetInnerHTML={{ __html: joke }} /></h2>
   </div>
 );
+
+GetJoke.propTypes = {
+  joke: PropTypes.string.isRequired,
+  onClick: PropTypes.func.isRequired
+};
 
 const mapStateToProps = (state) => ({
   joke: state.joke
 });
 
-const mapDispatchToProps = (dispatch) => ({
-  onGetJokeClick: () => dispatch(getJoke())
-});
-
-GetJoke.propTypes = {
-  joke: PropTypes.string.isRequired,
-  onGetJokeClick: PropTypes.func.isRequired
-};
-
-const GetJokeContainer = connect(mapStateToProps, mapDispatchToProps)(GetJoke);
-
-export default GetJokeContainer;
+export default connect(mapStateToProps, { onClick: getJoke })(GetJoke);

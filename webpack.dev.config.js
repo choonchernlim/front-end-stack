@@ -48,6 +48,11 @@ module.exports = Object.assign({}, baseConfig.webpackOptions, {
         target: 'https://localhost:8443',
         secure: false
       }
+    },
+
+    // To prevent "No 'Access-Control-Allow-Origin' header is present on the requested resource"
+    headers: {
+      'Access-Control-Allow-Origin': '*'
     }
   },
 
