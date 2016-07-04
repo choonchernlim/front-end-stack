@@ -1,9 +1,19 @@
 import { describe, it } from 'mocha';
 import { expect } from 'chai';
+import { takeLatest } from 'redux-saga';
 import { put, call } from 'redux-saga/effects';
 import { getRandomJokeApi } from '../../../src/js/chuck-norris/api';
-import { getJokeAsync } from '../../../src/js/chuck-norris/sagas/get-joke';
-import { getJokeSucceed, getJokeFailed } from '../../../src/js/chuck-norris/actions';
+import getJokeAsyncSaga, { getJokeAsync } from '../../../src/js/chuck-norris/sagas/get-joke';
+import { GET_JOKE, getJokeSucceed, getJokeFailed } from '../../../src/js/chuck-norris/actions';
+
+describe('getJokeAsyncSaga', () => {
+  it('given GET_JOKE, should trigger getJokeAsync', () => {
+    const generator = getJokeAsyncSaga();
+
+    expect(generator.next().value).to.deep.equal(call(takeLatest, GET_JOKE, getJokeAsync));
+    expect(generator.next()).to.deep.equal({ done: true, value: undefined });
+  });
+});
 
 describe('getJokeAsync', () => {
   it('given successful call, should return a joke', () => {
@@ -22,3 +32,4 @@ describe('getJokeAsync', () => {
     expect(generator.next()).to.deep.equal({ done: true, value: undefined });
   });
 });
+

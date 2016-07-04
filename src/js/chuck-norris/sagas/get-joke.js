@@ -13,9 +13,13 @@ export function* getJokeAsync() {
   }
 }
 
-// Unlike `takeLatest`, which allows concurrent get jokes, `takeLatest` ensures if GET_JOKE
-// gets dispatched while a fetch is already pending, that pending fetch is cancelled
-// and only the latest one will be run.
+// 1. Unlike `takeLatest`, which allows concurrent get jokes, `takeLatest` ensures if GET_JOKE
+//    gets dispatched while a fetch is already pending, that pending fetch is cancelled
+//    and only the latest one will be run.
+//
+// 2. Instead of `yield* takeLatest(GET_JOKE, getJokeAsync);`,
+//    using `yield call(takeLatest, GET_JOKE, getJokeAsync);` to make it more testable.
+//    See: https://github.com/yelouafi/redux-saga/issues/318
 export default function*() {
-  yield* takeLatest(GET_JOKE, getJokeAsync);
+  yield call(takeLatest, GET_JOKE, getJokeAsync);
 }
