@@ -30,4 +30,3 @@ describe('TodoList', () => {
     expect(actions).to.deep.equal([2, 1]);
   });
 });
-
