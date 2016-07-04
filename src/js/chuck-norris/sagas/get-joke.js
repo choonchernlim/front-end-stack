@@ -13,7 +13,7 @@ export function* getJokeAsync() {
   }
 }
 
-// 1. Unlike `takeLatest`, which allows concurrent get jokes, `takeLatest` ensures if GET_JOKE
+// 1. Unlike `takeEvery`, which allows concurrent get jokes, `takeLatest` ensures if GET_JOKE
 //    gets dispatched while a fetch is already pending, that pending fetch is cancelled
 //    and only the latest one will be run.
 //
