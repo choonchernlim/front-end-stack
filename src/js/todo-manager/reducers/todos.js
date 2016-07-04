@@ -1,10 +1,16 @@
-import { List, fromJS } from 'immutable';
+import { Record, List } from 'immutable';
 import { ADD_TODO, TOGGLE_TODO } from '../actions';
+
+const TodoRecord = new Record({
+  id: undefined,
+  text: undefined,
+  completed: undefined
+});
 
 const todo = (state, action) => {
   switch (action.type) {
     case ADD_TODO:
-      return fromJS({
+      return new TodoRecord({
         id: action.id,
         text: action.text,
         completed: false

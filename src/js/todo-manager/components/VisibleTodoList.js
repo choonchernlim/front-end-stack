@@ -16,7 +16,7 @@ const getVisibleTodos = (todos, filter) => {
 };
 
 const mapStateToProps = (state) => ({
-  todos: getVisibleTodos(state.todos, state.visibilityFilter).toJS()
+  todos: getVisibleTodos(state.todos, state.visibilityFilter)
 });
 
 export default connect(mapStateToProps, { toggleTodo })(TodoList);
