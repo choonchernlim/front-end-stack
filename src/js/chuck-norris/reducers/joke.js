@@ -1,16 +1,30 @@
 import { Map } from 'immutable';
-import { GET_JOKE_SUCCEEDED, GET_JOKE_FAILED } from '../actions';
+import { GET_JOKE, GET_JOKE_SUCCEEDED, GET_JOKE_FAILED } from '../actions';
 
-const joke = (state = Map(), action) => {
+const initialState = new Map({
+  completed: true,
+  joke: undefined,
+  error: undefined
+});
+
+const joke = (state = initialState, action) => {
   switch (action.type) {
+    case GET_JOKE:
+      return state.merge({
+        completed: false,
+        joke: undefined,
+        error: action.error
+      });
     case GET_JOKE_SUCCEEDED:
       return state.merge({
+        completed: true,
         joke: action.joke,
-        error: null
+        error: undefined
       });
     case GET_JOKE_FAILED:
       return state.merge({
-        joke: null,
+        completed: true,
+        joke: undefined,
         error: action.error
       });
     default:
