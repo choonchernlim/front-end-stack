@@ -1,13 +1,13 @@
-import { Map } from 'immutable';
+import { Record } from 'immutable';
 import { GET_JOKE, GET_JOKE_SUCCEEDED, GET_JOKE_FAILED } from '../actions';
 
-const initialState = new Map({
+const JokeRecord = new Record({
   completed: true,
   joke: undefined,
   error: undefined
 });
 
-const joke = (state = initialState, action) => {
+const joke = (state = new JokeRecord(), action) => {
   switch (action.type) {
     case GET_JOKE:
       return state.merge({
