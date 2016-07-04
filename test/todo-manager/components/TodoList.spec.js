@@ -1,8 +1,8 @@
 import { describe, it } from 'mocha';
-import React from 'react';
+import React from 'react'; // eslint-disable-line no-unused-vars
 import TestUtils from 'react-addons-test-utils';
 import { expect } from 'chai';
-import TodoList from '../../../src/js/todo-manager/components/TodoList'; // eslint-disable-line no-unused-vars
+import TodoList from '../../../src/js/todo-manager/components/TodoList';
 
 describe('TodoList', () => {
   it('given todos, should render LI items', () => {
