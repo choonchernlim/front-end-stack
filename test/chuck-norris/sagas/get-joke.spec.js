@@ -4,7 +4,7 @@ import { takeLatest } from 'redux-saga';
 import { put, call } from 'redux-saga/effects';
 import { getRandomJokeApi } from '../../../src/js/chuck-norris/api';
 import getJokeAsyncSaga, { getJokeAsync } from '../../../src/js/chuck-norris/sagas/get-joke';
-import { GET_JOKE, getJokeSucceed, getJokeFailed } from '../../../src/js/chuck-norris/actions';
+import { GET_JOKE, getJokeSucceeded, getJokeFailed } from '../../../src/js/chuck-norris/actions';
 
 describe('getJokeAsyncSaga', () => {
   it('given GET_JOKE, should trigger getJokeAsync', () => {
@@ -20,7 +20,7 @@ describe('getJokeAsync', () => {
     const generator = getJokeAsync();
 
     expect(generator.next().value).to.deep.equal(call(getRandomJokeApi));
-    expect(generator.next('joke').value).to.deep.equal(put(getJokeSucceed('joke')));
+    expect(generator.next('joke').value).to.deep.equal(put(getJokeSucceeded('joke')));
     expect(generator.next()).to.deep.equal({ done: true, value: undefined });
   });
 

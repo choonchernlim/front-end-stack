@@ -1,12 +1,12 @@
 import { takeLatest } from 'redux-saga';
 import { call, put } from 'redux-saga/effects';
 import { getRandomJokeApi } from '../api';
-import { GET_JOKE, getJokeSucceed, getJokeFailed } from '../actions';
+import { GET_JOKE, getJokeSucceeded, getJokeFailed } from '../actions';
 
 export function* getJokeAsync() {
   try {
     const joke = yield call(getRandomJokeApi);
-    yield put(getJokeSucceed(joke));
+    yield put(getJokeSucceeded(joke));
   }
   catch (e) {
     yield put(getJokeFailed(e.message));

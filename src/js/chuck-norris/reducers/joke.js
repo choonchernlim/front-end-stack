@@ -1,9 +1,9 @@
 import { Map } from 'immutable';
-import { GET_JOKE_SUCCEED, GET_JOKE_FAILED } from '../actions';
+import { GET_JOKE_SUCCEEDED, GET_JOKE_FAILED } from '../actions';
 
 const joke = (state = Map(), action) => {
   switch (action.type) {
-    case GET_JOKE_SUCCEED:
+    case GET_JOKE_SUCCEEDED:
       return state.merge({
         joke: action.joke,
         error: null

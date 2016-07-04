@@ -1,6 +1,6 @@
 export const GET_JOKE = 'chuck-norris/getJoke';
 export const GET_JOKE_FAILED = 'chuck-norris/getJokeFailed';
-export const GET_JOKE_SUCCEED = 'chuck-norris/getJokeSucceed';
+export const GET_JOKE_SUCCEEDED = 'chuck-norris/getJokeSucceeded';
 
 export const getJoke = () => ({
   type: GET_JOKE
@@ -11,7 +11,7 @@ export const getJokeFailed = (error) => ({
   error
 });
 
-export const getJokeSucceed = (joke) => ({
-  type: GET_JOKE_SUCCEED,
+export const getJokeSucceeded = (joke) => ({
+  type: GET_JOKE_SUCCEEDED,
   joke
 });
