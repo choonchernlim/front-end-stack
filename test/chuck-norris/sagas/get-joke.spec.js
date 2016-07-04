@@ -2,7 +2,7 @@ import { describe, it } from 'mocha';
 import { expect } from 'chai';
 import { put, call } from 'redux-saga/effects';
 import { getRandomJokeApi } from '../../../src/js/chuck-norris/api';
-import { getJokeAsync } from '../../../src/js/chuck-norris/saga/get-joke';
+import { getJokeAsync } from '../../../src/js/chuck-norris/sagas/get-joke';
 import { getJokeSucceed, getJokeFailed } from '../../../src/js/chuck-norris/actions';
 
 describe('getJokeAsync', () => {
