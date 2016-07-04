@@ -3,10 +3,10 @@ import { connect } from 'react-redux';
 import { getJoke } from '../actions';
 import RaisedButton from 'material-ui/RaisedButton';
 
-// noinspection HtmlUnknownAttribute
 const GetJoke = ({ joke, error, onClick }) => {
   const errorMessage = error ? <pre>An error has occurred: {error}</pre> : <pre />;
 
+  // noinspection HtmlUnknownAttribute
   return (
     <div>
       <RaisedButton primary label="Get Joke" onClick={onClick} />
