@@ -41,18 +41,12 @@ module.exports = Object.assign({}, baseConfig.webpackOptions, {
     // Display only errors to reduce the amount of output.
     stats: 'errors-only',
 
-    // Server side proxy when `<context_root>/api/*` is called
+    // Redirects `http://localhost:8080/api/*` to `https://localhost:8443/<context_root>/api/*`
     proxy: {
-      // Using `path.posix.join(..)` to ensure it won't generate `\` in Windows when creating URI
-      [path.posix.join(packageJson.config.context_root, '/api/*')]: {
-        target: 'https://localhost:8443',
+      '/api/*': {
+        target: `https://localhost:8443${packageJson.config.context_root}`,
         secure: false
       }
-    },
-
-    // To prevent "No 'Access-Control-Allow-Origin' header is present on the requested resource"
-    headers: {
-      'Access-Control-Allow-Origin': '*'
     }
   },
 

@@ -1,7 +1,7 @@
 import { Record } from 'immutable';
 import { GET_JOKE, GET_JOKE_SUCCEEDED, GET_JOKE_FAILED } from '../actions';
 
-const JokeRecord = new Record({
+const JokeRecord = Record({
   completed: true,
   joke: undefined,
   error: undefined

@@ -1,7 +1,7 @@
 import { Record, List } from 'immutable';
 import { ADD_TODO, TOGGLE_TODO } from '../actions';
 
-const TodoRecord = new Record({
+const TodoRecord = Record({
   id: undefined,
   text: undefined,
   completed: undefined
