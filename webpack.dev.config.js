@@ -43,8 +43,8 @@ module.exports = Object.assign({}, baseConfig.webpackOptions, {
 
     // Redirects `http://localhost:8080/api/*` to `https://localhost:8443/<context_root>/api/*`
     proxy: {
-      '/api/*': {
-        target: `https://localhost:8443${packageJson.config.context_root}`,
+      [path.posix.join(packageJson.config.context_root, '/api/*')]: {
+        target: 'https://localhost:8443',
         secure: false
       }
     }
