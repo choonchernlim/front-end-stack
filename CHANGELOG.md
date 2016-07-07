@@ -8,6 +8,7 @@
 * MAINTENANCE - Dependency updates.
     * `history v3.0.0` still doesn't work with `react-router`. See https://github.com/reactjs/react-router/issues/3515
 * MAINTENANCE - Tested with `Node.js v6.2.2`.
+* BUG - `webpack-dev-server` not resolving Roboto font path in CSS file.
 
 ## 0.3.3 - 2016-07-01
 

@@ -12,8 +12,8 @@ module.exports = Object.assign({}, baseConfig.webpackOptions, {
   output: {
     path: distPath,
 
-    // webpack-dev-server hosts directly from context root instead of dist uri
-    publicPath: packageJson.config.context_root,
+    // webpack-dev-server hosts directly from base url instead of dist uri
+    publicPath: '/',
 
     // When using `chunkhash` on filenames, webpack-dev-server throws an error:-
     // "Cannot use [chunkhash] for chunk in 'js/[name].[chunkhash].js' (use [hash] instead)"
@@ -29,9 +29,9 @@ module.exports = Object.assign({}, baseConfig.webpackOptions, {
   devServer: {
     contentBase: distPath,
 
-    // redirects 404s to context root
+    // redirects 404s to base url
     historyApiFallback: {
-      index: packageJson.config.context_root
+      index: '/'
     },
 
     hot: true,
