@@ -86,6 +86,7 @@ These commands are cross-platform compatible.
 |chai-as-promised                         |Test - Fluent approach to test promises                                             |
 |clean-webpack-plugin                     |Webpack - Clean output dir between builds                                           |
 |css-loader                               |Webpack - CSS loader                                                                |
+|enzyme                                   |Test - Testing utilities for React                                                  |    
 |eslint                                   |ESLint - For enforcing coding style                                                 |    
 |eslint-config-airbnb                     |ESLint - Using Airbnb's coding style                                                |                  
 |eslint-loader                            |Webpack - ESLint loader                                                             |           
@@ -121,6 +122,7 @@ Notes:-
 
 |Dependency                               |Description                                                                         |
 |-----------------------------------------|------------------------------------------------------------------------------------|
+|es6-promise                              |A polyfill for ES6-style Promises for weak browsers, like IE11                      |
 |history                                  |Managing browser history                                                            |
 |immutable                                |Creating Immutable objects                                                          |
 |isomorphic-fetch                         |Isomorphic WHATWG Fetch API                                                         |
