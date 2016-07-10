@@ -19,7 +19,7 @@ const joke = (state = new JokeRecord(), action) => {
       return state.merge({
         completed: true,
         joke: action.joke,
-        error: undefined
+        error: ''
       });
     case GET_JOKE_FAILED:
       return state.merge({

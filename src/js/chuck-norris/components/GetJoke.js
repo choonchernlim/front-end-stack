@@ -8,7 +8,7 @@ import CircularProgress from 'material-ui/CircularProgress';
 // 2. When result is shown, remove spinner.
 // 3. If API call fails, display error message. Otherwise, display joke.
 const GetJoke = ({ joke, error, completed, onClick }) => {
-  const spinner = !completed ? <div><CircularProgress size="0.5" /></div> : undefined;
+  const spinner = !completed ? <div><CircularProgress size={0.5} /></div> : undefined;
   const errorMessage = error ? <div>An error has occurred: {error}</div> : undefined;
 
   // noinspection HtmlUnknownAttribute
@@ -23,8 +23,8 @@ const GetJoke = ({ joke, error, completed, onClick }) => {
 };
 
 GetJoke.propTypes = {
-  joke: PropTypes.string.isRequired,
-  error: PropTypes.string.isRequired,
+  joke: PropTypes.string,
+  error: PropTypes.string,
   completed: PropTypes.bool.isRequired,
   onClick: PropTypes.func.isRequired
 };

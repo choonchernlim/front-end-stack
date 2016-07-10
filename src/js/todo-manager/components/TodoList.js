@@ -1,4 +1,5 @@
 import React, { PropTypes } from 'react';
+import { List } from 'immutable';
 import Todo from './Todo';
 
 const TodoList = ({ todos, toggleTodo }) => (
@@ -15,12 +16,7 @@ const TodoList = ({ todos, toggleTodo }) => (
 );
 
 TodoList.propTypes = {
-  todos: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.number.isRequired,
-      completed: PropTypes.bool.isRequired,
-      text: PropTypes.string.isRequired
-    }).isRequired).isRequired,
+  todos: PropTypes.instanceOf(List).isRequired,
   toggleTodo: PropTypes.func.isRequired
 };
 
