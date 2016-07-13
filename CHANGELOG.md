@@ -10,6 +10,7 @@
     * `history v3.0.0` still doesn't work with `react-router`. See https://github.com/reactjs/react-router/issues/3515
 * MAINTENANCE - Tested with `Node.js v6.2.2`.
 * BUG - `webpack-dev-server` not resolving Roboto font path in CSS file.
+* BUG - Lint both `src` and `test` dirs on `npm test` and `npm run ci`. Lint first before running tests.
 
 ## 0.3.3 - 2016-07-01
 

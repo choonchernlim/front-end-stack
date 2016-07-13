@@ -2,7 +2,7 @@
  * `npm test` - to run all tests.
  * `npm test ./test/submodule` - to run all tests within `./test/submodule`.
  *
- * Cross-platform script to execute Mocha tests and lint the test files.
+ * Cross-platform script to lint src/test files and execute Mocha tests.
  */
 const process = require('process');
 const script = require('./script');
@@ -16,4 +16,10 @@ const args = process.argv.slice(2);
 // package.json
 const testDirPath = args.length ? args[0] : process.env.npm_package_config_test_dir_path;
 
-script.run(`mocha ${testDirPath} ${mochaOpts} --colors && eslint ${testDirPath} --color`);
+const srcDirPath = process.env.npm_package_config_src_dir_path;
+
+const eslint = `eslint ${srcDirPath} ${testDirPath} --color`;
+
+const mocha = `mocha ${testDirPath} ${mochaOpts} --colors`;
+
+script.run(`${eslint} && ${mocha}`);
