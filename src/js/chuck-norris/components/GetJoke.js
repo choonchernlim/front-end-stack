@@ -1,28 +1,38 @@
 import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
-import { getJoke } from '../actions/index';
+import { getJoke } from '../actions';
 import RaisedButton from 'material-ui/RaisedButton';
+import CircularProgress from 'material-ui/CircularProgress';
 
-const GetJoke = ({ joke, onGetJokeClick }) => (
-  <div>
-    <RaisedButton primary label="Get Joke" onClick={onGetJokeClick} />
-    <h2><span dangerouslySetInnerHTML={{ __html: joke }} /></h2>
-  </div>
-);
+// 1. When "Get Joke" button is pressed, show spinner.
+// 2. When result is shown, remove spinner.
+// 3. If API call fails, display error message. Otherwise, display joke.
+const GetJoke = ({ joke, error, completed, onClick }) => {
+  const spinner = !completed ? <div><CircularProgress size={0.5} /></div> : undefined;
+  const errorMessage = error ? <div>An error has occurred: {error}</div> : undefined;
 
-const mapStateToProps = (state) => ({
-  joke: state.joke
-});
-
-const mapDispatchToProps = (dispatch) => ({
-  onGetJokeClick: () => dispatch(getJoke())
-});
-
-GetJoke.propTypes = {
-  joke: PropTypes.string.isRequired,
-  onGetJokeClick: PropTypes.func.isRequired
+  // noinspection HtmlUnknownAttribute
+  return (
+    <div>
+      <RaisedButton primary label="Get Joke" onClick={onClick} />
+      {spinner}
+      <h2><span dangerouslySetInnerHTML={{ __html: joke }} /></h2>
+      {errorMessage}
+    </div>
+  );
 };
 
-const GetJokeContainer = connect(mapStateToProps, mapDispatchToProps)(GetJoke);
+GetJoke.propTypes = {
+  joke: PropTypes.string,
+  error: PropTypes.string,
+  completed: PropTypes.bool.isRequired,
+  onClick: PropTypes.func.isRequired
+};
 
-export default GetJokeContainer;
+const mapStateToProps = (state) => ({
+  joke: state.joke.joke,
+  error: state.joke.error,
+  completed: state.joke.completed
+});
+
+export default connect(mapStateToProps, { onClick: getJoke })(GetJoke);

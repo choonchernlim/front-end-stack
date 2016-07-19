@@ -4,7 +4,7 @@ import GetJoke from './GetJoke';
 import chuckNorrisImage from '../../../img/chuck-norris.jpg';
 import Container from '../../common/components/Container';
 
-const ChuckNorris = () => (
+export default () => (
   <Container>
     <h1>Chuck Norris</h1>
 
@@ -19,5 +19,3 @@ const ChuckNorris = () => (
     </Grid>
   </Container>
 );
-
-export default ChuckNorris;

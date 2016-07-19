@@ -36,6 +36,8 @@ Project template for building epic single-page app using modern front-end stack.
     * Use [intellij-config](https://github.com/choonchernlim/intellij-config) to configure JavaScript code formatter.
     * Enable "ESLint" in your IDE, which will pick up `.eslintrc` from the project and enforce it.
 
+* This project template is configured to work with [Redux DevTools](https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd).
+
 * Clone or download/unzip this project template.
 
 * Run `npm install` to install dependencies.
@@ -57,14 +59,16 @@ Project template for building epic single-page app using modern front-end stack.
 
 These commands are cross-platform compatible.
 
-|Command                                  |Description                                                                         |
-|-----------------------------------------|------------------------------------------------------------------------------------|
-|`npm test`                               |Run tests and lint test files                                                       |
-|`npm test:watch`                         |Watch for changes in test files and rerun `npm test`                                |
-|`npm run build`                          |Build production bundle (compressed cache busting asset files)                      |
-|`npm run ci`                             |Remove report dir, run code coverage, run tests and generate result files for CI    |
-|`npm run reinstall`                      |Clear npm cache, remove `node_module` and install modules listed in `package.json`  |
-|`npm start`                              |Start Node.js Express server with Hot Module Replacement                            |
+|Command                                  |Description                                                                                           |
+|-----------------------------------------|------------------------------------------------------------------------------------------------------|
+|`npm test`                               |Lint src/test files and run entire tests and                                                          |
+|`npm test [./path/to/test/module]`       |Lint src/test files and run only tests within `[./path/to/test/module]`                               |
+|`npm test:watch`                         |Watch for changes in test files and rerun `npm test`                                                  |
+|`npm test:watch [./path/to/test/module]` |Watch for changes in test files and rerun `npm test [./path/to/test/module]`                          |
+|`npm run build`                          |Build production bundle (compressed cache busting asset files)                                        |
+|`npm run ci`                             |Remove report dir, run code coverage, lint src/test files, run tests and generate result files for CI |
+|`npm run reinstall`                      |Clear npm cache, remove `node_module` and install modules listed in `package.json`                    |
+|`npm start`                              |Start Node.js Express server with Hot Module Replacement                                              |
                                                                                                                                
 ## Dev Dependencies                            
                                                                                                                                
@@ -84,6 +88,7 @@ These commands are cross-platform compatible.
 |chai-as-promised                         |Test - Fluent approach to test promises                                             |
 |clean-webpack-plugin                     |Webpack - Clean output dir between builds                                           |
 |css-loader                               |Webpack - CSS loader                                                                |
+|enzyme                                   |Test - Testing utilities for React                                                  |    
 |eslint                                   |ESLint - For enforcing coding style                                                 |    
 |eslint-config-airbnb                     |ESLint - Using Airbnb's coding style                                                |                  
 |eslint-loader                            |Webpack - ESLint loader                                                             |           
@@ -119,6 +124,7 @@ Notes:-
 
 |Dependency                               |Description                                                                         |
 |-----------------------------------------|------------------------------------------------------------------------------------|
+|es6-promise                              |A polyfill for ES6-style Promises for weak browsers, like IE11                      |
 |history                                  |Managing browser history                                                            |
 |immutable                                |Creating Immutable objects                                                          |
 |isomorphic-fetch                         |Isomorphic WHATWG Fetch API                                                         |

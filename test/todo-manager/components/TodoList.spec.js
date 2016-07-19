@@ -13,7 +13,7 @@ describe('TodoList', () => {
         { id: 1, text: 'Item 1', completed: false },
         { id: 2, text: 'Item 2', completed: true }
       ],
-      onTodoClick(id) {
+      toggleTodo(id) {
         actions.push(id);
       }
     }));
@@ -30,4 +30,3 @@ describe('TodoList', () => {
     expect(actions).to.deep.equal([2, 1]);
   });
 });
-

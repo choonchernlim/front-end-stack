@@ -1,20 +1,23 @@
 import React, { PropTypes } from 'react';
+import { List } from 'immutable';
 import Todo from './Todo';
 
-const TodoList = ({ todos, onTodoClick }) => (
+const TodoList = ({ todos, toggleTodo }) => (
   <ul>
-    {todos.map(todo => <Todo key={todo.id} {...todo} onClick={() => onTodoClick(todo.id)} />)}
+    {todos.map(todo =>
+      <Todo
+        key={todo.id}
+        text={todo.text}
+        completed={todo.completed}
+        onClick={() => toggleTodo(todo.id)}
+      />)
+    }
   </ul>
 );
 
 TodoList.propTypes = {
-  todos: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.number.isRequired,
-      completed: PropTypes.bool.isRequired,
-      text: PropTypes.string.isRequired
-    }).isRequired).isRequired,
-  onTodoClick: PropTypes.func.isRequired
+  todos: PropTypes.instanceOf(List).isRequired,
+  toggleTodo: PropTypes.func.isRequired
 };
 
 export default TodoList;

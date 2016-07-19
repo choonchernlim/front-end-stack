@@ -1,6 +1,7 @@
 import { describe, it } from 'mocha';
 import { expect } from 'chai';
 import visibilityFilter from '../../../src/js/todo-manager/reducers/visibility-filter';
+import { SET_VISIBILITY_FILTER } from '../../../src/js/todo-manager/actions';
 
 describe('visibilityFilter', () => {
   it('given unknown action, should return initial state', () => {
@@ -14,7 +15,7 @@ describe('visibilityFilter', () => {
   it('given a filter, should return action', () => {
     expect(
       visibilityFilter('INITIAL', {
-        type: 'SET_VISIBILITY_FILTER',
+        type: SET_VISIBILITY_FILTER,
         filter: 'all'
       })
     ).to.deep.equal('all');

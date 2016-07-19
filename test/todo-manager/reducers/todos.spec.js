@@ -2,6 +2,7 @@ import { describe, it } from 'mocha';
 import { expect } from 'chai';
 import { List, fromJS } from 'immutable';
 import todos from '../../../src/js/todo-manager/reducers/todos';
+import { ADD_TODO, TOGGLE_TODO } from '../../../src/js/todo-manager/actions';
 
 describe('todos', () => {
   it('given unknown action, should return initial state', () => {
@@ -11,7 +12,7 @@ describe('todos', () => {
   it('when adding todo, should return new todo', () => {
     expect(
       todos(new List(), {
-        type: 'ADD_TODO',
+        type: ADD_TODO,
         id: 1,
         text: 'item 1'
       }).toJS()
@@ -41,7 +42,7 @@ describe('todos', () => {
 
     expect(
       todos(initialState, {
-        type: 'TOGGLE_TODO',
+        type: TOGGLE_TODO,
         id: 1
       }).toJS()
     ).to.deep.equal([
