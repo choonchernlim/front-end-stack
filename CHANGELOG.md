@@ -1,7 +1,8 @@
 # Change Log
 
-## TBD - 2016-TBD
+## 0.4.0 - 2016-07-19
 
+* FEATURE - Enabled Redux Dev Tools.
 * FEATURE - `npm test ./test/abc` and `npm run test:watch ./test/abc` to run (and watch) only tests within `./test/abc`.
 * FEATURE - Configured `webpack-dev-server` to prevent "No 'Access-Control-Allow-Origin' header is present on the requested resource". 
 * FEATURE - Added `enzyme` and `es6-promise` dependencies.

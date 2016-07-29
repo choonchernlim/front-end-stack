@@ -36,6 +36,8 @@ Project template for building epic single-page app using modern front-end stack.
     * Use [intellij-config](https://github.com/choonchernlim/intellij-config) to configure JavaScript code formatter.
     * Enable "ESLint" in your IDE, which will pick up `.eslintrc` from the project and enforce it.
 
+* This project template is configured to work with [Redux DevTools](https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd).
+
 * Clone or download/unzip this project template.
 
 * Run `npm install` to install dependencies.
