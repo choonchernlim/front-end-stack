@@ -6,10 +6,10 @@ const TodoList = ({ todos, toggleTodo }) => (
   <ul>
     {todos.map(todo =>
       <Todo
-        key={todo.id}
-        text={todo.text}
-        completed={todo.completed}
-        onClick={() => toggleTodo(todo.id)}
+        key={todo.get('id')}
+        text={todo.get('text')}
+        completed={todo.get('completed')}
+        onClick={() => toggleTodo(todo.get('id'))}
       />)
     }
   </ul>
