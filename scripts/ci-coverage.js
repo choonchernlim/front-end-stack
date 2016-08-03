@@ -5,6 +5,7 @@
  */
 const process = require('process');
 const script = require('./script');
+
 const mochaOpts = script.mochaOpts;
 const srcDirPath = process.env.npm_package_config_src_dir_path;
 const reportDirPath = process.env.npm_package_config_report_dir_path;

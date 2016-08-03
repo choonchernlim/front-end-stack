@@ -6,6 +6,7 @@
  */
 const process = require('process');
 const script = require('./script');
+
 const mochaOpts = script.mochaOpts;
 
 // remove first 2 arguments... first arg is usually the path to nodejs, and
