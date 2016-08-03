@@ -1,8 +1,8 @@
 import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
-import { getJoke } from '../actions';
 import RaisedButton from 'material-ui/RaisedButton';
 import CircularProgress from 'material-ui/CircularProgress';
+import { getJoke } from '../actions';
 
 // 1. When "Get Joke" button is pressed, show spinner.
 // 2. When result is shown, remove spinner.

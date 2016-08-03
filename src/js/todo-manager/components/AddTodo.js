@@ -1,9 +1,9 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
-import { addTodo } from '../actions';
 import RaisedButton from 'material-ui/RaisedButton';
 import TextField from 'material-ui/TextField';
 import { Grid, Cell } from 'radium-grid';
+import { addTodo } from '../actions';
 
 class AddTodo extends Component {
   static propTypes = {

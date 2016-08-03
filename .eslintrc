@@ -4,6 +4,11 @@
   // to handle ES7's static properties in React component
   // https://github.com/yannickcr/eslint-plugin-react/issues/43
   "parser": "babel-eslint",
+  // To prevent "'window' is not defined" or "'document' is not defined"
+  "env": {
+    "browser": true,
+    "node": true
+  },
   // overriding certain rules because it drives me nuts
   "rules": {
     // no trailing comma in multi-line object literal or array
@@ -37,6 +42,17 @@
           "OrderedSet",
           "Record",
           "Radium"
+        ]
+      }
+    ],
+    // Allow JSX on `.js`
+    // See https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-filename-extension.md
+    "react/jsx-filename-extension": [
+      1,
+      {
+        "extensions": [
+          ".js",
+          ".jsx"
         ]
       }
     ]

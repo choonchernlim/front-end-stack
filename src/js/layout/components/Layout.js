@@ -1,7 +1,6 @@
 import { Style, StyleRoot } from 'radium';
 import { Grid, Cell } from 'radium-grid';
 import React from 'react';
-import baseStyle from '../../common/styles';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import AppBar from 'material-ui/AppBar';
 import Drawer from 'material-ui/Drawer';
@@ -16,6 +15,7 @@ import SchoolIcon from 'material-ui/svg-icons/social/school';
 import DevicesIcon from 'material-ui/svg-icons/device/devices';
 import MoodIcon from 'material-ui/svg-icons/social/mood';
 import userImage from '../../../img/user.jpg';
+import baseStyle from '../../common/styles';
 import style from '../styles';
 import { name } from '../../../../package.json';
 

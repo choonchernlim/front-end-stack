@@ -1,0 +1,13 @@
+{
+  "rules": {
+    // To prevent the following error on test libs:-
+    //  "'mocha' should be listed in the project's dependencies, not devDependencies"
+    // See https://github.com/benmosher/eslint-plugin-import/issues/422
+    "import/no-extraneous-dependencies": [
+      "error",
+      {
+        "devDependencies": true
+      }
+    ]
+  }
+}

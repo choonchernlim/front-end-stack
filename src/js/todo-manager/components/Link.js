@@ -10,7 +10,7 @@ const Link = ({ active, filter, children, setVisibilityFilter }) => {
     setVisibilityFilter(filter);
   };
 
-  return <a href="#" onClick={onClick}>{children}</a>;
+  return <a href="#link" onClick={onClick}>{children}</a>;
 };
 
 Link.propTypes = {

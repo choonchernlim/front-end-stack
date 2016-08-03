@@ -1,9 +1,9 @@
 import React from 'react';
-import Container from '../../common/components/Container';
 import RaisedButton from 'material-ui/RaisedButton';
 import TextField from 'material-ui/TextField';
 import Checkbox from 'material-ui/Checkbox';
 import RadioButton from 'material-ui/RadioButton';
+import Container from '../../common/components/Container';
 
 export default () => (
   <Container>
@@ -13,7 +13,7 @@ export default () => (
 
     <h1>Heading 1</h1>
 
-    <p>This is a <a href="#">link</a>.</p>
+    <p>This is a <a href="#link">link</a>.</p>
 
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sed sodales ipsum, ut
       sollicitudin sem. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere

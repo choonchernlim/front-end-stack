@@ -1,1 +1,3 @@
-export default from './TodoManager';
+import TodoManager from './TodoManager';
+
+export default TodoManager;

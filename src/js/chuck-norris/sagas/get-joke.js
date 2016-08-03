@@ -20,6 +20,6 @@ export function* getJokeAsync() {
 // 2. Instead of `yield* takeLatest(GET_JOKE, getJokeAsync);`,
 //    using `yield call(takeLatest, GET_JOKE, getJokeAsync);` to make it more testable.
 //    See: https://github.com/yelouafi/redux-saga/issues/318
-export default function*() {
+export default function* () {
   yield call(takeLatest, GET_JOKE, getJokeAsync);
 }

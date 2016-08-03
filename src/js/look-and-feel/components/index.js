@@ -1,1 +1,3 @@
-export default from './LookAndFeel';
+import LookAndFeel from './LookAndFeel';
+
+export default LookAndFeel;
