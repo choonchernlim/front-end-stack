@@ -7,7 +7,7 @@ import { syncHistoryWithStore } from 'react-router-redux';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 import configureStore from './store';
 import getRoutes from './routes';
-import packageJson from '../../../package.json';
+import { sanitizeContextRoot } from '../common/utils/url-helper';
 import '../../scss/index.scss';
 
 // http://www.material-ui.com/#/get-started/installation
@@ -16,7 +16,7 @@ injectTapEventPlugin();
 // instead of using `browserHistory` from react-router, create one
 // with basename to allow app to specify different context root
 const browserHistory = useRouterHistory(createBrowserHistory)({
-  basename: packageJson.config.context_root
+  basename: sanitizeContextRoot()
 });
 
 // configure store
