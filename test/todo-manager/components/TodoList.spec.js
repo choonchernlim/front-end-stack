@@ -4,7 +4,7 @@ import TestUtils from 'react-addons-test-utils';
 import { expect } from 'chai';
 import { shallow } from 'enzyme';
 import { fromJS } from 'immutable';
-import TodoList from '../../../src/js/todo-manager/components/TodoList';
+import { TodoList } from '../../../src/js/todo-manager/components/TodoList';
 
 describe('TodoList', () => {
   it('given todos, should render LI items', () => {
@@ -15,7 +15,7 @@ describe('TodoList', () => {
         { id: 1, text: 'Item 1', completed: false },
         { id: 2, text: 'Item 2', completed: true }
       ]),
-      toggleTodo(id) {
+      onToggleTodo(id) {
         actions.push(id);
       }
     }));
@@ -42,7 +42,7 @@ describe('TodoList', () => {
 
     const toggleTodo = (id) => actions.push(id);
 
-    const wrapper = shallow(<TodoList todos={todos} toggleTodo={toggleTodo} />);
+    const wrapper = shallow(<TodoList todos={todos} onToggleTodo={toggleTodo} />);
 
     const todoTags = wrapper.find('Todo');
 

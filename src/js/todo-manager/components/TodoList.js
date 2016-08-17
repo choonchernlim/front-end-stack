@@ -1,15 +1,27 @@
 import React, { PropTypes } from 'react';
 import { List } from 'immutable';
-import Todo from './Todo';
+import { connect } from 'react-redux';
+import { toggleTodo } from '../actions';
+import createGetVisibleTodosSelector from '../selectors';
 
-const TodoList = ({ todos, toggleTodo }) => (
+export const Todo = ({ onClick, completed, text }) => (
+  <li onClick={onClick} style={{ textDecoration: completed ? 'line-through' : 'none' }}>{text}</li>
+);
+
+Todo.propTypes = {
+  onClick: PropTypes.func.isRequired,
+  completed: PropTypes.bool.isRequired,
+  text: PropTypes.string.isRequired
+};
+
+export const TodoList = ({ todos, onToggleTodo }) => (
   <ul>
     {todos.map(todo =>
       <Todo
         key={todo.get('id')}
         text={todo.get('text')}
         completed={todo.get('completed')}
-        onClick={() => toggleTodo(todo.get('id'))}
+        onClick={() => onToggleTodo(todo.get('id'))}
       />)
     }
   </ul>
@@ -17,7 +29,16 @@ const TodoList = ({ todos, toggleTodo }) => (
 
 TodoList.propTypes = {
   todos: PropTypes.instanceOf(List).isRequired,
-  toggleTodo: PropTypes.func.isRequired
+  onToggleTodo: PropTypes.func.isRequired
 };
 
-export default TodoList;
+const makeMapStateToProps = () => {
+  const getVisibleTodos = createGetVisibleTodosSelector();
+  return (state) => ({
+    todos: getVisibleTodos(state)
+  });
+};
+
+const TodoListContainer = connect(makeMapStateToProps, { onToggleTodo: toggleTodo })(TodoList);
+
+export default TodoListContainer;

@@ -1,7 +1,7 @@
 import React from 'react';
 import Footer from './Footer';
-import AddTodo from './AddTodo';
-import VisibleTodoList from './VisibleTodoList';
+import AddTodoContainer from './AddTodo';
+import TodoListContainer from './TodoList';
 import Container from '../../common/components/Container';
 
 export default () => (
@@ -10,8 +10,8 @@ export default () => (
 
     <p>A simple todo app using Redux.</p>
 
-    <AddTodo />
-    <VisibleTodoList />
+    <AddTodoContainer />
+    <TodoListContainer />
     <Footer />
   </Container>
 );

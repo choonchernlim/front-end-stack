@@ -2,7 +2,7 @@ import { describe, it } from 'mocha';
 import React from 'react'; // eslint-disable-line no-unused-vars
 import TestUtils from 'react-addons-test-utils';
 import { expect } from 'chai';
-import Link from '../../../src/js/todo-manager/components/Link';
+import { Link } from '../../../src/js/todo-manager/components/Link';
 
 describe('Link', () => {
   it('given active link, should be SPAN tag', () => {
