@@ -24,5 +24,5 @@ const run = (command) => {
 
 module.exports = {
   run,
-  mochaOpts: '--recursive --compilers js:babel-core/register'
+  mochaOpts: '--recursive --compilers js:babel-core/register -r ./test/setup.js'
 };

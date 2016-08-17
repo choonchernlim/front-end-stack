@@ -1,5 +1,9 @@
 # Change Log
 
+## TBD
+
+* FEATURE - Added `Reselect`.
+
 ## 0.4.0 - 2016-07-19
 
 * FEATURE - Enabled Redux Dev Tools.
