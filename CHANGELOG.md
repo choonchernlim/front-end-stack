@@ -3,6 +3,7 @@
 ## TBD
 
 * FEATURE - Added `Reselect`.
+* REFACTOR - Cleaned up code.
 
 ## 0.4.0 - 2016-07-19
 
