@@ -5,6 +5,6 @@ import { reducer as chuckNorrisReducer } from '../chuck-norris';
 
 export default combineReducers({
   ...todoManagerReducer,
-  ...chuckNorrisReducer,
+  chuckNorris: chuckNorrisReducer,
   routing: routerReducer
 });

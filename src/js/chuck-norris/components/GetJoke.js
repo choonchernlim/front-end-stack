@@ -30,9 +30,11 @@ GetJoke.propTypes = {
 };
 
 const mapStateToProps = (state) => ({
-  joke: state.joke.joke,
-  error: state.joke.error,
-  completed: state.joke.completed
+  joke: state.chuckNorris.get('joke'),
+  error: state.chuckNorris.get('error'),
+  completed: state.chuckNorris.get('completed')
 });
 
-export default connect(mapStateToProps, { onClick: getJoke })(GetJoke);
+const GetJokeContainer = connect(mapStateToProps, { onClick: getJoke })(GetJoke);
+
+export default GetJokeContainer;
