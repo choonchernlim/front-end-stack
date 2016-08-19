@@ -1,8 +1,7 @@
-import { describe, it } from 'mocha';
 import React from 'react'; // eslint-disable-line no-unused-vars
 import TestUtils from 'react-addons-test-utils';
 import { expect } from 'chai';
-import { Link } from '../../../src/js/todo-manager/components/Link';
+import { Link } from './Link';
 
 describe('Todo Manager => Components => Link', () => {
   describe('Link', () => {

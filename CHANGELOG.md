@@ -4,6 +4,7 @@
 
 * FEATURE - Added `Reselect`.
 * REFACTOR - Cleaned up code.
+* REFACTOR - Combined src and test in same dir to make things easier to test.
 
 ## 0.4.0 - 2016-07-19
 

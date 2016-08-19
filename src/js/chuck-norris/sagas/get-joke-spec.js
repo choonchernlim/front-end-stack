@@ -1,10 +1,9 @@
-import { describe, it } from 'mocha';
 import { expect } from 'chai';
 import { takeLatest } from 'redux-saga';
 import { put, call } from 'redux-saga/effects';
-import { getRandomJokeApi } from '../../../src/js/chuck-norris/api';
-import getJokeAsyncSaga, { getJokeAsync } from '../../../src/js/chuck-norris/sagas/get-joke';
-import { GET_JOKE, getJokeSucceeded, getJokeFailed } from '../../../src/js/chuck-norris/actions';
+import { getRandomJokeApi } from '../api';
+import getJokeAsyncSaga, { getJokeAsync } from './get-joke';
+import { GET_JOKE, getJokeSucceeded, getJokeFailed } from '../actions';
 
 describe('Chuck Norris => Saga', () => {
   describe('getJokeAsyncSaga', () => {

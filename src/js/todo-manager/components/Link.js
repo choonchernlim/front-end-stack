@@ -24,7 +24,7 @@ Link.propTypes = {
 
 const mapStateToProps = (state, ownProps) => ({
   filter: ownProps.filter,
-  active: ownProps.filter === state.visibilityFilter
+  active: ownProps.filter === state.todoManager.get('visibilityFilter')
 });
 
 const LinkContainer = connect(

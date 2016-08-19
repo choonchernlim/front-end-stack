@@ -1,7 +1,6 @@
-import { describe, it } from 'mocha';
 import { expect } from 'chai';
-import { server } from '../../nock-helper';
-import { url, sanitizeContextRoot } from '../../../src/js/common/utils/url-helper';
+import { server } from '../../__test__/nock-helper';
+import { url, sanitizeContextRoot } from './url-helper';
 
 describe('Common => Utils => Url', () => {
   describe('Default', () => {

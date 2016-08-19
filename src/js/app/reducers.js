@@ -4,7 +4,7 @@ import { reducer as todoManagerReducer } from '../todo-manager';
 import { reducer as chuckNorrisReducer } from '../chuck-norris';
 
 export default combineReducers({
-  ...todoManagerReducer,
+  todoManager: todoManagerReducer,
   chuckNorris: chuckNorrisReducer,
   routing: routerReducer
 });

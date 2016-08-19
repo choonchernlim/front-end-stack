@@ -1,4 +1,3 @@
-import { describe, it } from 'mocha';
 import chai from 'chai';
 import chaiAsPromised from 'chai-as-promised';
 import nock from 'nock';
@@ -6,7 +5,7 @@ import {
   RANDOM_JOKE_SERVER,
   RANDOM_JOKE_URI,
   getRandomJokeApi
-} from '../../../src/js/chuck-norris/api';
+} from '../api';
 
 chai.use(chaiAsPromised);
 

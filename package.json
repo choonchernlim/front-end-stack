@@ -5,7 +5,7 @@
     "context_root": "/",
     "dist_uri": "/assets/",
     "src_dir_path": "src/",
-    "test_dir_path": "test/",
+    "test_dir_path": "src/**/*-spec.js",
     "dist_dir_path": "dist/assets/",
     "entry_file_path": "dist/index.html",
     "report_dir_path": "reports/"
@@ -60,6 +60,7 @@
     "rimraf": "2.5.4",
     "roboto-fontface": "0.6.0",
     "sass-loader": "4.0.0",
+    "sinon": "1.17.5",
     "style-loader": "0.13.1",
     "url-loader": "0.5.7",
     "webpack": "1.13.2",

@@ -1,4 +1,3 @@
-import { describe, it } from 'mocha';
 import { expect } from 'chai';
 import {
   ADD_TODO,
@@ -7,7 +6,7 @@ import {
   addTodo,
   setVisibilityFilter,
   toggleTodo
-} from '../../../src/js/todo-manager/actions';
+} from './';
 
 describe('Todo Manager => Actions', () => {
   describe('addTodo', () => {

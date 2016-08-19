@@ -1,10 +1,9 @@
-import { describe, it } from 'mocha';
 import React from 'react'; // eslint-disable-line no-unused-vars
 import TestUtils from 'react-addons-test-utils';
 import { expect } from 'chai';
 import { shallow } from 'enzyme';
 import { fromJS } from 'immutable';
-import { TodoList } from '../../../src/js/todo-manager/components/TodoList';
+import { TodoList } from './TodoList';
 
 describe('Todo Manager => Components => TodoList', () => {
   describe('TodoList', () => {

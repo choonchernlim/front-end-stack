@@ -22,6 +22,7 @@ Project template for building epic single-page app using modern front-end stack.
 |[Babel](https://babeljs.io/) 	                                                |Transpiles ES6+ to ES5 to maximize cross browser compatibility           |                   
 |[React](https://facebook.github.io/react/)                                     |Handles view layer                                                       |
 |[Redux](https://github.com/reactjs/redux)                                      |One-way data flow, inspired by Flux pattern                              |
+|[Reselect](https://github.com/reactjs/reselect)                                |Selector library for Redux                                               |
 |[Saga](https://github.com/yelouafi/redux-saga) 	                            |Side Effects middleware using ES6 Generator                              |
 |[Immutable](https://facebook.github.io/immutable-js/) 	                        |Creates immutable objects                                                |
 |[Material UI](http://www.material-ui.com/) 	                                |UI components, adhering to [Google Material Design](https://www.google.com/design/spec/material-design/introduction.htm)|     
@@ -61,7 +62,7 @@ These commands are cross-platform compatible.
 
 |Command                                  |Description                                                                                           |
 |-----------------------------------------|------------------------------------------------------------------------------------------------------|
-|`npm test`                               |Lint src/test files and run entire tests and                                                          |
+|`npm test`                               |Lint src/test files and run entire tests.                                                             |
 |`npm test [./path/to/test/module]`       |Lint src/test files and run only tests within `[./path/to/test/module]`                               |
 |`npm test:watch`                         |Watch for changes in test files and rerun `npm test`                                                  |
 |`npm test:watch [./path/to/test/module]` |Watch for changes in test files and rerun `npm test [./path/to/test/module]`                          |
@@ -112,6 +113,7 @@ These commands are cross-platform compatible.
 |rimraf                                   |Util - `rm -rf` for both Unix and Windows world                                     |
 |roboto-fontface                          |Roboto font, adhering to Google Material Design spec                                |
 |sass-loader                              |Webpack - SASS loader                                                               |
+|sinon                                    |Test - Standalone test spies, stubs and mocks.                                      |
 |style-loader                             |Webpack - Style loader                                                              |
 |url-loader                               |Webpack - URL loader                                                                |
 |webpack                                  |Webpack - Core                                                                      |
@@ -139,6 +141,7 @@ Notes:-
 |react-tap-event-plugin                   |UI - Required by material-ui to listen for touch events                             |
 |redux                                    |Redux - Core                                                                        |
 |redux-saga                               |Redux - Side Effects middleware                                                     |
+|reselect                                 |Memoized selector for React components                                              |
 
 ## Project Structure
 
@@ -152,9 +155,7 @@ Notes:-
 │   └── ...                     
 ├── scripts                     -> Scripts dir - Cross-platform NPM scripts
 │   └── ...                     
-├── src                         -> Source dir - Actual source files
-│   └── ...                     
-├── test                        -> Test dir - Test files
+├── src                         -> Dir for actual source files and test files
 │   └── ...                     
 ├── .babelrc                    -> Babel configuration
 ├── .eslintrc                   -> ESLint configuration

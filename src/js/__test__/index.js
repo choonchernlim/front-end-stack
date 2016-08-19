@@ -1,3 +1,6 @@
+/**
+ * Global setup before running any specs.
+ */
 import { jsdom } from 'jsdom';
 
 global.document = jsdom('<!doctype html><html><body></body></html>');
