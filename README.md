@@ -71,6 +71,27 @@ These commands are cross-platform compatible.
 |`npm run reinstall`                      |Clear npm cache, remove `node_module` and install modules listed in `package.json`                    |
 |`npm start`                              |Start Node.js Express server with Hot Module Replacement                                              |
                                                                                                                                
+## Dependencies
+
+|Dependency                               |Description                                                                         |
+|-----------------------------------------|------------------------------------------------------------------------------------|
+|es6-promise                              |A polyfill for ES6-style Promises for weak browsers, like IE11                      |
+|history                                  |Managing browser history                                                            |
+|immutable                                |Creating Immutable objects                                                          |
+|isomorphic-fetch                         |Isomorphic WHATWG Fetch API                                                         |
+|material-ui                              |UI - Google's material design UI components built with React                        |
+|radium                                   |UI - Managing inline styles on React elements                                       |
+|radium-grid                              |UI - Grid layout                                                                    |
+|react                                    |React - Core                                                                        |
+|react-dom                                |React - DOM                                                                         |
+|react-redux                              |React - Redux integration                                                           |
+|react-router                             |React - Router                                                                      |
+|react-router-redux                       |React - Router with Redux integration                                               |
+|react-tap-event-plugin                   |UI - Required by material-ui to listen for touch events                             |
+|redux                                    |Redux - Core                                                                        |
+|redux-saga                               |Redux - Side Effects middleware                                                     |
+|reselect                                 |Memoized selector for React components                                              |
+
 ## Dev Dependencies                            
                                                                                                                                
 |Dependency                               |Description                                                                         |
@@ -121,27 +142,6 @@ These commands are cross-platform compatible.
 
 Notes:-
 * `babel-runtime` cannot be included because it will cause `Cannot find module 'babel-runtime/helpers/interop-require'` when dealing with `radium-grid`. See https://github.com/FormidableLabs/radium-grid/issues/31                                                                                
-
-## Dependencies
-
-|Dependency                               |Description                                                                         |
-|-----------------------------------------|------------------------------------------------------------------------------------|
-|es6-promise                              |A polyfill for ES6-style Promises for weak browsers, like IE11                      |
-|history                                  |Managing browser history                                                            |
-|immutable                                |Creating Immutable objects                                                          |
-|isomorphic-fetch                         |Isomorphic WHATWG Fetch API                                                         |
-|material-ui                              |UI - Google's material design UI components built with React                        |
-|radium                                   |UI - Managing inline styles on React elements                                       |
-|radium-grid                              |UI - Grid layout                                                                    |
-|react                                    |React - Core                                                                        |
-|react-dom                                |React - DOM                                                                         |
-|react-redux                              |React - Redux integration                                                           |
-|react-router                             |React - Router                                                                      |
-|react-router-redux                       |React - Router with Redux integration                                               |
-|react-tap-event-plugin                   |UI - Required by material-ui to listen for touch events                             |
-|redux                                    |Redux - Core                                                                        |
-|redux-saga                               |Redux - Side Effects middleware                                                     |
-|reselect                                 |Memoized selector for React components                                              |
 
 ## Project Structure
 

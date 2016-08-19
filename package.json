@@ -21,6 +21,24 @@
     "reinstall": "npm cache clean && rimraf node_modules && npm install",
     "start": "webpack-dev-server --config webpack.dev.config.js"
   },
+  "dependencies": {
+    "es6-promise": "3.2.1",
+    "history": "2.1.2",
+    "immutable": "3.8.1",
+    "isomorphic-fetch": "2.2.1",
+    "material-ui": "0.15.4",
+    "radium": "0.18.1",
+    "radium-grid": "2.0.1",
+    "react": "15.3.1",
+    "react-dom": "15.3.1",
+    "react-redux": "4.4.5",
+    "react-router": "2.6.1",
+    "react-router-redux": "4.0.5",
+    "react-tap-event-plugin": "1.0.0",
+    "redux": "3.5.2",
+    "redux-saga": "0.11.0",
+    "reselect": "2.5.3"
+  },
   "devDependencies": {
     "autoprefixer": "6.4.0",
     "babel-cli": "6.11.4",
@@ -54,9 +72,9 @@
     "mocha-junit-reporter": "1.12.0",
     "nock": "8.0.0",
     "node-sass": "3.8.0",
-    "nodemon": "1.10.0",
+    "nodemon": "1.10.2",
     "postcss-loader": "0.10.1",
-    "react-addons-test-utils": "15.3.0",
+    "react-addons-test-utils": "15.3.1",
     "rimraf": "2.5.4",
     "roboto-fontface": "0.6.0",
     "sass-loader": "4.0.0",
@@ -65,23 +83,5 @@
     "url-loader": "0.5.7",
     "webpack": "1.13.2",
     "webpack-dev-server": "1.14.1"
-  },
-  "dependencies": {
-    "es6-promise": "3.2.1",
-    "history": "2.1.2",
-    "immutable": "3.8.1",
-    "isomorphic-fetch": "2.2.1",
-    "material-ui": "0.15.4",
-    "radium": "0.18.1",
-    "radium-grid": "2.0.1",
-    "react": "15.3.0",
-    "react-dom": "15.3.0",
-    "react-redux": "4.4.5",
-    "react-router": "2.6.1",
-    "react-router-redux": "4.0.5",
-    "react-tap-event-plugin": "1.0.0",
-    "redux": "3.5.2",
-    "redux-saga": "0.11.0",
-    "reselect": "2.5.3"
   }
 }
