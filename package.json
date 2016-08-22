@@ -27,6 +27,7 @@
     "immutable": "3.8.1",
     "isomorphic-fetch": "2.2.1",
     "material-ui": "0.15.4",
+    "moment": "2.14.1",
     "radium": "0.18.1",
     "radium-grid": "2.0.1",
     "react": "15.3.1",
