@@ -3,6 +3,7 @@
 ## TBD
 
 * FEATURE - Added `Reselect`.
+* FEATURE - Added `.gitattributes` to ensure end-of-line is always LF instead of CRLF to satisfy ESLint.
 * REFACTOR - Cleaned up code.
 * REFACTOR - Combined src and test in same dir to make things easier to test.
 
