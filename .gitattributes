@@ -10,6 +10,7 @@
 *.md            text
 *.json          text
 .babelrc        text
+.editorconfig   text
 .eslintrc       text
 .gitattributes  text
 .gitignore      text
