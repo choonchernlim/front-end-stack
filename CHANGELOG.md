@@ -1,6 +1,6 @@
 # Change Log
 
-## TBD
+## 0.5.0 - 2016-08-24
 
 * FEATURE - Added `Reselect`.
 * FEATURE - Added `.gitattributes` to ensure end-of-line is always LF instead of CRLF to satisfy ESLint.
