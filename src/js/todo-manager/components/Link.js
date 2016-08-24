@@ -1,23 +1,35 @@
 import React, { PropTypes } from 'react';
+import { connect } from 'react-redux';
+import { setVisibilityFilter } from '../actions';
 
-const Link = ({ active, filter, children, setVisibilityFilter }) => {
+export const Link = ({ active, filter, children, onSetVisibilityFilter }) => {
   if (active) {
     return <span>{children}</span>;
   }
 
   const onClick = e => {
     e.preventDefault();
-    setVisibilityFilter(filter);
+    onSetVisibilityFilter(filter);
   };
 
-  return <a href="#" onClick={onClick}>{children}</a>;
+  return <a href="#link" onClick={onClick}>{children}</a>;
 };
 
 Link.propTypes = {
   filter: PropTypes.string.isRequired,
   active: PropTypes.bool.isRequired,
   children: PropTypes.node.isRequired,
-  setVisibilityFilter: PropTypes.func.isRequired
+  onSetVisibilityFilter: PropTypes.func.isRequired
 };
 
-export default Link;
+const mapStateToProps = (state, ownProps) => ({
+  filter: ownProps.filter,
+  active: ownProps.filter === state.todoManager.get('visibilityFilter')
+});
+
+const LinkContainer = connect(
+  mapStateToProps,
+  { onSetVisibilityFilter: setVisibilityFilter }
+)(Link);
+
+export default LinkContainer;

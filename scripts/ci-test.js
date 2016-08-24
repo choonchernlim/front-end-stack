@@ -1,11 +1,13 @@
 /**
  * `npm run ci:test`
  *
- * Cross-platform script to lint src/test files, execute Mocha tests and generate result file for CI.
+ * Cross-platform script to lint src/test files, execute Mocha tests and generate result file
+ * for CI.
  */
 const process = require('process');
 const path = require('path');
 const script = require('./script');
+
 const mochaOpts = script.mochaOpts;
 const srcDirPath = process.env.npm_package_config_src_dir_path;
 const testDirPath = process.env.npm_package_config_test_dir_path;

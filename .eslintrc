@@ -4,6 +4,12 @@
   // to handle ES7's static properties in React component
   // https://github.com/yannickcr/eslint-plugin-react/issues/43
   "parser": "babel-eslint",
+  // To prevent "'window' is not defined" or "'document' is not defined"
+  "env": {
+    "browser": true,
+    "node": true,
+    "mocha": true
+  },
   // overriding certain rules because it drives me nuts
   "rules": {
     // no trailing comma in multi-line object literal or array
@@ -38,6 +44,26 @@
           "Record",
           "Radium"
         ]
+      }
+    ],
+    // Allow JSX on `.js`
+    // See https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-filename-extension.md
+    "react/jsx-filename-extension": [
+      1,
+      {
+        "extensions": [
+          ".js",
+          ".jsx"
+        ]
+      }
+    ],
+    // To allow test libraries (ex: chai) to reside in `devDependencies` instead of `dependencies`
+    // See https://github.com/airbnb/javascript/issues/959
+    // See https://github.com/benmosher/eslint-plugin-import/issues/422
+    "import/no-extraneous-dependencies": [
+      2,
+      {
+        "devDependencies": true
       }
     ]
   }

@@ -1,7 +1,7 @@
 // `roboto-fontface` includes bunch of font extensions, which slows down build time and increases the project size.
 // So, modified mixin to include only woff and woff2 files.
 
-$roboto-font-path: '~roboto-fontface/fonts/roboto';
+$roboto-font-path: '~roboto-fontface/fonts/Roboto';
 
 @mixin roboto-font($type, $weight, $style) {
   @font-face {

@@ -12,7 +12,7 @@ const distPath = path.join(__dirname, packageJson.config.dist_dir_path);
 const contextRoot = process.env.CONTEXT_ROOT || packageJson.config.context_root;
 
 // Make sure there is a trailing slash
-const distUri = path.join(contextRoot, packageJson.config.dist_uri, '/');
+const distUri = path.posix.join(contextRoot, packageJson.config.dist_uri, '/');
 
 module.exports = Object.assign({}, baseConfig.webpackOptions, {
 
@@ -49,7 +49,9 @@ module.exports = Object.assign({}, baseConfig.webpackOptions, {
     // which skips development warnings and is faster."
     new webpack.DefinePlugin({
       'process.env': {
-        NODE_ENV: JSON.stringify('production')
+        NODE_ENV: JSON.stringify('production'),
+        CONTEXT_ROOT: JSON.stringify(contextRoot),
+        APP_NAME: JSON.stringify(packageJson.name)
       }
     }),
 

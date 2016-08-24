@@ -1,8 +1,32 @@
-import { createStore, compose } from 'redux';
-import reducer from './reducer';
-import middleware, { runSagaMiddleware } from './middleware';
+/**
+ * Function to configure store and executes sagas.
+ */
+import { applyMiddleware, createStore, compose } from 'redux';
+import { routerMiddleware } from 'react-router-redux';
+import createSagaMiddleware from 'redux-saga';
 import devToolsExtension from './dev-tools-extension';
+import sagas from './sagas';
+import reducers from './reducers';
 
-export default createStore(reducer, compose(middleware, devToolsExtension()));
+export default function configureStore(history) {
+  // Initializing saga middleware
+  const sagaMiddleware = createSagaMiddleware();
 
-runSagaMiddleware();
+  // To allow saga to change use `push(..)` and such to change the routing.
+  // See https://github.com/reactjs/react-router-redux#pushlocation-replacelocation-gonumber-goback-goforward
+  const routerHistoryMiddleware = routerMiddleware(history);
+
+  const enhancer = compose(
+    applyMiddleware(sagaMiddleware, routerHistoryMiddleware),
+    devToolsExtension()
+  );
+
+  // Create store with middlewares
+  const store = createStore(reducers, enhancer);
+
+  // Only run all sagas after the saga middleware is mounted to store
+  // See https://github.com/yelouafi/redux-saga#mainjs
+  sagas.forEach(saga => sagaMiddleware.run(saga));
+
+  return store;
+}

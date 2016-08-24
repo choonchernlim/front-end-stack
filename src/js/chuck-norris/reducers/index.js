@@ -1,5 +1,33 @@
-import joke from './joke';
+import { Record } from 'immutable';
+import { GET_JOKE, GET_JOKE_SUCCEEDED, GET_JOKE_FAILED } from '../actions';
 
-export default {
-  joke
+const JokeRecord = Record({
+  completed: true,
+  joke: undefined,
+  error: undefined
+});
+
+export default (state = new JokeRecord(), action) => {
+  switch (action.type) {
+    case GET_JOKE:
+      return state.merge({
+        completed: false,
+        joke: undefined,
+        error: action.error
+      });
+    case GET_JOKE_SUCCEEDED:
+      return state.merge({
+        completed: true,
+        joke: action.joke,
+        error: ''
+      });
+    case GET_JOKE_FAILED:
+      return state.merge({
+        completed: true,
+        joke: undefined,
+        error: action.error
+      });
+    default:
+      return state;
+  }
 };

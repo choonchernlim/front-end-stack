@@ -1,5 +1,13 @@
 # Change Log
 
+## 0.5.0 - 2016-08-24
+
+* FEATURE - Added `Reselect`.
+* FEATURE - Added `.gitattributes` to ensure end-of-line is always LF instead of CRLF to satisfy ESLint.
+* FEATURE - Added `.editorconfig`.
+* REFACTOR - Cleaned up code.
+* REFACTOR - Combined src and test in same dir to make things easier to test.
+
 ## 0.4.0 - 2016-07-19
 
 * FEATURE - Enabled Redux Dev Tools.

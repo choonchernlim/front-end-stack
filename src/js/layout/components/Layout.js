@@ -1,7 +1,6 @@
 import { Style, StyleRoot } from 'radium';
 import { Grid, Cell } from 'radium-grid';
 import React from 'react';
-import baseStyle from '../../common/styles';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import AppBar from 'material-ui/AppBar';
 import Drawer from 'material-ui/Drawer';
@@ -16,8 +15,8 @@ import SchoolIcon from 'material-ui/svg-icons/social/school';
 import DevicesIcon from 'material-ui/svg-icons/device/devices';
 import MoodIcon from 'material-ui/svg-icons/social/mood';
 import userImage from '../../../img/user.jpg';
+import baseStyle from '../../common/styles';
 import style from '../styles';
-import { name } from '../../../../package.json';
 
 // combine `large` and `xlarge` breakpoints
 const largeGrid = [Grid.defaultProps.breakpoints.large, Grid.defaultProps.breakpoints.xlarge]
@@ -26,21 +25,7 @@ const largeGrid = [Grid.defaultProps.breakpoints.large, Grid.defaultProps.breakp
 
 const mql = window.matchMedia(largeGrid);
 
-export default class extends React.Component {
-  static childContextTypes = {
-    muiTheme: React.PropTypes.object
-  };
-
-  static propTypes = {
-    children: React.PropTypes.element.isRequired
-  };
-
-  // to get router to work
-  // https://github.com/davezuko/react-redux-starter-kit/issues/695
-  static contextTypes = {
-    router: React.PropTypes.object
-  };
-
+class Layout extends React.Component {
   constructor(props) {
     super(props);
     this.state = { open: true, mql };
@@ -65,7 +50,7 @@ export default class extends React.Component {
         <Style rules={baseStyle.global} />
 
         <AppBar
-          title={name}
+          title={process.env.APP_NAME}
           style={style.appBar.base}
           titleStyle={style.appBar.title}
           onTitleTouchTap={() => this.context.router.push('/')}
@@ -121,3 +106,19 @@ export default class extends React.Component {
     );
   }
 }
+
+Layout.childContextTypes = {
+  muiTheme: React.PropTypes.object
+};
+
+Layout.propTypes = {
+  children: React.PropTypes.element.isRequired
+};
+
+// to get router to work
+// https://github.com/davezuko/react-redux-starter-kit/issues/695
+Layout.contextTypes = {
+  router: React.PropTypes.object
+};
+
+export default Layout;

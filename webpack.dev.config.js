@@ -6,6 +6,9 @@ const packageJson = require('./package.json');
 
 const distPath = path.join(__dirname, packageJson.config.dist_dir_path);
 
+// Use override value if exists, otherwise use the one defined in `package.json`
+const contextRoot = process.env.CONTEXT_ROOT || packageJson.config.context_root;
+
 module.exports = Object.assign({}, baseConfig.webpackOptions, {
   devtool: 'eval',
 
@@ -61,6 +64,15 @@ module.exports = Object.assign({}, baseConfig.webpackOptions, {
 
     // Generates `index.html` at the default location, which is dist dir, so that webpack-dev-server
     // can find it
-    new HtmlWebpackPlugin(baseConfig.htmlWebpackPluginOptions)
+    new HtmlWebpackPlugin(baseConfig.htmlWebpackPluginOptions),
+
+    // Defining variables accessible by client code
+    new webpack.DefinePlugin({
+      'process.env': {
+        NODE_ENV: JSON.stringify('development'),
+        CONTEXT_ROOT: JSON.stringify(contextRoot),
+        APP_NAME: JSON.stringify(packageJson.name)
+      }
+    })
   ])
 });

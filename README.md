@@ -22,6 +22,7 @@ Project template for building epic single-page app using modern front-end stack.
 |[Babel](https://babeljs.io/) 	                                                |Transpiles ES6+ to ES5 to maximize cross browser compatibility           |                   
 |[React](https://facebook.github.io/react/)                                     |Handles view layer                                                       |
 |[Redux](https://github.com/reactjs/redux)                                      |One-way data flow, inspired by Flux pattern                              |
+|[Reselect](https://github.com/reactjs/reselect)                                |Selector library for Redux                                               |
 |[Saga](https://github.com/yelouafi/redux-saga) 	                            |Side Effects middleware using ES6 Generator                              |
 |[Immutable](https://facebook.github.io/immutable-js/) 	                        |Creates immutable objects                                                |
 |[Material UI](http://www.material-ui.com/) 	                                |UI components, adhering to [Google Material Design](https://www.google.com/design/spec/material-design/introduction.htm)|     
@@ -61,7 +62,7 @@ These commands are cross-platform compatible.
 
 |Command                                  |Description                                                                                           |
 |-----------------------------------------|------------------------------------------------------------------------------------------------------|
-|`npm test`                               |Lint src/test files and run entire tests and                                                          |
+|`npm test`                               |Lint src/test files and run entire tests.                                                             |
 |`npm test [./path/to/test/module]`       |Lint src/test files and run only tests within `[./path/to/test/module]`                               |
 |`npm test:watch`                         |Watch for changes in test files and rerun `npm test`                                                  |
 |`npm test:watch [./path/to/test/module]` |Watch for changes in test files and rerun `npm test [./path/to/test/module]`                          |
@@ -70,6 +71,28 @@ These commands are cross-platform compatible.
 |`npm run reinstall`                      |Clear npm cache, remove `node_module` and install modules listed in `package.json`                    |
 |`npm start`                              |Start Node.js Express server with Hot Module Replacement                                              |
                                                                                                                                
+## Dependencies
+
+|Dependency                               |Description                                                                         |
+|-----------------------------------------|------------------------------------------------------------------------------------|
+|es6-promise                              |A polyfill for ES6-style Promises for weak browsers, like IE11                      |
+|history                                  |Managing browser history                                                            |
+|immutable                                |Creating Immutable objects                                                          |
+|isomorphic-fetch                         |Isomorphic WHATWG Fetch API                                                         |
+|material-ui                              |UI - Google's material design UI components built with React                        |
+|moment                                   |Parse, validate, manipulate and display dates.                                      |
+|radium                                   |UI - Managing inline styles on React elements                                       |
+|radium-grid                              |UI - Grid layout                                                                    |
+|react                                    |React - Core                                                                        |
+|react-dom                                |React - DOM                                                                         |
+|react-redux                              |React - Redux integration                                                           |
+|react-router                             |React - Router                                                                      |
+|react-router-redux                       |React - Router with Redux integration                                               |
+|react-tap-event-plugin                   |UI - Required by material-ui to listen for touch events                             |
+|redux                                    |Redux - Core                                                                        |
+|redux-saga                               |Redux - Side Effects middleware                                                     |
+|reselect                                 |Memoized selector for React components                                              |
+
 ## Dev Dependencies                            
                                                                                                                                
 |Dependency                               |Description                                                                         |
@@ -112,6 +135,7 @@ These commands are cross-platform compatible.
 |rimraf                                   |Util - `rm -rf` for both Unix and Windows world                                     |
 |roboto-fontface                          |Roboto font, adhering to Google Material Design spec                                |
 |sass-loader                              |Webpack - SASS loader                                                               |
+|sinon                                    |Test - Standalone test spies, stubs and mocks.                                      |
 |style-loader                             |Webpack - Style loader                                                              |
 |url-loader                               |Webpack - URL loader                                                                |
 |webpack                                  |Webpack - Core                                                                      |
@@ -119,26 +143,6 @@ These commands are cross-platform compatible.
 
 Notes:-
 * `babel-runtime` cannot be included because it will cause `Cannot find module 'babel-runtime/helpers/interop-require'` when dealing with `radium-grid`. See https://github.com/FormidableLabs/radium-grid/issues/31                                                                                
-
-## Dependencies
-
-|Dependency                               |Description                                                                         |
-|-----------------------------------------|------------------------------------------------------------------------------------|
-|es6-promise                              |A polyfill for ES6-style Promises for weak browsers, like IE11                      |
-|history                                  |Managing browser history                                                            |
-|immutable                                |Creating Immutable objects                                                          |
-|isomorphic-fetch                         |Isomorphic WHATWG Fetch API                                                         |
-|material-ui                              |UI - Google's material design UI components built with React                        |
-|radium                                   |UI - Managing inline styles on React elements                                       |
-|radium-grid                              |UI - Grid layout                                                                    |
-|react                                    |React - Core                                                                        |
-|react-dom                                |React - DOM                                                                         |
-|react-redux                              |React - Redux integration                                                           |
-|react-router                             |React - Router                                                                      |
-|react-router-redux                       |React - Router with Redux integration                                               |
-|react-tap-event-plugin                   |UI - Required by material-ui to listen for touch events                             |
-|redux                                    |Redux - Core                                                                        |
-|redux-saga                               |Redux - Side Effects middleware                                                     |
 
 ## Project Structure
 
@@ -152,17 +156,17 @@ Notes:-
 │   └── ...                     
 ├── scripts                     -> Scripts dir - Cross-platform NPM scripts
 │   └── ...                     
-├── src                         -> Source dir - Actual source files
-│   └── ...                     
-├── test                        -> Test dir - Test files
+├── src                         -> Dir for actual source files and test files
 │   └── ...                     
 ├── .babelrc                    -> Babel configuration
+├── .editorconfig               -> Coding style for different editors
 ├── .eslintrc                   -> ESLint configuration
+├── .gitattributes              -> Custom Git config
 ├── .gitignore                  -> Git ignore list
 ├── CHANGELOG.md                -> Change logs
 ├── LICENSE.md                  -> License, if needed
-├── package.json                -> NPM scripts and dependencies
 ├── README.md                   -> Readme file for the app
+├── package.json                -> NPM scripts and dependencies
 ├── webpack.base.config.js      -> Common webpack config
 ├── webpack.config.js           -> Production webpack config
 └── webpack.dev.config.js       -> Development webpack config

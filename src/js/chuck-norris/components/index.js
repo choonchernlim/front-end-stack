@@ -1,1 +1,3 @@
-export default from './ChuckNorris';
+import ChuckNorris from './ChuckNorris';
+
+export default ChuckNorris;
