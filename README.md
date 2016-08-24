@@ -159,12 +159,14 @@ Notes:-
 ├── src                         -> Dir for actual source files and test files
 │   └── ...                     
 ├── .babelrc                    -> Babel configuration
+├── .editorconfig               -> Coding style for different editors
 ├── .eslintrc                   -> ESLint configuration
+├── .gitattributes              -> Custom Git config
 ├── .gitignore                  -> Git ignore list
 ├── CHANGELOG.md                -> Change logs
 ├── LICENSE.md                  -> License, if needed
-├── package.json                -> NPM scripts and dependencies
 ├── README.md                   -> Readme file for the app
+├── package.json                -> NPM scripts and dependencies
 ├── webpack.base.config.js      -> Common webpack config
 ├── webpack.config.js           -> Production webpack config
 └── webpack.dev.config.js       -> Development webpack config
