@@ -1,5 +1,4 @@
-import React from 'react'; // eslint-disable-line no-unused-vars
-import TestUtils from 'react-addons-test-utils';
+import React from 'react';
 import { expect } from 'chai';
 import { shallow } from 'enzyme';
 import { fromJS } from 'immutable';
@@ -7,32 +6,7 @@ import { TodoList } from './TodoList';
 
 describe('Todo Manager => Components => TodoList', () => {
   describe('TodoList', () => {
-    it('given todos, should render LI items', () => {
-      const actions = [];
-
-      const todoList = TestUtils.renderIntoDocument(new TodoList({
-        todos: fromJS([
-          { id: 1, text: 'Item 1', completed: false },
-          { id: 2, text: 'Item 2', completed: true }
-        ]),
-        onToggleTodo(id) {
-          actions.push(id);
-        }
-      }));
-
-      expect(todoList.tagName).to.equal('UL');
-      expect(todoList.children.length).to.equal(2);
-
-      expect(todoList.children[0].textContent).to.equal('Item 1');
-      expect(todoList.children[1].textContent).to.equal('Item 2');
-
-      TestUtils.Simulate.click(todoList.children[1]);
-      TestUtils.Simulate.click(todoList.children[0]);
-
-      expect(actions).to.deep.equal([2, 1]);
-    });
-
-    it('(Enzyme) given todos, should render LI items', () => {
+    it('Given todos, should render LI items', () => {
       const actions = [];
 
       const todos = fromJS([
@@ -40,7 +14,7 @@ describe('Todo Manager => Components => TodoList', () => {
         { id: 2, text: 'Item 2', completed: true }
       ]);
 
-      const toggleTodo = (id) => actions.push(id);
+      const toggleTodo = id => actions.push(id);
 
       const wrapper = shallow(<TodoList todos={todos} onToggleTodo={toggleTodo} />);
 

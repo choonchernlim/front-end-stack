@@ -39,7 +39,7 @@ const todoManager = (state = new TodoManagerRecord(), action) => {
       return state.set('todos', state.get('todos').push(todo(undefined, action)));
 
     case TOGGLE_TODO:
-      return state.set('todos', state.get('todos').map((t) => todo(t, action)));
+      return state.set('todos', state.get('todos').map(t => todo(t, action)));
 
     case SET_VISIBILITY_FILTER:
       return state.set('visibilityFilter', action.filter);
