@@ -37,7 +37,6 @@ module.exports = Object.assign({}, baseConfig.webpackOptions, {
 
     // Minify JS without source map and suppress any warnings.
     new webpack.optimize.UglifyJsPlugin({
-      sourceMap: false,
       compress: {
         warnings: false
       }

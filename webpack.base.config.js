@@ -30,15 +30,13 @@ const webpackOptions = {
   },
 
   module: {
-    preLoaders: [
+    rules: [
       {
+        enforce: 'pre',
         test: /\.js?$/,
         loader: 'eslint',
         exclude: /node_modules/
-      }
-    ],
-
-    loaders: [
+      },
       {
         test: /\.js$/,
         loader: 'babel',
@@ -46,11 +44,19 @@ const webpackOptions = {
       },
       {
         test: /\.scss$/,
-        loader: ExtractTextPlugin.extract('style', 'css!postcss!sass')
+        loader: ExtractTextPlugin.extract({
+          fallbackLoader: 'style',
+          loader: ['css', 'postcss', 'sass']
+        })
       },
       {
         test: /\.woff(2)?$/,
-        loader: 'url?limit=10000&minetype=application/octet-stream&name=font/[name].[hash].[ext]'
+        loader: 'url',
+        query: {
+          limit: '10000',
+          mimetype: 'application/octet-stream',
+          name: 'font/[name].[hash].[ext]'
+        }
       },
       {
         test: /\.json$/,
@@ -67,6 +73,18 @@ const webpackOptions = {
   },
 
   plugins: [
+    new webpack.LoaderOptionsPlugin({
+      options: {
+        // create vendor prefixes to maximize compatibility. Recommended by Google:
+        // https://developers.google.com/web/tools/setup/setup-buildtools#dont-trip-up-with-vendor-prefixes
+        postcss: [
+          autoprefixer({
+            browsers: ['last 2 versions']
+          })
+        ]
+      }
+    }),
+
     // Split vendors from app
     new webpack.optimize.CommonsChunkPlugin({ name: 'vendor' }),
 
@@ -75,17 +93,7 @@ const webpackOptions = {
     // bundle file (styles.css). If your total stylesheet volume is big, it will be faster
     // because the stylesheet bundle is loaded in parallel to the javascript bundle.
     new ExtractTextPlugin('css/app.[chunkhash].css')
-  ],
-
-  // create vendor prefixes to maximize compatibility. Recommended by Google:
-  // https://developers.google.com/web/tools/setup/setup-buildtools#dont-trip-up-with-vendor-prefixes
-  postcss() {
-    return [
-      autoprefixer({
-        browsers: ['last 2 versions']
-      })
-    ];
-  }
+  ]
 };
 
 module.exports = {

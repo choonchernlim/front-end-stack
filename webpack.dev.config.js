@@ -30,7 +30,7 @@ module.exports = Object.assign({}, baseConfig.webpackOptions, {
   },
 
   devServer: {
-    contentBase: distPath,
+    contentBase1: distPath,
 
     // redirects 404s to base url
     historyApiFallback: {
@@ -38,7 +38,6 @@ module.exports = Object.assign({}, baseConfig.webpackOptions, {
     },
 
     hot: true,
-    inline: true,
     progress: true,
 
     // Display only errors to reduce the amount of output.
