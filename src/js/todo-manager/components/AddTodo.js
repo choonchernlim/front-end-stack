@@ -78,8 +78,6 @@ class AddTodo extends Component {
 }
 
 AddTodo.propTypes = {
-  value: PropTypes.string,
-  error: PropTypes.string,
   addTodo: PropTypes.func.isRequired
 };
 

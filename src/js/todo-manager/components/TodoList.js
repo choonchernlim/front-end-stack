@@ -5,7 +5,15 @@ import { toggleTodo } from '../actions';
 import createGetVisibleTodosSelector from '../selectors';
 
 export const Todo = ({ onClick, completed, text }) => (
-  <li onClick={onClick} style={{ textDecoration: completed ? 'line-through' : 'none' }}>{text}</li>
+  <li>
+    <a
+      href="#toggle"
+      onClick={onClick}
+      style={{ color: 'inherit', textDecoration: completed ? 'line-through' : 'none' }}
+    >
+      {text}
+    </a>
+  </li>
 );
 
 Todo.propTypes = {
@@ -34,7 +42,7 @@ TodoList.propTypes = {
 
 const makeMapStateToProps = () => {
   const getVisibleTodos = createGetVisibleTodosSelector();
-  return (state) => ({
+  return state => ({
     todos: getVisibleTodos(state)
   });
 };

@@ -8,6 +8,7 @@ import injectTapEventPlugin from 'react-tap-event-plugin';
 import configureStore from './store';
 import getRoutes from './routes';
 import { sanitizeContextRoot } from '../common/utils/url-helper';
+import './chrome-react-perf';
 import '../../scss/index.scss';
 
 // http://www.material-ui.com/#/get-started/installation

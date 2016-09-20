@@ -19,7 +19,7 @@ export const sanitizeContextRoot = (contextRoot = process.env.CONTEXT_ROOT || ''
  npm te* @param uri URI
  * @return URL with context root prefix.
  */
-export const url = (uri) => sanitizeContextRoot() + uri;
+export const url = uri => sanitizeContextRoot() + uri;
 
 export default {
   url,

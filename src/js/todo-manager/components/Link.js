@@ -7,7 +7,7 @@ export const Link = ({ active, filter, children, onSetVisibilityFilter }) => {
     return <span>{children}</span>;
   }
 
-  const onClick = e => {
+  const onClick = (e) => {
     e.preventDefault();
     onSetVisibilityFilter(filter);
   };

@@ -1,7 +1,7 @@
 import { createSelector } from 'reselect';
 
-const getVisibilityFilter = (state) => state.todoManager.get('visibilityFilter');
-const getTodos = (state) => state.todoManager.get('todos');
+const getVisibilityFilter = state => state.todoManager.get('visibilityFilter');
+const getTodos = state => state.todoManager.get('todos');
 
 const makeGetVisibleTodos = () => (
   createSelector(

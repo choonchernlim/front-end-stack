@@ -16,7 +16,9 @@ const GetJoke = ({ joke, error, completed, onClick }) => {
     <div>
       <RaisedButton primary label="Get Joke" onClick={onClick} />
       {spinner}
+      {/* eslint-disable react/no-danger */}
       <h2><span dangerouslySetInnerHTML={{ __html: joke }} /></h2>
+      {/* eslint-enable react/no-danger */}
       {errorMessage}
     </div>
   );
@@ -29,7 +31,7 @@ GetJoke.propTypes = {
   onClick: PropTypes.func.isRequired
 };
 
-const mapStateToProps = (state) => ({
+const mapStateToProps = state => ({
   joke: state.chuckNorris.get('joke'),
   error: state.chuckNorris.get('error'),
   completed: state.chuckNorris.get('completed')

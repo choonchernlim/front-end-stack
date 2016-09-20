@@ -6,12 +6,12 @@ export const getJoke = () => ({
   type: GET_JOKE
 });
 
-export const getJokeFailed = (error) => ({
+export const getJokeFailed = error => ({
   type: GET_JOKE_FAILED,
   error
 });
 
-export const getJokeSucceeded = (joke) => ({
+export const getJokeSucceeded = joke => ({
   type: GET_JOKE_SUCCEEDED,
   joke
 });

@@ -1,5 +1,9 @@
 # Change Log
 
+## 0.6.0 - 2016-09-20
+
+* FEATURE - Configured `react-addons-perf` module to work with `React Perf` extension in Chrome.
+
 ## 0.5.0 - 2016-08-24
 
 * FEATURE - Added `Reselect`.
