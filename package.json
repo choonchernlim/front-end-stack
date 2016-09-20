@@ -22,7 +22,7 @@
     "start": "webpack-dev-server --config webpack.dev.config.js"
   },
   "dependencies": {
-    "es6-promise": "3.3.0",
+    "es6-promise": "3.3.1",
     "history": "2.1.2",
     "immutable": "3.8.1",
     "isomorphic-fetch": "2.2.1",
@@ -30,15 +30,15 @@
     "moment": "2.15.0",
     "radium": "0.18.1",
     "radium-grid": "2.0.1",
-    "react": "15.3.1",
-    "react-dom": "15.3.1",
+    "react": "15.3.2",
+    "react-dom": "15.3.2",
     "react-redux": "4.4.5",
     "react-router": "2.8.1",
     "react-router-redux": "4.0.5",
     "react-tap-event-plugin": "1.0.0",
     "redux": "3.6.0",
     "redux-saga": "0.11.1",
-    "reselect": "2.5.3"
+    "reselect": "2.5.4"
   },
   "devDependencies": {
     "autoprefixer": "6.4.1",
@@ -61,7 +61,7 @@
     "eslint-loader": "1.5.0",
     "eslint-plugin-import": "1.15.0",
     "eslint-plugin-jsx-a11y": "2.2.2",
-    "eslint-plugin-react": "6.2.1",
+    "eslint-plugin-react": "6.3.0",
     "extract-text-webpack-plugin": "1.0.1",
     "file-loader": "0.9.0",
     "html-webpack-plugin": "2.22.0",
@@ -72,18 +72,18 @@
     "mocha": "3.0.2",
     "mocha-junit-reporter": "1.12.0",
     "nock": "8.0.0",
-    "node-sass": "3.9.3",
+    "node-sass": "3.10.0",
     "nodemon": "1.10.2",
     "postcss-loader": "0.13.0",
     "react-addons-perf": "15.3.2",
-    "react-addons-test-utils": "15.3.1",
+    "react-addons-test-utils": "15.3.2",
     "rimraf": "2.5.4",
     "roboto-fontface": "0.6.0",
     "sass-loader": "4.0.2",
-    "sinon": "1.17.5",
+    "sinon": "1.17.6",
     "style-loader": "0.13.1",
     "url-loader": "0.5.7",
     "webpack": "1.13.2",
-    "webpack-dev-server": "1.15.1"
+    "webpack-dev-server": "1.16.1"
   }
 }
