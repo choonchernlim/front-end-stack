@@ -33,11 +33,14 @@ Project template for building epic single-page app using modern front-end stack.
 
 ## Getting Started
 
+* In Chrome, install the following dev tool extensions:-
+  * [React Developer Tools](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=en)
+  * [Redux DevTools](https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd)
+  * [React Perf](https://chrome.google.com/webstore/detail/react-perf/hacmcodfllhbnekmghgdlplbdnahmhmm)
+  
 * If you are using IntelliJ product (ex: IDEA, WebStorm, etc)...
     * Use [intellij-config](https://github.com/choonchernlim/intellij-config) to configure JavaScript code formatter.
     * Enable "ESLint" in your IDE, which will pick up `.eslintrc` from the project and enforce it.
-
-* This project template is configured to work with [Redux DevTools](https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd).
 
 * Clone or download/unzip this project template.
 
@@ -131,6 +134,7 @@ These commands are cross-platform compatible.
 |node-sass                                |Webpack - Required by SASS loader                                                   |
 |nodemon                                  |Test - Monitor test files and rerun tests. Needed due to cross-platform test runner because `mocha --watch` doesn't produce run results when executed from `require('child_process').exec` |
 |postcss-loader                           |Webpack - Post CSS loader to run autoprefixer                                       |
+|react-addons-perf                        |Util - Performance profiling tool.                                                  |
 |react-addons-test-utils                  |Test - Utils for testing React components                                           |
 |rimraf                                   |Util - `rm -rf` for both Unix and Windows world                                     |
 |roboto-fontface                          |Roboto font, adhering to Google Material Design spec                                |
