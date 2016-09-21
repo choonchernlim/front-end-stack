@@ -4,7 +4,7 @@
 import { applyMiddleware, createStore, compose } from 'redux';
 import { routerMiddleware } from 'react-router-redux';
 import createSagaMiddleware from 'redux-saga';
-import devToolsExtension from './dev-tools-extension';
+import reduxDevToolsExtension from './redux-devtools-extension';
 import sagas from './sagas';
 import reducers from './reducers';
 
@@ -18,7 +18,7 @@ export default function configureStore(history) {
 
   const enhancer = compose(
     applyMiddleware(sagaMiddleware, routerHistoryMiddleware),
-    devToolsExtension()
+    reduxDevToolsExtension()
   );
 
   // Create store with middlewares
