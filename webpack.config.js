@@ -54,7 +54,7 @@ module.exports = Object.assign({}, baseConfig.webpackOptions, {
       }
     }),
 
-    // TODO LIMC As of webpack 2.1.0-beta.24, disable this to prevent "Template cannot be applied as TemplateArgument: HarmonyImportDependency". See https://github.com/webpack/webpack/issues/2644
+    // TODO As of webpack 2.1.0-beta.24, disable this to prevent "Template cannot be applied as TemplateArgument: HarmonyImportDependency". See https://github.com/webpack/webpack/issues/2644
     // Prevents the inclusion of duplicate code into bundle and instead applies a copy
     // of the function at runtime, which results smaller file size
     // new webpack.optimize.DedupePlugin(),
