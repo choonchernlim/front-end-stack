@@ -1,5 +1,9 @@
 # Change Log
 
+## 0.7.0 - TBD
+
+* FEATURE - Webpack 2.x and tree shaking.
+
 ## 0.6.0 - 2016-09-20
 
 * FEATURE - Configured `react-addons-perf` module to work with `React Perf` extension in Chrome.
@@ -16,7 +20,7 @@
 
 * FEATURE - Enabled Redux Dev Tools.
 * FEATURE - `npm test ./test/abc` and `npm run test:watch ./test/abc` to run (and watch) only tests within `./test/abc`.
-* FEATURE - Configured `webpack-dev-server` to prevent "No 'Access-Control-Allow-Origin' header is present on the requested resource". 
+* FEATURE - Configured `webpack-dev-server` to prevent "No 'Access-Control-Allow-Origin' header is present on the requested resource".
 * FEATURE - Added `enzyme` and `es6-promise` dependencies.
 * REFACTOR - Ref Callback instead of Ref String. See `https://facebook.github.io/react/docs/more-about-refs.html`.
 * MAINTENANCE - Dependency updates.
