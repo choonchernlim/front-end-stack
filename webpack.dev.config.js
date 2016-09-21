@@ -30,7 +30,7 @@ module.exports = Object.assign({}, baseConfig.webpackOptions, {
   },
 
   devServer: {
-    contentBase1: distPath,
+    contentBase: distPath,
 
     // redirects 404s to base url
     historyApiFallback: {
