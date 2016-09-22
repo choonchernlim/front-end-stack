@@ -74,6 +74,8 @@ const webpackOptions = {
 
   plugins: [
     new webpack.LoaderOptionsPlugin({
+      minimize: true,
+      debug: false,
       options: {
         // create vendor prefixes to maximize compatibility. Recommended by Google:
         // https://developers.google.com/web/tools/setup/setup-buildtools#dont-trip-up-with-vendor-prefixes
