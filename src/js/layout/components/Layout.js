@@ -1,6 +1,7 @@
 import { Style, StyleRoot } from 'radium';
 import { Grid, Cell } from 'radium-grid';
 import React from 'react';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import AppBar from 'material-ui/AppBar';
 import Drawer from 'material-ui/Drawer';
@@ -25,13 +26,21 @@ const largeGrid = [Grid.defaultProps.breakpoints.large, Grid.defaultProps.breakp
 
 const mql = window.matchMedia(largeGrid);
 
-class Layout extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { open: true, mql };
-  }
+export default class Layout extends React.Component {
+  static propTypes = {
+    children: React.PropTypes.element.isRequired
+  };
 
-  getChildContext = () => ({ muiTheme: getMuiTheme(baseStyle.muiTheme) });
+  // to get router to work
+  // https://github.com/davezuko/react-redux-starter-kit/issues/695
+  static contextTypes = {
+    router: React.PropTypes.object
+  };
+
+  state = {
+    open: true,
+    mql
+  };
 
   componentWillMount = () => {
     this.state.mql.addListener(this.handleMediaQueryChanged);
@@ -45,80 +54,68 @@ class Layout extends React.Component {
   handleToggle = () => this.setState({ open: !this.state.open });
 
   render() {
+    const { router } = this.context;
+
     return (
-      <StyleRoot>
-        <Style rules={baseStyle.global} />
+      <MuiThemeProvider muiTheme={getMuiTheme(baseStyle.muiTheme)}>
+        <StyleRoot>
+          <Style rules={baseStyle.global} />
 
-        <AppBar
-          title={process.env.APP_NAME}
-          style={style.appBar.base}
-          titleStyle={style.appBar.title}
-          onTitleTouchTap={() => this.context.router.push('/')}
-          onLeftIconButtonTouchTap={this.handleToggle}
-          iconStyleRight={style.appBar.iconRight}
-          iconElementRight={<Avatar src={userImage} />}
-        />
+          <AppBar
+            title={process.env.APP_NAME}
+            style={style.appBar.base}
+            titleStyle={style.appBar.title}
+            onTitleTouchTap={() => router.push('/')}
+            onLeftIconButtonTouchTap={this.handleToggle}
+            iconStyleRight={style.appBar.iconRight}
+            iconElementRight={<Avatar src={userImage} />}
+          />
 
-        <Drawer open={this.state.open} containerStyle={style.leftNav}>
+          <Drawer open={this.state.open} containerStyle={style.leftNav}>
 
-          <MenuItem
-            onTouchTap={() => this.context.router.push('/')}
-            leftIcon={<HomeIcon />}
-          >Home</MenuItem>
+            <MenuItem
+              onTouchTap={() => router.push('/')}
+              leftIcon={<HomeIcon />}
+            >Home</MenuItem>
 
-          <MenuItem
-            onTouchTap={() => this.context.router.push('look-and-feel')}
-            leftIcon={<DevicesIcon />}
-          >Look and Feel</MenuItem>
+            <MenuItem
+              onTouchTap={() => router.push('look-and-feel')}
+              leftIcon={<DevicesIcon />}
+            >Look and Feel</MenuItem>
 
-          <MenuItem
-            onTouchTap={() => this.context.router.push('chuck-norris')}
-            leftIcon={<MoodIcon />}
-          >Chuck Norris</MenuItem>
+            <MenuItem
+              onTouchTap={() => router.push('chuck-norris')}
+              leftIcon={<MoodIcon />}
+            >Chuck Norris</MenuItem>
 
-          <MenuItem
-            onTouchTap={() => this.context.router.push('todo-manager')}
-            leftIcon={<AssignmentIcon />}
-          >Todo Manager</MenuItem>
+            <MenuItem
+              onTouchTap={() => router.push('todo-manager')}
+              leftIcon={<AssignmentIcon />}
+            >Todo Manager</MenuItem>
 
-          <Divider />
+            <Divider />
 
-          <Subheader>External Links</Subheader>
+            <Subheader>External Links</Subheader>
 
-          <MenuItem
-            href="https://github.com/choonchernlim/front-end-stack"
-            leftIcon={<BugReportIcon />}
-          >GitHub
-          </MenuItem>
+            <MenuItem
+              href="https://github.com/choonchernlim/front-end-stack"
+              leftIcon={<BugReportIcon />}
+            >GitHub
+            </MenuItem>
 
-          <MenuItem
-            href="https://myshittycode.com/"
-            leftIcon={<SchoolIcon />}
-          >My Shitty Code
-          </MenuItem>
+            <MenuItem
+              href="https://myshittycode.com/"
+              leftIcon={<SchoolIcon />}
+            >My Shitty Code
+            </MenuItem>
 
-        </Drawer>
+          </Drawer>
 
-        <Grid>
-          <Cell width="1" style={style.container}>{this.props.children}</Cell>
-        </Grid>
-      </StyleRoot>
+          <Grid>
+            <Cell width="1" style={style.container}>{this.props.children}</Cell>
+          </Grid>
+        </StyleRoot>
+      </MuiThemeProvider>
     );
   }
 }
-
-Layout.childContextTypes = {
-  muiTheme: React.PropTypes.object
-};
-
-Layout.propTypes = {
-  children: React.PropTypes.element.isRequired
-};
-
-// to get router to work
-// https://github.com/davezuko/react-redux-starter-kit/issues/695
-Layout.contextTypes = {
-  router: React.PropTypes.object
-};
-
-export default Layout;

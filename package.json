@@ -26,15 +26,15 @@
     "history": "2.1.2",
     "immutable": "3.8.1",
     "isomorphic-fetch": "2.2.1",
-    "material-ui": "0.15.4",
-    "moment": "2.15.0",
+    "material-ui": "0.16.0-rc1",
+    "moment": "2.15.1",
     "radium": "0.18.1",
     "radium-grid": "2.0.1",
     "react": "15.3.2",
     "react-dom": "15.3.2",
     "react-redux": "4.4.5",
     "react-router": "2.8.1",
-    "react-router-redux": "4.0.5",
+    "react-router-redux": "4.0.6",
     "react-tap-event-plugin": "1.0.0",
     "redux": "3.6.0",
     "redux-saga": "0.11.1",
@@ -83,7 +83,7 @@
     "sinon": "1.17.6",
     "style-loader": "0.13.1",
     "url-loader": "0.5.7",
-    "webpack": "2.1.0-beta.24",
-    "webpack-dev-server": "2.1.0-beta.4"
+    "webpack": "2.1.0-beta.25",
+    "webpack-dev-server": "2.1.0-beta.5"
   }
 }
