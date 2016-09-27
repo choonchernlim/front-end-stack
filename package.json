@@ -19,14 +19,15 @@
     "ci:coverage": "node ./scripts/ci-coverage",
     "ci:test": "node ./scripts/ci-test",
     "reinstall": "npm cache clean && rimraf node_modules && npm install",
-    "start": "webpack-dev-server --config webpack.dev.config.js"
+    "start": "webpack-dev-server --config webpack.dev.config.js",
+    "profile": "webpack --profile --json > stats.json"
   },
   "dependencies": {
-    "es6-promise": "3.3.1",
+    "es6-promise": "4.0.0",
     "history": "2.1.2",
     "immutable": "3.8.1",
     "isomorphic-fetch": "2.2.1",
-    "material-ui": "0.16.0-rc1",
+    "material-ui": "0.16.0-rc2",
     "moment": "2.15.1",
     "radium": "0.18.1",
     "radium-grid": "2.0.1",
@@ -56,10 +57,10 @@
     "clean-webpack-plugin": "0.1.10",
     "css-loader": "0.25.0",
     "enzyme": "2.4.1",
-    "eslint": "3.5.0",
-    "eslint-config-airbnb": "11.1.0",
+    "eslint": "3.6.1",
+    "eslint-config-airbnb": "12.0.0",
     "eslint-loader": "1.5.0",
-    "eslint-plugin-import": "1.15.0",
+    "eslint-plugin-import": "2.0.0-beta.1",
     "eslint-plugin-jsx-a11y": "2.2.2",
     "eslint-plugin-react": "6.3.0",
     "extract-text-webpack-plugin": "2.0.0-beta.4",
@@ -84,6 +85,6 @@
     "style-loader": "0.13.1",
     "url-loader": "0.5.7",
     "webpack": "2.1.0-beta.25",
-    "webpack-dev-server": "2.1.0-beta.5"
+    "webpack-dev-server": "2.1.0-beta.6"
   }
 }

@@ -14,6 +14,14 @@ const contextRoot = process.env.CONTEXT_ROOT || packageJson.config.context_root;
 // Make sure there is a trailing slash
 const distUri = path.posix.join(contextRoot, packageJson.config.dist_uri, '/');
 
+// when running `npm run build`, display extra config info
+if (JSON.parse(process.env.npm_config_argv).original.join() === 'run,build') {
+  console.log('------------------------------');
+  console.log('Vendors   :', baseConfig.webpackOptions.entry.vendor.join());
+  console.log('App Path  :', baseConfig.webpackOptions.entry.app);
+  console.log('------------------------------');
+}
+
 module.exports = Object.assign({}, baseConfig.webpackOptions, {
 
   output: {

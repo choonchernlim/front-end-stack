@@ -3,7 +3,7 @@
 _"Failure is an option here. If things are not failing, you are not innovating enough." -- Elon Musk_
 
 _"Progress is impossible without change, and those who cannot change their minds cannot change anything." -- George Bernard Shaw_
-  
+
 _"To improve is to change; to be perfect is to change often." -- Winston Churchill_
 
 _"Sometimes if you want to see a change for the better, you have to take things into your own hands." -- Clint Eastwood_
@@ -19,16 +19,16 @@ Project template for building epic single-page app using modern front-end stack.
 |[Webpack](https://webpack.github.io/) 	                                        |Module bundler                                                           |
 |[Webpack Dev Server](https://github.com/webpack/webpack-dev-server)            |Live reloading server (for app dev)                                      |
 |[ES6](http://www.ecma-international.org/ecma-262/6.0/) and ES7                 |Latest and greatest JavaScript language                                  |
-|[Babel](https://babeljs.io/) 	                                                |Transpiles ES6+ to ES5 to maximize cross browser compatibility           |                   
+|[Babel](https://babeljs.io/) 	                                                |Transpiles ES6+ to ES5 to maximize cross browser compatibility           |
 |[React](https://facebook.github.io/react/)                                     |Handles view layer                                                       |
 |[Redux](https://github.com/reactjs/redux)                                      |One-way data flow, inspired by Flux pattern                              |
 |[Reselect](https://github.com/reactjs/reselect)                                |Selector library for Redux                                               |
 |[Saga](https://github.com/yelouafi/redux-saga) 	                            |Side Effects middleware using ES6 Generator                              |
 |[Immutable](https://facebook.github.io/immutable-js/) 	                        |Creates immutable objects                                                |
-|[Material UI](http://www.material-ui.com/) 	                                |UI components, adhering to [Google Material Design](https://www.google.com/design/spec/material-design/introduction.htm)|     
+|[Material UI](http://www.material-ui.com/) 	                                |UI components, adhering to [Google Material Design](https://www.google.com/design/spec/material-design/introduction.htm)|
 |[Radium](https://github.com/FormidableLabs/radium) and [Radium Grid](https://github.com/FormidableLabs/radium-grid)|Inline CSS and grid layout           |
-|[ESLint](https://github.com/eslint/eslint) 	                                |Validates JavaScript, adhering to [Airbnb's JavaScript style guide](https://github.com/airbnb/javascript) |                    
-|[Mocha](https://mochajs.org/) 	                                                |JavaScript test framework                                                |   
+|[ESLint](https://github.com/eslint/eslint) 	                                |Validates JavaScript, adhering to [Airbnb's JavaScript style guide](https://github.com/airbnb/javascript) |
+|[Mocha](https://mochajs.org/) 	                                                |JavaScript test framework                                                |
 
 
 ## Getting Started
@@ -37,7 +37,7 @@ Project template for building epic single-page app using modern front-end stack.
   * [React Developer Tools](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=en)
   * [Redux DevTools](https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd)
   * [React Perf](https://chrome.google.com/webstore/detail/react-perf/hacmcodfllhbnekmghgdlplbdnahmhmm)
-  
+
 * If you are using IntelliJ product (ex: IDEA, WebStorm, etc)...
     * Use [intellij-config](https://github.com/choonchernlim/intellij-config) to configure JavaScript code formatter.
     * Enable "ESLint" in your IDE, which will pick up `.eslintrc` from the project and enforce it.
@@ -51,10 +51,10 @@ Project template for building epic single-page app using modern front-end stack.
     * Open a browser and visit `http://localhost:8080`.
     * When you modify the source code, the configured Hot Module Replacement will automatically refresh the browser content.
 
-* To package for production, run `npm run build`. 
+* To package for production, run `npm run build`.
     * This script will clean the distribution directory and create minified bundle files.
 
-* To package for production with a different context root than the one defined in `package.json`, run `CONTEXT_ROOT=/new-context-root npm run build`. 
+* To package for production with a different context root than the one defined in `package.json`, run `CONTEXT_ROOT=/new-context-root npm run build`.
 
 * To configure as Jenkins job, run `npm run ci`.
     * This script will create test result and code coverage files.
@@ -73,7 +73,8 @@ These commands are cross-platform compatible.
 |`npm run ci`                             |Remove report dir, run code coverage, lint src/test files, run tests and generate result files for CI |
 |`npm run reinstall`                      |Clear npm cache, remove `node_module` and install modules listed in `package.json`                    |
 |`npm start`                              |Start Node.js Express server with Hot Module Replacement                                              |
-                                                                                                                               
+|`npm run profile`                        |Create `stats.json` that be loaded to http://webpack.github.io/analyse/ to visualize build.           |
+
 ## Dependencies
 
 |Dependency                               |Description                                                                         |
@@ -96,8 +97,8 @@ These commands are cross-platform compatible.
 |redux-saga                               |Redux - Side Effects middleware                                                     |
 |reselect                                 |Memoized selector for React components                                              |
 
-## Dev Dependencies                            
-                                                                                                                               
+## Dev Dependencies
+
 |Dependency                               |Description                                                                         |
 |-----------------------------------------|------------------------------------------------------------------------------------|
 |autoprefixer                             |Webpack - Add vendor prefixes in CSS                                                |
@@ -114,10 +115,10 @@ These commands are cross-platform compatible.
 |chai-as-promised                         |Test - Fluent approach to test promises                                             |
 |clean-webpack-plugin                     |Webpack - Clean output dir between builds                                           |
 |css-loader                               |Webpack - CSS loader                                                                |
-|enzyme                                   |Test - Testing utilities for React                                                  |    
-|eslint                                   |ESLint - For enforcing coding style                                                 |    
-|eslint-config-airbnb                     |ESLint - Using Airbnb's coding style                                                |                  
-|eslint-loader                            |Webpack - ESLint loader                                                             |           
+|enzyme                                   |Test - Testing utilities for React                                                  |
+|eslint                                   |ESLint - For enforcing coding style                                                 |
+|eslint-config-airbnb                     |ESLint - Using Airbnb's coding style                                                |
+|eslint-loader                            |Webpack - ESLint loader                                                             |
 |eslint-plugin-import                     |ESLint - Linting of ES2015+ (ES6+) import/export syntax                             |
 |eslint-plugin-jsx-a11y                   |ESLint - Static AST checker for accessibility rules on JSX elements                 |
 |eslint-plugin-react                      |ESLint - React specific linting rules                                               |
@@ -146,22 +147,22 @@ These commands are cross-platform compatible.
 |webpack-dev-server                       |Webpack - Node.js Express server                                                    |
 
 Notes:-
-* `babel-runtime` cannot be included because it will cause `Cannot find module 'babel-runtime/helpers/interop-require'` when dealing with `radium-grid`. See https://github.com/FormidableLabs/radium-grid/issues/31                                                                                
+* `babel-runtime` cannot be included because it will cause `Cannot find module 'babel-runtime/helpers/interop-require'` when dealing with `radium-grid`. See https://github.com/FormidableLabs/radium-grid/issues/31
 
 ## Project Structure
 
 ```
 .
 ├── dist                        -> Distribution dir - Production bundle, including index.html
-│   └── ...                     
+│   └── ...
 ├── node_modules                -> Installed modules dir
-│   └── ...                     
+│   └── ...
 ├── reports                     -> Reports dir - Generated reports for Jenkins
-│   └── ...                     
+│   └── ...
 ├── scripts                     -> Scripts dir - Cross-platform NPM scripts
-│   └── ...                     
+│   └── ...
 ├── src                         -> Dir for actual source files and test files
-│   └── ...                     
+│   └── ...
 ├── .babelrc                    -> Babel configuration
 ├── .editorconfig               -> Coding style for different editors
 ├── .eslintrc                   -> ESLint configuration

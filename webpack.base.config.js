@@ -9,11 +9,6 @@ const srcPath = path.join(__dirname, packageJson.config.src_dir_path);
 
 const appPath = path.join(srcPath, '/js/app/index.js');
 
-console.log('------------------------------');
-console.log('Vendors   :', vendors.join());
-console.log('App Path  :', appPath);
-console.log('------------------------------');
-
 // Base options for HtmlWebpackPlugin for generating `index.html`
 // This allows production bundle to have possibly different entry file path than webpack-dev-server
 const htmlWebpackPluginOptions = {
