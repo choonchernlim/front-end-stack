@@ -73,7 +73,7 @@ These commands are cross-platform compatible.
 |`npm run ci`                             |Remove report dir, run code coverage, lint src/test files, run tests and generate result files for CI |
 |`npm run reinstall`                      |Clear npm cache, remove `node_module` and install modules listed in `package.json`                    |
 |`npm start`                              |Start Node.js Express server with Hot Module Replacement                                              |
-|`npm run profile`                        |Create `stats.json` that be loaded to http://webpack.github.io/analyse/ to visualize build.           |
+|`npm run stats`                          |Create `stats.json` that be loaded to http://webpack.github.io/analyse/ to visualize build.           |
 
 ## Dependencies
 
@@ -172,7 +172,7 @@ Notes:-
 ├── LICENSE.md                  -> License, if needed
 ├── package.json                -> NPM scripts and dependencies
 ├── README.md                   -> Readme file for the app
-├── stats.json                  -> Generated file when running `npm run profile`
+├── stats.json                  -> Generated file when running `npm run stats`
 ├── webpack.base.config.js      -> Common webpack config
 ├── webpack.config.js           -> Production webpack config
 └── webpack.dev.config.js       -> Development webpack config

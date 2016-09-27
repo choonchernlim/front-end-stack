@@ -20,7 +20,7 @@
     "ci:test": "node ./scripts/ci-test",
     "reinstall": "npm cache clean && rimraf node_modules && npm install",
     "start": "webpack-dev-server --config webpack.dev.config.js",
-    "profile": "webpack --profile --json > stats.json"
+    "stats": "webpack --profile --json > stats.json"
   },
   "dependencies": {
     "es6-promise": "4.0.2",
