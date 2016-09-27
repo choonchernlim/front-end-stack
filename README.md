@@ -170,8 +170,9 @@ Notes:-
 ├── .gitignore                  -> Git ignore list
 ├── CHANGELOG.md                -> Change logs
 ├── LICENSE.md                  -> License, if needed
-├── README.md                   -> Readme file for the app
 ├── package.json                -> NPM scripts and dependencies
+├── README.md                   -> Readme file for the app
+├── stats.json                  -> Generated file when running `npm run profile`
 ├── webpack.base.config.js      -> Common webpack config
 ├── webpack.config.js           -> Production webpack config
 └── webpack.dev.config.js       -> Development webpack config
