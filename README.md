@@ -79,7 +79,6 @@ These commands are cross-platform compatible.
 
 |Dependency                               |Description                                                                         |
 |-----------------------------------------|------------------------------------------------------------------------------------|
-|es6-promise                              |A polyfill for ES6-style Promises for weak browsers, like IE11                      |
 |history                                  |Managing browser history                                                            |
 |immutable                                |Creating Immutable objects                                                          |
 |isomorphic-fetch                         |Isomorphic WHATWG Fetch API                                                         |
@@ -107,7 +106,7 @@ These commands are cross-platform compatible.
 |babel-eslint                             |Babel - For linting ES7 syntax... ex: `static` properties                           |
 |babel-loader                             |Babel - Loader for transpiling                                                      |
 |babel-plugin-transform-decorators-legacy |Babel - To fix "Decorators are not supported yet in 6.x pending proposal update."   |
-|babel-plugin-transform-runtime           |Babel - Polyfilling code without polluting globals (replacing `babel-polyfill` to fix "ReferenceError: regeneratorRuntime is not defined"  |
+|babel-polyfill                           |Babel - Emulate a full ES2015 environment.                                          |
 |babel-preset-es2015                      |Babel - ES6 preset                                                                  |
 |babel-preset-react                       |Babel - React preset                                                                |
 |babel-preset-stage-0                     |Babel - ES7+ preset                                                                 |
