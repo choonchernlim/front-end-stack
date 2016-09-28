@@ -5,8 +5,6 @@ import { Router, useRouterHistory } from 'react-router';
 import createBrowserHistory from 'history/lib/createBrowserHistory';
 import { syncHistoryWithStore } from 'react-router-redux';
 import injectTapEventPlugin from 'react-tap-event-plugin';
-// Enable ES6 Promise polyfill. See https://github.com/stefanpenner/es6-promise#auto-polyfill
-import 'es6-promise/auto';
 import configureStore from './store';
 import getRoutes from './routes';
 import { sanitizeContextRoot } from '../common/utils/url-helper';
