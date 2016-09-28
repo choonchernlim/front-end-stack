@@ -18,7 +18,7 @@
     "ci:clean": "node ./scripts/ci-clean",
     "ci:coverage": "node ./scripts/ci-coverage",
     "ci:test": "node ./scripts/ci-test",
-    "reinstall": "npm cache clean && rimraf node_modules && npm install",
+    "reinstall": "npm cache clean && rimraf \"node_modules/!(rimraf|.bin)\" && npm install",
     "start": "webpack-dev-server --config webpack.dev.config.js",
     "stats": "webpack --profile --json > stats.json"
   },

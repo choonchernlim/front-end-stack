@@ -6,6 +6,7 @@
 * FEATURE - `material-ui` 0.16.0.
 * FEATURE - Added `npm run stats` to create `stats.json` that can be loaded to http://webpack.github.io/analyse/
 * REFACTOR - Dropped `es6-promise` and `babel-plugin-transform-runtime`. Replaced with `babel-polyfill` to have more complete ES6 polyfills.
+* BUG - Configured `rimraf` in `npm run reinstall` not to delete `rimraf` and `.bin` within `node_modules` to prevent Windows from throwing an error. See https://github.com/isaacs/rimraf/issues/102
 
 ## 0.6.0 - 2016-09-20
 
