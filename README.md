@@ -23,11 +23,11 @@ Project template for building epic single-page app using modern front-end stack.
 |[React](https://facebook.github.io/react/)                                     |Handles view layer                                                       |
 |[Redux](https://github.com/reactjs/redux)                                      |One-way data flow, inspired by Flux pattern                              |
 |[Reselect](https://github.com/reactjs/reselect)                                |Selector library for Redux                                               |
-|[Saga](https://github.com/yelouafi/redux-saga) 	                            |Side Effects middleware using ES6 Generator                              |
+|[Saga](https://github.com/yelouafi/redux-saga) 	                              |Side Effects middleware using ES6 Generator                              |
 |[Immutable](https://facebook.github.io/immutable-js/) 	                        |Creates immutable objects                                                |
-|[Material UI](http://www.material-ui.com/) 	                                |UI components, adhering to [Google Material Design](https://www.google.com/design/spec/material-design/introduction.htm)|
+|[Material UI](http://www.material-ui.com/) 	                                  |UI components, adhering to [Google Material Design](https://www.google.com/design/spec/material-design/introduction.htm)|
 |[Radium](https://github.com/FormidableLabs/radium) and [Radium Grid](https://github.com/FormidableLabs/radium-grid)|Inline CSS and grid layout           |
-|[ESLint](https://github.com/eslint/eslint) 	                                |Validates JavaScript, adhering to [Airbnb's JavaScript style guide](https://github.com/airbnb/javascript) |
+|[ESLint](https://github.com/eslint/eslint) 	                                  |Validates JavaScript, adhering to [Airbnb's JavaScript style guide](https://github.com/airbnb/javascript) |
 |[Mocha](https://mochajs.org/) 	                                                |JavaScript test framework                                                |
 
 
