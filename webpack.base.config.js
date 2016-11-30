@@ -30,24 +30,24 @@ const webpackOptions = {
       {
         enforce: 'pre',
         test: /\.js?$/,
-        loader: 'eslint',
+        loader: 'eslint-loader',
         exclude: /node_modules/
       },
       {
         test: /\.js$/,
-        loader: 'babel',
+        loader: 'babel-loader',
         exclude: /node_modules/
       },
       {
         test: /\.scss$/,
         loader: ExtractTextPlugin.extract({
-          fallbackLoader: 'style',
-          loader: ['css', 'postcss', 'sass']
+          fallbackLoader: 'style-loader',
+          loader: ['css-loader', 'postcss-loader', 'sass-loader']
         })
       },
       {
         test: /\.woff(2)?$/,
-        loader: 'url',
+        loader: 'url-loader',
         query: {
           limit: '10000',
           mimetype: 'application/octet-stream',
@@ -56,13 +56,13 @@ const webpackOptions = {
       },
       {
         test: /\.json$/,
-        loader: 'json'
+        loader: 'json-loader'
       },
       {
         test: /\.(jpe?g|png|gif)$/i,
         loaders: [
-          'file?hash=sha512&digest=hex&name=img/[name].[hash].[ext]',
-          'image-webpack?bypassOnDebug&optimizationLevel=7&interlaced=false'
+          'file-loader?hash=sha512&digest=hex&name=img/[name].[hash].[ext]',
+          'image-webpack-loader?bypassOnDebug&optimizationLevel=7&interlaced=false'
         ]
       }
     ]

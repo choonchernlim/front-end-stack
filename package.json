@@ -13,13 +13,13 @@
   "scripts": {
     "test": "node ./scripts/test",
     "test:watch": "nodemon --exec 'npm test'",
-    "build": "webpack",
+    "build": "webpack --progress",
     "ci": "npm run ci:clean && npm run ci:test && npm run ci:coverage",
     "ci:clean": "node ./scripts/ci-clean",
     "ci:coverage": "node ./scripts/ci-coverage",
     "ci:test": "node ./scripts/ci-test",
     "reinstall": "npm cache clean && rimraf \"node_modules/!(rimraf|.bin)\" && npm install",
-    "start": "webpack-dev-server --config webpack.dev.config.js",
+    "start": "webpack-dev-server --config webpack.dev.config.js --progress",
     "stats": "webpack --profile --json > stats.json"
   },
   "dependencies": {
@@ -83,7 +83,7 @@
     "sinon": "1.17.6",
     "style-loader": "0.13.1",
     "url-loader": "0.5.7",
-    "webpack": "2.1.0-beta.25",
-    "webpack-dev-server": "2.1.0-beta.9"
+    "webpack": "2.1.0-beta.27",
+    "webpack-dev-server": "2.1.0-beta.12"
   }
 }
