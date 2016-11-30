@@ -29,7 +29,7 @@ describe('Chuck Norris => API', () => {
       nock(RANDOM_JOKE_SERVER).get(RANDOM_JOKE_URI).reply(400);
 
       return expect(getRandomJokeApi()).to.eventually.rejectedWith(Error,
-        'Error: Unable to get a random joke: Bad Request');
+        'Unable to get a random joke: Bad Request');
     });
   });
 });

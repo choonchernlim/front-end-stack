@@ -14,6 +14,15 @@ const contextRoot = process.env.CONTEXT_ROOT || packageJson.config.context_root;
 // Make sure there is a trailing slash
 const distUri = path.posix.join(contextRoot, packageJson.config.dist_uri, '/');
 
+// when running `npm run build`, display extra config info
+if (JSON.parse(process.env.npm_config_argv).original.join() === 'run,build') {
+  console.log('------------------------------');
+  console.log('App Path      :', baseConfig.webpackOptions.entry.app);
+  console.log('Total Vendors :', baseConfig.webpackOptions.entry.vendor.length);
+  console.log('Vendors       :', baseConfig.webpackOptions.entry.vendor.join());
+  console.log('------------------------------');
+}
+
 module.exports = Object.assign({}, baseConfig.webpackOptions, {
 
   output: {
@@ -37,7 +46,6 @@ module.exports = Object.assign({}, baseConfig.webpackOptions, {
 
     // Minify JS without source map and suppress any warnings.
     new webpack.optimize.UglifyJsPlugin({
-      sourceMap: false,
       compress: {
         warnings: false
       }
@@ -55,9 +63,10 @@ module.exports = Object.assign({}, baseConfig.webpackOptions, {
       }
     }),
 
+    // TODO As of webpack 2.1.0-beta.24, disable this to prevent "Template cannot be applied as TemplateArgument: HarmonyImportDependency". See https://github.com/webpack/webpack/issues/2644
     // Prevents the inclusion of duplicate code into bundle and instead applies a copy
     // of the function at runtime, which results smaller file size
-    new webpack.optimize.DedupePlugin(),
+    // new webpack.optimize.DedupePlugin(),
 
     // Generates `index.html` at the location specified by the user
     new HtmlWebpackPlugin(Object.assign({}, baseConfig.htmlWebpackPluginOptions, {

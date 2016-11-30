@@ -23,4 +23,6 @@ const eslint = `eslint ${srcDirPath} ${testDirPath} --color`;
 
 const mocha = `mocha ${testDirPath} ${mochaOpts} --colors`;
 
+process.env.NODE_ENV = 'test';
+
 script.run(`${eslint} && ${mocha}`);

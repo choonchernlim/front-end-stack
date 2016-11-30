@@ -10,6 +10,7 @@
 *.ear
 *.iml
 npm-debug.log
+stats.json
 target/
 .idea/
 node_modules/

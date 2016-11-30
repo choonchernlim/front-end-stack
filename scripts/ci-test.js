@@ -17,4 +17,6 @@ const mochaFilePath = path.join(reportDirPath, 'test-results.xml');
 const eslint = `eslint ${srcDirPath} ${testDirPath} --color`;
 const mocha = `mocha ${testDirPath} ${mochaOpts} --reporter mocha-junit-reporter --reporter-options mochaFile=${mochaFilePath}`;
 
+process.env.NODE_ENV = 'test';
+
 script.run(`${eslint} && ${mocha}`);

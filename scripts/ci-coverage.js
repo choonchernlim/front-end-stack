@@ -11,6 +11,8 @@ const srcDirPath = process.env.npm_package_config_src_dir_path;
 const reportDirPath = process.env.npm_package_config_report_dir_path;
 const testDirPath = process.env.npm_package_config_test_dir_path;
 
+process.env.NODE_ENV = 'test';
+
 // have to use `babel-node` and specify node module paths for `isparta` and `_mocha`
 // to get it working in Windows... this change has no impact on Mac.
 // See: https://github.com/douglasduteil/isparta/pull/77/files

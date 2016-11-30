@@ -1,5 +1,14 @@
 # Change Log
 
+## 0.7.0 - 2016-11-30
+
+* FEATURE - Webpack 2.x and tree shaking. Since Webpack 2.x supports `import` natively, modules are no longer converted to CommonJS modules by Babel.
+* FEATURE - `material-ui` 0.16.x.
+* FEATURE - Added `npm run stats` to create `stats.json` that can be loaded to http://webpack.github.io/analyse/
+* FEATURE - Enabled HTTPS on webpack-dev-server.
+* REFACTOR - Dropped `es6-promise` and `babel-plugin-transform-runtime`. Replaced with `babel-polyfill` to have more complete ES6 polyfills.
+* BUG - Configured `rimraf` in `npm run reinstall` not to delete `rimraf` and `.bin` within `node_modules` to prevent Windows from throwing an error. See https://github.com/isaacs/rimraf/issues/102
+
 ## 0.6.0 - 2016-09-20
 
 * FEATURE - Configured `react-addons-perf` module to work with `React Perf` extension in Chrome.
@@ -16,7 +25,7 @@
 
 * FEATURE - Enabled Redux Dev Tools.
 * FEATURE - `npm test ./test/abc` and `npm run test:watch ./test/abc` to run (and watch) only tests within `./test/abc`.
-* FEATURE - Configured `webpack-dev-server` to prevent "No 'Access-Control-Allow-Origin' header is present on the requested resource". 
+* FEATURE - Configured `webpack-dev-server` to prevent "No 'Access-Control-Allow-Origin' header is present on the requested resource".
 * FEATURE - Added `enzyme` and `es6-promise` dependencies.
 * REFACTOR - Ref Callback instead of Ref String. See `https://facebook.github.io/react/docs/more-about-refs.html`.
 * MAINTENANCE - Dependency updates.

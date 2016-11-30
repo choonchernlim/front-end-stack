@@ -15,8 +15,8 @@ module.exports = Object.assign({}, baseConfig.webpackOptions, {
   output: {
     path: distPath,
 
-    // webpack-dev-server hosts directly from base url instead of dist uri
-    publicPath: '/',
+    // configure base URI to match server side context root
+    publicPath: packageJson.config.context_root,
 
     // When using `chunkhash` on filenames, webpack-dev-server throws an error:-
     // "Cannot use [chunkhash] for chunk in 'js/[name].[chunkhash].js' (use [hash] instead)"
@@ -32,21 +32,27 @@ module.exports = Object.assign({}, baseConfig.webpackOptions, {
   devServer: {
     contentBase: distPath,
 
-    // redirects 404s to base url
+    // to ensure bookmarkable link works instead of getting a blank screen
     historyApiFallback: {
-      index: '/'
+      index: packageJson.config.context_root
     },
 
+    // use HTTPS to ensure client side can read server side generated cookie containing CSRF token
+    https: true,
+
     hot: true,
-    inline: true,
-    progress: true,
 
     // Display only errors to reduce the amount of output.
     stats: 'errors-only',
 
-    // Redirects `http://localhost:8080/api/*` to `https://localhost:8443/<context_root>/api/*`
     proxy: {
+      // Redirects `https://localhost:8080/api/*` to `https://localhost:8443/<context_root>/api/*`
       [path.posix.join(packageJson.config.context_root, '/api/*')]: {
+        target: 'https://localhost:8443',
+        secure: false
+      },
+      // Redirects `https://localhost:8080/saml/*` to `https://localhost:8443/<context_root>/saml/*`
+      [path.posix.join(packageJson.config.context_root, '/saml/*')]: {
         target: 'https://localhost:8443',
         secure: false
       }

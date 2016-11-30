@@ -9,11 +9,6 @@ const srcPath = path.join(__dirname, packageJson.config.src_dir_path);
 
 const appPath = path.join(srcPath, '/js/app/index.js');
 
-console.log('------------------------------');
-console.log('Vendors   :', vendors.join());
-console.log('App Path  :', appPath);
-console.log('------------------------------');
-
 // Base options for HtmlWebpackPlugin for generating `index.html`
 // This allows production bundle to have possibly different entry file path than webpack-dev-server
 const htmlWebpackPluginOptions = {
@@ -25,48 +20,69 @@ const htmlWebpackPluginOptions = {
 // Base options for WebPack
 const webpackOptions = {
   entry: {
+    polyfill: 'babel-polyfill',
     app: appPath,
     vendor: vendors
   },
 
   module: {
-    preLoaders: [
+    rules: [
       {
+        enforce: 'pre',
         test: /\.js?$/,
-        loader: 'eslint',
+        loader: 'eslint-loader',
         exclude: /node_modules/
-      }
-    ],
-
-    loaders: [
+      },
       {
         test: /\.js$/,
-        loader: 'babel',
+        loader: 'babel-loader',
         exclude: /node_modules/
       },
       {
         test: /\.scss$/,
-        loader: ExtractTextPlugin.extract('style', 'css!postcss!sass')
+        loader: ExtractTextPlugin.extract({
+          fallbackLoader: 'style-loader',
+          loader: ['css-loader', 'postcss-loader', 'sass-loader']
+        })
       },
       {
         test: /\.woff(2)?$/,
-        loader: 'url?limit=10000&minetype=application/octet-stream&name=font/[name].[hash].[ext]'
+        loader: 'url-loader',
+        query: {
+          limit: '10000',
+          mimetype: 'application/octet-stream',
+          name: 'font/[name].[hash].[ext]'
+        }
       },
       {
         test: /\.json$/,
-        loader: 'json'
+        loader: 'json-loader'
       },
       {
         test: /\.(jpe?g|png|gif)$/i,
         loaders: [
-          'file?hash=sha512&digest=hex&name=img/[name].[hash].[ext]',
-          'image-webpack?bypassOnDebug&optimizationLevel=7&interlaced=false'
+          'file-loader?hash=sha512&digest=hex&name=img/[name].[hash].[ext]',
+          'image-webpack-loader?bypassOnDebug&optimizationLevel=7&interlaced=false'
         ]
       }
     ]
   },
 
   plugins: [
+    new webpack.LoaderOptionsPlugin({
+      minimize: true,
+      debug: false,
+      options: {
+        // create vendor prefixes to maximize compatibility. Recommended by Google:
+        // https://developers.google.com/web/tools/setup/setup-buildtools#dont-trip-up-with-vendor-prefixes
+        postcss: [
+          autoprefixer({
+            browsers: ['last 2 versions']
+          })
+        ]
+      }
+    }),
+
     // Split vendors from app
     new webpack.optimize.CommonsChunkPlugin({ name: 'vendor' }),
 
@@ -75,17 +91,7 @@ const webpackOptions = {
     // bundle file (styles.css). If your total stylesheet volume is big, it will be faster
     // because the stylesheet bundle is loaded in parallel to the javascript bundle.
     new ExtractTextPlugin('css/app.[chunkhash].css')
-  ],
-
-  // create vendor prefixes to maximize compatibility. Recommended by Google:
-  // https://developers.google.com/web/tools/setup/setup-buildtools#dont-trip-up-with-vendor-prefixes
-  postcss() {
-    return [
-      autoprefixer({
-        browsers: ['last 2 versions']
-      })
-    ];
-  }
+  ]
 };
 
 module.exports = {
