@@ -48,8 +48,12 @@ Project template for building epic single-page app using modern front-end stack.
 
 * To start app development, run `npm start`.
     * This script will start webpack-dev-server.
-    * Open a browser and visit `http://localhost:8080`.
+    * Open a browser and visit `https://localhost:8080`.
     * When you modify the source code, the configured Hot Module Replacement will automatically refresh the browser content.
+    * Since HTTPS is used, Chrome will prompt warning regarding untrusted security certificate. To disable this check... 
+      * In Chrome, go to `chrome://flags/#allow-insecure-localhost`
+      * Click "Enable"
+      * Click "Relaunch Now"
 
 * To package for production, run `npm run build`.
     * This script will clean the distribution directory and create minified bundle files.

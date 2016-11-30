@@ -1,6 +1,6 @@
 import fetch from 'isomorphic-fetch';
 
-export const RANDOM_JOKE_SERVER = 'http://api.icndb.com';
+export const RANDOM_JOKE_SERVER = 'https://api.icndb.com';
 export const RANDOM_JOKE_URI = '/jokes/random';
 
 export function getRandomJokeApi() {
