@@ -180,7 +180,20 @@ Notes:-
 ├── webpack.config.js           -> Production webpack config
 └── webpack.dev.config.js       -> Development webpack config
 ```
+## Troubleshooting
 
+### Error: dyld: Library not loaded
+
+When running `npm start`, you get this error...
+
+```
+Module build failed: Error: dyld: Library not loaded: /usr/local/opt/libpng/lib/libpng16.16.dylib
+  Referenced from: /path/to/front-end-stack/node_modules/mozjpeg/vendor/cjpeg
+  Reason: image not found
+```
+
+To fix it, run `brew install libpng` ... [see here for more info](https://github.com/tcoopman/image-webpack-loader/issues/51)
+   
 ## Acknowledgement
 
 _"You want to be extra rigorous about making the best possible thing you can. Find everything that’s wrong with it and fix it. Seek negative feedback, particularly from friends." -- Elon Musk_
