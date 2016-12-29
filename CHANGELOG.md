@@ -1,5 +1,9 @@
 # Change Log
 
+## 0.7.1 - 2016-12-29
+
+* MAINTENANCE - Dependency updates, particularly react-redux 5.x and webpack 2.2.x.
+ 
 ## 0.7.0 - 2016-11-30
 
 * FEATURE - Webpack 2.x and tree shaking. Since Webpack 2.x supports `import` natively, modules are no longer converted to CommonJS modules by Babel.
