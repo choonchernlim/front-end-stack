@@ -27,6 +27,7 @@ Project template for building epic single-page app using modern front-end stack.
 |[Immutable](https://facebook.github.io/immutable-js/) 	                        |Creates immutable objects                                                |
 |[Material UI](http://www.material-ui.com/) 	                                  |UI components, adhering to [Google Material Design](https://www.google.com/design/spec/material-design/introduction.htm)|
 |[Radium](https://github.com/FormidableLabs/radium) and [Radium Grid](https://github.com/FormidableLabs/radium-grid)|Inline CSS and grid layout           |
+|[Flow](https://flowtype.org/) 	                                                |Static type checker for JavaScript                                       |
 |[ESLint](https://github.com/eslint/eslint) 	                                  |Validates JavaScript, adhering to [Airbnb's JavaScript style guide](https://github.com/airbnb/javascript) |
 |[Mocha](https://mochajs.org/) 	                                                |JavaScript test framework                                                |
 
@@ -78,6 +79,7 @@ These commands are cross-platform compatible.
 |`npm run reinstall`                      |Clear npm cache, remove `node_module` and install modules listed in `package.json`                    |
 |`npm start`                              |Start Node.js Express server with Hot Module Replacement                                              |
 |`npm run stats`                          |Create `stats.json` that be loaded to http://webpack.github.io/analyse/ to visualize build.           |
+|`npm run flow`                           |Run Flow type check.                                                                                  |
 
 ## Dependencies
 
@@ -110,6 +112,7 @@ These commands are cross-platform compatible.
 |babel-eslint                             |Babel - For linting ES7 syntax... ex: `static` properties                           |
 |babel-loader                             |Babel - Loader for transpiling                                                      |
 |babel-plugin-transform-decorators-legacy |Babel - To fix "Decorators are not supported yet in 6.x pending proposal update."   |
+|babel-plugin-transform-flow-strip-types  |Babel - Strip all flow type annotations and declarations from output code.          |
 |babel-polyfill                           |Babel - Emulate a full ES2015 environment.                                          |
 |babel-preset-es2015                      |Babel - ES6 preset                                                                  |
 |babel-preset-react                       |Babel - React preset                                                                |
@@ -127,6 +130,7 @@ These commands are cross-platform compatible.
 |eslint-plugin-react                      |ESLint - React specific linting rules                                               |
 |extract-text-webpack-plugin              |Webpack - Separate out inlined CSS from JS files                                    |
 |file-loader                              |Webpack - File loader                                                               |
+|flow-bin                                 |Flow - Static type checker for JavaScript                                           | 
 |html-webpack-plugin                      |Webpack - Generates `index.html` using hash filenames for cache busting             |
 |image-webpack-loader                     |Webpack - Image loader and handling compression                                     |
 |isparta                                  |Code coverage for ES6 and for creating result file for Jenkins                      |
@@ -169,6 +173,7 @@ Notes:-
 ├── .babelrc                    -> Babel configuration
 ├── .editorconfig               -> Coding style for different editors
 ├── .eslintrc                   -> ESLint configuration
+├── .flowconfig                 -> Flow configuration
 ├── .gitattributes              -> Custom Git config
 ├── .gitignore                  -> Git ignore list
 ├── CHANGELOG.md                -> Change logs

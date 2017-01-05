@@ -1,0 +1,10 @@
+
+[ignore]
+<PROJECT_ROOT>/node_modules/builder-radium-component
+<PROJECT_ROOT>/node_modules/radium
+
+[options]
+module.file_ext=.js
+module.file_ext=.jsx
+module.file_ext=.json
+module.file_ext=.scss

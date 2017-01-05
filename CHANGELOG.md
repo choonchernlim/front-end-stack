@@ -1,5 +1,14 @@
 # Change Log
 
+## X.X.X
+
+* http://www.robinwieruch.de/the-soundcloud-client-in-react-redux-flow/
+* TODO: Consider calling `npm run flow` before `npm test`, `npm run build` and `npm run ci`.
+
+* FEATURE - Enabled Flow type check.
+* MAINTENANCE - Suppressed "WARNING in asset size limit" warning on `npm run build`.
+* MAINTENANCE - Removed commented DedupePlugin config because it will be removed in Webpack 2. See https://github.com/webpack/webpack/issues/2644
+
 ## 0.7.1 - 2016-12-29
 
 * MAINTENANCE - Dependency updates, particularly react-redux 5.x and webpack 2.2.x.
