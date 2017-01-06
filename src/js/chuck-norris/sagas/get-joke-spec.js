@@ -1,7 +1,7 @@
 import { expect } from 'chai';
 import { takeLatest } from 'redux-saga';
 import { put, call } from 'redux-saga/effects';
-import { getRandomJokeApi } from '../api';
+import { getRandomJokeApi } from '../apis';
 import getJokeAsyncSaga, { getJokeAsync } from './get-joke';
 import { ACTION_TYPES, getJokeSucceeded, getJokeFailed } from '../actions';
 

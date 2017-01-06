@@ -1,6 +1,6 @@
 import { takeLatest } from 'redux-saga';
 import { call, put } from 'redux-saga/effects';
-import { getRandomJokeApi } from '../api';
+import { getRandomJokeApi } from '../apis';
 import { ACTION_TYPES, getJokeSucceeded, getJokeFailed } from '../actions';
 
 export function* getJokeAsync() {

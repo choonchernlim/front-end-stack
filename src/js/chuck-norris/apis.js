@@ -1,3 +1,4 @@
+// @flow
 import fetch from 'isomorphic-fetch';
 
 export const RANDOM_JOKE_SERVER = 'https://api.icndb.com';

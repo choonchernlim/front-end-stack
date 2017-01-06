@@ -5,7 +5,7 @@ import {
   RANDOM_JOKE_SERVER,
   RANDOM_JOKE_URI,
   getRandomJokeApi
-} from '../api';
+} from './apis';
 
 chai.use(chaiAsPromised);
 
