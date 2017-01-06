@@ -1,6 +1,5 @@
 import { expect } from 'chai';
-import { takeLatest } from 'redux-saga';
-import { put, call } from 'redux-saga/effects';
+import { takeEvery, put, call } from 'redux-saga/effects';
 import { getRandomJokeApi } from '../apis';
 import getJokeAsyncSaga, { getJokeAsync } from './get-joke';
 import { ACTION_TYPES, getJokeSucceeded, getJokeFailed } from '../actions';
@@ -10,7 +9,7 @@ describe('Chuck Norris => Saga', () => {
     it('given GET_JOKE, should trigger getJokeAsync', () => {
       const gen = getJokeAsyncSaga();
 
-      expect(gen.next().value).to.deep.equal(call(takeLatest, ACTION_TYPES.GET_JOKE, getJokeAsync));
+      expect(gen.next().value).to.deep.equal(takeEvery(ACTION_TYPES.GET_JOKE, getJokeAsync));
       expect(gen.next()).to.deep.equal({ done: true, value: undefined });
     });
   });

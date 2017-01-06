@@ -4,7 +4,7 @@ import fetch from 'isomorphic-fetch';
 export const RANDOM_JOKE_SERVER = 'https://api.icndb.com';
 export const RANDOM_JOKE_URI = '/jokes/random';
 
-export function getRandomJokeApi() {
+export function getRandomJokeApi(): Promise<string> {
   return fetch(RANDOM_JOKE_SERVER + RANDOM_JOKE_URI)
     .then((response) => {
       if (response.status >= 400) {

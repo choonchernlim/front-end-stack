@@ -1,3 +1,4 @@
+// @flow
 import { Record } from 'immutable';
 
 const JokeRecord = Record({
