@@ -1,4 +1,3 @@
-
 [ignore]
 <PROJECT_ROOT>/node_modules/builder-radium-component
 <PROJECT_ROOT>/node_modules/radium
@@ -8,3 +7,6 @@ module.file_ext=.js
 module.file_ext=.jsx
 module.file_ext=.json
 module.file_ext=.scss
+
+
+module.name_mapper='\(radium-grid\)' -> '<PROJECT_ROOT>/src/flow/general-stub.js.flow'

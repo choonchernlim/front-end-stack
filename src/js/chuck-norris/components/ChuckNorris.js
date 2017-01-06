@@ -1,3 +1,4 @@
+// @flow
 import React from 'react';
 import { Grid, Cell } from 'radium-grid';
 import GetJokeContainer from './GetJoke';

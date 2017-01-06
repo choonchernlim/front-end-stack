@@ -1,13 +1,22 @@
-import React, { PropTypes } from 'react';
+// @flow
+import React from 'react';
 import { connect } from 'react-redux';
 import RaisedButton from 'material-ui/RaisedButton';
 import CircularProgress from 'material-ui/CircularProgress';
 import { getJoke } from '../actions';
 
+// TODO LIMC should Flow replace PropTypes??
+type Props = {
+  joke?: string,
+  error?: string,
+  completed: boolean,
+  onClick: () => void
+};
+
 // 1. When "Get Joke" button is pressed, show spinner.
 // 2. When result is shown, remove spinner.
 // 3. If API call fails, display error message. Otherwise, display joke.
-const GetJoke = ({ joke, error, completed, onClick }) => {
+const GetJoke = ({ joke, error, completed, onClick }: Props) => {
   const spinner = !completed ? <div><CircularProgress /></div> : undefined;
   const errorMessage = error ? <div>An error has occurred: {error}</div> : undefined;
 
@@ -24,12 +33,12 @@ const GetJoke = ({ joke, error, completed, onClick }) => {
   );
 };
 
-GetJoke.propTypes = {
-  joke: PropTypes.string,
-  error: PropTypes.string,
-  completed: PropTypes.bool.isRequired,
-  onClick: PropTypes.func.isRequired
-};
+// GetJoke.propTypes = {
+//   joke: PropTypes.string,
+//   error: PropTypes.string,
+//   completed: PropTypes.bool.isRequired,
+//   onClick: PropTypes.func.isRequired
+// };
 
 const mapStateToProps = state => ({
   joke: state.chuckNorris.get('joke'),
