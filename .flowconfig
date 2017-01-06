@@ -3,6 +3,9 @@
 <PROJECT_ROOT>/node_modules/builder-radium-component
 <PROJECT_ROOT>/node_modules/radium
 
+[libs]
+src/js/chuck-norris/flow-types
+
 [options]
 module.file_ext=.js
 module.file_ext=.jsx

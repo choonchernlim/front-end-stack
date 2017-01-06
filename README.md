@@ -125,6 +125,7 @@ These commands are cross-platform compatible.
 |eslint                                   |ESLint - For enforcing coding style                                                 |
 |eslint-config-airbnb                     |ESLint - Using Airbnb's coding style                                                |
 |eslint-loader                            |Webpack - ESLint loader                                                             |
+|eslint-plugin-flowtype                   |ESLint - Flow type linting                                                          |
 |eslint-plugin-import                     |ESLint - Linting of ES2015+ (ES6+) import/export syntax                             |
 |eslint-plugin-jsx-a11y                   |ESLint - Static AST checker for accessibility rules on JSX elements                 |
 |eslint-plugin-react                      |ESLint - React specific linting rules                                               |
