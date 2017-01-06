@@ -3,14 +3,14 @@ import { takeLatest } from 'redux-saga';
 import { put, call } from 'redux-saga/effects';
 import { getRandomJokeApi } from '../api';
 import getJokeAsyncSaga, { getJokeAsync } from './get-joke';
-import { GET_JOKE, getJokeSucceeded, getJokeFailed } from '../actions';
+import { ACTION_TYPES, getJokeSucceeded, getJokeFailed } from '../actions';
 
 describe('Chuck Norris => Saga', () => {
   describe('getJokeAsyncSaga', () => {
     it('given GET_JOKE, should trigger getJokeAsync', () => {
       const gen = getJokeAsyncSaga();
 
-      expect(gen.next().value).to.deep.equal(call(takeLatest, GET_JOKE, getJokeAsync));
+      expect(gen.next().value).to.deep.equal(call(takeLatest, ACTION_TYPES.GET_JOKE, getJokeAsync));
       expect(gen.next()).to.deep.equal({ done: true, value: undefined });
     });
   });

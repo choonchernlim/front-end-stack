@@ -91,7 +91,15 @@ const webpackOptions = {
     // bundle file (styles.css). If your total stylesheet volume is big, it will be faster
     // because the stylesheet bundle is loaded in parallel to the javascript bundle.
     new ExtractTextPlugin('css/app.[chunkhash].css')
-  ]
+  ],
+
+  // To suppress this warning when creating the vendor bundle:-
+  //
+  // WARNING in asset size limit: The following asset(s) exceed the recommended size limit (250 kB).
+  // This can impact web performance.
+  performance: {
+    hints: false
+  }
 };
 
 module.exports = {

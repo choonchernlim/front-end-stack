@@ -1,7 +1,7 @@
 import { takeLatest } from 'redux-saga';
 import { call, put } from 'redux-saga/effects';
 import { getRandomJokeApi } from '../api';
-import { GET_JOKE, getJokeSucceeded, getJokeFailed } from '../actions';
+import { ACTION_TYPES, getJokeSucceeded, getJokeFailed } from '../actions';
 
 export function* getJokeAsync() {
   try {
@@ -21,5 +21,5 @@ export function* getJokeAsync() {
 //    using `yield call(takeLatest, GET_JOKE, getJokeAsync);` to make it more testable.
 //    See: https://github.com/yelouafi/redux-saga/issues/318
 export default function* () {
-  yield call(takeLatest, GET_JOKE, getJokeAsync);
+  yield call(takeLatest, ACTION_TYPES.GET_JOKE, getJokeAsync);
 }

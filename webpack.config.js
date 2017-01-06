@@ -67,13 +67,5 @@ module.exports = Object.assign({}, baseConfig.webpackOptions, {
     new HtmlWebpackPlugin(Object.assign({}, baseConfig.htmlWebpackPluginOptions, {
       filename: path.join(__dirname, packageJson.config.entry_file_path)
     }))
-  ),
-
-  // To suppress this warning when creating the vendor bundle:-
-  //
-  // WARNING in asset size limit: The following asset(s) exceed the recommended size limit (250 kB).
-  // This can impact web performance.
-  performance: {
-    hints: false
-  }
+  )
 });

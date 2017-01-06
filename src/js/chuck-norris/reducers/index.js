@@ -1,27 +1,21 @@
-import { Record } from 'immutable';
-import { GET_JOKE, GET_JOKE_SUCCEEDED, GET_JOKE_FAILED } from '../actions';
-
-const JokeRecord = Record({
-  completed: true,
-  joke: undefined,
-  error: undefined
-});
+import JokeRecord from '../models/joke-record';
+import { ACTION_TYPES } from '../actions';
 
 export default (state = new JokeRecord(), action) => {
   switch (action.type) {
-    case GET_JOKE:
+    case ACTION_TYPES.GET_JOKE:
       return state.merge({
         completed: false,
         joke: undefined,
         error: action.error
       });
-    case GET_JOKE_SUCCEEDED:
+    case ACTION_TYPES.GET_JOKE_SUCCEEDED:
       return state.merge({
         completed: true,
         joke: action.joke,
         error: ''
       });
-    case GET_JOKE_FAILED:
+    case ACTION_TYPES.GET_JOKE_FAILED:
       return state.merge({
         completed: true,
         joke: undefined,
