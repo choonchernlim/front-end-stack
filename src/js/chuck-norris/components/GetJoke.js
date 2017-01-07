@@ -1,5 +1,5 @@
 // @flow
-import React from 'react';
+import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
 import RaisedButton from 'material-ui/RaisedButton';
 import CircularProgress from 'material-ui/CircularProgress';
@@ -7,8 +7,8 @@ import { getJoke } from '../actions';
 
 // TODO LIMC should Flow replace PropTypes??
 type Props = {
-  joke?: string,
-  error?: string,
+  joke: string,
+  error: string,
   completed: boolean,
   onClick: () => void
 };
