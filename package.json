@@ -11,17 +11,16 @@
     "report_dir_path": "reports/"
   },
   "scripts": {
-    "test": "node ./scripts/test",
+    "test": "flow && node ./scripts/test",
     "test:watch": "nodemon --exec 'npm test'",
-    "build": "webpack --progress",
-    "ci": "npm run ci:clean && npm run ci:test && npm run ci:coverage",
+    "build": "npm test && webpack --progress",
+    "ci": "npm run ci:clean && flow && npm run ci:test && npm run ci:coverage",
     "ci:clean": "node ./scripts/ci-clean",
     "ci:coverage": "node ./scripts/ci-coverage",
     "ci:test": "node ./scripts/ci-test",
     "reinstall": "npm cache clean && rimraf \"node_modules/!(rimraf|.bin)\" && npm install",
     "start": "webpack-dev-server --config webpack.dev.config.js --progress",
-    "stats": "webpack --profile --json > stats.json",
-    "flow": "flow; test $? -eq 0 -o $? -eq 2"
+    "stats": "webpack --profile --json > stats.json"
   },
   "dependencies": {
     "history": "3.2.0",
