@@ -3,12 +3,14 @@
 ## X.X.X
 
 * http://www.robinwieruch.de/the-soundcloud-client-in-react-redux-flow/
-* TODO: Consider calling `npm run flow` before `npm test`, `npm run build` and `npm run ci`.
-* TODO: Before `npm run build`, invoke `npm test` first.
+* TODO: Update README on npm scripts.
+
 
 * FEATURE - Enabled Flow type check.
 * FEATURE - Configured Flow type linting.
-
+* REFACTOR - `npm test` - run Flow first before running tests.
+* REFACTOR - `npm run ci` - run Flow first before running tests.
+* REFACTOR - `npm run build` - run `npm test` before building the bundles.
 * REFACTOR - Simplify module structure to prevent too many "single file in a directory" problems.
 
 * MAINTENANCE - Suppressed "WARNING in asset size limit" warning on `npm run build`.
