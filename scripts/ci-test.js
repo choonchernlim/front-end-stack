@@ -14,9 +14,10 @@ const testDirPath = process.env.npm_package_config_test_dir_path;
 const reportDirPath = process.env.npm_package_config_report_dir_path;
 const mochaFilePath = path.join(reportDirPath, 'test-results.xml');
 
+const flow = 'flow --color always';
 const eslint = `eslint ${srcDirPath} ${testDirPath} --color`;
 const mocha = `mocha ${testDirPath} ${mochaOpts} --reporter mocha-junit-reporter --reporter-options mochaFile=${mochaFilePath}`;
 
 process.env.NODE_ENV = 'test';
 
-script.run(`${eslint} && ${mocha}`);
+script.run(`${flow} && ${eslint} && ${mocha}`);

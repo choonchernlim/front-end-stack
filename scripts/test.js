@@ -19,10 +19,10 @@ const testDirPath = args.length ? args[0] : process.env.npm_package_config_test_
 
 const srcDirPath = process.env.npm_package_config_src_dir_path;
 
+const flow = 'flow --color always';
 const eslint = `eslint ${srcDirPath} ${testDirPath} --color`;
-
 const mocha = `mocha ${testDirPath} ${mochaOpts} --colors`;
 
 process.env.NODE_ENV = 'test';
 
-script.run(`${eslint} && ${mocha}`);
+script.run(`${flow} && ${eslint} && ${mocha}`);
