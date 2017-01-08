@@ -70,16 +70,15 @@ These commands are cross-platform compatible.
 
 |Command                                  |Description                                                                                           |
 |-----------------------------------------|------------------------------------------------------------------------------------------------------|
-|`npm test`                               |Lint src/test files and run entire tests.                                                             |
-|`npm test [./path/to/test/module]`       |Lint src/test files and run only tests within `[./path/to/test/module]`                               |
-|`npm test:watch`                         |Watch for changes in test files and rerun `npm test`                                                  |
-|`npm test:watch [./path/to/test/module]` |Watch for changes in test files and rerun `npm test [./path/to/test/module]`                          |
+|`npm test`                               |Static type check, lint src/test files and run entire tests.                                          |
+|`npm test [./path/to/test/module]`       |Static type check, lint src/test files and run only tests within `[./path/to/test/module]`            |
+|`npm test:watch`                         |Watch for changes in all test files and rerun `npm test`                                              |
+|`npm test:watch [./path/to/test/module]` |Watch for changes in selected test files and rerun `npm test [./path/to/test/module]`                 |
 |`npm run build`                          |Build production bundle (compressed cache busting asset files)                                        |
 |`npm run ci`                             |Remove report dir, run code coverage, lint src/test files, run tests and generate result files for CI |
 |`npm run reinstall`                      |Clear npm cache, remove `node_module` and install modules listed in `package.json`                    |
 |`npm start`                              |Start Node.js Express server with Hot Module Replacement                                              |
 |`npm run stats`                          |Create `stats.json` that be loaded to http://webpack.github.io/analyse/ to visualize build.           |
-|`npm run flow`                           |Run Flow type check.                                                                                  |
 
 ## Dependencies
 
