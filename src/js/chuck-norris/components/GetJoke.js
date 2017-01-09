@@ -12,14 +12,19 @@ type Props = {
   onClick: () => void
 };
 
-const GetJoke = ({ joke = '', error, completed, onClick }: Props): React.Element<*> => (
+const GetJoke = ({ joke, error, completed, onClick }: Props): React.Element<*> => (
   <div>
     <RaisedButton primary label="Get Joke" onClick={onClick} />
     {!completed ? <div><br /><CircularProgress /></div> : null}
-    <h2>{joke}</h2>
+    {joke ? <h2>{joke}</h2> : null}
     {error ? <div>An error has occurred: {error}</div> : null}
   </div>
 );
+
+GetJoke.defaultProps = {
+  joke: undefined,
+  error: false
+};
 
 const mapStateToProps = state => ({
   joke: state.chuckNorris.get('joke'),
