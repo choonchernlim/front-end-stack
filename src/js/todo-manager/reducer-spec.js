@@ -1,8 +1,9 @@
 import { expect } from 'chai';
-import { fromJS } from 'immutable';
+import { List } from 'immutable';
 import reducer from './reducer';
 import TodoManagerRecord from './models/todo-manager-record';
-import { ACTION_TYPES } from './actions';
+import TodoRecord from './models/todo-record';
+import { addTodo, toggleTodo, setVisibilityFilter } from './actions';
 
 describe('Todo Manager', () => {
   describe('Reducer', () => {
@@ -16,16 +17,12 @@ describe('Todo Manager', () => {
       it('when adding todo, should return new todo', () => {
         const initialState = new TodoManagerRecord();
 
-        const actualState = reducer(initialState,
-          { type: ACTION_TYPES.ADD_TODO, id: 1, text: 'item 1' });
+        const action = addTodo('item 1');
+        const actualState = reducer(initialState, action);
 
         const expectedState = new TodoManagerRecord({
-          todos: fromJS([
-            {
-              id: 1,
-              text: 'item 1',
-              completed: false
-            }
+          todos: List([
+            new TodoRecord({ id: action.id, text: 'item 1', completed: false })
           ])
         });
 
@@ -36,34 +33,18 @@ describe('Todo Manager', () => {
     describe('TOGGLE_TODO', () => {
       it('when toggling incomplete todo, should return completed flag', () => {
         const initialState = new TodoManagerRecord({
-          todos: fromJS([
-            {
-              id: 1,
-              text: 'item 1',
-              completed: false
-            },
-            {
-              id: 2,
-              text: 'item 2',
-              completed: false
-            }
+          todos: List([
+            new TodoRecord({ id: 1, text: 'item 1', completed: false }),
+            new TodoRecord({ id: 2, text: 'item 2', completed: false })
           ])
         });
 
-        const actualState = reducer(initialState, { type: ACTION_TYPES.TOGGLE_TODO, id: 1 });
+        const actualState = reducer(initialState, toggleTodo(1));
 
         const expectedState = new TodoManagerRecord({
-          todos: fromJS([
-            {
-              id: 1,
-              text: 'item 1',
-              completed: true
-            },
-            {
-              id: 2,
-              text: 'item 2',
-              completed: false
-            }
+          todos: List([
+            new TodoRecord({ id: 1, text: 'item 1', completed: true }),
+            new TodoRecord({ id: 2, text: 'item 2', completed: false })
           ])
         });
 
@@ -75,8 +56,7 @@ describe('Todo Manager', () => {
       it('given a filter, should return action', () => {
         const initialState = new TodoManagerRecord();
 
-        const actualState = reducer(initialState,
-          { type: ACTION_TYPES.SET_VISIBILITY_FILTER, filter: 'ALL' });
+        const actualState = reducer(initialState, setVisibilityFilter('ALL'));
 
         const expectedState = new TodoManagerRecord({ visibilityFilter: 'ALL' });
 

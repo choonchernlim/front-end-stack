@@ -15,5 +15,3 @@ export type ToggleTodoAction = {
   type: string,
   id: number
 };
-
-export type Action = AddTodoAction | SetVisibilityFilterAction | ToggleTodoAction;

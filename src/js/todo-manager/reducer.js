@@ -1,44 +1,39 @@
-// TODO LIMC need to figure out flow
+// @flow
+import createReducer from '../common/utils/create-reducer';
 import TodoRecord from './models/todo-record';
 import TodoManagerRecord from './models/todo-manager-record';
 import { ACTION_TYPES } from './actions';
-import type { Action } from './types';
+import type { SetVisibilityFilterAction, ToggleTodoAction, AddTodoAction } from './types';
 
-const todo = (state?: TodoRecord, action: Action) => {
-  switch (action.type) {
-    case ACTION_TYPES.ADD_TODO:
-      return new TodoRecord({
-        id: action.id,
-        text: action.text,
-        completed: false
-      });
+const initialState: TodoManagerRecord = new TodoManagerRecord();
 
-    case ACTION_TYPES.TOGGLE_TODO:
-      if (state.get('id') !== action.id) {
-        return state;
-      }
+const addTodo = (state: TodoManagerRecord, action: AddTodoAction): TodoManagerRecord => (
+  state.set('todos', state.get('todos').push(new TodoRecord({
+    id: action.id,
+    text: action.text,
+    completed: false
+  })))
+);
 
-      return state.set('completed', !state.get('completed'));
+const toggleTodo = (state: TodoManagerRecord, action: ToggleTodoAction): TodoManagerRecord => (
+  state.set('todos', state.get('todos').map((todo) => {
+    if (todo.get('id') !== action.id) {
+      return todo;
+    }
 
-    default:
-      return state;
-  }
-};
+    return todo.set('completed', !todo.get('completed'));
+  }))
+);
 
-const todoManager = (state: TodoManagerRecord = new TodoManagerRecord(), action: Action) => {
-  switch (action.type) {
-    case ACTION_TYPES.ADD_TODO:
-      return state.set('todos', state.get('todos').push(todo(undefined, action)));
+const setVisibilityFilter = (
+  state: TodoManagerRecord,
+  action: SetVisibilityFilterAction
+): TodoManagerRecord => (
+  state.set('visibilityFilter', action.filter)
+);
 
-    case ACTION_TYPES.TOGGLE_TODO:
-      return state.set('todos', state.get('todos').map(t => todo(t, action)));
-
-    case ACTION_TYPES.SET_VISIBILITY_FILTER:
-      return state.set('visibilityFilter', action.filter);
-
-    default:
-      return state;
-  }
-};
-
-export default todoManager;
+export default createReducer(initialState, {
+  [ACTION_TYPES.ADD_TODO]: addTodo,
+  [ACTION_TYPES.TOGGLE_TODO]: toggleTodo,
+  [ACTION_TYPES.SET_VISIBILITY_FILTER]: setVisibilityFilter
+});
