@@ -1,6 +1,7 @@
 import { expect } from 'chai';
 import { fromJS } from 'immutable';
-import reducer, { TodoManagerRecord } from './';
+import reducer from './';
+import TodoManagerRecord from '../models/todo-manager-record';
 import { ADD_TODO, TOGGLE_TODO, SET_VISIBILITY_FILTER } from '../actions';
 
 describe('Todo Manager', () => {

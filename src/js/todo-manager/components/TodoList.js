@@ -2,25 +2,8 @@ import React, { PropTypes } from 'react';
 import { List } from 'immutable';
 import { connect } from 'react-redux';
 import { toggleTodo } from '../actions';
-import createGetVisibleTodosSelector from '../selectors';
-
-export const Todo = ({ onClick, completed, text }) => (
-  <li>
-    <a
-      href="#toggle"
-      onClick={onClick}
-      style={{ color: 'inherit', textDecoration: completed ? 'line-through' : 'none' }}
-    >
-      {text}
-    </a>
-  </li>
-);
-
-Todo.propTypes = {
-  onClick: PropTypes.func.isRequired,
-  completed: PropTypes.bool.isRequired,
-  text: PropTypes.string.isRequired
-};
+import makeGetVisibleTodos from '../selectors';
+import Todo from './Todo';
 
 export const TodoList = ({ todos, onToggleTodo }) => (
   <ul>
@@ -41,7 +24,7 @@ TodoList.propTypes = {
 };
 
 const makeMapStateToProps = () => {
-  const getVisibleTodos = createGetVisibleTodosSelector();
+  const getVisibleTodos = makeGetVisibleTodos();
   return state => ({
     todos: getVisibleTodos(state)
   });

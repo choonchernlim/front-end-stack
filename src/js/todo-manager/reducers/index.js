@@ -1,16 +1,6 @@
-import { Record, List } from 'immutable';
 import { ADD_TODO, TOGGLE_TODO, SET_VISIBILITY_FILTER } from '../actions';
-
-const TodoRecord = Record({
-  id: undefined,
-  text: undefined,
-  completed: undefined
-});
-
-export const TodoManagerRecord = Record({
-  todos: new List(),
-  visibilityFilter: 'SHOW_ALL'
-});
+import TodoRecord from '../models/todo-record';
+import TodoManagerRecord from '../models/todo-manager-record';
 
 const todo = (state, action) => {
   switch (action.type) {
