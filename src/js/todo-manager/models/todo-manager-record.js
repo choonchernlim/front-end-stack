@@ -1,7 +1,7 @@
 import { Record, List } from 'immutable';
 
 const TodoManagerRecord = Record({
-  todos: new List(),
+  todos: List(),
   visibilityFilter: 'SHOW_ALL'
 });
 
