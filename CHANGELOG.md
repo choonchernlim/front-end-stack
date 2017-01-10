@@ -4,6 +4,7 @@
 
 * http://www.robinwieruch.de/the-soundcloud-client-in-react-redux-flow/
 * https://robwise.github.io/blog/using-flow-annotations-in-your-redux-reducers
+* https://github.com/facebook/flow/issues/2377
 * TODO: Update README on npm scripts.
 
 
