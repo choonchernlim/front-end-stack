@@ -9,10 +9,10 @@ type Props = {
   joke?: string,
   error?: string,
   completed: boolean,
-  onClick: () => void
+  onClick: Function
 };
 
-const GetJoke = ({ joke, error, completed, onClick }: Props): React.Element<*> => (
+const GetJoke = ({ joke, error, completed, onClick }: Props) => (
   <div>
     <RaisedButton primary label="Get Joke" onClick={onClick} />
     {!completed ? <div><br /><CircularProgress /></div> : null}

@@ -1,11 +1,18 @@
-import React, { PropTypes } from 'react';
+// @flow
+import React from 'react';
 import { List } from 'immutable';
 import { connect } from 'react-redux';
 import { toggleTodo } from '../actions';
 import makeGetVisibleTodos from '../selectors';
 import Todo from './Todo';
+import TodoRecord from '../models/todo-record';
 
-export const TodoList = ({ todos, onToggleTodo }) => (
+type Props = {
+  todos: List<TodoRecord>,
+  onToggleTodo: Function
+};
+
+export const TodoList = ({ todos, onToggleTodo }: Props) => (
   <ul>
     {todos.map(todo =>
       <Todo
@@ -18,13 +25,8 @@ export const TodoList = ({ todos, onToggleTodo }) => (
   </ul>
 );
 
-TodoList.propTypes = {
-  todos: PropTypes.instanceOf(List).isRequired,
-  onToggleTodo: PropTypes.func.isRequired
-};
-
 const makeMapStateToProps = () => {
-  const getVisibleTodos = makeGetVisibleTodos();
+  const getVisibleTodos: Function = makeGetVisibleTodos();
   return state => ({
     todos: getVisibleTodos(state)
   });

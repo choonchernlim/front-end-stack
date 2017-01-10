@@ -1,8 +1,8 @@
 import { expect } from 'chai';
 import { fromJS } from 'immutable';
-import reducer from './';
-import TodoManagerRecord from '../models/todo-manager-record';
-import { ADD_TODO, TOGGLE_TODO, SET_VISIBILITY_FILTER } from '../actions';
+import reducer from './reducer';
+import TodoManagerRecord from './models/todo-manager-record';
+import { ACTION_TYPES } from './actions';
 
 describe('Todo Manager', () => {
   describe('Reducer', () => {
@@ -16,7 +16,8 @@ describe('Todo Manager', () => {
       it('when adding todo, should return new todo', () => {
         const initialState = new TodoManagerRecord();
 
-        const actualState = reducer(initialState, { type: ADD_TODO, id: 1, text: 'item 1' });
+        const actualState = reducer(initialState,
+          { type: ACTION_TYPES.ADD_TODO, id: 1, text: 'item 1' });
 
         const expectedState = new TodoManagerRecord({
           todos: fromJS([
@@ -49,7 +50,7 @@ describe('Todo Manager', () => {
           ])
         });
 
-        const actualState = reducer(initialState, { type: TOGGLE_TODO, id: 1 });
+        const actualState = reducer(initialState, { type: ACTION_TYPES.TOGGLE_TODO, id: 1 });
 
         const expectedState = new TodoManagerRecord({
           todos: fromJS([
@@ -74,7 +75,8 @@ describe('Todo Manager', () => {
       it('given a filter, should return action', () => {
         const initialState = new TodoManagerRecord();
 
-        const actualState = reducer(initialState, { type: SET_VISIBILITY_FILTER, filter: 'ALL' });
+        const actualState = reducer(initialState,
+          { type: ACTION_TYPES.SET_VISIBILITY_FILTER, filter: 'ALL' });
 
         const expectedState = new TodoManagerRecord({ visibilityFilter: 'ALL' });
 
