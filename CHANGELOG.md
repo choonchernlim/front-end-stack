@@ -8,9 +8,6 @@
 * TODO: Update README on npm scripts.
 
 * TODO: Explore replacing iSparta with nyc and babel-plugin-istanbul.
-* TODO: Explore dropping babel-node and use Node 6+, which has full support of ES6 syntax to speed up build process.
-* TODO: mochaOpts under `scripts/script.js` should be relative, not hardcoded to "--require ./src/js/__test__"
-
 
 * FEATURE - Enabled Flow type check.
 * FEATURE - Configured Flow type linting.
@@ -18,6 +15,7 @@
 * REFACTOR - `npm run ci` - run Flow first before running tests.
 * REFACTOR - `npm run build` - run `npm test` before building the bundles.
 * REFACTOR - Simplify module structure to prevent too many "single file in a directory" problems.
+* BUG: `scripts/script.js` - "--require ./src/js/__test__" should use user configurable path. 
 
 * MAINTENANCE - Suppressed "WARNING in asset size limit" warning on `npm run build`.
 * MAINTENANCE - Removed commented DedupePlugin config because it will be removed in Webpack 2. See https://github.com/webpack/webpack/issues/2644
