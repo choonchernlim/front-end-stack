@@ -1,6 +1,4 @@
 [ignore]
-<PROJECT_ROOT>/.*spec\.js
-<PROJECT_ROOT>/.*/__test__/.*
 <PROJECT_ROOT>/node_modules/builder-radium-component
 <PROJECT_ROOT>/node_modules/radium
 

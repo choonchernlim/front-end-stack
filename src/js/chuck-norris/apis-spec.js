@@ -1,3 +1,5 @@
+// @flow
+import { describe, it, beforeEach } from 'mocha';
 import chai from 'chai';
 import chaiAsPromised from 'chai-as-promised';
 import nock from 'nock';
@@ -10,6 +12,8 @@ const expect = chai.expect;
 describe('Chuck Norris', () => {
   describe('API', () => {
     describe('getRandomJokeApi', () => {
+      beforeEach(() => nock.cleanAll());
+
       it('given valid call, should return value', () => {
         nock(RANDOM_JOKE_SERVER).get(RANDOM_JOKE_URI).reply(200, {
           value: {

@@ -1,3 +1,5 @@
+// @flow
+import { describe, it } from 'mocha';
 import { expect } from 'chai';
 import { ACTION_TYPES, addTodo, setVisibilityFilter, toggleTodo } from './actions';
 

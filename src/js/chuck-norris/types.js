@@ -1,5 +1,4 @@
 // @flow
-
 type State = {
   completed: boolean,
   joke?: string,
@@ -20,5 +19,3 @@ export type GetJokeSucceededAction = {
   type: string,
   state: State
 };
-
-export type Action = GetJokeAction | GetJokeFailedAction | GetJokeSucceededAction;

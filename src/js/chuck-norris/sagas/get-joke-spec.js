@@ -1,3 +1,5 @@
+// @flow
+import { describe, it } from 'mocha';
 import { expect } from 'chai';
 import { takeEvery, put, call } from 'redux-saga/effects';
 import { getRandomJokeApi } from '../apis';

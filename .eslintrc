@@ -13,6 +13,7 @@
   ],
   // To prevent "'window' is not defined" or "'document' is not defined"
   "env": {
+    "es6": true,
     "browser": true,
     "node": true,
     "mocha": true
