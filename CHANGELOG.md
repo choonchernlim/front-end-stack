@@ -7,6 +7,10 @@
 * https://github.com/facebook/flow/issues/2377
 * TODO: Update README on npm scripts.
 
+* TODO: Explore replacing iSparta with nyc and babel-plugin-istanbul.
+* TODO: Explore dropping babel-node and use Node 6+, which has full support of ES6 syntax to speed up build process.
+* TODO: mochaOpts under `scripts/script.js` should be relative, not hardcoded to "--require ./src/js/__test__"
+
 
 * FEATURE - Enabled Flow type check.
 * FEATURE - Configured Flow type linting.
