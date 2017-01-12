@@ -7,8 +7,16 @@
 * https://github.com/facebook/flow/issues/2377
 * TODO: Update README on npm scripts.
 
-* TODO: Explore replacing iSparta with nyc and babel-plugin-istanbul.
+* TODO: Explore whether `ci:test` and `ci:coverage` can be combined... ie: define `mochaFile=reports/test-results.xml` in coverage. 
+* TODO: Remove `isparta` from package.json
+* TODO: Update README
+ 
 
+* FEATURE: Replace `isparta` with `nyc` and `babel-plugin-istanbul`.
+  * Enabling `babel-plugin-istanbul` provides more accurate ES6 coverage report.
+  * `nyc` configuration must reside under `package.json` because it will not work properly when placed under `.nycrc`.
+  * Instead of hardcoding `include` path under `package.json`, which prevents dynamic configuration based on user settings, `exclude` paths are used.
+ 
 * FEATURE - Enabled Flow type check.
 * FEATURE - Configured Flow type linting.
 * REFACTOR - `npm test` - run Flow first before running tests.
