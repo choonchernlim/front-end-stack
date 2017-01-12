@@ -75,7 +75,7 @@
     "node-sass": "4.2.0",
     "nodemon": "1.11.0",
     "nyc": "10.0.0",
-    "postcss-loader": "1.2.1",
+    "postcss-loader": "1.2.2",
     "react-addons-perf": "15.4.2",
     "react-addons-test-utils": "15.4.2",
     "rimraf": "2.5.4",
@@ -84,7 +84,7 @@
     "sinon": "1.17.7",
     "style-loader": "0.13.1",
     "url-loader": "0.5.7",
-    "webpack": "2.2.0-rc.3",
+    "webpack": "2.2.0-rc.4",
     "webpack-dev-server": "2.2.0-rc.0"
   },
   "nyc": {
