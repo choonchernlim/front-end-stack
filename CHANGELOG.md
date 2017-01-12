@@ -7,9 +7,9 @@
 * https://github.com/facebook/flow/issues/2377
 * TODO: Update README on npm scripts.
 
-* TODO: Explore whether `ci:test` and `ci:coverage` can be combined... ie: define `mochaFile=reports/test-results.xml` in coverage. 
 * TODO: Update README
- 
+
+
 * FEATURE: Replaced unmaintained `isparta` with `nyc` and `babel-plugin-istanbul`.
   * Configured `babel-plugin-istanbul` to provide more accurate ES6 coverage report.
   * `nyc` configuration must reside under `package.json` because `babel-plugin-istanbul` will not work properly when placed under `.nycrc`.
@@ -17,12 +17,14 @@
     * See https://github.com/istanbuljs/nyc/issues/377
   * Instead of hardcoding `include` path under `package.json`, which prevents dynamic configuration based on user settings, `exclude` paths are used.
  
+* FEATURE - Explained steps to be performed when running `npm test` or `npm run ci`.
 * FEATURE - Enabled Flow type check.
 * FEATURE - Configured Flow type linting.
-* REFACTOR - `npm test` - run Flow first before running tests.
-* REFACTOR - `npm run ci` - run Flow first before running tests.
-* REFACTOR - `npm run build` - run `npm test` before building the bundles.
+* FEATURE - `npm run flow` - Run Flow.
+* REFACTOR - `npm test` - Run Flow first before running tests.
+* REFACTOR - `npm run build` - Run `npm test` before building the bundles.
 * REFACTOR - Simplify module structure to prevent too many "single file in a directory" problems.
+* REFACTOR: Combined `npm run ci:clean`, `npm run ci:test` and `npm run ci:coverage` into `npm run ci` to prevent Mocha from running twice (once to generate test result file and another to generate code coverage result file).
 * BUG: `scripts/script.js` - "--require ./src/js/__test__" should use user configurable path. 
 
 * MAINTENANCE - Suppressed "WARNING in asset size limit" warning on `npm run build`.

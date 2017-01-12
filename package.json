@@ -14,10 +14,7 @@
     "test": "node ./scripts/test",
     "test:watch": "nodemon --exec 'npm test'",
     "build": "webpack --progress",
-    "ci": "npm run ci:clean && npm run ci:test && npm run ci:coverage",
-    "ci:clean": "node ./scripts/ci-clean",
-    "ci:coverage": "node ./scripts/ci-coverage",
-    "ci:test": "node ./scripts/ci-test",
+    "ci": "node ./scripts/ci",
     "reinstall": "npm cache clean && rimraf \"node_modules/!(rimraf|.bin)\" && npm install",
     "start": "webpack-dev-server --config webpack.dev.config.js --progress",
     "stats": "webpack --profile --json > stats.json",
@@ -102,7 +99,6 @@
       "**/node_modules/**"
     ],
     "reporter": [
-      "text",
       "html",
       "cobertura"
     ],

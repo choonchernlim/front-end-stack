@@ -25,4 +25,8 @@ const mocha = `mocha ${testDirPath} ${mochaOpts} --colors`;
 
 process.env.NODE_ENV = 'test';
 
-script.run(`${flow} && ${eslint} && ${mocha}`);
+script.run(`${flow} && ${eslint} && ${mocha}`, [
+  'Flow   : Static type check',
+  'ESLint : Code linting',
+  'Mocha  : Run tests'
+]);

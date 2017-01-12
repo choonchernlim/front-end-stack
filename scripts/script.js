@@ -6,7 +6,13 @@ const console = require('console');
 const path = require('path');
 const exec = require('child_process').exec;
 
-const run = (command) => {
+const run = (command, comments) => {
+  if (comments) {
+    console.log('Performing the following action(s):-');
+    comments.forEach(comment => console.log(`- ${comment}`));
+    console.log();
+  }
+
   console.log(`Executing: ${command}`);
 
   exec(command, (err, stdout, stderr) => {
