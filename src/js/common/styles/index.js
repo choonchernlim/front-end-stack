@@ -1,3 +1,4 @@
+// @flow
 import { cyan800, blue700, grey700 } from 'material-ui/styles/colors';
 
 const headerTag = {

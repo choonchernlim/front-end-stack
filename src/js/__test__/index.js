@@ -1,3 +1,4 @@
+// @flow
 /**
  * Global setup before running any specs.
  */

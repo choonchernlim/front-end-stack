@@ -2,6 +2,8 @@
 
 ## X.X.X
 
+* TODO : WARNING in webpack: Using NoErrorsPlugin is deprecated. Use NoEmitOnErrorsPlugin instead.
+
 * TODO: When all files are flow-typed, enable this ESLint rule: https://github.com/gajus/eslint-plugin-flowtype#eslint-plugin-flowtype-rules-require-valid-file-annotation
 
 ```

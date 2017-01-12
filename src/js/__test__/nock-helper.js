@@ -1,3 +1,4 @@
+// @flow
 /**
  * PROBLEM:
  * `isomorphic-fetch`, which uses `node-fetch`, requires absolute URL. When running specs using
