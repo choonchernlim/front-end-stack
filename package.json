@@ -96,9 +96,7 @@
       "babel-register"
     ],
     "exclude": [
-      "dist/",
       "node_modules/",
-      "reports/",
       "scripts/",
       "webpack.**.js",
       "**/*spec.js",

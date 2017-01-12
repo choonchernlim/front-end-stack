@@ -11,10 +11,11 @@
 * TODO: Remove `isparta` from package.json
 * TODO: Update README
  
-
 * FEATURE: Replace `isparta` with `nyc` and `babel-plugin-istanbul`.
   * Enabling `babel-plugin-istanbul` provides more accurate ES6 coverage report.
   * `nyc` configuration must reside under `package.json` because it will not work properly when placed under `.nycrc`.
+    * See https://github.com/istanbuljs/nyc/issues/419
+    * See https://github.com/istanbuljs/nyc/issues/377
   * Instead of hardcoding `include` path under `package.json`, which prevents dynamic configuration based on user settings, `exclude` paths are used.
  
 * FEATURE - Enabled Flow type check.
