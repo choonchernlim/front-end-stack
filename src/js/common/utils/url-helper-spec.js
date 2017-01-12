@@ -1,3 +1,4 @@
+// @flow
 import { describe, it } from 'mocha';
 import { expect } from 'chai';
 import { server } from '../../__test__/nock-helper';
@@ -21,6 +22,16 @@ describe('Common', () => {
       });
 
       describe('sanitizeContextRoot', () => {
+        it('given undefined value, should be CONTEXT_ROOT', () => {
+          const contextRoot = process.env.CONTEXT_ROOT;
+
+          process.env.CONTEXT_ROOT = '/abc';
+
+          expect(sanitizeContextRoot(undefined)).to.deep.equal('/abc');
+
+          process.env.CONTEXT_ROOT = contextRoot;
+        });
+
         it('given /, should be empty string', () => {
           expect(sanitizeContextRoot('/')).to.deep.equal('');
         });
