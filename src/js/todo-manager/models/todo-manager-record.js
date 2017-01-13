@@ -1,3 +1,4 @@
+// @flow
 import { Record, List } from 'immutable';
 
 const TodoManagerRecord = Record({

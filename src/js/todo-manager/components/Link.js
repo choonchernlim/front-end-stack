@@ -1,3 +1,4 @@
+// TODO LIMC cannot use flow due to `children`
 import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { setVisibilityFilter } from '../actions';

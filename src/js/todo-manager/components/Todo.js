@@ -1,6 +1,13 @@
-import React, { PropTypes } from 'react';
+// @flow
+import React, { Element } from 'react';
 
-const Todo = ({ onClick, completed, text }) => (
+type Props = {
+  onClick: Function,
+  completed: boolean,
+  text: string
+};
+
+const Todo = ({ onClick, completed, text }: Props): Element<any> => (
   <li>
     <a
       href="#toggle"
@@ -11,11 +18,5 @@ const Todo = ({ onClick, completed, text }) => (
     </a>
   </li>
 );
-
-Todo.propTypes = {
-  onClick: PropTypes.func.isRequired,
-  completed: PropTypes.bool.isRequired,
-  text: PropTypes.string.isRequired
-};
 
 export default Todo;

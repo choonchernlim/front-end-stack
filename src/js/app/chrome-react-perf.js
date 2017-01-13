@@ -1,3 +1,4 @@
+// @flow
 /**
  * Enable Chrome React Perf by exposing `react-addons-perf` module as `Perf` global variable
  * in development mode.

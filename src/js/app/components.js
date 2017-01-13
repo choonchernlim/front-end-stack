@@ -1,3 +1,4 @@
+// @flow
 import layout from '../layout';
 import home from '../home';
 import todoManager from '../todo-manager';
