@@ -35,12 +35,12 @@ class AddTodo extends Component {
   };
 
   // on input change, update state
-  handleInputChange = (event): void => {
+  handleInputChange = (event: SyntheticInputEvent): void => {
     this.setState({ value: event.target.value });
   };
 
   // on enter pressed on input field, trigger button click
-  handleInputEnter = (event): void => {
+  handleInputEnter = (event: SyntheticKeyboardEvent): void => {
     if (event.keyCode === 13) {
       this.handleButtonClick();
     }

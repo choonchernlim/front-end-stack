@@ -1,5 +1,5 @@
 // @flow
-import React from 'react';
+import React, { Element } from 'react';
 import { List } from 'immutable';
 import { connect } from 'react-redux';
 import { toggleTodo } from '../actions';
@@ -12,7 +12,7 @@ type Props = {
   onToggleTodo: Function
 };
 
-export const TodoList = ({ todos, onToggleTodo }: Props) => (
+export const TodoList = ({ todos, onToggleTodo }: Props): Element<*> => (
   <ul>
     {todos.map(todo =>
       <Todo

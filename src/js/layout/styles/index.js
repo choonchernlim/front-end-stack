@@ -1,3 +1,4 @@
+// @flow
 import { Grid } from 'radium-grid';
 
 const appBarHeight = '64px';

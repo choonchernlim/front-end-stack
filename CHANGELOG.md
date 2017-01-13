@@ -2,22 +2,6 @@
 
 ## X.X.X
 
-* TODO: When all files are flow-typed, enable this ESLint rule: https://github.com/gajus/eslint-plugin-flowtype#eslint-plugin-flowtype-rules-require-valid-file-annotation
-
-```
-// `// @flow` must exist on the top of all files
-{
-  "rules": {
-    "flowtype/require-valid-file-annotation": [
-      2,
-      "always", {
-        "annotationStyle": "line"
-      }
-    ]
-  }
-}
-```
-
 * Replaced unmaintained `isparta` with `nyc` and `babel-plugin-istanbul`.
   * `nyc` configuration must reside under `package.json` because `babel-plugin-istanbul` will not work properly when placed under `.nycrc`.
     * See https://github.com/istanbuljs/nyc/issues/419
@@ -28,6 +12,8 @@
   * Configured Flow type linting.
   * `npm run flow` - Run Flow.
   * `npm test` - Run Flow first before running tests.
+  * ESLint rule to ensure `// @flow` exists on the top of all files.
+  * For certain Flow related problems (`record.toJS()`, `PropTypes.children`, etc), suppressed with `// $FlowFixMe` until they are fixed in the future.
 
 * Simplified module structure to prevent too many "single file in a directory" problems.
 * Combined `npm run ci:clean`, `npm run ci:test` and `npm run ci:coverage` into `npm run ci` to prevent Mocha from running twice (once to generate test result file and another to generate code coverage result file).

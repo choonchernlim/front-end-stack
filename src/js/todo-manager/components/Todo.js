@@ -7,7 +7,7 @@ type Props = {
   text: string
 };
 
-const Todo = ({ onClick, completed, text }: Props): Element<any> => (
+const Todo = ({ onClick, completed, text }: Props): Element<*> => (
   <li>
     <a
       href="#toggle"

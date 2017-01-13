@@ -2,7 +2,7 @@
 import React, { Element } from 'react';
 import LinkContainer from './Link';
 
-export default (): Element<any> => (
+const Footer = (): Element<*> => (
   <p>
     Show:
     {' '}
@@ -13,3 +13,5 @@ export default (): Element<any> => (
     <LinkContainer filter="SHOW_COMPLETED">Completed</LinkContainer>
   </p>
 );
+
+export default Footer;

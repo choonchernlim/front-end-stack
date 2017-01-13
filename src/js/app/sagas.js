@@ -1,7 +1,8 @@
+// @flow
 import chuckNorris from '../chuck-norris';
 
 // flatten nested arrays
-const sagas = [].concat(
+const sagas: Function[] = [].concat(
   ...[
     chuckNorris.sagas
   ]

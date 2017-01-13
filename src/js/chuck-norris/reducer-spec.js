@@ -1,4 +1,4 @@
-// TODO LIMC cannot use flow due to error on `record`
+// @flow
 import { describe, it } from 'mocha';
 import { expect } from 'chai';
 import reducer from './reducer';
@@ -23,6 +23,7 @@ describe('Chuck Norris', () => {
         const actualState = reducer(initialState, getJoke());
         const expectedState = new JokeRecord({ completed: false });
 
+        // $FlowFixMe: Waiting for ImmutableJS to fix `record.toJS()`
         expect(actualState.toJS()).to.deep.equal(expectedState.toJS());
       });
     });
@@ -40,6 +41,7 @@ describe('Chuck Norris', () => {
           joke: 'new joke'
         });
 
+        // $FlowFixMe: Waiting for ImmutableJS to fix `record.toJS()`
         expect(actualState.toJS()).to.deep.equal(expectedState.toJS());
       });
     });
@@ -58,6 +60,7 @@ describe('Chuck Norris', () => {
           error: 'error'
         });
 
+        // $FlowFixMe: Waiting for ImmutableJS to fix `record.toJS()`
         expect(actualState.toJS()).to.deep.equal(expectedState.toJS());
       });
     });

@@ -1,3 +1,4 @@
+// @flow
 import { describe, it } from 'mocha';
 import { expect } from 'chai';
 import { List } from 'immutable';
@@ -27,6 +28,7 @@ describe('Todo Manager', () => {
           ])
         });
 
+        // $FlowFixMe: Waiting for ImmutableJS to fix `record.toJS()`
         expect(actualState.toJS()).to.deep.equal(expectedState.toJS());
       });
     });
@@ -49,6 +51,7 @@ describe('Todo Manager', () => {
           ])
         });
 
+        // $FlowFixMe: Waiting for ImmutableJS to fix `record.toJS()`
         expect(actualState.toJS()).to.deep.equal(expectedState.toJS());
       });
     });
@@ -61,6 +64,7 @@ describe('Todo Manager', () => {
 
         const expectedState = new TodoManagerRecord({ visibilityFilter: 'ALL' });
 
+        // $FlowFixMe: Waiting for ImmutableJS to fix `record.toJS()`
         expect(actualState.toJS()).to.deep.equal(expectedState.toJS());
       });
     });

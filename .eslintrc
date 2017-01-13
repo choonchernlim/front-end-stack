@@ -73,6 +73,14 @@
       {
         "devDependencies": true
       }
+    ],
+    // `// @flow` must exist on the top of all files
+    "flowtype/require-valid-file-annotation": [
+      2,
+      "always",
+      {
+        "annotationStyle": "line"
+      }
     ]
   }
 }

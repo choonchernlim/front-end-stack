@@ -11,8 +11,9 @@ describe('Todo Manager', () => {
       it('given active link, should be SPAN tag', () => {
         const span = TestUtils.renderIntoDocument(new Link({
           active: true,
+          filter: 'Show',
           children: 'Hello',
-          onClick: undefined
+          onSetVisibilityFilter: f => f
         }));
 
         expect(span.tagName).to.equal('SPAN');

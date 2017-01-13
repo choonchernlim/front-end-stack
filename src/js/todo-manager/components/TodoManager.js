@@ -5,7 +5,7 @@ import AddTodoContainer from './AddTodo';
 import TodoListContainer from './TodoList';
 import Container from '../../common/components/Container';
 
-export default (): Element<any> => (
+export default (): Element<*> => (
   <Container>
     <h1>Todo Manager</h1>
 
