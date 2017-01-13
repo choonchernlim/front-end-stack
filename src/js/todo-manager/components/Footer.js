@@ -1,7 +1,8 @@
-import React from 'react';
+// @flow
+import React, { Element } from 'react';
 import LinkContainer from './Link';
 
-export default () => (
+export default (): Element<any> => (
   <p>
     Show:
     {' '}

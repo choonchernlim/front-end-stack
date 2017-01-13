@@ -1,1 +1,5 @@
-export component from './components';
+import component from './components/Layout';
+
+export default {
+  component
+};

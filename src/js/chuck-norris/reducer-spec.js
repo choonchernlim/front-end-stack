@@ -1,3 +1,4 @@
+// TODO LIMC cannot use flow due to error on `record`
 import { describe, it } from 'mocha';
 import { expect } from 'chai';
 import reducer from './reducer';

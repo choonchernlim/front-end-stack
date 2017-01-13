@@ -1,4 +1,10 @@
 // @flow
-export { default as reducer } from './reducer';
-export { default as saga } from './sagas';
-export { default as component } from './components/ChuckNorris';
+import reducer from './reducer';
+import sagas from './sagas';
+import component from './components/ChuckNorris';
+
+export default {
+  reducer,
+  sagas,
+  component
+};

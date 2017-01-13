@@ -1,11 +1,12 @@
-import React from 'react';
+// @flow
+import React, { Element } from 'react';
 import RaisedButton from 'material-ui/RaisedButton';
 import TextField from 'material-ui/TextField';
 import Checkbox from 'material-ui/Checkbox';
 import RadioButton from 'material-ui/RadioButton';
 import Container from '../../common/components/Container';
 
-export default () => (
+export default (): Element<any> => (
   <Container>
     <h1>Look and Feel</h1>
 

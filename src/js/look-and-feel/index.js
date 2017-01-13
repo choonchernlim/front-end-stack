@@ -1,1 +1,6 @@
-export component from './components';
+// @flow
+import component from './components/LookAndFeel';
+
+export default {
+  component
+};

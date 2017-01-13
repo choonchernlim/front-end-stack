@@ -1,3 +1,4 @@
+// TODO LIMC cannot use flow due to error on `children`
 import React, { PropTypes } from 'react';
 
 const Container = ({ children }) => (

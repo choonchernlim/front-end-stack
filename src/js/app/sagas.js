@@ -1,5 +1,10 @@
-import { saga as chuckNorrisSaga } from '../chuck-norris';
+import chuckNorris from '../chuck-norris';
 
-export default [
-  chuckNorrisSaga
-];
+// flatten nested arrays
+const sagas = [].concat(
+  ...[
+    chuckNorris.sagas
+  ]
+);
+
+export default sagas;

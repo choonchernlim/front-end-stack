@@ -1,5 +1,15 @@
-export { component as Layout } from '../layout';
-export { component as Home } from '../home';
-export { component as TodoManager } from '../todo-manager';
-export { component as ChuckNorris } from '../chuck-norris';
-export { component as LookAndFeel } from '../look-and-feel';
+import layout from '../layout';
+import home from '../home';
+import todoManager from '../todo-manager';
+import chuckNorris from '../chuck-norris';
+import lookAndFeel from '../look-and-feel';
+
+const components = {
+  layout: layout.component,
+  home: home.component,
+  todoManager: todoManager.component,
+  chuckNorris: chuckNorris.component,
+  lookAndFeel: lookAndFeel.component
+};
+
+export default components;

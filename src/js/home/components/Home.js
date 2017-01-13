@@ -1,7 +1,8 @@
-import React from 'react';
+// @flow
+import React, { Element } from 'react';
 import Container from '../../common/components/Container';
 
-const Home = () => (
+const Home = (): Element<any> => (
   <Container>
     <h1>Welcome!</h1>
 

@@ -1,3 +1,5 @@
+// @flow
+// TODO LIMC need better flow typed. PropTypes has to be used due to `children`
 import { Style, StyleRoot } from 'radium';
 import { Grid, Cell } from 'radium-grid';
 import React from 'react';
@@ -20,9 +22,10 @@ import baseStyle from '../../common/styles';
 import style from '../styles';
 
 // combine `large` and `xlarge` breakpoints
-const largeGrid = [Grid.defaultProps.breakpoints.large, Grid.defaultProps.breakpoints.xlarge]
-  .map(breakpoint => breakpoint.replace(/@media\s+/, ''))
-  .join();
+const largeGrid: string = [
+  Grid.defaultProps.breakpoints.large,
+  Grid.defaultProps.breakpoints.xlarge
+].map(breakpoint => breakpoint.replace(/@media\s+/, '')).join();
 
 const mql = window.matchMedia(largeGrid);
 
