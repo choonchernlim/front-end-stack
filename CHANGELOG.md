@@ -2,8 +2,6 @@
 
 ## X.X.X
 
-* TODO : WARNING in webpack: Using NoErrorsPlugin is deprecated. Use NoEmitOnErrorsPlugin instead.
-
 * TODO: When all files are flow-typed, enable this ESLint rule: https://github.com/gajus/eslint-plugin-flowtype#eslint-plugin-flowtype-rules-require-valid-file-annotation
 
 ```
@@ -38,6 +36,7 @@
 
 * Suppressed "WARNING in asset size limit" warning on `npm run build`.
 * Removed commented `DedupePlugin` config because it will be removed in Webpack 2. See https://github.com/webpack/webpack/issues/2644
+* Fixed "Using NoErrorsPlugin is deprecated. Use NoEmitOnErrorsPlugin instead.".
 
 ## 0.7.1 - 2016-12-29
 

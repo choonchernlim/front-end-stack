@@ -68,7 +68,7 @@ module.exports = Object.assign({}, baseConfig.webpackOptions, {
 
     // When there are errors while compiling this plugin skips the emitting phase
     // (and recording phase), so there are no assets emitted that include errors.
-    new webpack.NoErrorsPlugin(),
+    new webpack.NoEmitOnErrorsPlugin(),
 
     // Generates `index.html` at the default location, which is dist dir, so that webpack-dev-server
     // can find it
