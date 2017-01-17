@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import RaisedButton from 'material-ui/RaisedButton';
 import CircularProgress from 'material-ui/CircularProgress';
 import { getJoke } from '../actions';
+import stateSelector from '../../common/selectors/state-selector';
 
 type Props = {
   joke?: string,
@@ -27,9 +28,9 @@ GetJoke.defaultProps = {
 };
 
 const mapStateToProps = state => ({
-  joke: state.chuckNorris.get('joke'),
-  error: state.chuckNorris.get('error'),
-  completed: state.chuckNorris.get('completed')
+  joke: stateSelector.chuckNorris.joke(state),
+  error: stateSelector.chuckNorris.error(state),
+  completed: stateSelector.chuckNorris.completed(state)
 });
 
 const GetJokeContainer = connect(mapStateToProps, { onClick: getJoke })(GetJoke);

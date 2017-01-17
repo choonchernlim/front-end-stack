@@ -3,7 +3,7 @@ import React, { Element } from 'react';
 import { List } from 'immutable';
 import { connect } from 'react-redux';
 import { toggleTodo } from '../actions';
-import makeGetVisibleTodos from '../selectors/make-get-visible-todos';
+import reselectSelector from '../../common/selectors/reselect-selector';
 import Todo from './Todo';
 import TodoRecord from '../models/todo-record';
 
@@ -26,7 +26,7 @@ export const TodoList = ({ todos, onToggleTodo }: Props): Element<*> => (
 );
 
 const makeMapStateToProps = () => {
-  const getVisibleTodos: Function = makeGetVisibleTodos();
+  const getVisibleTodos: Function = reselectSelector.makeGetVisibleTodos();
   return state => ({
     todos: getVisibleTodos(state)
   });
