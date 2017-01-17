@@ -2,6 +2,8 @@
 
 ## X.X.X
 
+* TODO: Revisit saga testing: https://github.com/redux-saga/redux-saga/issues/518
+                                
 * Replaced unmaintained `isparta` with `nyc` and `babel-plugin-istanbul`.
   * `nyc` configuration must reside under `package.json` because `babel-plugin-istanbul` will not work properly when placed under `.nycrc`.
     * See https://github.com/istanbuljs/nyc/issues/419
