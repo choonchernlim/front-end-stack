@@ -3,7 +3,7 @@ import React, { Element } from 'react';
 import { List } from 'immutable';
 import { connect } from 'react-redux';
 import { toggleTodo } from '../actions';
-import makeGetVisibleTodos from '../selectors';
+import makeGetVisibleTodos from '../selectors/make-get-visible-todos';
 import Todo from './Todo';
 import TodoRecord from '../models/todo-record';
 
