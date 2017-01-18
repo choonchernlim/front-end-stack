@@ -127,7 +127,6 @@ These commands are cross-platform compatible.
 |html-webpack-plugin                      |Webpack - Generates `index.html` using hash filenames for cache busting              |
 |image-webpack-loader                     |Webpack - Image loader and handling compression                                      |
 |jsdom                                    |Test - A JavaScript implementation of the WHATWG DOM and HTML standards              |
-|json-loader                              |Webpack - JSON loader                                                                |
 |mocha                                    |Test - JS test framework                                                             |
 |mocha-junit-reporter                     |Test - Creating JUnit result file for Jenkins                                        |
 |nock                                     |Test - HTTP mocking and expectations library                                         |
