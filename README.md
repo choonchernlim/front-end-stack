@@ -141,6 +141,7 @@ These commands are cross-platform compatible.
 |postcss-loader                           |Webpack - Post CSS loader to run autoprefixer                                        |
 |react-addons-perf                        |Util - Performance profiling tool                                                    |
 |react-addons-test-utils                  |Test - Utils for testing React components                                            |
+|redux-saga-test-plan                     |Test - Utils for testing Redux Saga                                                  |
 |rimraf                                   |Util - `rm -rf` for both Unix and Windows world                                      |
 |roboto-fontface                          |Roboto font, adhering to Google Material Design spec                                 |
 |sass-loader                              |Webpack - SASS loader                                                                |
