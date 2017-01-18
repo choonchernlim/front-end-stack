@@ -1,10 +1,11 @@
+// @flow
 import { combineReducers } from 'redux';
 import { routerReducer } from 'react-router-redux';
-import { reducer as todoManagerReducer } from '../todo-manager';
-import { reducer as chuckNorrisReducer } from '../chuck-norris';
+import todoManager from '../todo-manager/reducer';
+import chuckNorris from '../chuck-norris/reducer';
 
 export default combineReducers({
-  todoManager: todoManagerReducer,
-  chuckNorris: chuckNorrisReducer,
+  todoManager,
+  chuckNorris,
   routing: routerReducer
 });

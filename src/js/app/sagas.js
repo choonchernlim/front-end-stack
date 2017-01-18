@@ -1,5 +1,11 @@
-import { saga as chuckNorrisSaga } from '../chuck-norris';
+// @flow
+import chuckNorris from '../chuck-norris/sagas';
 
-export default [
-  chuckNorrisSaga
-];
+// flatten nested arrays
+const sagas: Function[] = [].concat(
+  ...[
+    chuckNorris
+  ]
+);
+
+export default sagas;

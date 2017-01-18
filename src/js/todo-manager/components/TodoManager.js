@@ -1,10 +1,11 @@
-import React from 'react';
+// @flow
+import React, { Element } from 'react';
 import Footer from './Footer';
 import AddTodoContainer from './AddTodo';
 import TodoListContainer from './TodoList';
 import Container from '../../common/components/Container';
 
-export default () => (
+export default (): Element<*> => (
   <Container>
     <h1>Todo Manager</h1>
 

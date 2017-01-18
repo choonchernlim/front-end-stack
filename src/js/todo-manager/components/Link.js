@@ -1,8 +1,16 @@
-import React, { PropTypes } from 'react';
+// @flow
+import React from 'react';
 import { connect } from 'react-redux';
 import { setVisibilityFilter } from '../actions';
 
-export const Link = ({ active, filter, children, onSetVisibilityFilter }) => {
+type Props = {
+  filter: string,
+  active: boolean,
+  children: string,
+  onSetVisibilityFilter: Function
+};
+
+export const Link = ({ active, filter, children, onSetVisibilityFilter }: Props) => {
   if (active) {
     return <span>{children}</span>;
   }
@@ -13,13 +21,6 @@ export const Link = ({ active, filter, children, onSetVisibilityFilter }) => {
   };
 
   return <a href="#link" onClick={onClick}>{children}</a>;
-};
-
-Link.propTypes = {
-  filter: PropTypes.string.isRequired,
-  active: PropTypes.bool.isRequired,
-  children: PropTypes.node.isRequired,
-  onSetVisibilityFilter: PropTypes.func.isRequired
 };
 
 const mapStateToProps = (state, ownProps) => ({

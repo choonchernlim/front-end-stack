@@ -1,7 +1,8 @@
-import React from 'react';
+// @flow
+import React, { Element } from 'react';
 import LinkContainer from './Link';
 
-export default () => (
+const Footer = (): Element<*> => (
   <p>
     Show:
     {' '}
@@ -12,3 +13,5 @@ export default () => (
     <LinkContainer filter="SHOW_COMPLETED">Completed</LinkContainer>
   </p>
 );
+
+export default Footer;

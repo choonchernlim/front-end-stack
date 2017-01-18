@@ -1,10 +1,18 @@
 /**
  * Script runner.
  */
+const process = require('process');
 const console = require('console');
+const path = require('path');
 const exec = require('child_process').exec;
 
-const run = (command) => {
+const run = (command, comments) => {
+  if (comments) {
+    console.log('Performing the following action(s):-');
+    comments.forEach(comment => console.log(`- ${comment}`));
+    console.log();
+  }
+
   console.log(`Executing: ${command}`);
 
   exec(command, (err, stdout, stderr) => {
@@ -22,7 +30,10 @@ const run = (command) => {
   });
 };
 
+const srcDirPath = process.env.npm_package_config_src_dir_path;
+const testBootstrap = path.join(srcDirPath, 'js', '__tests__', 'index.js');
+
 module.exports = {
   run,
-  mochaOpts: '--recursive --compilers js:babel-register --require ./src/js/__test__'
+  mochaOpts: `--recursive --compilers js:babel-register --require ${testBootstrap}`
 };

@@ -1,3 +1,4 @@
+// @flow
 /**
  * Removes trailing slash from context root.
  *
@@ -7,8 +8,8 @@
  * @param contextRoot Context root
  * @return Context root without trailing slash
  */
-export const sanitizeContextRoot = (contextRoot = process.env.CONTEXT_ROOT || '') => (
-  contextRoot.replace(/\/$/, '')
+export const sanitizeContextRoot = (contextRoot: ?string = process.env.CONTEXT_ROOT): string => (
+  contextRoot ? contextRoot.replace(/\/$/, '') : ''
 );
 
 /**
@@ -16,10 +17,10 @@ export const sanitizeContextRoot = (contextRoot = process.env.CONTEXT_ROOT || ''
  *
  * Context root has to be dynamically determine to allow specs using `nock` to mock it out.
  *
- npm te* @param uri URI
+ * @param uri URI
  * @return URL with context root prefix.
  */
-export const url = uri => sanitizeContextRoot() + uri;
+export const url = (uri: string): string => sanitizeContextRoot() + uri;
 
 export default {
   url,

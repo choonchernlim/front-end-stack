@@ -1,3 +1,4 @@
+// @flow
 import { Style, StyleRoot } from 'radium';
 import { Grid, Cell } from 'radium-grid';
 import React from 'react';
@@ -19,27 +20,27 @@ import userImage from '../../../img/user.jpg';
 import baseStyle from '../../common/styles';
 import style from '../styles';
 
-// combine `large` and `xlarge` breakpoints
-const largeGrid = [Grid.defaultProps.breakpoints.large, Grid.defaultProps.breakpoints.xlarge]
-  .map(breakpoint => breakpoint.replace(/@media\s+/, ''))
-  .join();
-
-const mql = window.matchMedia(largeGrid);
+type Props = {
+  children: React.Element<*>,
+  router: Object
+};
 
 export default class Layout extends React.Component {
-  static propTypes = {
-    children: React.PropTypes.element.isRequired
-  };
+  constructor(props: Props) {
+    super(props);
 
-  // to get router to work
-  // https://github.com/davezuko/react-redux-starter-kit/issues/695
-  static contextTypes = {
-    router: React.PropTypes.object
-  };
+    this.state = {
+      open: true,
+      mql: window.matchMedia([
+        Grid.defaultProps.breakpoints.large,
+        Grid.defaultProps.breakpoints.xlarge
+      ].map(breakpoint => breakpoint.replace(/@media\s+/, '')).join())
+    };
+  }
 
-  state = {
-    open: true,
-    mql
+  state: {
+    open: boolean,
+    mql: Function
   };
 
   componentWillMount = () => {
@@ -54,7 +55,7 @@ export default class Layout extends React.Component {
   handleToggle = () => this.setState({ open: !this.state.open });
 
   render() {
-    const { router } = this.context;
+    const { router } = this.props;
 
     return (
       <MuiThemeProvider muiTheme={getMuiTheme(baseStyle.muiTheme)}>

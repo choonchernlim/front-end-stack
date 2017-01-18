@@ -1,44 +1,53 @@
-import React, { Component, PropTypes } from 'react';
+// @flow
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import RaisedButton from 'material-ui/RaisedButton';
 import TextField from 'material-ui/TextField';
 import { Grid, Cell } from 'radium-grid';
 import { addTodo } from '../actions';
 
+type Props = {
+  addTodo: Function
+};
+
 class AddTodo extends Component {
   constructor(props) {
     super(props);
     this.state = { value: '', error: '' };
-    this.handleInputFocus = this.handleInputFocus.bind(this);
-    this.handleInputChange = this.handleInputChange.bind(this);
-    this.handleButtonClick = this.handleButtonClick.bind(this);
-    this.handleInputEnter = this.handleInputEnter.bind(this);
   }
 
+  state: {
+    value: string,
+    error: string
+  };
+
   // on render, set focus on text field
-  componentDidMount() {
+  componentDidMount(): void {
     this.handleInputFocus();
   }
 
+  props: Props;
+  todoTextField: TextField;
+
   // triggers focus on text field
-  handleInputFocus() {
+  handleInputFocus = (): void => {
     this.todoTextField.focus();
-  }
+  };
 
   // on input change, update state
-  handleInputChange(event) {
+  handleInputChange = (event: SyntheticInputEvent): void => {
     this.setState({ value: event.target.value });
-  }
+  };
 
   // on enter pressed on input field, trigger button click
-  handleInputEnter(event) {
+  handleInputEnter = (event: SyntheticKeyboardEvent): void => {
     if (event.keyCode === 13) {
       this.handleButtonClick();
     }
-  }
+  };
 
   // on button click, add new value, reset state value and set focus on text field
-  handleButtonClick() {
+  handleButtonClick = (): void => {
     if (this.state.value) {
       this.props.addTodo(this.state.value);
       this.setState({ value: '', error: '' }, () => this.handleInputFocus());
@@ -46,7 +55,7 @@ class AddTodo extends Component {
     else {
       this.setState({ error: 'Field is required' }, () => this.handleInputFocus());
     }
-  }
+  };
 
   render() {
     return (
@@ -76,10 +85,6 @@ class AddTodo extends Component {
     );
   }
 }
-
-AddTodo.propTypes = {
-  addTodo: PropTypes.func.isRequired
-};
 
 const AddTodoContainer = connect(null, { addTodo })(AddTodo);
 

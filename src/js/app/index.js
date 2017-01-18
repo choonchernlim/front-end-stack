@@ -1,6 +1,8 @@
-import React from 'react';
+// @flow
+import React, { Element } from 'react';
 import ReactDOM from 'react-dom';
-import { Provider } from 'react-redux';
+import { StoreCreator } from 'redux';
+import { Provider, HistoryMiddleware } from 'react-redux';
 import { Router, useRouterHistory } from 'react-router';
 import createBrowserHistory from 'history/lib/createBrowserHistory';
 import { syncHistoryWithStore } from 'react-router-redux';
@@ -16,17 +18,17 @@ injectTapEventPlugin();
 
 // instead of using `browserHistory` from react-router, create one
 // with basename to allow app to specify different context root
-const browserHistory = useRouterHistory(createBrowserHistory)({
+const browserHistory: HistoryMiddleware = useRouterHistory(createBrowserHistory)({
   basename: sanitizeContextRoot()
 });
 
 // configure store
-const store = configureStore(browserHistory);
+const store: StoreCreator = configureStore(browserHistory);
 
-const routes = getRoutes(store);
+const routes: Element<*> = getRoutes(store);
 
 // Create an enhanced history that syncs navigation events with the store
-const history = syncHistoryWithStore(browserHistory, store);
+const history: HistoryMiddleware = syncHistoryWithStore(browserHistory, store);
 
 ReactDOM.render(
   <Provider store={store}>

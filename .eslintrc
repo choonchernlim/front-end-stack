@@ -1,11 +1,19 @@
 {
-  // using Airbnb's rule
-  "extends": "airbnb",
+  // using Airbnb and Flow best recommendations
+  "extends": [
+    "airbnb",
+    "plugin:flowtype/recommended"
+  ],
   // to handle ES7's static properties in React component
   // https://github.com/yannickcr/eslint-plugin-react/issues/43
   "parser": "babel-eslint",
+  // Enable Flow type linting
+  "plugins": [
+    "flowtype"
+  ],
   // To prevent "'window' is not defined" or "'document' is not defined"
   "env": {
+    "es6": true,
     "browser": true,
     "node": true,
     "mocha": true
@@ -64,6 +72,14 @@
       2,
       {
         "devDependencies": true
+      }
+    ],
+    // `// @flow` must exist on the top of all files
+    "flowtype/require-valid-file-annotation": [
+      2,
+      "always",
+      {
+        "annotationStyle": "line"
       }
     ]
   }
