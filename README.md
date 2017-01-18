@@ -6,7 +6,8 @@ Project template for building single-page app using modern front-end stack. Here
 
 |Library                                                                        |Description                                                              |
 |-------------------------------------------------------------------------------|-------------------------------------------------------------------------|
-|[NPM](https://www.npmjs.com/)                                                  |JavaScript package manager                                               |
+|[Yarn](https://yarnpkg.com/)                                                   |(Preferred) JavaScript package manager                                   |
+|[NPM](https://www.npmjs.com/)                                                  |(Alternative) JavaScript package manager                                 |
 |[Node.js](https://nodejs.org)                                                  |Event-driven I/O server-side JavaScript environment (for app dev)        |
 |[Webpack](https://webpack.github.io/) 	                                        |Module bundler                                                           |
 |[Webpack Dev Server](https://github.com/webpack/webpack-dev-server)            |Live reloading server (for app dev)                                      |
@@ -26,12 +27,16 @@ Project template for building single-page app using modern front-end stack. Here
 
 ## Getting Started
 
+* Install the following tools:-
+  * [Node.js](https://github.com/creationix/nvm).
+  * [Yarn](https://yarnpkg.com/en/docs/install) (if you don't want to use `npm` provided by Node.js).
+
 * In Chrome, install the following dev tool extensions:-
   * [React Developer Tools](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=en)
   * [Redux DevTools](https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd)
   * [React Perf](https://chrome.google.com/webstore/detail/react-perf/hacmcodfllhbnekmghgdlplbdnahmhmm)
 
-* If you are using IntelliJ product (ex: IDEA, WebStorm, etc)...
+* In IntelliJ (ex: IDEA, WebStorm):-
     * Use [intellij-config](https://github.com/choonchernlim/intellij-config) to configure JavaScript code formatter.
     * Enable "ESLint" in your IDE, which will pick up `.eslintrc` from the project and enforce it.
 
@@ -172,7 +177,8 @@ These commands are cross-platform compatible.
 ├── stats.json                  -> Generated file when running `npm run stats`
 ├── webpack.base.config.js      -> Common webpack config
 ├── webpack.config.js           -> Production webpack config
-└── webpack.dev.config.js       -> Development webpack config
+├── webpack.dev.config.js       -> Development webpack config
+└── yarn.lock                   -> Dependency versions lock file used by Yarn
 ```
 ## Troubleshooting
 

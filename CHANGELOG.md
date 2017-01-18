@@ -17,6 +17,8 @@
   * ESLint rule to ensure `// @flow` exists on the top of all files.
   * For certain Flow related problems (`record.toJS()`, `PropTypes.children`, etc), suppressed with `// $FlowFixMe` until they are fixed in the future.
 
+* Added `yarn.lock` file to accommodate developers using Yarn. 
+
 * Simplified module structure to prevent too many "single file in a directory" problems.
 * Combined `npm run ci:clean`, `npm run ci:test` and `npm run ci:coverage` into `npm run ci` to prevent Mocha from running twice (once to generate test result file and another to generate code coverage result file).
 
