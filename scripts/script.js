@@ -31,7 +31,7 @@ const run = (command, comments) => {
 };
 
 const srcDirPath = process.env.npm_package_config_src_dir_path;
-const testBootstrap = path.join(srcDirPath, 'js', '__test__', 'index.js');
+const testBootstrap = path.join(srcDirPath, 'js', '__tests__', 'index.js');
 
 module.exports = {
   run,

@@ -20,7 +20,7 @@
 * Simplified module structure to prevent too many "single file in a directory" problems.
 * Combined `npm run ci:clean`, `npm run ci:test` and `npm run ci:coverage` into `npm run ci` to prevent Mocha from running twice (once to generate test result file and another to generate code coverage result file).
 
-* `scripts/script.js` - `--require ./src/js/__test__` should use user configurable path. 
+* `scripts/script.js` - `--require ./src/js/__tests__` should use user configurable path. 
 
 * Suppressed "WARNING in asset size limit" warning on `npm run build`.
 * Removed commented `DedupePlugin` config because it will be removed in Webpack 2. See https://github.com/webpack/webpack/issues/2644
