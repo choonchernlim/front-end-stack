@@ -1,5 +1,11 @@
 # Change Log
 
+## TBD
+
+* Dependency update.
+
+* Fixed deprecation warnings from `image-webpack-loader`. See https://github.com/tcoopman/image-webpack-loader/issues/68
+
 ## 0.8.0 - 2017-01-18
 
 * Replaced unmaintained `isparta` with `nyc` and `babel-plugin-istanbul`.
