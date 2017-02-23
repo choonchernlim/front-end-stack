@@ -1,6 +1,6 @@
 # Change Log
 
-## TBD
+## 0.8.1 - 2017-02-23
 
 * Dependency update.
 
