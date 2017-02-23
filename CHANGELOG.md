@@ -5,6 +5,9 @@
 * Dependency update.
 
 * Fixed deprecation warnings from `image-webpack-loader`. See https://github.com/tcoopman/image-webpack-loader/issues/68
+* Fixed deprecation warnings from `webpack 2`. 
+  * `fallbackLoader` option - Replaced with `fallback`.
+  * `loader` option - Replaced with `use`.
 
 ## 0.8.0 - 2017-01-18
 
