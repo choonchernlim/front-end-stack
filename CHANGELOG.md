@@ -3,6 +3,7 @@
 * npm test not working
 * airbnb react.js error in .eslintrc
 * flow error: fbjs/lib/shallowEqual. Required module not found
+* jsdom v10 - error... use v9
 
 did not upgrade
  history                           3.2.0  →   4.6.1 
@@ -39,7 +40,7 @@ did not upgrade
  file-loader                      0.10.0  →  0.11.1 
  flow-bin                         0.39.0  →  0.46.0 
  image-webpack-loader              3.2.0  →   3.3.1 
- jsdom                            9.11.0  →  10.1.0 
+ jsdom                            9.11.0  →  9.12.0 
  mocha                             3.2.0  →   3.4.1 
  nock                              9.0.6  →  9.0.13 
  node-sass                         4.5.0  →   4.5.3 
