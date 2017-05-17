@@ -1,8 +1,6 @@
 [ignore]
-<PROJECT_ROOT>/node_modules/builder-radium-component
-<PROJECT_ROOT>/node_modules/radium
-<PROJECT_ROOT>/node_modules/fbjs
-<PROJECT_ROOT>/node_modules/redux-saga-test-plan
+<PROJECT_ROOT>/node_modules/redux-saga-test-plan/.*
+<PROJECT_ROOT>/node_modules/builder-radium-component/.*
 
 [options]
 module.file_ext=.js
@@ -10,8 +8,7 @@ module.file_ext=.jsx
 module.file_ext=.json
 module.file_ext=.scss
 
-module.name_mapper='\(radium-grid\)' -> '<PROJECT_ROOT>/src/flow/general-stub.js.flow'
-module.name_mapper='\(radium\)' -> '<PROJECT_ROOT>/src/flow/general-stub.js.flow'
+# To fix "Required module not found" error
 module.name_mapper='\(redux-saga-test-plan\)' -> '<PROJECT_ROOT>/src/flow/general-stub.js.flow'
 
 esproposal.class_static_fields=enable
