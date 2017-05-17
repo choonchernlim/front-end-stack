@@ -1,5 +1,60 @@
 # Change Log
 
+* npm test not working
+* airbnb react.js error in .eslintrc
+* flow error: fbjs/lib/shallowEqual. Required module not found
+
+did not upgrade
+ history                           3.2.0  →   4.6.1 
+ react-router                      3.0.2  →   4.1.1 
+
+  
+ material-ui                      0.17.0  →  0.18.1 
+ moment                           2.17.1  →  2.18.1 
+ radium                           0.18.1  →  0.19.0 
+ react                            15.4.2  →  15.5.4 
+ react-dom                        15.4.2  →  15.5.4 
+ react-redux                       5.0.3  →   5.0.4 
+ redux-saga                       0.14.3  →  0.15.3 
+ reselect                          2.5.4  →   3.0.1 
+ autoprefixer                      6.7.5  →   7.1.0 
+ babel-cli                        6.23.0  →  6.24.1 
+ babel-core                       6.23.1  →  6.24.1 
+ babel-eslint                      7.1.1  →   7.2.3 
+ babel-loader                      6.3.2  →   7.0.0 
+ babel-plugin-istanbul             4.0.0  →   4.1.3 
+ babel-preset-es2015              6.22.0  →  6.24.1 
+ babel-preset-react               6.23.0  →  6.24.1 
+ babel-preset-stage-0             6.22.0  →  6.24.1 
+ clean-webpack-plugin             0.1.15  →  0.1.16 
+ css-loader                       0.26.1  →  0.28.1 
+ enzyme                            2.7.1  →   2.8.2 
+ eslint                           3.16.1  →  3.19.0 
+ eslint-config-airbnb             14.1.0  →  15.0.1 
+ eslint-loader                     1.6.3  →   1.7.1 
+ eslint-plugin-flowtype           2.30.0  →  2.33.0 
+ eslint-plugin-jsx-a11y            4.0.0  →   5.0.3 
+ eslint-plugin-react              6.10.0  →   7.0.1 
+ extract-text-webpack-plugin  2.0.0-rc.3  →   2.1.0 
+ file-loader                      0.10.0  →  0.11.1 
+ flow-bin                         0.39.0  →  0.46.0 
+ image-webpack-loader              3.2.0  →   3.3.1 
+ jsdom                            9.11.0  →  10.1.0 
+ mocha                             3.2.0  →   3.4.1 
+ nock                              9.0.6  →  9.0.13 
+ node-sass                         4.5.0  →   4.5.3 
+ nyc                              10.1.2  →  10.3.2 
+ postcss-loader                    1.3.1  →   2.0.5 
+ react-addons-test-utils          15.4.2  →  15.5.1 
+ redux-saga-test-plan              2.2.1  →   3.0.2 
+ rimraf                            2.6.0  →   2.6.1 
+ sass-loader                       6.0.2  →   6.0.5 
+ sinon                            1.17.7  →   2.2.0 
+ style-loader                     0.13.1  →  0.17.0 
+ url-loader                        0.5.7  →   0.5.8 
+ webpack                           2.2.1  →   2.5.1 
+ webpack-dev-server                2.4.1  →   2.4.5 
+
 ## 0.8.1 - 2017-02-23
 
 * Dependency update.

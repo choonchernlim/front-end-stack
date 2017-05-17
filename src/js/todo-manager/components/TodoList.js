@@ -14,13 +14,13 @@ type Props = {
 
 export const TodoList = ({ todos, onToggleTodo }: Props): Element<*> => (
   <ul>
-    {todos.map(todo =>
+    {todos.map(todo => (
       <Todo
         key={todo.get('id')}
         text={todo.get('text')}
         completed={todo.get('completed')}
         onClick={() => onToggleTodo(todo.get('id'))}
-      />)
+      />))
     }
   </ul>
 );
