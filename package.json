@@ -26,6 +26,7 @@
     "isomorphic-fetch": "2.2.1",
     "material-ui": "0.18.1",
     "moment": "2.18.1",
+    "prop-types": "15.5.10",
     "radium": "0.19.0",
     "radium-grid": "2.0.3",
     "react": "15.5.4",

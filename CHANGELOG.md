@@ -1,9 +1,28 @@
 # Change Log
 
+* Dependency update.
+
+* Added `postcss.config.js` to fix "No PostCSS Config found" error. See https://github.com/postcss/postcss-loader/issues/204
+
+* Added `prop-types` to handle "Accessing PropTypes via the main React package is deprecated. Use the prop-types package from npm instead." warning.
+
 * npm test not working
-* airbnb react.js error in .eslintrc
-* flow error: fbjs/lib/shallowEqual. Required module not found
 * jsdom v10 - error... use v9
+
+
+  Error: /Users/meteoric/Documents/development/workspace/intellij/front-end-stack/node_modules/eslint-config-airbnb/rules/react.js:
+    Configuration for rule "react/jsx-wrap-multilines" is invalid:
+    Value "data["0"].arrow" has additional properties.
+  
+  Referenced from: airbnb
+  Referenced from: /Users/meteoric/Documents/development/workspace/intellij/front-end-stack/.eslintrc
+  
+  Error: /Users/meteoric/Documents/development/workspace/intellij/front-end-stack/node_modules/eslint-config-airbnb/rules/react.js:
+    Configuration for rule "react/jsx-wrap-multilines" is invalid:
+    Value "data["0"].arrow" has additional properties.
+  
+  Referenced from: airbnb
+  Referenced from: /Users/meteoric/Documents/development/workspace/intellij/front-end-stack/.eslintrc
 
 did not upgrade
  history                           3.2.0  →   4.6.1 
