@@ -31,10 +31,10 @@ did not upgrade
   
  material-ui                      0.17.0  →  0.18.1 
  moment                           2.17.1  →  2.18.1 
- radium                           0.18.1  →  0.19.0 
+ radium                           0.18.1  →  0.19.1 
  react                            15.4.2  →  15.5.4 
  react-dom                        15.4.2  →  15.5.4 
- react-redux                       5.0.3  →   5.0.4 
+ react-redux                       5.0.3  →   5.0.5 
  redux-saga                       0.14.3  →  0.15.3 
  reselect                          2.5.4  →   3.0.1 
  autoprefixer                      6.7.5  →   7.1.0 
