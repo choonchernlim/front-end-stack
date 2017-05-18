@@ -3,10 +3,11 @@
  * Global setup before running any specs.
  */
 import 'babel-polyfill';
-import { jsdom } from 'jsdom';
+import { JSDOM } from 'jsdom';
 
-global.document = jsdom('<!doctype html><html><body></body></html>');
-global.window = document.defaultView;
+const { window } = new JSDOM('<!doctype html><html><body></body></html>');
+global.window = window;
+global.document = window.document;
 global.navigator = global.window.navigator;
 
 global.window.matchMedia = () => ({
