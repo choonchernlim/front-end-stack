@@ -1,6 +1,7 @@
 [ignore]
 <PROJECT_ROOT>/node_modules/redux-saga-test-plan/.*
 <PROJECT_ROOT>/node_modules/builder-radium-component/.*
+<PROJECT_ROOT>/node_modules/nock/.*
 
 [options]
 module.file_ext=.js
@@ -8,8 +9,9 @@ module.file_ext=.jsx
 module.file_ext=.json
 module.file_ext=.scss
 
-# To fix "Required module not found" error
+# To fix "Required module not found" error after ignoring dependencies above due to flow validation error
 module.name_mapper='\(redux-saga-test-plan\)' -> '<PROJECT_ROOT>/src/flow/general-stub.js.flow'
+module.name_mapper='\(nock\)' -> '<PROJECT_ROOT>/src/flow/general-stub.js.flow'
 
 esproposal.class_static_fields=enable
 esproposal.class_instance_fields=enable

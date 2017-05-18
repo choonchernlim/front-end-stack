@@ -6,8 +6,7 @@ Project template for building single-page app using modern front-end stack. Here
 
 |Library                                                                        |Description                                                              |
 |-------------------------------------------------------------------------------|-------------------------------------------------------------------------|
-|[Yarn](https://yarnpkg.com/)                                                   |(Preferred) JavaScript package manager                                   |
-|[NPM](https://www.npmjs.com/)                                                  |(Alternative) JavaScript package manager                                 |
+|[Yarn](https://yarnpkg.com/)                                                   |JavaScript package manager                                               |
 |[Node.js](https://nodejs.org)                                                  |Event-driven I/O server-side JavaScript environment (for app dev)        |
 |[Webpack](https://webpack.github.io/) 	                                        |Module bundler                                                           |
 |[Webpack Dev Server](https://github.com/webpack/webpack-dev-server)            |Live reloading server (for app dev)                                      |
@@ -29,7 +28,7 @@ Project template for building single-page app using modern front-end stack. Here
 
 * Install the following tools:-
   * [Node.js](https://github.com/creationix/nvm).
-  * [Yarn](https://yarnpkg.com/en/docs/install) (if you don't want to use `npm` provided by Node.js).
+  * [Yarn](https://yarnpkg.com/en/docs/install).
 
 * In Chrome, install the following dev tool extensions:-
   * [React Developer Tools](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=en)
@@ -42,9 +41,9 @@ Project template for building single-page app using modern front-end stack. Here
 
 * Clone or download/unzip this project template.
 
-* Run `npm install` to install dependencies.
+* Run `yarn install` to install dependencies.
 
-* To start app development, run `npm start`.
+* To start app development, run `yarn start`.
     * This script will start webpack-dev-server.
     * Open a browser and visit `https://localhost:8080`.
     * When you modify the source code, the configured Hot Module Replacement will automatically refresh the browser content.
@@ -53,12 +52,12 @@ Project template for building single-page app using modern front-end stack. Here
       * Click "Enable"
       * Click "Relaunch Now"
 
-* To package for production, run `npm run build`.
+* To package for production, run `yarn run build`.
     * This script will clean the distribution directory and create minified bundle files.
 
-* To package for production with a different context root than the one defined in `package.json`, run `CONTEXT_ROOT=/new-context-root npm run build`.
+* To package for production with a different context root than the one defined in `package.json`, run `CONTEXT_ROOT=/new-context-root yarn run build`.
 
-* To configure as Jenkins job, run `npm run ci`.
+* To configure as Jenkins job, run `yarn run ci`.
     * This script will create test result and code coverage files.
 
 ## Commands
@@ -67,16 +66,16 @@ These commands are cross-platform compatible.
 
 |Command                                  |Description                                                                                           |
 |-----------------------------------------|------------------------------------------------------------------------------------------------------|
-|`npm test`                               |Static type check, lint src/test files and run entire tests.                                          |
-|`npm test [./path/to/test/module]`       |Static type check, lint src/test files and run only tests within `[./path/to/test/module]`            |
-|`npm test:watch`                         |Watch for changes in all test files and rerun `npm test`                                              |
-|`npm test:watch [./path/to/test/module]` |Watch for changes in selected test files and rerun `npm test [./path/to/test/module]`                 |
-|`npm run build`                          |Build production bundle (compressed cache busting asset files)                                        |
-|`npm run ci`                             |Remove report dir, static type check, lint src/test files, run tests, run code coverage and generate result files for CI |
-|`npm run reinstall`                      |Clear npm cache, remove `node_module` and install modules listed in `package.json`                    |
-|`npm start`                              |Start Node.js Express server with Hot Module Replacement                                              |
-|`npm run stats`                          |Create `stats.json` that be loaded to http://webpack.github.io/analyse/ to visualize build.           |
-|`npm run flow`                           |Static type check.                                                                                    |
+|`yarn test`                              |Static type check, lint src/test files and run entire tests.                                          |
+|`yarn test [./path/to/test/module]`      |Static type check, lint src/test files and run only tests within `[./path/to/test/module]`            |
+|`yarn test:watch`                        |Watch for changes in all test files and rerun `yarn test`                                             |
+|`yarn test:watch [./path/to/test/module]`|Watch for changes in selected test files and rerun `yarn test [./path/to/test/module]`                |
+|`yarn run build`                         |Build production bundle (compressed cache busting asset files)                                        |
+|`yarn run ci`                            |Remove report dir, static type check, lint src/test files, run tests, run code coverage and generate result files for CI |
+|`yarn run reinstall`                     |Clear yarn cache, remove `node_module` and install modules listed in `package.json`                   |
+|`yarn start`                             |Start Node.js Express server with Hot Module Replacement                                              |
+|`yarn run stats`                         |Create `stats.json` that be loaded to http://webpack.github.io/analyse/ to visualize build.           |
+|`yarn run flow`                          |Static type check.                                                                                    |
 
 ## Dependencies
 
@@ -175,7 +174,7 @@ These commands are cross-platform compatible.
 ├── LICENSE.md                  -> License, if needed
 ├── package.json                -> NPM scripts and dependencies
 ├── README.md                   -> Readme file for the app
-├── stats.json                  -> Generated file when running `npm run stats`
+├── stats.json                  -> Generated file when running `yarn run stats`
 ├── webpack.base.config.js      -> Common webpack config
 ├── webpack.config.js           -> Production webpack config
 ├── webpack.dev.config.js       -> Development webpack config
@@ -185,7 +184,7 @@ These commands are cross-platform compatible.
 
 ### Error: dyld: Library not loaded
 
-When running `npm start`, you get this error...
+When running `yarn start`, you get this error...
 
 ```
 Module build failed: Error: dyld: Library not loaded: /usr/local/opt/libpng/lib/libpng16.16.dylib

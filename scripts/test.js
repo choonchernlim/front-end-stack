@@ -1,6 +1,6 @@
 /**
- * `npm test` - to run all tests.
- * `npm test ./test/submodule` - to run all tests within `./test/submodule`.
+ * `yarn test` - to run all tests.
+ * `yarn test ./test/submodule` - to run all tests within `./test/submodule`.
  *
  * Cross-platform script to lint src/test files and execute Mocha tests.
  */

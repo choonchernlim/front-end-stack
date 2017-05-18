@@ -1,5 +1,5 @@
 /**
- * `npm run ci`
+ * `yarn run ci`
  *
  * Cross-platform script to generate test result file and coverage result file for CI.
  */

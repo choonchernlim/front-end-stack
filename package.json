@@ -12,10 +12,10 @@
   },
   "scripts": {
     "test": "node ./scripts/test",
-    "test:watch": "nodemon --exec 'npm test'",
+    "test:watch": "nodemon --exec 'yarn test'",
     "build": "webpack --progress",
     "ci": "node ./scripts/ci",
-    "reinstall": "npm cache clean && rimraf \"node_modules/!(rimraf|.bin)\" && npm install",
+    "reinstall": "yarn cache clean && rimraf \"node_modules/!(rimraf|.bin)\" && yarn install",
     "start": "webpack-dev-server --config webpack.dev.config.js --progress",
     "stats": "webpack --profile --json > stats.json",
     "flow": "flow"
