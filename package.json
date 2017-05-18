@@ -87,24 +87,5 @@
     "url-loader": "0.5.8",
     "webpack": "2.5.1",
     "webpack-dev-server": "2.4.5"
-  },
-  "nyc": {
-    "require": [
-      "babel-register"
-    ],
-    "exclude": [
-      "scripts/",
-      "webpack.**.js",
-      "**/*spec.js",
-      "**/__tests__/**",
-      "**/node_modules/**"
-    ],
-    "reporter": [
-      "html",
-      "cobertura"
-    ],
-    "sourceMap": false,
-    "instrument": false,
-    "all": true
   }
 }
