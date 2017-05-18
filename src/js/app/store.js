@@ -18,10 +18,14 @@ const configureStore = (history: HistoryMiddleware): StoreCreator => {
   // See https://github.com/reactjs/react-router-redux#pushlocation-replacelocation-gonumber-goback-goforward
   const routerHistoryMiddleware = routerMiddleware(history);
 
-  const enhancer: GenericStoreEnchancer = compose(
-    applyMiddleware(sagaMiddleware, routerHistoryMiddleware),
-    reduxDevToolsExtension()
+  let enhancer: GenericStoreEnchancer = applyMiddleware(
+    sagaMiddleware,
+    routerHistoryMiddleware
   );
+
+  if (process.env.NODE_ENV !== 'production') {
+    enhancer = compose(enhancer, reduxDevToolsExtension());
+  }
 
   // Create store with middlewares
   const store: StoreCreator = createStore(reducers, enhancer);
