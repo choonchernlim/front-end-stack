@@ -35,7 +35,7 @@ const webpackOptions = {
       },
       {
         test: /\.js$/,
-        use: 'babel-loader',
+        use: 'babel-loader?cacheDirectory',
         exclude: /node_modules/
       },
       {
