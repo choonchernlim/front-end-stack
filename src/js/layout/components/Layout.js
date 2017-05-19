@@ -1,6 +1,5 @@
 // @flow
 import { Style, StyleRoot } from 'radium';
-import { Grid, Cell } from 'radium-grid';
 import React from 'react';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
@@ -18,7 +17,7 @@ import DevicesIcon from 'material-ui/svg-icons/device/devices';
 import MoodIcon from 'material-ui/svg-icons/social/mood';
 import userImage from '../../../img/user.jpg';
 import baseStyle from '../../common/styles';
-import style from '../styles';
+import style, { mediaQuery } from '../styles';
 
 type Props = {
   children: React.Element<*>,
@@ -31,10 +30,7 @@ export default class Layout extends React.Component {
 
     this.state = {
       open: true,
-      mql: window.matchMedia([
-        Grid.defaultProps.breakpoints.large,
-        Grid.defaultProps.breakpoints.xlarge
-      ].map(breakpoint => breakpoint.replace(/@media\s+/, '')).join())
+      mql: window.matchMedia(mediaQuery.large)
     };
   }
 
@@ -73,7 +69,6 @@ export default class Layout extends React.Component {
           />
 
           <Drawer open={this.state.open} containerStyle={style.leftNav}>
-
             <MenuItem
               onTouchTap={() => router.push('/')}
               leftIcon={<HomeIcon />}
@@ -109,12 +104,10 @@ export default class Layout extends React.Component {
               leftIcon={<SchoolIcon />}
             >My Shitty Code
             </MenuItem>
-
           </Drawer>
 
-          <Grid>
-            <Cell width="1" style={style.container}>{this.props.children}</Cell>
-          </Grid>
+          <br />
+          <div style={style.container}>{this.props.children}</div>
         </StyleRoot>
       </MuiThemeProvider>
     );

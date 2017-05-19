@@ -3,7 +3,6 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import RaisedButton from 'material-ui/RaisedButton';
 import TextField from 'material-ui/TextField';
-import { Grid, Cell } from 'radium-grid';
 import { addTodo } from '../actions';
 
 type Props = {
@@ -59,29 +58,24 @@ class AddTodo extends Component {
 
   render() {
     return (
-      <Grid>
-        <Cell width="1/3">
-          {
-            // Using ref callback instead of string.
-            // See https://facebook.github.io/react/docs/more-about-refs.html
-          }
-          <TextField
-            ref={ref => (this.todoTextField = ref)}
-            hintText="Enter Todo..."
-            errorText={this.state.error}
-            value={this.state.value}
-            onChange={this.handleInputChange}
-            onKeyDown={this.handleInputEnter}
-          />
-        </Cell>
-        <Cell width="2/3">
-          <RaisedButton
-            primary
-            label="Add Todo"
-            onClick={this.handleButtonClick}
-          />
-        </Cell>
-      </Grid>
+      <div>
+        <TextField
+          ref={ref => (this.todoTextField = ref)}
+          hintText="Enter Todo..."
+          errorText={this.state.error}
+          value={this.state.value}
+          onChange={this.handleInputChange}
+          onKeyDown={this.handleInputEnter}
+        />
+
+        <br />
+
+        <RaisedButton
+          primary
+          label="Add Todo"
+          onClick={this.handleButtonClick}
+        />
+      </div>
     );
   }
 }

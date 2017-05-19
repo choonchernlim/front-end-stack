@@ -87,7 +87,6 @@ These commands are cross-platform compatible.
 |material-ui                              |UI - Google's material design UI components built with React                         |
 |moment                                   |Parse, validate, manipulate and display dates.                                       |
 |radium                                   |UI - Managing inline styles on React elements                                        |
-|radium-grid                              |UI - Grid layout                                                                     |
 |react                                    |React - Core                                                                         |
 |react-dom                                |React - DOM                                                                          |
 |react-redux                              |React - Redux integration                                                            |

@@ -15,7 +15,7 @@
     "test:watch": "nodemon --exec 'yarn test'",
     "build": "webpack --progress",
     "ci": "node ./scripts/ci",
-    "reinstall": "yarn cache clean && rimraf \"node_modules/!(rimraf|.bin)\" && yarn install",
+    "reinstall": "yarn cache clean && yarn upgrade",
     "start": "webpack-dev-server --config webpack.dev.config.js --progress",
     "stats": "webpack --profile --json > stats.json",
     "flow": "flow"
@@ -28,7 +28,6 @@
     "moment": "2.18.1",
     "prop-types": "15.5.10",
     "radium": "0.19.1",
-    "radium-grid": "2.0.3",
     "react": "15.5.4",
     "react-dom": "15.5.4",
     "react-redux": "5.0.5",

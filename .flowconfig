@@ -1,6 +1,5 @@
 [ignore]
 <PROJECT_ROOT>/node_modules/redux-saga-test-plan/.*
-<PROJECT_ROOT>/node_modules/builder-radium-component/.*
 <PROJECT_ROOT>/node_modules/nock/.*
 
 [options]
