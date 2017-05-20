@@ -6,17 +6,9 @@ import TextField from 'material-ui/TextField';
 import Checkbox from 'material-ui/Checkbox';
 import RadioButton from 'material-ui/RadioButton';
 import Container from '../../app/components/Container';
+import styles from '../styles';
 
-const styles = {
-  paper: {
-    padding: 12
-  },
-  textField: {
-    verticalAlign: 'top'
-  }
-};
-
-const Home = (): React.Element<any> => (
+const Home = (): React.Element<*> => (
   <Container>
     <h1>Welcome!</h1>
 
@@ -24,7 +16,7 @@ const Home = (): React.Element<any> => (
 
     <h1>Look and Feel</h1>
 
-    <Paper style={styles.paper}>
+    <Paper style={styles.home.paper}>
       <p><a href="#link">This is a link</a>. <strong>This is a strong text</strong>.</p>
 
       <h1>Heading 1</h1>
@@ -33,28 +25,26 @@ const Home = (): React.Element<any> => (
 
       <h3>Heading 3</h3>
 
-      <TextField hintText="Text Field" style={styles.textField} />
+      <TextField hintText="Text Field" style={styles.home.textField} />
       {' '}
-      <TextField hintText="Text Field (Disabled)" disabled style={styles.textField} />
+      <TextField hintText="Disabled Text Field" disabled style={styles.home.textField} />
       {' '}
       <TextField
-        hintText="Text Field with Error Message"
-        errorText="This field is required"
-        style={styles.textField}
+        hintText="Error Text Field"
+        errorText="Required field"
+        style={styles.home.textField}
       />
 
       <br /><br />
-      <br /><br />
 
-      <RaisedButton label="Primary Button" primary />
+      <RaisedButton label="Primary Button" primary style={styles.home.button} />
       {' '}
-      <RaisedButton label="Secondary Button" secondary />
+      <RaisedButton label="Secondary Button" secondary style={styles.home.button} />
       {' '}
-      <RaisedButton label="Default Button" />
+      <RaisedButton label="Default Button" style={styles.home.button} />
       {' '}
-      <RaisedButton label="Disabled Button" disabled />
+      <RaisedButton label="Disabled Button" disabled style={styles.home.button} />
 
-      <br /><br />
       <br /><br />
 
       <Checkbox label="Unchecked Checkbox" />

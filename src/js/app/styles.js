@@ -7,6 +7,13 @@ export const mediaQuery = {
   large: 'only screen and (min-width: 1025px)'
 };
 
+// Material UI theme override: http://www.material-ui.com/#/customization/themes
+const muiTheme = () => ({
+  palette: {
+    primary1Color: cyan800
+  }
+});
+
 const baseStyle = () => {
   const headerTag = {
     fontWeight: 400,
@@ -68,15 +75,26 @@ const layoutStyle = () => {
   };
 };
 
-const styles = {
-  // Material UI theme override: http://www.material-ui.com/#/customization/themes
-  muiTheme: {
-    palette: {
-      primary1Color: cyan800
-    }
+const home = {
+  paper: {
+    padding: 12
   },
+  textField: {
+    verticalAlign: 'top',
+    width: 200,
+    margin: 12
+  },
+  button: {
+    width: 200,
+    margin: 12
+  }
+};
+
+const styles = {
+  muiTheme: muiTheme(),
   base: baseStyle(),
-  layout: layoutStyle()
+  layout: layoutStyle(),
+  home
 };
 
 export default styles;
