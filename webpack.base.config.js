@@ -1,3 +1,5 @@
+// @flow
+
 const path = require('path');
 const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
@@ -14,7 +16,7 @@ const appPath = path.join(srcPath, '/js/app/index.js');
 const htmlWebpackPluginOptions = {
   title: packageJson.name,
   template: path.join(srcPath, '/html/index.html'),
-  favicon: path.join(srcPath, '/img/favicon.png')
+  favicon: path.join(srcPath, '/img/favicon.png'),
 };
 
 // Base options for WebPack
@@ -22,7 +24,7 @@ const webpackOptions = {
   entry: {
     polyfill: 'babel-polyfill',
     app: appPath,
-    vendor: vendors
+    vendor: vendors,
   },
 
   module: {
@@ -31,19 +33,19 @@ const webpackOptions = {
         enforce: 'pre',
         test: /\.js?$/,
         use: 'eslint-loader',
-        exclude: /node_modules/
+        exclude: /node_modules/,
       },
       {
         test: /\.js$/,
         use: 'babel-loader?cacheDirectory',
-        exclude: /node_modules/
+        exclude: /node_modules/,
       },
       {
         test: /\.scss$/,
         use: ExtractTextPlugin.extract({
           fallback: 'style-loader',
-          use: ['css-loader', 'postcss-loader', 'sass-loader']
-        })
+          use: ['css-loader', 'postcss-loader', 'sass-loader'],
+        }),
       },
       {
         test: /\.woff(2)?$/,
@@ -51,8 +53,8 @@ const webpackOptions = {
         query: {
           limit: '10000',
           mimetype: 'application/octet-stream',
-          name: 'font/[name].[hash].[ext]'
-        }
+          name: 'font/[name].[hash].[ext]',
+        },
       },
       {
         test: /\.(jpe?g|png|gif)$/i,
@@ -62,23 +64,23 @@ const webpackOptions = {
             loader: 'image-webpack-loader',
             query: {
               mozjpeg: {
-                progressive: true
+                progressive: true,
               },
               gifsicle: {
-                interlaced: false
+                interlaced: false,
               },
               optipng: {
-                optimizationLevel: 4
+                optimizationLevel: 4,
               },
               pngquant: {
                 quality: '75-90',
-                speed: 3
-              }
-            }
-          }
-        ]
-      }
-    ]
+                speed: 3,
+              },
+            },
+          },
+        ],
+      },
+    ],
   },
 
   plugins: [
@@ -90,10 +92,10 @@ const webpackOptions = {
         // https://developers.google.com/web/tools/setup/setup-buildtools#dont-trip-up-with-vendor-prefixes
         postcss: [
           autoprefixer({
-            browsers: ['last 2 versions']
-          })
-        ]
-      }
+            browsers: ['last 2 versions'],
+          }),
+        ],
+      },
     }),
 
     // Split vendors from app
@@ -103,7 +105,7 @@ const webpackOptions = {
     // So your styles are no longer inlined into the javascript, but separate in a css
     // bundle file (styles.css). If your total stylesheet volume is big, it will be faster
     // because the stylesheet bundle is loaded in parallel to the javascript bundle.
-    new ExtractTextPlugin('css/app.[chunkhash].css')
+    new ExtractTextPlugin('css/app.[chunkhash].css'),
   ],
 
   // To suppress this warning when creating the vendor bundle:-
@@ -111,11 +113,11 @@ const webpackOptions = {
   // WARNING in asset size limit: The following asset(s) exceed the recommended size limit (250 kB).
   // This can impact web performance.
   performance: {
-    hints: false
-  }
+    hints: false,
+  },
 };
 
 module.exports = {
   htmlWebpackPluginOptions,
-  webpackOptions
+  webpackOptions,
 };

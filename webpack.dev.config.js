@@ -1,3 +1,5 @@
+// @flow
+
 const baseConfig = require('./webpack.base.config');
 const path = require('path');
 const webpack = require('webpack');
@@ -28,7 +30,7 @@ module.exports = Object.assign({}, baseConfig.webpackOptions, {
 
     // Include comments with information about the modules to complement devtool="eval"
     // https://github.com/webpack/docs/wiki/build-performance#sourcemaps
-    pathinfo: true
+    pathinfo: true,
   },
 
   devServer: {
@@ -36,7 +38,7 @@ module.exports = Object.assign({}, baseConfig.webpackOptions, {
 
     // to ensure bookmarkable link works instead of getting a blank screen
     historyApiFallback: {
-      index: trailingSlashContextRoot
+      index: trailingSlashContextRoot,
     },
 
     // use HTTPS to ensure client side can read server side generated cookie containing CSRF token
@@ -51,14 +53,14 @@ module.exports = Object.assign({}, baseConfig.webpackOptions, {
       // Redirects `https://localhost:8080/api/*` to `https://localhost:8443/<context_root>/api/*`
       [path.posix.join(contextRoot, '/api/*')]: {
         target: 'https://localhost:8443',
-        secure: false
+        secure: false,
       },
       // Redirects `https://localhost:8080/saml/*` to `https://localhost:8443/<context_root>/saml/*`
       [path.posix.join(contextRoot, '/saml/*')]: {
         target: 'https://localhost:8443',
-        secure: false
-      }
-    }
+        secure: false,
+      },
+    },
   },
 
   plugins: baseConfig.webpackOptions.plugins.concat([
@@ -79,8 +81,8 @@ module.exports = Object.assign({}, baseConfig.webpackOptions, {
       'process.env': {
         NODE_ENV: JSON.stringify('development'),
         CONTEXT_ROOT: JSON.stringify(contextRoot),
-        APP_NAME: JSON.stringify(packageJson.name)
-      }
-    })
-  ])
+        APP_NAME: JSON.stringify(packageJson.name),
+      },
+    }),
+  ]),
 });

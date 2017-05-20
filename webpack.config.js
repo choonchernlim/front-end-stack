@@ -1,3 +1,5 @@
+// @flow
+
 const baseConfig = require('./webpack.base.config');
 const path = require('path');
 const webpack = require('webpack');
@@ -33,22 +35,22 @@ module.exports = Object.assign({}, baseConfig.webpackOptions, {
     // Using `chunkhash` instead of `hash` to ensure `vendor` and `app` have different
     // computed hash. This allows `vendor` file to have longer term cache on user's browser
     // until the vendor dependencies get updated
-    filename: 'js/[name].[chunkhash].js'
+    filename: 'js/[name].[chunkhash].js',
   },
 
-  plugins: baseConfig.webpackOptions.plugins.concat(
+  plugins: baseConfig.webpackOptions.plugins.concat([
     // Instead of cleaning whole dist dir between builds, clean only dirs that may contain
     // hashed filenames
     new CleanPlugin(['css', 'font', 'img', 'js'], {
       root: distPath,
-      verbose: false
+      verbose: false,
     }),
 
     // Minify JS without source map and suppress any warnings.
     new webpack.optimize.UglifyJsPlugin({
       compress: {
-        warnings: false
-      }
+        warnings: false,
+      },
     }),
 
     // To prevent the following warnings in browser console:-
@@ -59,13 +61,13 @@ module.exports = Object.assign({}, baseConfig.webpackOptions, {
       'process.env': {
         NODE_ENV: JSON.stringify('production'),
         CONTEXT_ROOT: JSON.stringify(contextRoot),
-        APP_NAME: JSON.stringify(packageJson.name)
-      }
+        APP_NAME: JSON.stringify(packageJson.name),
+      },
     }),
 
     // Generates `index.html` at the location specified by the user
     new HtmlWebpackPlugin(Object.assign({}, baseConfig.htmlWebpackPluginOptions, {
-      filename: path.join(__dirname, packageJson.config.entry_file_path)
-    }))
-  )
+      filename: path.join(__dirname, packageJson.config.entry_file_path),
+    })),
+  ]),
 });
