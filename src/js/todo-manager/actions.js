@@ -6,7 +6,7 @@ let nextTodoId = 0;
 export const ACTION_TYPES: { [key: string]: string } = {
   ADD_TODO: 'todo-manager/addTodo',
   SET_VISIBILITY_FILTER: 'todo-manager/setVisibilityFilter',
-  TOGGLE_TODO: 'todo-manager/toggleTodo'
+  TOGGLE_TODO: 'todo-manager/toggleTodo',
 };
 
 export const addTodo = (text: string): AddTodoAction => {
@@ -14,16 +14,16 @@ export const addTodo = (text: string): AddTodoAction => {
   return {
     type: ACTION_TYPES.ADD_TODO,
     id: nextTodoId,
-    text
+    text,
   };
 };
 
 export const setVisibilityFilter = (filter: string): SetVisibilityFilterAction => ({
   type: ACTION_TYPES.SET_VISIBILITY_FILTER,
-  filter
+  filter,
 });
 
 export const toggleTodo = (id: number): ToggleTodoAction => ({
   type: ACTION_TYPES.TOGGLE_TODO,
-  id
+  id,
 });

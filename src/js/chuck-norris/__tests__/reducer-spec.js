@@ -17,7 +17,7 @@ describe('Chuck Norris', () => {
       it('when getting joke, should set completed to false', () => {
         const initialState = new JokeRecord({
           completed: true,
-          joke: 'joke'
+          joke: 'joke',
         });
 
         const actualState = reducer(initialState, getJoke());
@@ -32,13 +32,13 @@ describe('Chuck Norris', () => {
       it('when invoked, should return new joke', () => {
         const initialState = new JokeRecord({
           completed: false,
-          joke: 'joke'
+          joke: 'joke',
         });
 
         const actualState = reducer(initialState, getJokeSucceeded('new joke'));
         const expectedState = new JokeRecord({
           completed: true,
-          joke: 'new joke'
+          joke: 'new joke',
         });
 
         // $FlowFixMe: Waiting for ImmutableJS to fix `record.toJS()`
@@ -50,14 +50,14 @@ describe('Chuck Norris', () => {
       it('when invoked, should return error', () => {
         const initialState = new JokeRecord({
           completed: false,
-          joke: 'joke'
+          joke: 'joke',
         });
 
         const actualState = reducer(initialState, getJokeFailed('error'));
         const expectedState = new JokeRecord({
           completed: true,
           joke: undefined,
-          error: 'error'
+          error: 'error',
         });
 
         // $FlowFixMe: Waiting for ImmutableJS to fix `record.toJS()`

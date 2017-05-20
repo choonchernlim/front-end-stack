@@ -25,12 +25,12 @@ export const Link = ({ active, filter, children, onSetVisibilityFilter }: Props)
 
 const mapStateToProps = (state, ownProps) => ({
   filter: ownProps.filter,
-  active: ownProps.filter === state.todoManager.get('visibilityFilter')
+  active: ownProps.filter === state.todoManager.get('visibilityFilter'),
 });
 
 const LinkContainer = connect(
   mapStateToProps,
-  { onSetVisibilityFilter: setVisibilityFilter }
+  { onSetVisibilityFilter: setVisibilityFilter },
 )(Link);
 
 export default LinkContainer;

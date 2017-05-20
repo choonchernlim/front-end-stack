@@ -12,8 +12,8 @@ describe('Chuck Norris', () => {
           state: {
             completed: false,
             joke: undefined,
-            error: undefined
-          }
+            error: undefined,
+          },
         });
       });
     });
@@ -25,8 +25,8 @@ describe('Chuck Norris', () => {
           state: {
             completed: true,
             joke: undefined,
-            error: 'error'
-          }
+            error: 'error',
+          },
         });
       });
     });
@@ -38,8 +38,8 @@ describe('Chuck Norris', () => {
           state: {
             completed: true,
             joke: 'joke',
-            error: undefined
-          }
+            error: undefined,
+          },
         });
       });
     });

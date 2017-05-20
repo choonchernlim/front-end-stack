@@ -26,13 +26,13 @@ const stateSelector: StateSelector = {
   chuckNorris: {
     joke: (state: State): ?string => state.chuckNorris.get('joke'),
     error: (state: State): ?string => state.chuckNorris.get('error'),
-    completed: (state: State): boolean => state.chuckNorris.get('completed')
+    completed: (state: State): boolean => state.chuckNorris.get('completed'),
   },
 
   todoManager: {
     visibilityFilter: (state: State): string => state.todoManager.get('visibilityFilter'),
-    todos: (state: State): List<TodoRecord> => state.todoManager.get('todos')
-  }
+    todos: (state: State): List<TodoRecord> => state.todoManager.get('todos'),
+  },
 };
 
 export default stateSelector;

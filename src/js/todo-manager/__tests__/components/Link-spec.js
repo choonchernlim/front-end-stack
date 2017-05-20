@@ -13,7 +13,7 @@ describe('Todo Manager', () => {
           active: true,
           filter: 'Show',
           children: 'Hello',
-          onSetVisibilityFilter: f => f
+          onSetVisibilityFilter: f => f,
         }));
 
         expect(span.tagName).to.equal('SPAN');

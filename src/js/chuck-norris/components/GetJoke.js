@@ -24,13 +24,13 @@ const GetJoke = ({ joke, error, completed, onClick }: Props) => (
 
 GetJoke.defaultProps = {
   joke: undefined,
-  error: false
+  error: false,
 };
 
 const mapStateToProps = state => ({
   joke: stateSelector.chuckNorris.joke(state),
   error: stateSelector.chuckNorris.error(state),
-  completed: stateSelector.chuckNorris.completed(state)
+  completed: stateSelector.chuckNorris.completed(state),
 });
 
 const GetJokeContainer = connect(mapStateToProps, { onClick: getJoke })(GetJoke);

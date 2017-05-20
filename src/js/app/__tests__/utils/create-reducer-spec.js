@@ -20,7 +20,7 @@ describe('Common', () => {
       it('given handlers with no matching action, should return existing state', () => {
         const existingState = List();
         const handlers = {
-          'DIFFERENT-ACTION': () => List('1')
+          'DIFFERENT-ACTION': () => List('1'),
         };
 
         const reducer = createReducer(existingState, handlers);
@@ -34,7 +34,7 @@ describe('Common', () => {
         const existingState = List();
         const expectedState = List('1');
         const handlers = {
-          ACTION: () => expectedState
+          ACTION: () => expectedState,
         };
 
         const reducer = createReducer(existingState, handlers);

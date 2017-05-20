@@ -20,11 +20,6 @@
   },
   // overriding certain rules because it drives me nuts
   "rules": {
-    // no trailing comma in multi-line object literal or array
-    "comma-dangle": [
-      2,
-      "never"
-    ],
     // allow `else` on new line
     // http://eslint.org/docs/rules/brace-style
     "brace-style": [

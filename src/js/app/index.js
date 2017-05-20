@@ -19,7 +19,7 @@ injectTapEventPlugin();
 // instead of using `browserHistory` from react-router, create one
 // with basename to allow app to specify different context root
 const browserHistory: HistoryMiddleware = useRouterHistory(createBrowserHistory)({
-  basename: sanitizeContextRoot()
+  basename: sanitizeContextRoot(),
 });
 
 // configure store
@@ -34,5 +34,5 @@ ReactDOM.render(
   <Provider store={store}>
     <Router history={history} routes={routes} />
   </Provider>,
-  document.getElementById('app')
+  document.getElementById('app'),
 );

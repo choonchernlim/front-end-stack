@@ -7,5 +7,5 @@ import chuckNorris from '../chuck-norris/reducer';
 export default combineReducers({
   todoManager,
   chuckNorris,
-  routing: routerReducer
+  routing: routerReducer,
 });

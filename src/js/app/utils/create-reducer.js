@@ -15,7 +15,7 @@ type State = List<*> | Map<*, *> | Record<*>;
  */
 const createReducer = (initialState: State, handlers: {}) => (
   state: State = initialState,
-  action: { type: string }
+  action: { type: string },
 ): State => (
   Object.prototype.hasOwnProperty.call(handlers, action.type) ?
     handlers[action.type](state, action) :

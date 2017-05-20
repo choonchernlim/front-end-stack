@@ -18,7 +18,7 @@ const makeGetVisibleTodos = () => createSelector(
       default:
         return todos;
     }
-  }
+  },
 );
 
 export default makeGetVisibleTodos;

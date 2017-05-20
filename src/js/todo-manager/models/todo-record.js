@@ -4,7 +4,7 @@ import { Record } from 'immutable';
 const TodoRecord = Record({
   id: undefined,
   text: undefined,
-  completed: undefined
+  completed: undefined,
 });
 
 export default TodoRecord;

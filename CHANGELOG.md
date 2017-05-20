@@ -12,6 +12,9 @@
 
 * Externalized nyc config from `package.json` to `.nycrc`.
 
+* ESLint configuration:
+  * Allowed trailing comma in multi-line object literal or array (works with IntelliJ IDEA 2017).
+  
 * npm test not working
 * jsdom v10 - error... use v9
 

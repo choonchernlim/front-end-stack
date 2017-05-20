@@ -6,7 +6,7 @@ type ReselectSelector = {
 };
 
 const reselectSelector: ReselectSelector = {
-  makeGetVisibleTodos
+  makeGetVisibleTodos,
 };
 
 export default reselectSelector;

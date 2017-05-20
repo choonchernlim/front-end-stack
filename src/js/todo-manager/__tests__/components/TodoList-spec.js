@@ -14,7 +14,7 @@ describe('Todo Manager', () => {
 
         const todos = fromJS([
           { id: 1, text: 'Item 1', completed: false },
-          { id: 2, text: 'Item 2', completed: true }
+          { id: 2, text: 'Item 2', completed: true },
         ]);
 
         const toggleTodo = id => actions.push(id);

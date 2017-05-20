@@ -28,7 +28,7 @@ export const TodoList = ({ todos, onToggleTodo }: Props): Element<*> => (
 const makeMapStateToProps = () => {
   const getVisibleTodos: Function = reselectSelector.makeGetVisibleTodos();
   return state => ({
-    todos: getVisibleTodos(state)
+    todos: getVisibleTodos(state),
   });
 };
 

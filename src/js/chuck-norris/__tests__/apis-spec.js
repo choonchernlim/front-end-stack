@@ -17,8 +17,8 @@ describe('Chuck Norris', () => {
       it('given valid call, should return value', () => {
         nock(RANDOM_JOKE_SERVER).get(RANDOM_JOKE_URI).reply(200, {
           value: {
-            joke: 'ha ha'
-          }
+            joke: 'ha ha',
+          },
         });
 
         return expect(getRandomJokeApi()).to.eventually.equal('ha ha');

@@ -20,7 +20,7 @@ const configureStore = (history: HistoryMiddleware): StoreCreator => {
 
   let enhancer: GenericStoreEnchancer = applyMiddleware(
     sagaMiddleware,
-    routerHistoryMiddleware
+    routerHistoryMiddleware,
   );
 
   if (process.env.NODE_ENV !== 'production') {

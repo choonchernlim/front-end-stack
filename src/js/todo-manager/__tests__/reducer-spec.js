@@ -24,8 +24,8 @@ describe('Todo Manager', () => {
 
         const expectedState = new TodoManagerRecord({
           todos: List([
-            new TodoRecord({ id: action.id, text: 'item 1', completed: false })
-          ])
+            new TodoRecord({ id: action.id, text: 'item 1', completed: false }),
+          ]),
         });
 
         // $FlowFixMe: Waiting for ImmutableJS to fix `record.toJS()`
@@ -38,8 +38,8 @@ describe('Todo Manager', () => {
         const initialState = new TodoManagerRecord({
           todos: List([
             new TodoRecord({ id: 1, text: 'item 1', completed: false }),
-            new TodoRecord({ id: 2, text: 'item 2', completed: false })
-          ])
+            new TodoRecord({ id: 2, text: 'item 2', completed: false }),
+          ]),
         });
 
         const actualState = reducer(initialState, toggleTodo(1));
@@ -47,8 +47,8 @@ describe('Todo Manager', () => {
         const expectedState = new TodoManagerRecord({
           todos: List([
             new TodoRecord({ id: 1, text: 'item 1', completed: true }),
-            new TodoRecord({ id: 2, text: 'item 2', completed: false })
-          ])
+            new TodoRecord({ id: 2, text: 'item 2', completed: false }),
+          ]),
         });
 
         // $FlowFixMe: Waiting for ImmutableJS to fix `record.toJS()`

@@ -15,5 +15,5 @@ global.window.matchMedia = () => ({
   addListener() {
   },
   removeListener() {
-  }
+  },
 });

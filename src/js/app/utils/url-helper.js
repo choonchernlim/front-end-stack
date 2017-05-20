@@ -24,5 +24,5 @@ export const url = (uri: string): string => sanitizeContextRoot() + uri;
 
 export default {
   url,
-  sanitizeContextRoot
+  sanitizeContextRoot,
 };

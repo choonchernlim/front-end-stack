@@ -9,7 +9,7 @@ const addTodo = (state: TodoManagerRecord, action: AddTodoAction): TodoManagerRe
   state.set('todos', state.get('todos').push(new TodoRecord({
     id: action.id,
     text: action.text,
-    completed: false
+    completed: false,
   })))
 );
 
@@ -23,7 +23,7 @@ const toggleTodo = (state: TodoManagerRecord, action: ToggleTodoAction): TodoMan
 
 const setVisibilityFilter = (
   state: TodoManagerRecord,
-  action: SetVisibilityFilterAction
+  action: SetVisibilityFilterAction,
 ): TodoManagerRecord => (
   state.set('visibilityFilter', action.filter)
 );
@@ -31,5 +31,5 @@ const setVisibilityFilter = (
 export default createReducer(new TodoManagerRecord(), {
   [ACTION_TYPES.ADD_TODO]: addTodo,
   [ACTION_TYPES.TOGGLE_TODO]: toggleTodo,
-  [ACTION_TYPES.SET_VISIBILITY_FILTER]: setVisibilityFilter
+  [ACTION_TYPES.SET_VISIBILITY_FILTER]: setVisibilityFilter,
 });
