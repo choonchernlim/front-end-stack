@@ -26,29 +26,6 @@
       "error",
       "stroustrup"
     ],
-    // allow uppercase functions from ImmutableJS and Radium
-    "new-cap": [
-      2,
-      {
-        "capIsNewExceptions": [
-          "Immutable.List",
-          "Immutable.Stack",
-          "Immutable.Map",
-          "Immutable.OrderedMap",
-          "Immutable.Set",
-          "Immutable.OrderedSet",
-          "Immutable.Record",
-          "List",
-          "Stack",
-          "Map",
-          "OrderedMap",
-          "Set",
-          "OrderedSet",
-          "Record",
-          "Radium"
-        ]
-      }
-    ],
     // Allow JSX on `.js`
     // See https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-filename-extension.md
     "react/jsx-filename-extension": [
@@ -58,15 +35,6 @@
           ".js",
           ".jsx"
         ]
-      }
-    ],
-    // To allow test libraries (ex: chai) to reside in `devDependencies` instead of `dependencies`
-    // See https://github.com/airbnb/javascript/issues/959
-    // See https://github.com/benmosher/eslint-plugin-import/issues/422
-    "import/no-extraneous-dependencies": [
-      2,
-      {
-        "devDependencies": true
       }
     ],
     // `// @flow` must exist on the top of all files
