@@ -5,7 +5,7 @@
     "plugin:flowtype/recommended"
   ],
   // to handle ES7's static properties in React component
-  // https://github.com/yannickcr/eslint-plugin-react/issues/43
+  // https://github.com/gajus/eslint-plugin-flowtype#installation
   "parser": "babel-eslint",
   // Enable Flow type linting
   "plugins": [
