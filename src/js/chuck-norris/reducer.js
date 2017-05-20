@@ -1,5 +1,5 @@
 // @flow
-import createReducer from '../common/utils/create-reducer';
+import createReducer from '../app/utils/create-reducer';
 import JokeRecord from './models/joke-record';
 import { ACTION_TYPES } from './actions';
 import type { GetJokeAction, GetJokeFailedAction, GetJokeSucceededAction } from './types';

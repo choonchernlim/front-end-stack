@@ -3,7 +3,7 @@ import React, { Element } from 'react';
 import { List } from 'immutable';
 import { connect } from 'react-redux';
 import { toggleTodo } from '../actions';
-import reselectSelector from '../../common/selectors/reselect-selector';
+import reselectSelector from '../../app/selectors/reselect-selector';
 import Todo from './Todo';
 import TodoRecord from '../models/todo-record';
 

@@ -16,8 +16,7 @@ import SchoolIcon from 'material-ui/svg-icons/social/school';
 import DevicesIcon from 'material-ui/svg-icons/device/devices';
 import MoodIcon from 'material-ui/svg-icons/social/mood';
 import userImage from '../../../img/user.jpg';
-import baseStyle from '../../common/styles';
-import style, { mediaQuery } from '../styles';
+import styles, { mediaQuery } from '../styles';
 
 type Props = {
   children: React.Element<*>,
@@ -54,21 +53,21 @@ export default class Layout extends React.Component {
     const { router } = this.props;
 
     return (
-      <MuiThemeProvider muiTheme={getMuiTheme(baseStyle.muiTheme)}>
+      <MuiThemeProvider muiTheme={getMuiTheme(styles.muiTheme)}>
         <StyleRoot>
-          <Style rules={baseStyle.global} />
+          <Style rules={styles.base} />
 
           <AppBar
             title={process.env.APP_NAME}
-            style={style.appBar.base}
-            titleStyle={style.appBar.title}
+            style={styles.layout.appBar.base}
+            titleStyle={styles.layout.appBar.title}
             onTitleTouchTap={() => router.push('/')}
             onLeftIconButtonTouchTap={this.handleToggle}
-            iconStyleRight={style.appBar.iconRight}
+            iconStyleRight={styles.layout.appBar.iconRight}
             iconElementRight={<Avatar src={userImage} />}
           />
 
-          <Drawer open={this.state.open} containerStyle={style.leftNav}>
+          <Drawer open={this.state.open} containerStyle={styles.layout.leftNav}>
             <MenuItem
               onTouchTap={() => router.push('/')}
               leftIcon={<HomeIcon />}
@@ -107,7 +106,7 @@ export default class Layout extends React.Component {
           </Drawer>
 
           <br />
-          <div style={style.container}>{this.props.children}</div>
+          <div style={styles.layout.container}>{this.props.children}</div>
         </StyleRoot>
       </MuiThemeProvider>
     );

@@ -2,11 +2,11 @@
 /**
  * Function to configure store and executes sagas.
  */
-import { applyMiddleware, createStore, compose, GenericStoreEnchancer, StoreCreator } from 'redux';
+import { applyMiddleware, compose, createStore, GenericStoreEnchancer, StoreCreator } from 'redux';
 import { HistoryMiddleware } from 'react-router';
 import { routerMiddleware } from 'react-router-redux';
 import createSagaMiddleware, { SagaMiddleware } from 'redux-saga';
-import reduxDevToolsExtension from './redux-devtools-extension';
+import reduxDevToolsExtension from './devtools/redux-devtools-extension';
 import sagas from './sagas';
 import reducers from './reducers';
 

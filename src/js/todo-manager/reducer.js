@@ -1,5 +1,5 @@
 // @flow
-import createReducer from '../common/utils/create-reducer';
+import createReducer from '../app/utils/create-reducer';
 import TodoRecord from './models/todo-record';
 import TodoManagerRecord from './models/todo-manager-record';
 import { ACTION_TYPES } from './actions';

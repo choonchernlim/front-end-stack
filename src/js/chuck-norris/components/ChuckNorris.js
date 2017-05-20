@@ -2,7 +2,7 @@
 import React from 'react';
 import GetJokeContainer from './GetJoke';
 import chuckNorrisImage from '../../../img/chuck-norris.jpg';
-import Container from '../../common/components/Container';
+import Container from '../../app/components/Container';
 
 export default () => (
   <Container>

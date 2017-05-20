@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import RaisedButton from 'material-ui/RaisedButton';
 import CircularProgress from 'material-ui/CircularProgress';
 import { getJoke } from '../actions';
-import stateSelector from '../../common/selectors/state-selector';
+import stateSelector from '../../app/selectors/state-selector';
 
 type Props = {
   joke?: string,

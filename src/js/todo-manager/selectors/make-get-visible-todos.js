@@ -1,7 +1,7 @@
 // @flow
 import { createSelector } from 'reselect';
 import { List } from 'immutable';
-import stateSelector from '../../common/selectors/state-selector';
+import stateSelector from '../../app/selectors/state-selector';
 import TodoRecord from '../models/todo-record';
 
 const makeGetVisibleTodos = () => createSelector(
