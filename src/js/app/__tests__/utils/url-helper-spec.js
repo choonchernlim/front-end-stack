@@ -1,8 +1,8 @@
 // @flow
 import { describe, it } from 'mocha';
 import { expect } from 'chai';
-import { server } from '../../__tests__/nock-helper';
-import { url, sanitizeContextRoot } from './url-helper';
+import { server } from '../../../__tests__/nock-helper';
+import { url, sanitizeContextRoot } from '../../utils/url-helper';
 
 describe('Common', () => {
   describe('Utils', () => {

@@ -2,7 +2,7 @@
 import { describe, it } from 'mocha';
 import { expect } from 'chai';
 import { List } from 'immutable';
-import createReducer from './create-reducer';
+import createReducer from '../../utils/create-reducer';
 
 describe('Common', () => {
   describe('Utils', () => {

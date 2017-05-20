@@ -2,10 +2,10 @@
 import { describe, it } from 'mocha';
 import { expect } from 'chai';
 import { List } from 'immutable';
-import reducer from './reducer';
-import TodoManagerRecord from './models/todo-manager-record';
-import TodoRecord from './models/todo-record';
-import { addTodo, toggleTodo, setVisibilityFilter } from './actions';
+import reducer from '../reducer';
+import TodoManagerRecord from '../models/todo-manager-record';
+import TodoRecord from '../models/todo-record';
+import { addTodo, toggleTodo, setVisibilityFilter } from '../actions';
 
 describe('Todo Manager', () => {
   describe('Reducer', () => {

@@ -4,7 +4,7 @@ import React from 'react';
 import { expect } from 'chai';
 import { shallow } from 'enzyme';
 import { fromJS } from 'immutable';
-import { TodoList } from './TodoList';
+import { TodoList } from '../../components/TodoList';
 
 describe('Todo Manager', () => {
   describe('Components', () => {

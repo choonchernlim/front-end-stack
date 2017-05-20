@@ -1,9 +1,9 @@
 // @flow
 import { describe, it } from 'mocha';
 import { testSaga } from 'redux-saga-test-plan';
-import { getRandomJokeApi } from '../apis';
-import getJokeAsyncSaga, { getJokeAsync } from './get-joke';
-import { ACTION_TYPES, getJokeSucceeded, getJokeFailed } from '../actions';
+import { getRandomJokeApi } from '../../apis';
+import getJokeAsyncSaga, { getJokeAsync } from '../../sagas/get-joke';
+import { ACTION_TYPES, getJokeSucceeded, getJokeFailed } from '../../actions';
 
 describe('Chuck Norris', () => {
   describe('Saga', () => {

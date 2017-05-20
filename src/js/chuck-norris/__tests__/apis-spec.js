@@ -3,7 +3,7 @@ import { describe, it, beforeEach } from 'mocha';
 import chai from 'chai';
 import chaiAsPromised from 'chai-as-promised';
 import nock from 'nock';
-import { RANDOM_JOKE_SERVER, RANDOM_JOKE_URI, getRandomJokeApi } from './apis';
+import { RANDOM_JOKE_SERVER, RANDOM_JOKE_URI, getRandomJokeApi } from '../apis';
 
 chai.use(chaiAsPromised);
 

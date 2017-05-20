@@ -169,9 +169,11 @@ These commands are cross-platform compatible.
 ├── .flowconfig                 -> Flow configuration
 ├── .gitattributes              -> Custom Git config
 ├── .gitignore                  -> Git ignore list
+├── .nycrc                      -> Istanbul CLI configuration
 ├── CHANGELOG.md                -> Change logs
 ├── LICENSE.md                  -> License, if needed
 ├── package.json                -> NPM scripts and dependencies
+├── postcss.config.js           -> To fix "No PostCSS Config found" error
 ├── README.md                   -> Readme file for the app
 ├── stats.json                  -> Generated file when running `yarn run stats`
 ├── webpack.base.config.js      -> Common webpack config
