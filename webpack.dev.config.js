@@ -46,6 +46,9 @@ module.exports = Object.assign({}, baseConfig.webpackOptions, {
 
     hot: true,
 
+    // automatically open the browser link
+    open: true,
+
     // Display only errors to reduce the amount of output.
     stats: 'errors-only',
 

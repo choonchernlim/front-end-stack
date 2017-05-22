@@ -6,7 +6,7 @@
 
 * Replaced `npm` with `yarn`.
 
-* Dependency update.
+* `npm start` will automatically open the browser and bring user to the landing page.
 
 * Added `postcss.config.js` to fix "No PostCSS Config found" error. See https://github.com/postcss/postcss-loader/issues/204
 
@@ -15,6 +15,9 @@
 * Externalized nyc config from `package.json` to `.nycrc`.
 
 * ESLint configuration - Allowed trailing comma in multi-line object literal or array (works with IntelliJ IDEA 2017).
+
+* Dependency update.
+
   
 ## 0.8.1 - 2017-02-23
 
