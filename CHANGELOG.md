@@ -2,6 +2,8 @@
 
 ## 0.9.0 - XXXX
 
+* Significantly sped up Webpack build time.
+
 * Replaced `npm` with `yarn`.
 
 * Dependency update.
@@ -12,31 +14,8 @@
 
 * Externalized nyc config from `package.json` to `.nycrc`.
 
-* ESLint configuration:
-  * Allowed trailing comma in multi-line object literal or array (works with IntelliJ IDEA 2017).
+* ESLint configuration - Allowed trailing comma in multi-line object literal or array (works with IntelliJ IDEA 2017).
   
-* npm test not working
-* jsdom v10 - error... use v9
-
-
-  Error: /Users/meteoric/Documents/development/workspace/intellij/front-end-stack/node_modules/eslint-config-airbnb/rules/react.js:
-    Configuration for rule "react/jsx-wrap-multilines" is invalid:
-    Value "data["0"].arrow" has additional properties.
-  
-  Referenced from: airbnb
-  Referenced from: /Users/meteoric/Documents/development/workspace/intellij/front-end-stack/.eslintrc
-  
-  Error: /Users/meteoric/Documents/development/workspace/intellij/front-end-stack/node_modules/eslint-config-airbnb/rules/react.js:
-    Configuration for rule "react/jsx-wrap-multilines" is invalid:
-    Value "data["0"].arrow" has additional properties.
-  
-  Referenced from: airbnb
-  Referenced from: /Users/meteoric/Documents/development/workspace/intellij/front-end-stack/.eslintrc
-
-did not upgrade
- history                           3.2.0  →   4.6.1 
- react-router                      3.0.2  →   4.1.1 
-
 ## 0.8.1 - 2017-02-23
 
 * Dependency update.

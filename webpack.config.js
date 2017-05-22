@@ -2,8 +2,10 @@
 
 const baseConfig = require('./webpack.base.config');
 const path = require('path');
+const os = require('os');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ParallelUglifyPlugin = require('webpack-parallel-uglify-plugin');
 const CleanPlugin = require('clean-webpack-plugin');
 const packageJson = require('./package.json');
 const process = require('process');
@@ -26,7 +28,6 @@ if (JSON.parse(process.env.npm_config_argv).original.join() === 'run,build') {
 }
 
 module.exports = Object.assign({}, baseConfig.webpackOptions, {
-
   output: {
     path: distPath,
 
@@ -46,10 +47,15 @@ module.exports = Object.assign({}, baseConfig.webpackOptions, {
       verbose: false,
     }),
 
-    // Minify JS without source map and suppress any warnings.
-    new webpack.optimize.UglifyJsPlugin({
-      compress: {
-        warnings: false,
+    // Speed up JS minification by replacing `webpack.optimize.UglifyJsPlugin` with a plugin
+    // that handles multi-workers.
+    new ParallelUglifyPlugin({
+      cacheDir: '.webpack/webpack-parallel-uglify-plugin',
+      workerCount: os.cpus().length,
+      uglifyJS: {
+        compress: {
+          warnings: false,
+        },
       },
     }),
 

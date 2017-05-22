@@ -1,8 +1,10 @@
 // @flow
 
 const path = require('path');
+const os = require('os');
 const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const HappyPack = require('happypack');
 const autoprefixer = require('autoprefixer');
 const packageJson = require('./package.json');
 
@@ -19,6 +21,15 @@ const htmlWebpackPluginOptions = {
   favicon: path.join(srcPath, '/img/favicon.png'),
 };
 
+const threadPool = HappyPack.ThreadPool({ size: os.cpus().length });
+
+const newHappyPackPlugin = (id, loaders) => new HappyPack({
+  id,
+  loaders,
+  threadPool,
+  tempDir: '.webpack/happypack',
+});
+
 // Base options for WebPack
 const webpackOptions = {
   entry: {
@@ -32,19 +43,19 @@ const webpackOptions = {
       {
         enforce: 'pre',
         test: /\.js?$/,
-        use: 'eslint-loader',
+        use: 'happypack/loader?id=eslint',
         exclude: /node_modules/,
       },
       {
         test: /\.js$/,
-        use: 'babel-loader?cacheDirectory',
+        use: 'happypack/loader?id=babel',
         exclude: /node_modules/,
       },
       {
         test: /\.scss$/,
         use: ExtractTextPlugin.extract({
           fallback: 'style-loader',
-          use: ['css-loader', 'postcss-loader', 'sass-loader'],
+          use: 'happypack/loader?id=scss',
         }),
       },
       {
@@ -84,6 +95,10 @@ const webpackOptions = {
   },
 
   plugins: [
+    newHappyPackPlugin('eslint', ['eslint-loader']),
+    newHappyPackPlugin('babel', ['babel-loader?cacheDirectory']),
+    newHappyPackPlugin('scss', ['css-loader', 'postcss-loader', 'sass-loader']),
+
     new webpack.LoaderOptionsPlugin({
       minimize: true,
       debug: false,

@@ -127,6 +127,7 @@ These commands are cross-platform compatible.
 |extract-text-webpack-plugin              |Webpack - Separate out inlined CSS from JS files                                     |
 |file-loader                              |Webpack - File loader                                                                |
 |flow-bin                                 |Flow - Static type checker for JavaScript                                            | 
+|happypack                                |Webpack - Improve Webpack build times                                                |
 |html-webpack-plugin                      |Webpack - Generates `index.html` using hash filenames for cache busting              |
 |image-webpack-loader                     |Webpack - Image loader and handling compression                                      |
 |jsdom                                    |Test - A JavaScript implementation of the WHATWG DOM and HTML standards              |
@@ -143,16 +144,18 @@ These commands are cross-platform compatible.
 |rimraf                                   |Util - `rm -rf` for both Unix and Windows world                                      |
 |roboto-fontface                          |Roboto font, adhering to Google Material Design spec                                 |
 |sass-loader                              |Webpack - SASS loader                                                                |
-|sinon                                    |Test - Standalone test spies, stubs and mocks.                                       |
+|sinon                                    |Test - Standalone test spies, stubs and mocks                                        |
 |style-loader                             |Webpack - Style loader                                                               |
 |url-loader                               |Webpack - URL loader                                                                 |
 |webpack                                  |Webpack - Core                                                                       |
 |webpack-dev-server                       |Webpack - Node.js Express server                                                     |
-
+|webpack-parallel-uglify-plugin           |Webpack - Replacing `webpack.optimize.UglifyJsPlugin` to improve build time          |
 ## Project Structure
 
 ```
 .
+├── .webpack                    -> Internal dir for Webpack to store processing and cache files
+│   └── ...
 ├── dist                        -> Distribution dir - Production bundle, including index.html
 │   └── ...
 ├── node_modules                -> Installed modules dir
@@ -176,9 +179,9 @@ These commands are cross-platform compatible.
 ├── postcss.config.js           -> To fix "No PostCSS Config found" error
 ├── README.md                   -> Readme file for the app
 ├── stats.json                  -> Generated file when running `yarn run stats`
-├── webpack.base.config.js      -> Common webpack config
-├── webpack.config.js           -> Production webpack config
-├── webpack.dev.config.js       -> Development webpack config
+├── webpack.base.config.js      -> Common Webpack config
+├── webpack.config.js           -> Production Webpack config
+├── webpack.dev.config.js       -> Development Webpack config
 └── yarn.lock                   -> Dependency versions lock file used by Yarn
 ```
 ## Troubleshooting
