@@ -1,4 +1,5 @@
 // @flow
+import type { Element } from 'react';
 import React from 'react';
 import Paper from 'material-ui/Paper';
 import RaisedButton from 'material-ui/RaisedButton';
@@ -8,7 +9,7 @@ import RadioButton from 'material-ui/RadioButton';
 import Container from '../../app/components/Container';
 import styles from '../styles';
 
-const Home = (): React.Element<*> => (
+const Home = (): Element<*> => (
   <Container>
     <h1>Welcome!</h1>
 

@@ -1,5 +1,6 @@
 // @flow
-import React, { Element } from 'react';
+import type { Element } from 'react';
+import React from 'react';
 
 type Props = {
   onClick: Function,

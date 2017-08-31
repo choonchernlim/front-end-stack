@@ -9,16 +9,16 @@ type Props = {
   addTodo: Function
 };
 
-class AddTodo extends Component {
+type State = {
+  value: string,
+  error: string
+};
+
+class AddTodo extends Component<Props, State> {
   constructor(props) {
     super(props);
     this.state = { value: '', error: '' };
   }
-
-  state: {
-    value: string,
-    error: string
-  };
 
   // on render, set focus on text field
   componentDidMount(): void {
@@ -34,12 +34,12 @@ class AddTodo extends Component {
   };
 
   // on input change, update state
-  handleInputChange = (event: SyntheticInputEvent): void => {
+  handleInputChange = (event: SyntheticInputEvent<*>): void => {
     this.setState({ value: event.target.value });
   };
 
   // on enter pressed on input field, trigger button click
-  handleInputEnter = (event: SyntheticKeyboardEvent): void => {
+  handleInputEnter = (event: SyntheticKeyboardEvent<*>): void => {
     if (event.keyCode === 13) {
       this.handleButtonClick();
     }
@@ -60,7 +60,10 @@ class AddTodo extends Component {
     return (
       <div>
         <TextField
-          ref={ref => (this.todoTextField = ref)}
+          ref={(ref) => {
+            this.todoTextField = ref;
+            return false;
+          }}
           hintText="Enter Todo..."
           errorText={this.state.error}
           value={this.state.value}

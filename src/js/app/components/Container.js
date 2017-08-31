@@ -1,11 +1,10 @@
 // @flow
-import React, { Element } from 'react';
+import React from 'react';
 
 type Props = {
-  children: Element<*>
+  children: any
 };
 
-// $FlowFixMe: Waiting for React to fix "Property not found" when using `children`.
 const Container = ({ children }: Props) => (
   <div style={{ width: '100%' }}>{children}</div>
 );

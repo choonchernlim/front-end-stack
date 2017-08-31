@@ -1,5 +1,6 @@
 // @flow
-import React, { Element } from 'react';
+import type { Element } from 'react';
+import React from 'react';
 import { List } from 'immutable';
 import { connect } from 'react-redux';
 import { toggleTodo } from '../actions';

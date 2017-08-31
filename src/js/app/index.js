@@ -1,5 +1,6 @@
 // @flow
-import React, { Element } from 'react';
+import type { Element } from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom';
 import { StoreCreator } from 'redux';
 import { HistoryMiddleware, Provider } from 'react-redux';
@@ -25,7 +26,7 @@ const browserHistory: HistoryMiddleware = useRouterHistory(createBrowserHistory)
 // configure store
 const store: StoreCreator = configureStore(browserHistory);
 
-const routes: Element<*> = getRoutes(store);
+const routes: Element<*> = getRoutes();
 
 // Create an enhanced history that syncs navigation events with the store
 const history: HistoryMiddleware = syncHistoryWithStore(browserHistory, store);

@@ -72,12 +72,12 @@ These commands are cross-platform compatible.
 |`yarn test [./path/to/test/module]`      |Static type check, lint src/test files and run only tests within `[./path/to/test/module]`            |
 |`yarn test:watch`                        |Watch for changes in all test files and rerun `yarn test`                                             |
 |`yarn test:watch [./path/to/test/module]`|Watch for changes in selected test files and rerun `yarn test [./path/to/test/module]`                |
-|`yarn run build`                         |Build production bundle (compressed cache busting asset files)                                        |
-|`yarn run ci`                            |Remove report dir, static type check, lint src/test files, run tests, run code coverage and generate result files for CI |
-|`yarn run reinstall`                     |Clear yarn cache, remove `node_module` and install modules listed in `package.json`                   |
+|`yarn build`                             |Build production bundle (compressed cache busting asset files)                                        |
+|`yarn ci`                                |Remove report dir, static type check, lint src/test files, run tests, run code coverage and generate result files for CI |
+|`yarn reinstall`                         |Clear yarn cache, remove `node_module` and install modules listed in `package.json`                   |
 |`yarn start`                             |Start Node.js Express server with Hot Module Replacement                                              |
-|`yarn run stats`                         |Create `stats.json` that be loaded to http://webpack.github.io/analyse/ to visualize build.           |
-|`yarn run flow`                          |Static type check.                                                                                    |
+|`yarn stats`                             |Create `stats.json` that be loaded to http://webpack.github.io/analyse/ to visualize build.           |
+|`yarn flow`                              |Static type check.                                                                                    |
 
 ## Dependencies
 
