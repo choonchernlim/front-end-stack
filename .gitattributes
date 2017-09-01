@@ -9,11 +9,15 @@
 *.html          text
 *.md            text
 *.json          text
+*.flow          text
 .babelrc        text
 .editorconfig   text
 .eslintrc       text
+.flowconfig     text
 .gitattributes  text
 .gitignore      text
+.nycrc          text
+yarn.lock       text
 
 # Denote all files that are truly binary and should not be modified.
 *.png           binary

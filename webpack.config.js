@@ -1,7 +1,11 @@
+// @flow
+
 const baseConfig = require('./webpack.base.config');
 const path = require('path');
+const os = require('os');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ParallelUglifyPlugin = require('webpack-parallel-uglify-plugin');
 const CleanPlugin = require('clean-webpack-plugin');
 const packageJson = require('./package.json');
 const process = require('process');
@@ -24,7 +28,6 @@ if (JSON.parse(process.env.npm_config_argv).original.join() === 'run,build') {
 }
 
 module.exports = Object.assign({}, baseConfig.webpackOptions, {
-
   output: {
     path: distPath,
 
@@ -33,22 +36,27 @@ module.exports = Object.assign({}, baseConfig.webpackOptions, {
     // Using `chunkhash` instead of `hash` to ensure `vendor` and `app` have different
     // computed hash. This allows `vendor` file to have longer term cache on user's browser
     // until the vendor dependencies get updated
-    filename: 'js/[name].[chunkhash].js'
+    filename: 'js/[name].[chunkhash].js',
   },
 
-  plugins: baseConfig.webpackOptions.plugins.concat(
+  plugins: baseConfig.webpackOptions.plugins.concat([
     // Instead of cleaning whole dist dir between builds, clean only dirs that may contain
     // hashed filenames
     new CleanPlugin(['css', 'font', 'img', 'js'], {
       root: distPath,
-      verbose: false
+      verbose: false,
     }),
 
-    // Minify JS without source map and suppress any warnings.
-    new webpack.optimize.UglifyJsPlugin({
-      compress: {
-        warnings: false
-      }
+    // Speed up JS minification by replacing `webpack.optimize.UglifyJsPlugin` with a plugin
+    // that handles multi-workers.
+    new ParallelUglifyPlugin({
+      cacheDir: '.webpack/webpack-parallel-uglify-plugin',
+      workerCount: os.cpus().length,
+      uglifyJS: {
+        compress: {
+          warnings: false,
+        },
+      },
     }),
 
     // To prevent the following warnings in browser console:-
@@ -59,13 +67,13 @@ module.exports = Object.assign({}, baseConfig.webpackOptions, {
       'process.env': {
         NODE_ENV: JSON.stringify('production'),
         CONTEXT_ROOT: JSON.stringify(contextRoot),
-        APP_NAME: JSON.stringify(packageJson.name)
-      }
+        APP_NAME: JSON.stringify(packageJson.name),
+      },
     }),
 
     // Generates `index.html` at the location specified by the user
     new HtmlWebpackPlugin(Object.assign({}, baseConfig.htmlWebpackPluginOptions, {
-      filename: path.join(__dirname, packageJson.config.entry_file_path)
-    }))
-  )
+      filename: path.join(__dirname, packageJson.config.entry_file_path),
+    })),
+  ]),
 });

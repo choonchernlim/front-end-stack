@@ -5,7 +5,7 @@
     "plugin:flowtype/recommended"
   ],
   // to handle ES7's static properties in React component
-  // https://github.com/yannickcr/eslint-plugin-react/issues/43
+  // https://github.com/gajus/eslint-plugin-flowtype#installation
   "parser": "babel-eslint",
   // Enable Flow type linting
   "plugins": [
@@ -20,39 +20,11 @@
   },
   // overriding certain rules because it drives me nuts
   "rules": {
-    // no trailing comma in multi-line object literal or array
-    "comma-dangle": [
-      2,
-      "never"
-    ],
     // allow `else` on new line
     // http://eslint.org/docs/rules/brace-style
     "brace-style": [
       "error",
       "stroustrup"
-    ],
-    // allow uppercase functions from ImmutableJS and Radium
-    "new-cap": [
-      2,
-      {
-        "capIsNewExceptions": [
-          "Immutable.List",
-          "Immutable.Stack",
-          "Immutable.Map",
-          "Immutable.OrderedMap",
-          "Immutable.Set",
-          "Immutable.OrderedSet",
-          "Immutable.Record",
-          "List",
-          "Stack",
-          "Map",
-          "OrderedMap",
-          "Set",
-          "OrderedSet",
-          "Record",
-          "Radium"
-        ]
-      }
     ],
     // Allow JSX on `.js`
     // See https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-filename-extension.md
@@ -63,15 +35,6 @@
           ".js",
           ".jsx"
         ]
-      }
-    ],
-    // To allow test libraries (ex: chai) to reside in `devDependencies` instead of `dependencies`
-    // See https://github.com/airbnb/javascript/issues/959
-    // See https://github.com/benmosher/eslint-plugin-import/issues/422
-    "import/no-extraneous-dependencies": [
-      2,
-      {
-        "devDependencies": true
       }
     ],
     // `// @flow` must exist on the top of all files

@@ -4,7 +4,7 @@ import type { GetJokeAction, GetJokeFailedAction, GetJokeSucceededAction } from 
 export const ACTION_TYPES: { [key: string]: string } = {
   GET_JOKE: 'chuck-norris/getJoke',
   GET_JOKE_FAILED: 'chuck-norris/getJokeFailed',
-  GET_JOKE_SUCCEEDED: 'chuck-norris/getJokeSucceeded'
+  GET_JOKE_SUCCEEDED: 'chuck-norris/getJokeSucceeded',
 };
 
 export const getJoke = (): GetJokeAction => ({
@@ -12,8 +12,8 @@ export const getJoke = (): GetJokeAction => ({
   state: {
     completed: false,
     joke: undefined,
-    error: undefined
-  }
+    error: undefined,
+  },
 });
 
 export const getJokeFailed = (error: string): GetJokeFailedAction => ({
@@ -21,8 +21,8 @@ export const getJokeFailed = (error: string): GetJokeFailedAction => ({
   state: {
     completed: true,
     joke: undefined,
-    error
-  }
+    error,
+  },
 });
 
 export const getJokeSucceeded = (joke: string): GetJokeSucceededAction => ({
@@ -30,6 +30,6 @@ export const getJokeSucceeded = (joke: string): GetJokeSucceededAction => ({
   state: {
     completed: true,
     joke,
-    error: undefined
-  }
+    error: undefined,
+  },
 });

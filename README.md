@@ -6,8 +6,7 @@ Project template for building single-page app using modern front-end stack. Here
 
 |Library                                                                        |Description                                                              |
 |-------------------------------------------------------------------------------|-------------------------------------------------------------------------|
-|[Yarn](https://yarnpkg.com/)                                                   |(Preferred) JavaScript package manager                                   |
-|[NPM](https://www.npmjs.com/)                                                  |(Alternative) JavaScript package manager                                 |
+|[Yarn](https://yarnpkg.com/)                                                   |JavaScript package manager                                               |
 |[Node.js](https://nodejs.org)                                                  |Event-driven I/O server-side JavaScript environment (for app dev)        |
 |[Webpack](https://webpack.github.io/) 	                                        |Module bundler                                                           |
 |[Webpack Dev Server](https://github.com/webpack/webpack-dev-server)            |Live reloading server (for app dev)                                      |
@@ -29,7 +28,7 @@ Project template for building single-page app using modern front-end stack. Here
 
 * Install the following tools:-
   * [Node.js](https://github.com/creationix/nvm).
-  * [Yarn](https://yarnpkg.com/en/docs/install) (if you don't want to use `npm` provided by Node.js).
+  * [Yarn](https://yarnpkg.com/en/docs/install) because it is much faster than NPM.
 
 * In Chrome, install the following dev tool extensions:-
   * [React Developer Tools](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=en)
@@ -42,23 +41,25 @@ Project template for building single-page app using modern front-end stack. Here
 
 * Clone or download/unzip this project template.
 
-* Run `npm install` to install dependencies.
+* Run `yarn install` to install dependencies.
 
-* To start app development, run `npm start`.
-    * This script will start webpack-dev-server.
-    * Open a browser and visit `https://localhost:8080`.
+* To start app development, run `yarn start`.
+    * This command will:-
+      * Start Webpack Dev Server.
+      * Open default browser.
+      * Open `https://localhost:8080`.
     * When you modify the source code, the configured Hot Module Replacement will automatically refresh the browser content.
-    * Since HTTPS is used, Chrome will prompt warning regarding untrusted security certificate. To disable this check... 
-      * In Chrome, go to `chrome://flags/#allow-insecure-localhost`
-      * Click "Enable"
-      * Click "Relaunch Now"
+    * Since HTTPS is used, Chrome will prompt warning regarding untrusted security certificate. To disable this check:- 
+      * In Chrome, go to `chrome://flags/#allow-insecure-localhost`.
+      * Click "Enable".
+      * Click "Relaunch Now".
 
-* To package for production, run `npm run build`.
+* To package for production, run `yarn build`.
     * This script will clean the distribution directory and create minified bundle files.
 
-* To package for production with a different context root than the one defined in `package.json`, run `CONTEXT_ROOT=/new-context-root npm run build`.
+* To package for production with a different context root than the one defined in `package.json`, run `CONTEXT_ROOT=/new-context-root yarn build`.
 
-* To configure as Jenkins job, run `npm run ci`.
+* To configure as Jenkins job, run `yarn ci`.
     * This script will create test result and code coverage files.
 
 ## Commands
@@ -67,16 +68,16 @@ These commands are cross-platform compatible.
 
 |Command                                  |Description                                                                                           |
 |-----------------------------------------|------------------------------------------------------------------------------------------------------|
-|`npm test`                               |Static type check, lint src/test files and run entire tests.                                          |
-|`npm test [./path/to/test/module]`       |Static type check, lint src/test files and run only tests within `[./path/to/test/module]`            |
-|`npm test:watch`                         |Watch for changes in all test files and rerun `npm test`                                              |
-|`npm test:watch [./path/to/test/module]` |Watch for changes in selected test files and rerun `npm test [./path/to/test/module]`                 |
-|`npm run build`                          |Build production bundle (compressed cache busting asset files)                                        |
-|`npm run ci`                             |Remove report dir, static type check, lint src/test files, run tests, run code coverage and generate result files for CI |
-|`npm run reinstall`                      |Clear npm cache, remove `node_module` and install modules listed in `package.json`                    |
-|`npm start`                              |Start Node.js Express server with Hot Module Replacement                                              |
-|`npm run stats`                          |Create `stats.json` that be loaded to http://webpack.github.io/analyse/ to visualize build.           |
-|`npm run flow`                           |Static type check.                                                                                    |
+|`yarn test`                              |Static type check, lint src/test files and run entire tests.                                          |
+|`yarn test [./path/to/test/module]`      |Static type check, lint src/test files and run only tests within `[./path/to/test/module]`            |
+|`yarn test:watch`                        |Watch for changes in all test files and rerun `yarn test`                                             |
+|`yarn test:watch [./path/to/test/module]`|Watch for changes in selected test files and rerun `yarn test [./path/to/test/module]`                |
+|`yarn build`                             |Build production bundle (compressed cache busting asset files)                                        |
+|`yarn ci`                                |Remove report dir, static type check, lint src/test files, run tests, run code coverage and generate result files for CI |
+|`yarn reinstall`                         |Clear yarn cache, remove `node_module` and install modules listed in `package.json`                   |
+|`yarn start`                             |Start Node.js Express server with Hot Module Replacement                                              |
+|`yarn stats`                             |Create `stats.json` that be loaded to http://webpack.github.io/analyse/ to visualize build.           |
+|`yarn flow`                              |Static type check.                                                                                    |
 
 ## Dependencies
 
@@ -87,8 +88,8 @@ These commands are cross-platform compatible.
 |isomorphic-fetch                         |Isomorphic WHATWG Fetch API                                                          |
 |material-ui                              |UI - Google's material design UI components built with React                         |
 |moment                                   |Parse, validate, manipulate and display dates.                                       |
+|prop-types                               |React - Runtime type checking for React props.                                       |
 |radium                                   |UI - Managing inline styles on React elements                                        |
-|radium-grid                              |UI - Grid layout                                                                     |
 |react                                    |React - Core                                                                         |
 |react-dom                                |React - DOM                                                                          |
 |react-redux                              |React - Redux integration                                                            |
@@ -110,10 +111,11 @@ These commands are cross-platform compatible.
 |babel-loader                             |Babel - Loader for transpiling                                                       |
 |babel-plugin-istanbul                    |Babel - Istanbul instrumentation to ES6 code. Used in conjunction with `nyc`.        |
 |babel-plugin-transform-decorators-legacy |Babel - To fix "Decorators are not supported yet in 6.x pending proposal update."    |
-|babel-polyfill                           |Babel - Emulate a full ES2015 environment.                                           |
+|babel-polyfill                           |Babel - Emulate a full ES2015 environment                                            |
 |babel-preset-es2015                      |Babel - ES6 preset                                                                   |
 |babel-preset-react                       |Babel - React preset                                                                 |
 |babel-preset-stage-0                     |Babel - ES7+ preset                                                                  |
+|cache-loader                             |Webpack - Work in conjunction with Happypack to speed up build process               |
 |chai                                     |Test - Expect lib                                                                    |
 |chai-as-promised                         |Test - Fluent approach to test promises                                              |
 |clean-webpack-plugin                     |Webpack - Clean output dir between builds                                            |
@@ -129,6 +131,7 @@ These commands are cross-platform compatible.
 |extract-text-webpack-plugin              |Webpack - Separate out inlined CSS from JS files                                     |
 |file-loader                              |Webpack - File loader                                                                |
 |flow-bin                                 |Flow - Static type checker for JavaScript                                            | 
+|happypack                                |Webpack - Improve Webpack build times                                                |
 |html-webpack-plugin                      |Webpack - Generates `index.html` using hash filenames for cache busting              |
 |image-webpack-loader                     |Webpack - Image loader and handling compression                                      |
 |jsdom                                    |Test - A JavaScript implementation of the WHATWG DOM and HTML standards              |
@@ -140,21 +143,24 @@ These commands are cross-platform compatible.
 |nyc                                      |Test - Istanbul CLI for code coverage                                                |
 |postcss-loader                           |Webpack - Post CSS loader to run autoprefixer                                        |
 |react-addons-perf                        |Util - Performance profiling tool                                                    |
-|react-addons-test-utils                  |Test - Utils for testing React components                                            |
+|react-test-renderer                      |Test - Works in conjunction with Enzyme                                              |
 |redux-saga-test-plan                     |Test - Utils for testing Redux Saga                                                  |
 |rimraf                                   |Util - `rm -rf` for both Unix and Windows world                                      |
 |roboto-fontface                          |Roboto font, adhering to Google Material Design spec                                 |
 |sass-loader                              |Webpack - SASS loader                                                                |
-|sinon                                    |Test - Standalone test spies, stubs and mocks.                                       |
+|sinon                                    |Test - Standalone test spies, stubs and mocks                                        |
 |style-loader                             |Webpack - Style loader                                                               |
 |url-loader                               |Webpack - URL loader                                                                 |
 |webpack                                  |Webpack - Core                                                                       |
 |webpack-dev-server                       |Webpack - Node.js Express server                                                     |
+|webpack-parallel-uglify-plugin           |Webpack - Replacing `webpack.optimize.UglifyJsPlugin` to improve build time          |
 
 ## Project Structure
 
 ```
 .
+├── .webpack                    -> Internal dir for Webpack to store processing and cache files
+│   └── ...
 ├── dist                        -> Distribution dir - Production bundle, including index.html
 │   └── ...
 ├── node_modules                -> Installed modules dir
@@ -171,21 +177,24 @@ These commands are cross-platform compatible.
 ├── .flowconfig                 -> Flow configuration
 ├── .gitattributes              -> Custom Git config
 ├── .gitignore                  -> Git ignore list
+├── .nycrc                      -> Istanbul CLI configuration
 ├── CHANGELOG.md                -> Change logs
 ├── LICENSE.md                  -> License, if needed
 ├── package.json                -> NPM scripts and dependencies
+├── postcss.config.js           -> To fix "No PostCSS Config found" error
 ├── README.md                   -> Readme file for the app
-├── stats.json                  -> Generated file when running `npm run stats`
-├── webpack.base.config.js      -> Common webpack config
-├── webpack.config.js           -> Production webpack config
-├── webpack.dev.config.js       -> Development webpack config
+├── stats.json                  -> Generated file when running `yarn stats`
+├── webpack.base.config.js      -> Common Webpack config
+├── webpack.config.js           -> Production Webpack config
+├── webpack.dev.config.js       -> Development Webpack config
 └── yarn.lock                   -> Dependency versions lock file used by Yarn
 ```
+
 ## Troubleshooting
 
 ### Error: dyld: Library not loaded
 
-When running `npm start`, you get this error...
+When running `yarn start`, you get this error...
 
 ```
 Module build failed: Error: dyld: Library not loaded: /usr/local/opt/libpng/lib/libpng16.16.dylib
@@ -194,12 +203,3 @@ Module build failed: Error: dyld: Library not loaded: /usr/local/opt/libpng/lib/
 ```
 
 To fix it, run `brew install libpng` ... [see here for more info](https://github.com/tcoopman/image-webpack-loader/issues/51)
-   
-## Acknowledgement
-
-> "You want to be extra rigorous about making the best possible thing you can. Find everything that’s wrong with it and fix it. Seek negative feedback, particularly from friends." -- Elon Musk
-
-Special thanks to the following individuals for improving my sloppy work:-
-
-* Cory Cray
-* Jason Thiesse

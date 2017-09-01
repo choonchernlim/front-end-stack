@@ -3,23 +3,22 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import RaisedButton from 'material-ui/RaisedButton';
 import TextField from 'material-ui/TextField';
-import { Grid, Cell } from 'radium-grid';
 import { addTodo } from '../actions';
 
 type Props = {
   addTodo: Function
 };
 
-class AddTodo extends Component {
+type State = {
+  value: string,
+  error: string
+};
+
+class AddTodo extends Component<Props, State> {
   constructor(props) {
     super(props);
     this.state = { value: '', error: '' };
   }
-
-  state: {
-    value: string,
-    error: string
-  };
 
   // on render, set focus on text field
   componentDidMount(): void {
@@ -35,12 +34,12 @@ class AddTodo extends Component {
   };
 
   // on input change, update state
-  handleInputChange = (event: SyntheticInputEvent): void => {
+  handleInputChange = (event: SyntheticInputEvent<*>): void => {
     this.setState({ value: event.target.value });
   };
 
   // on enter pressed on input field, trigger button click
-  handleInputEnter = (event: SyntheticKeyboardEvent): void => {
+  handleInputEnter = (event: SyntheticKeyboardEvent<*>): void => {
     if (event.keyCode === 13) {
       this.handleButtonClick();
     }
@@ -59,29 +58,27 @@ class AddTodo extends Component {
 
   render() {
     return (
-      <Grid>
-        <Cell width="1/3">
-          {
-            // Using ref callback instead of string.
-            // See https://facebook.github.io/react/docs/more-about-refs.html
-          }
-          <TextField
-            ref={ref => (this.todoTextField = ref)}
-            hintText="Enter Todo..."
-            errorText={this.state.error}
-            value={this.state.value}
-            onChange={this.handleInputChange}
-            onKeyDown={this.handleInputEnter}
-          />
-        </Cell>
-        <Cell width="2/3">
-          <RaisedButton
-            primary
-            label="Add Todo"
-            onClick={this.handleButtonClick}
-          />
-        </Cell>
-      </Grid>
+      <div>
+        <TextField
+          ref={(ref) => {
+            this.todoTextField = ref;
+            return false;
+          }}
+          hintText="Enter Todo..."
+          errorText={this.state.error}
+          value={this.state.value}
+          onChange={this.handleInputChange}
+          onKeyDown={this.handleInputEnter}
+        />
+
+        <br />
+
+        <RaisedButton
+          primary
+          label="Add Todo"
+          onClick={this.handleButtonClick}
+        />
+      </div>
     );
   }
 }

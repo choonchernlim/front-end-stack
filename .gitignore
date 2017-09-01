@@ -10,6 +10,7 @@
 *.ear
 *.iml
 npm-debug.log
+yarn-error.log
 stats.json
 target/
 .idea/
@@ -17,6 +18,7 @@ node_modules/
 reports/
 dist/
 .nyc_output/
+.webpack/
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*

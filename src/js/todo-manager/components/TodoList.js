@@ -1,9 +1,10 @@
 // @flow
-import React, { Element } from 'react';
+import type { Element } from 'react';
+import React from 'react';
 import { List } from 'immutable';
 import { connect } from 'react-redux';
 import { toggleTodo } from '../actions';
-import reselectSelector from '../../common/selectors/reselect-selector';
+import reselectSelector from '../../app/selectors/reselect-selector';
 import Todo from './Todo';
 import TodoRecord from '../models/todo-record';
 
@@ -14,13 +15,13 @@ type Props = {
 
 export const TodoList = ({ todos, onToggleTodo }: Props): Element<*> => (
   <ul>
-    {todos.map(todo =>
+    {todos.map(todo => (
       <Todo
         key={todo.get('id')}
         text={todo.get('text')}
         completed={todo.get('completed')}
         onClick={() => onToggleTodo(todo.get('id'))}
-      />)
+      />))
     }
   </ul>
 );
@@ -28,7 +29,7 @@ export const TodoList = ({ todos, onToggleTodo }: Props): Element<*> => (
 const makeMapStateToProps = () => {
   const getVisibleTodos: Function = reselectSelector.makeGetVisibleTodos();
   return state => ({
-    todos: getVisibleTodos(state)
+    todos: getVisibleTodos(state),
   });
 };
 

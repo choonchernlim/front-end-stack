@@ -1,6 +1,8 @@
+/* eslint-disable flowtype/require-valid-file-annotation */
+
 /**
- * `npm test` - to run all tests.
- * `npm test ./test/submodule` - to run all tests within `./test/submodule`.
+ * `yarn test` - to run all tests.
+ * `yarn test ./test/submodule` - to run all tests within `./test/submodule`.
  *
  * Cross-platform script to lint src/test files and execute Mocha tests.
  */
@@ -28,5 +30,5 @@ process.env.NODE_ENV = 'test';
 script.run(`${flow} && ${eslint} && ${mocha}`, [
   'Flow   : Static type check',
   'ESLint : Code linting',
-  'Mocha  : Run tests'
+  'Mocha  : Run tests',
 ]);

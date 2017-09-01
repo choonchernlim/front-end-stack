@@ -1,5 +1,28 @@
 # Change Log
 
+## 0.9.0 - 2017-09-01
+
+* Significantly sped up Webpack build time.
+
+* Replaced `npm` with `yarn`.
+
+* `yarn start` will automatically open the browser and bring user to the landing page.
+
+* Added `postcss.config.js` to fix "No PostCSS Config found" error. See https://github.com/postcss/postcss-loader/issues/204
+
+* Added `prop-types` to handle "Accessing PropTypes via the main React package is deprecated. Use the prop-types package from npm instead." warning.
+
+* Externalized nyc config from `package.json` to `.nycrc`.
+
+* ESLint configuration - Allowed trailing comma in multi-line object literal or array (works with IntelliJ IDEA 2017).
+
+* Added `cache-loader` to fix HappyPack's "Option 'tempDir' has been deprecated. Configuring it will cause an error to be thrown in future versions." warning.
+
+* Removed deprecated `react-addons-test-utils` and added `react-test-renderer` to get `enzyme` working again with new React version.
+
+* Dependency update.
+
+  
 ## 0.8.1 - 2017-02-23
 
 * Dependency update.
