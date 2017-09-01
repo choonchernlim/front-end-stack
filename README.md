@@ -28,7 +28,7 @@ Project template for building single-page app using modern front-end stack. Here
 
 * Install the following tools:-
   * [Node.js](https://github.com/creationix/nvm).
-  * [Yarn](https://yarnpkg.com/en/docs/install).
+  * [Yarn](https://yarnpkg.com/en/docs/install) because it is much faster than NPM.
 
 * In Chrome, install the following dev tool extensions:-
   * [React Developer Tools](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=en)
@@ -54,12 +54,12 @@ Project template for building single-page app using modern front-end stack. Here
       * Click "Enable".
       * Click "Relaunch Now".
 
-* To package for production, run `yarn run build`.
+* To package for production, run `yarn build`.
     * This script will clean the distribution directory and create minified bundle files.
 
-* To package for production with a different context root than the one defined in `package.json`, run `CONTEXT_ROOT=/new-context-root yarn run build`.
+* To package for production with a different context root than the one defined in `package.json`, run `CONTEXT_ROOT=/new-context-root yarn build`.
 
-* To configure as Jenkins job, run `yarn run ci`.
+* To configure as Jenkins job, run `yarn ci`.
     * This script will create test result and code coverage files.
 
 ## Commands
@@ -88,6 +88,7 @@ These commands are cross-platform compatible.
 |isomorphic-fetch                         |Isomorphic WHATWG Fetch API                                                          |
 |material-ui                              |UI - Google's material design UI components built with React                         |
 |moment                                   |Parse, validate, manipulate and display dates.                                       |
+|prop-types                               |React - Runtime type checking for React props.                                       |
 |radium                                   |UI - Managing inline styles on React elements                                        |
 |react                                    |React - Core                                                                         |
 |react-dom                                |React - DOM                                                                          |
@@ -110,10 +111,11 @@ These commands are cross-platform compatible.
 |babel-loader                             |Babel - Loader for transpiling                                                       |
 |babel-plugin-istanbul                    |Babel - Istanbul instrumentation to ES6 code. Used in conjunction with `nyc`.        |
 |babel-plugin-transform-decorators-legacy |Babel - To fix "Decorators are not supported yet in 6.x pending proposal update."    |
-|babel-polyfill                           |Babel - Emulate a full ES2015 environment.                                           |
+|babel-polyfill                           |Babel - Emulate a full ES2015 environment                                            |
 |babel-preset-es2015                      |Babel - ES6 preset                                                                   |
 |babel-preset-react                       |Babel - React preset                                                                 |
 |babel-preset-stage-0                     |Babel - ES7+ preset                                                                  |
+|cache-loader                             |Webpack - Work in conjunction with Happypack to speed up build process               |
 |chai                                     |Test - Expect lib                                                                    |
 |chai-as-promised                         |Test - Fluent approach to test promises                                              |
 |clean-webpack-plugin                     |Webpack - Clean output dir between builds                                            |
@@ -141,7 +143,7 @@ These commands are cross-platform compatible.
 |nyc                                      |Test - Istanbul CLI for code coverage                                                |
 |postcss-loader                           |Webpack - Post CSS loader to run autoprefixer                                        |
 |react-addons-perf                        |Util - Performance profiling tool                                                    |
-|react-addons-test-utils                  |Test - Utils for testing React components                                            |
+|react-test-renderer                      |Test - Works in conjunction with Enzyme                                              |
 |redux-saga-test-plan                     |Test - Utils for testing Redux Saga                                                  |
 |rimraf                                   |Util - `rm -rf` for both Unix and Windows world                                      |
 |roboto-fontface                          |Roboto font, adhering to Google Material Design spec                                 |
@@ -152,6 +154,7 @@ These commands are cross-platform compatible.
 |webpack                                  |Webpack - Core                                                                       |
 |webpack-dev-server                       |Webpack - Node.js Express server                                                     |
 |webpack-parallel-uglify-plugin           |Webpack - Replacing `webpack.optimize.UglifyJsPlugin` to improve build time          |
+
 ## Project Structure
 
 ```
@@ -180,12 +183,13 @@ These commands are cross-platform compatible.
 ├── package.json                -> NPM scripts and dependencies
 ├── postcss.config.js           -> To fix "No PostCSS Config found" error
 ├── README.md                   -> Readme file for the app
-├── stats.json                  -> Generated file when running `yarn run stats`
+├── stats.json                  -> Generated file when running `yarn stats`
 ├── webpack.base.config.js      -> Common Webpack config
 ├── webpack.config.js           -> Production Webpack config
 ├── webpack.dev.config.js       -> Development Webpack config
 └── yarn.lock                   -> Dependency versions lock file used by Yarn
 ```
+
 ## Troubleshooting
 
 ### Error: dyld: Library not loaded
@@ -199,12 +203,3 @@ Module build failed: Error: dyld: Library not loaded: /usr/local/opt/libpng/lib/
 ```
 
 To fix it, run `brew install libpng` ... [see here for more info](https://github.com/tcoopman/image-webpack-loader/issues/51)
-   
-## Acknowledgement
-
-> "You want to be extra rigorous about making the best possible thing you can. Find everything that’s wrong with it and fix it. Seek negative feedback, particularly from friends." -- Elon Musk
-
-Special thanks to the following individuals for improving my sloppy work:-
-
-* Cory Cray
-* Jason Thiesse

@@ -17,6 +17,9 @@
 * ESLint configuration - Allowed trailing comma in multi-line object literal or array (works with IntelliJ IDEA 2017).
 
 * Added `cache-loader` to fix HappyPack's "Option 'tempDir' has been deprecated. Configuring it will cause an error to be thrown in future versions." warning.
+
+* Removed deprecated `react-addons-test-utils` and added `react-test-renderer` to get `enzyme` working again with new React version.
+
 * Dependency update.
 
   

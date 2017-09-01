@@ -1,7 +1,7 @@
 // @flow
 import { describe, it } from 'mocha';
 import React from 'react'; // eslint-disable-line no-unused-vars
-import TestUtils from 'react-addons-test-utils';
+import TestUtils from 'react-dom/test-utils';
 import { expect } from 'chai';
 import { Link } from '../../components/Link';
 

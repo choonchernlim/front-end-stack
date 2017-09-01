@@ -1,3 +1,4 @@
+/* eslint-disable flowtype/require-valid-file-annotation */
 /**
  * By default, `.babelrc` requires "["es2015",{"modules": false}]" preset to prevent
  * modules to be converted into CommonJS modules so that "tree shaking" works when running
@@ -15,12 +16,12 @@
 module.exports = {
   presets: [
     [
-      /* eslint-disable global-require */
+      /* eslint-disable global-require, import/no-extraneous-dependencies */
       require('babel-preset-es2015').buildPreset,
-      /* eslint-enable global-require */
+      /* eslint-enable global-require, import/no-extraneous-dependencies */
       {
-        modules: process.env.NODE_ENV === 'test' ? 'commonjs' : false
-      }
-    ]
-  ]
+        modules: process.env.NODE_ENV === 'test' ? 'commonjs' : false,
+      },
+    ],
+  ],
 };

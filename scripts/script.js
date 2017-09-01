@@ -1,3 +1,5 @@
+/* eslint-disable flowtype/require-valid-file-annotation */
+
 /**
  * Script runner.
  */
@@ -35,5 +37,5 @@ const testBootstrap = path.join(srcDirPath, 'js', '__tests__', 'index.js');
 
 module.exports = {
   run,
-  mochaOpts: `--recursive --compilers js:babel-register --require ${testBootstrap}`
+  mochaOpts: `--recursive --compilers js:babel-register --require ${testBootstrap}`,
 };

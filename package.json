@@ -78,7 +78,7 @@
     "nyc": "^11.1.0",
     "postcss-loader": "^2.0.6",
     "react-addons-perf": "15.4.2",
-    "react-addons-test-utils": "^15.6.0",
+    "react-test-renderer": "^15.6.1",
     "redux-saga-test-plan": "^3.1.0",
     "rimraf": "2.6.1",
     "roboto-fontface": "^0.8.0",
