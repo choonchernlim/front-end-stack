@@ -1,12 +1,12 @@
 # Change Log
 
-## 0.9.0 - XXXX
+## 0.9.0 - 2017-09-01
 
 * Significantly sped up Webpack build time.
 
 * Replaced `npm` with `yarn`.
 
-* `npm start` will automatically open the browser and bring user to the landing page.
+* `yarn start` will automatically open the browser and bring user to the landing page.
 
 * Added `postcss.config.js` to fix "No PostCSS Config found" error. See https://github.com/postcss/postcss-loader/issues/204
 
