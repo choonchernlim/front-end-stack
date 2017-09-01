@@ -10,6 +10,7 @@
 *.ear
 *.iml
 npm-debug.log
+yarn-error.log
 stats.json
 target/
 .idea/

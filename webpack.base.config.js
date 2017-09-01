@@ -25,9 +25,16 @@ const threadPool = HappyPack.ThreadPool({ size: os.cpus().length });
 
 const newHappyPackPlugin = (id, loaders) => new HappyPack({
   id,
-  loaders,
+  loaders: [
+    {
+      loader: 'cache-loader',
+      options: {
+        cacheDirectory: path.resolve(__dirname, '.webpack/happypack'),
+      },
+    },
+    ...loaders,
+  ],
   threadPool,
-  tempDir: '.webpack/happypack',
 });
 
 // Base options for WebPack

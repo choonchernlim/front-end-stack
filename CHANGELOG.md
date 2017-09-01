@@ -16,6 +16,7 @@
 
 * ESLint configuration - Allowed trailing comma in multi-line object literal or array (works with IntelliJ IDEA 2017).
 
+* Added `cache-loader` to fix HappyPack's "Option 'tempDir' has been deprecated. Configuring it will cause an error to be thrown in future versions." warning.
 * Dependency update.
 
   
