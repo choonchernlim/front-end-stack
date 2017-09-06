@@ -68,7 +68,7 @@
     "flow-bin": "0.54.0",
     "happypack": "4.0.0-beta.5",
     "html-webpack-plugin": "2.30.1",
-    "image-webpack-loader": "3.4.0",
+    "image-webpack-loader": "^3.4.2",
     "jsdom": "11.2.0",
     "mocha": "3.5.0",
     "mocha-junit-reporter": "1.13.0",

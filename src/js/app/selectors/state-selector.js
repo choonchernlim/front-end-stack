@@ -6,7 +6,8 @@ import TodoRecord from '../../todo-manager/models/todo-record';
 
 type State = {
   chuckNorris: JokeRecord,
-  todoManager: TodoManagerRecord
+  todoManager: TodoManagerRecord,
+  routing: *
 };
 
 type StateSelector = {
@@ -19,7 +20,11 @@ type StateSelector = {
   todoManager: {
     visibilityFilter: Function,
     todos: Function
-  }
+  },
+
+  routing: {
+    queryPath: Function
+  },
 };
 
 const stateSelector: StateSelector = {
@@ -32,6 +37,10 @@ const stateSelector: StateSelector = {
   todoManager: {
     visibilityFilter: (state: State): string => state.todoManager.get('visibilityFilter'),
     todos: (state: State): List<TodoRecord> => state.todoManager.get('todos'),
+  },
+
+  routing: {
+    queryPath: (state: State): string => state.routing.locationBeforeTransitions.query.path,
   },
 };
 
