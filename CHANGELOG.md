@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.9.1 - 2017-09-06
+
+* `image-webpack-loader` produced corrupted JPEG files.
+
+* Dependency updates. 
+
 ## 0.9.0 - 2017-09-01
 
 * Significantly sped up Webpack build time.
