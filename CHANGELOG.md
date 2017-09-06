@@ -1,6 +1,6 @@
 # Change Log
 
-## 0.9.1 - 2017-09-01
+## 0.9.1 - 2017-09-06
 
 * `image-webpack-loader` produced corrupted JPEG files.
 
