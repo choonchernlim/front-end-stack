@@ -2,13 +2,6 @@
   "require": [
     "babel-register"
   ],
-  "exclude": [
-    "scripts/",
-    "webpack.**.js",
-    "**/*spec.js",
-    "**/__tests__/**",
-    "**/node_modules/**"
-  ],
   "reporter": [
     "html",
     "cobertura"
@@ -17,3 +10,4 @@
   "instrument": false,
   "all": true
 }
+

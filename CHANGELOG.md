@@ -1,5 +1,9 @@
 # Change Log
 
+## 0.9.2 - 2017-09-07
+
+* `nyc` failed to exclude directories properly.
+
 ## 0.9.1 - 2017-09-06
 
 * `image-webpack-loader` produced corrupted JPEG files.
