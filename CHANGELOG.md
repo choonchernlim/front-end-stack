@@ -4,6 +4,7 @@
 
 * `nyc` failed to exclude directories properly.
 * Added `.eslintignore` file.
+* Dependency updates. 
 
 ## 0.9.1 - 2017-09-06
 
