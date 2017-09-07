@@ -1,6 +1,5 @@
 // @flow
-import type { Element } from 'react';
-import React from 'react';
+import React, { type Element } from 'react';
 import LinkContainer from './Link';
 
 const Footer = (): Element<*> => (

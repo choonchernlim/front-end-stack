@@ -1,6 +1,5 @@
 // @flow
-import type { Element } from 'react';
-import React from 'react';
+import React, { type Element } from 'react';
 import { IndexRoute, Redirect, Route } from 'react-router';
 import Layout from './components/Layout';
 import Home from './components/Home';

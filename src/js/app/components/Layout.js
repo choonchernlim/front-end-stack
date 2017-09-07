@@ -1,6 +1,5 @@
 // @flow
-import type { Element } from 'react';
-import React from 'react';
+import React, { type Element } from 'react';
 import { Style, StyleRoot } from 'radium';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
@@ -12,29 +11,27 @@ import styles, { mediaQuery } from '../styles';
 
 type Props = {
   children: Element<*>,
-  router: Object
+  router: Object,
 };
 
 type State = {
   open: boolean,
-  mql: Function
+  mql: Function,
 };
 
 export default class Layout extends React.Component<Props, State> {
-  constructor(props: Props) {
-    super(props);
+  state = {
+    open: true,
+    mql: window.matchMedia(mediaQuery.large),
+  };
 
-    this.state = {
-      open: true,
-      mql: window.matchMedia(mediaQuery.large),
-    };
-  }
-
+  // noinspection JSUnusedGlobalSymbols
   componentWillMount = () => {
     this.state.mql.addListener(this.handleMediaQueryChanged);
     this.handleMediaQueryChanged();
   };
 
+  // noinspection JSUnusedGlobalSymbols
   componentWillUnmount = () => this.state.mql.removeListener(this.handleMediaQueryChanged);
 
   props: Props;

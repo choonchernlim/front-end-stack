@@ -1,6 +1,5 @@
 // @flow
-import type { Element } from 'react';
-import React from 'react';
+import React, { type Element } from 'react';
 import ReactDOM from 'react-dom';
 import { StoreCreator } from 'redux';
 import { HistoryMiddleware, Provider } from 'react-redux';
