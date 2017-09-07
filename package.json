@@ -16,7 +16,7 @@
     "test:watch": "nodemon --exec 'yarn test'",
     "build": "webpack --progress",
     "ci": "node ./scripts/ci",
-    "reinstall": "yarn cache clean && yarn upgrade",
+    "reinstall": "yarn cache clean && rimraf node_modules/ && yarn",
     "start": "webpack-dev-server --config webpack.dev.config.js --progress",
     "stats": "webpack --profile --json > stats.json",
     "flow": "flow"

@@ -4,6 +4,7 @@
 
 * `nyc` failed to exclude directories properly.
 * Added `.eslintignore` file.
+* Configured `yarn reinstall` to remove `node_modules` dir before reinstalling it.
 * Dependency updates. 
 
 ## 0.9.1 - 2017-09-06
