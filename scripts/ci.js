@@ -1,5 +1,4 @@
-/* eslint-disable flowtype/require-valid-file-annotation */
-
+// noinspection NpmUsedModulesInstalled
 /**
  * `yarn run ci`
  *

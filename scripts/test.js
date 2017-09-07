@@ -1,5 +1,4 @@
-/* eslint-disable flowtype/require-valid-file-annotation */
-
+// noinspection NpmUsedModulesInstalled
 /**
  * `yarn test` - to run all tests.
  * `yarn test ./test/submodule` - to run all tests within `./test/submodule`.
