@@ -78,6 +78,7 @@ const layoutStyle = () => {
 const home = {
   paper: {
     padding: 12,
+    color: grey700,
   },
   textField: {
     verticalAlign: 'top',
