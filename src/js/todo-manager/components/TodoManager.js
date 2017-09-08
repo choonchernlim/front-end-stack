@@ -1,6 +1,5 @@
 // @flow
-import type { Element } from 'react';
-import React from 'react';
+import React, { type Element } from 'react';
 import Footer from './Footer';
 import AddTodoContainer from './AddTodo';
 import TodoListContainer from './TodoList';

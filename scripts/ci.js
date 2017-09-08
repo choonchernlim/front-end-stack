@@ -1,5 +1,4 @@
-/* eslint-disable flowtype/require-valid-file-annotation */
-
+// noinspection NpmUsedModulesInstalled
 /**
  * `yarn run ci`
  *
@@ -24,11 +23,18 @@ const eslint = `eslint ${srcDirPath} ${testDirPath} --color`;
 // In addition to the `exclude` patterns defined in package.json, add user defined paths.
 // Most importantly, `distDirPath` has to be excluded because it contains large bundled JS files
 // and it causes "JavaScript heap out of memory" error.
-const nycExtraExcludes = [distDirPath, reportDirPath]
-  .map(pattern => `--exclude=${pattern}`)
+const nycExtraExcludes = [
+  distDirPath,
+  reportDirPath,
+  '**/__tests__/',
+  '.webpack/',
+  'node/',
+  'node_modules/',
+  'scripts/',
+].map(pattern => `--exclude=${pattern}`)
   .join(' ');
 
-const nyc = `nyc ${nycExtraExcludes} --report-dir=${reportDirPath}`;
+const nyc = `nyc ${nycExtraExcludes} --include=${srcDirPath} --report-dir=${reportDirPath}`;
 const mocha = `node_modules/mocha/bin/_mocha ${testDirPath} ${mochaOpts} --reporter mocha-junit-reporter --reporter-options mochaFile=${mochaFilePath} --colors`;
 
 const removeReportDir = `rimraf ${reportDirPath}`;
