@@ -173,6 +173,7 @@ These commands are cross-platform compatible.
 │   └── ...
 ├── .babelrc                    -> Babel configuration
 ├── .editorconfig               -> Coding style for different editors
+├── .eslintignore               -> ESLint ignore list
 ├── .eslintrc                   -> ESLint configuration
 ├── .flowconfig                 -> Flow configuration
 ├── .gitattributes              -> Custom Git config
