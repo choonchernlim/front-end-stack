@@ -1,6 +1,6 @@
 # Change Log
 
-## 0.9.2 - 2017-09-07
+## 0.9.2 - 2017-09-08
 
 * `nyc` failed to exclude directories properly.
 * Added `.eslintignore` file.
