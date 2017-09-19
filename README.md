@@ -83,12 +83,13 @@ These commands are cross-platform compatible.
 
 |Dependency                               |Description                                                                          |
 |-----------------------------------------|-------------------------------------------------------------------------------------|
+|classnames                               |UI - Conditionally joining classNames together                                       |
 |history                                  |Managing browser history                                                             |
 |immutable                                |Creating Immutable objects                                                           |
 |isomorphic-fetch                         |Isomorphic WHATWG Fetch API                                                          |
 |material-ui                              |UI - Google's material design UI components built with React                         |
-|moment                                   |Parse, validate, manipulate and display dates.                                       |
-|prop-types                               |React - Runtime type checking for React props.                                       |
+|moment                                   |Parse, validate, manipulate and display dates                                        |
+|prop-types                               |React - Runtime type checking for React props                                        |
 |radium                                   |UI - Managing inline styles on React elements                                        |
 |react                                    |React - Core                                                                         |
 |react-dom                                |React - DOM                                                                          |

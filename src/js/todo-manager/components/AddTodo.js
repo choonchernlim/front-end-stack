@@ -1,7 +1,7 @@
 // @flow
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import RaisedButton from 'material-ui/RaisedButton';
+import Button from 'material-ui/Button';
 import TextField from 'material-ui/TextField';
 import { addTodo } from '../actions';
 
@@ -11,14 +11,14 @@ type Props = {
 
 type State = {
   value: string,
-  error: string
+  error: boolean
 };
 
 class AddTodo extends Component<Props, State> {
-  constructor(props) {
-    super(props);
-    this.state = { value: '', error: '' };
-  }
+  state = {
+    value: '',
+    error: false,
+  };
 
   // on render, set focus on text field
   componentDidMount(): void {
@@ -26,7 +26,7 @@ class AddTodo extends Component<Props, State> {
   }
 
   props: Props;
-  todoTextField: TextField;
+  todoTextField: Function;
 
   // triggers focus on text field
   handleInputFocus = (): void => {
@@ -49,37 +49,33 @@ class AddTodo extends Component<Props, State> {
   handleButtonClick = (): void => {
     if (this.state.value) {
       this.props.addTodo(this.state.value);
-      this.setState({ value: '', error: '' }, () => this.handleInputFocus());
+      this.setState({ value: '', error: false }, () => this.handleInputFocus());
     }
     else {
-      this.setState({ error: 'Field is required' }, () => this.handleInputFocus());
+      this.setState({ error: true }, () => this.handleInputFocus());
     }
   };
 
   render() {
+    /* eslint-disable no-return-assign */
     return (
       <div>
         <TextField
-          ref={(ref) => {
-            this.todoTextField = ref;
-            return false;
-          }}
-          hintText="Enter Todo..."
-          errorText={this.state.error}
+          inputRef={ref => (this.todoTextField = ref)}
+          autoFocus
+          placeholder="Enter Todo..."
           value={this.state.value}
           onChange={this.handleInputChange}
           onKeyDown={this.handleInputEnter}
+          error={this.state.error}
         />
 
-        <br />
+        <br /><br />
 
-        <RaisedButton
-          primary
-          label="Add Todo"
-          onClick={this.handleButtonClick}
-        />
+        <Button raised color="primary" onClick={this.handleButtonClick}>Add Todo</Button>
       </div>
     );
+    /* eslint-enable no-return-assign */
   }
 }
 

@@ -58,11 +58,19 @@ const webpackOptions = {
         use: 'happypack/loader?id=babel',
         exclude: /node_modules/,
       },
+      // TODO LIMC remove SCSS?
+      // {
+      //   test: /\.scss$/,
+      //   use: ExtractTextPlugin.extract({
+      //     fallback: 'style-loader',
+      //     use: 'happypack/loader?id=scss',
+      //   }),
+      // },
       {
-        test: /\.scss$/,
+        test: /\.css$/,
         use: ExtractTextPlugin.extract({
           fallback: 'style-loader',
-          use: 'happypack/loader?id=scss',
+          use: 'happypack/loader?id=css',
         }),
       },
       {
@@ -104,7 +112,9 @@ const webpackOptions = {
   plugins: [
     newHappyPackPlugin('eslint', ['eslint-loader']),
     newHappyPackPlugin('babel', ['babel-loader?cacheDirectory']),
-    newHappyPackPlugin('scss', ['css-loader', 'postcss-loader', 'sass-loader']),
+    // TODO LIMC remove SCSS?
+    // newHappyPackPlugin('scss', ['css-loader', 'postcss-loader', 'sass-loader']),
+    newHappyPackPlugin('css', ['css-loader', 'postcss-loader']),
 
     new webpack.LoaderOptionsPlugin({
       minimize: true,

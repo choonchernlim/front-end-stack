@@ -1,4 +1,5 @@
 // @flow
+import 'typeface-roboto/index.css';
 import React, { type Element } from 'react';
 import ReactDOM from 'react-dom';
 import { StoreCreator } from 'redux';
@@ -11,7 +12,7 @@ import configureStore from './store';
 import getRoutes from './routes';
 import { sanitizeContextRoot } from './utils/url-helper';
 import './devtools/chrome-react-perf';
-import '../../scss/index.scss';
+// import '../../scss/index.scss';
 
 // http://www.material-ui.com/#/get-started/installation
 injectTapEventPlugin();

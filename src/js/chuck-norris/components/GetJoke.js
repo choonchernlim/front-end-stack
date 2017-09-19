@@ -1,8 +1,9 @@
 // @flow
 import React from 'react';
 import { connect } from 'react-redux';
-import RaisedButton from 'material-ui/RaisedButton';
-import CircularProgress from 'material-ui/CircularProgress';
+import Button from 'material-ui/Button';
+import { CircularProgress } from 'material-ui/Progress';
+import Typography from 'material-ui/Typography';
 import { getJoke } from '../actions';
 import stateSelector from '../../app/selectors/state-selector';
 
@@ -15,9 +16,9 @@ type Props = {
 
 const GetJoke = ({ joke, error, completed, onClick }: Props) => (
   <div>
-    <RaisedButton primary label="Get Joke" onClick={onClick} />
+    <Button raised color="primary" onClick={onClick}>Get Joke</Button>
     {!completed ? <div><br /><CircularProgress /></div> : null}
-    {joke ? <h2>{joke}</h2> : null}
+    {joke ? <Typography type="display1" gutterBottom>{joke}</Typography> : null}
     {error ? <div>An error has occurred: {error}</div> : null}
   </div>
 );

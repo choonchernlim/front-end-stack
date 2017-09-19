@@ -1,18 +1,20 @@
 // @flow
 import React, { type Element } from 'react';
+import Typography from 'material-ui/Typography';
 import Footer from './Footer';
 import AddTodoContainer from './AddTodo';
 import TodoListContainer from './TodoList';
-import Container from '../../app/components/Container';
 
 export default (): Element<*> => (
-  <Container>
-    <h1>Todo Manager</h1>
+  <div>
+    <Typography type="display2" gutterBottom>Todo Manager</Typography>
 
-    <p>A simple todo app using Redux.</p>
+    <Typography gutterBottom>A simple todo app using Redux.</Typography>
+
+    <br /><br />
 
     <AddTodoContainer />
     <TodoListContainer />
     <Footer />
-  </Container>
+  </div>
 );

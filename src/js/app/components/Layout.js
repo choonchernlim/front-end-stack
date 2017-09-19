@@ -1,17 +1,23 @@
 // @flow
 import React, { type Element } from 'react';
-import { Style, StyleRoot } from 'radium';
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import getMuiTheme from 'material-ui/styles/getMuiTheme';
+import classNames from 'classnames';
+import { MuiThemeProvider, withStyles } from 'material-ui/styles';
 import AppBar from 'material-ui/AppBar';
+import Toolbar from 'material-ui/Toolbar';
+import Typography from 'material-ui/Typography';
+import IconButton from 'material-ui/IconButton';
+import MenuIcon from 'material-ui-icons/Menu';
 import Avatar from 'material-ui/Avatar';
 import MenuNavigation from './MenuNavigation';
 import userImage from '../../../img/user.jpg';
-import styles, { mediaQuery } from '../styles';
+import styles from '../styles';
+
+// TODO LIMC possibly drop Radium!
 
 type Props = {
   children: Element<*>,
   router: Object,
+  classes: Object,
 };
 
 type State = {
@@ -19,10 +25,10 @@ type State = {
   mql: Function,
 };
 
-export default class Layout extends React.Component<Props, State> {
+class Layout extends React.Component<Props, State> {
   state = {
     open: true,
-    mql: window.matchMedia(mediaQuery.large),
+    mql: window.matchMedia(styles.muiTheme.breakpoints.up('md').replace('@media ', '')),
   };
 
   // noinspection JSUnusedGlobalSymbols
@@ -41,29 +47,47 @@ export default class Layout extends React.Component<Props, State> {
   handleToggle = () => this.setState({ open: !this.state.open });
 
   render() {
-    const { router } = this.props;
+    const { router, classes, children } = this.props;
 
     return (
-      <MuiThemeProvider muiTheme={getMuiTheme(styles.muiTheme)}>
-        <StyleRoot>
-          <Style rules={styles.base} />
+      <MuiThemeProvider theme={styles.muiTheme}>
+        <div>
+          <div className={classNames(this.state.open && classes.bodyShift)}>
+            <AppBar position="static">
+              <Toolbar>
+                <IconButton
+                  className={classes.menuButton}
+                  color="contrast"
+                  onClick={this.handleToggle}
+                  aria-label="Menu"
+                >
+                  <MenuIcon />
+                </IconButton>
 
-          <AppBar
-            title={process.env.APP_NAME}
-            style={styles.layout.appBar.base}
-            titleStyle={styles.layout.appBar.title}
-            onTitleTouchTap={() => router.push('/')}
-            onLeftIconButtonTouchTap={this.handleToggle}
-            iconStyleRight={styles.layout.appBar.iconRight}
-            iconElementRight={<Avatar src={userImage} />}
-          />
+                <Typography
+                  type="title"
+                  color="inherit"
+                  className={classes.title}
+                  onClick={() => router.push('/')}
+                  noWrap
+                >
+                  {process.env.APP_NAME}
+                </Typography>
+
+                <Avatar src={userImage} />
+              </Toolbar>
+            </AppBar>
+
+            <br />
+
+            <div className={classes.content}>{children}</div>
+          </div>
 
           <MenuNavigation open={this.state.open} />
-
-          <br />
-          <div style={styles.layout.container}>{this.props.children}</div>
-        </StyleRoot>
+        </div>
       </MuiThemeProvider>
     );
   }
 }
+
+export default withStyles(styles.layout)(Layout);

@@ -1,9 +1,10 @@
 // @flow
 import React, { type Element } from 'react';
+import Typography from 'material-ui/Typography';
 import LinkContainer from './Link';
 
 const Footer = (): Element<*> => (
-  <p>
+  <Typography>
     Show:
     {' '}
     <LinkContainer filter="SHOW_ALL">All</LinkContainer>
@@ -11,7 +12,7 @@ const Footer = (): Element<*> => (
     <LinkContainer filter="SHOW_ACTIVE">Active</LinkContainer>
     {' '}
     <LinkContainer filter="SHOW_COMPLETED">Completed</LinkContainer>
-  </p>
+  </Typography>
 );
 
 export default Footer;
