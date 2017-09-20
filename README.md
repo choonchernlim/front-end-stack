@@ -95,7 +95,6 @@ These commands are cross-platform compatible.
 |react-redux                              |React - Redux integration                                                            |
 |react-router                             |React - Router                                                                       |
 |react-router-redux                       |React - Router with Redux integration                                                |
-|react-tap-event-plugin                   |UI - Required by material-ui to listen for touch events                              |
 |redux                                    |Redux - Core                                                                         |
 |redux-saga                               |Redux - Side Effects middleware                                                      |
 |reselect                                 |Memoized selector for React components                                               |

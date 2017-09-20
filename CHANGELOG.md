@@ -7,6 +7,7 @@
 * Added `classnames` to make it easier to work with CSS class names since `material-ui` has switched to `jss`.
 * Added `material-ui-icons` to work with `material-ui`.
 * Removed `radium` and `sass-loader`. Removed SASS configurations.
+* Removed `react-tap-event-plugin`. No longer needed with `material-ui`.
 
 ## 0.9.2 - 2017-09-08
 
