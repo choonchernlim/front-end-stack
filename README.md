@@ -90,7 +90,6 @@ These commands are cross-platform compatible.
 |material-ui                              |UI - Google's material design UI components built with React                         |
 |moment                                   |Parse, validate, manipulate and display dates                                        |
 |prop-types                               |React - Runtime type checking for React props                                        |
-|radium                                   |UI - Managing inline styles on React elements                                        |
 |react                                    |React - Core                                                                         |
 |react-dom                                |React - DOM                                                                          |
 |react-redux                              |React - Redux integration                                                            |
@@ -148,7 +147,6 @@ These commands are cross-platform compatible.
 |react-test-renderer                      |Test - Works in conjunction with Enzyme                                              |
 |redux-saga-test-plan                     |Test - Utils for testing Redux Saga                                                  |
 |rimraf                                   |Util - `rm -rf` for both Unix and Windows world                                      |
-|sass-loader                              |Webpack - SASS loader                                                                |
 |sinon                                    |Test - Standalone test spies, stubs and mocks                                        |
 |style-loader                             |Webpack - Style loader                                                               |
 |url-loader                               |Webpack - URL loader                                                                 |

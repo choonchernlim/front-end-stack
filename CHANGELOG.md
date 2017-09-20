@@ -4,6 +4,7 @@
 * Replaced `roboto-fontface` with `typeface-roboto`. Worked better with `material-ui`.
 * Added `classnames` to make it easier to work with CSS class names since `material-ui` has switched to `jss`.
 * Added `material-ui-icons` to work with `material-ui`.
+* Removed `radium` and `sass-loader`. Removed SASS configurations.
 
 ## 0.9.2 - 2017-09-08
 
