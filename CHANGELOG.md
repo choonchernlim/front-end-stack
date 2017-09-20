@@ -1,5 +1,7 @@
 # Change Log
 
+## 0.10.0-beta - 2017-X-X
+
 * Upgraded `material-ui` to v1.0.
 * Replaced `roboto-fontface` with `typeface-roboto`. Worked better with `material-ui`.
 * Added `classnames` to make it easier to work with CSS class names since `material-ui` has switched to `jss`.

@@ -9,6 +9,7 @@ import createSagaMiddleware, { SagaMiddleware } from 'redux-saga';
 import reduxDevToolsExtension from './devtools/redux-devtools-extension';
 import sagas from './sagas';
 import reducers from './reducers';
+import env from './utils/env';
 
 const configureStore = (history: HistoryMiddleware): StoreCreator => {
   // Initializing saga middleware
@@ -23,7 +24,7 @@ const configureStore = (history: HistoryMiddleware): StoreCreator => {
     routerHistoryMiddleware,
   );
 
-  if (process.env.NODE_ENV !== 'production') {
+  if (!env.isProduction()) {
     enhancer = compose(enhancer, reduxDevToolsExtension());
   }
 

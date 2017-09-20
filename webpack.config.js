@@ -68,6 +68,7 @@ module.exports = Object.assign({}, baseConfig.webpackOptions, {
         NODE_ENV: JSON.stringify('production'),
         CONTEXT_ROOT: JSON.stringify(contextRoot),
         APP_NAME: JSON.stringify(packageJson.name),
+        VERSION: JSON.stringify(packageJson.version),
       },
     }),
 

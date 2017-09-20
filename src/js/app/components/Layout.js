@@ -11,8 +11,7 @@ import Avatar from 'material-ui/Avatar';
 import MenuNavigation from './MenuNavigation';
 import userImage from '../../../img/user.jpg';
 import styles from '../styles';
-
-// TODO LIMC possibly drop Radium!
+import env from '../utils/env';
 
 type Props = {
   children: Element<*>,
@@ -71,7 +70,7 @@ class Layout extends React.Component<Props, State> {
                   onClick={() => router.push('/')}
                   noWrap
                 >
-                  {process.env.APP_NAME}
+                  {`${env.getAppName()} ( ${env.getVersion()} )`}
                 </Typography>
 
                 <Avatar src={userImage} />
