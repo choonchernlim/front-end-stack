@@ -1,5 +1,10 @@
 # Change Log
 
+* Upgraded `material-ui` to v1.0.
+* Replaced `roboto-fontface` with `typeface-roboto`. Worked better with `material-ui`.
+* Added `classnames` to make it easier to work with CSS class names since `material-ui` has switched to `jss`.
+* Added `material-ui-icons` to work with `material-ui`.
+
 ## 0.9.2 - 2017-09-08
 
 * `nyc` failed to exclude directories properly.

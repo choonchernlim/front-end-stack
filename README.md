@@ -100,6 +100,7 @@ These commands are cross-platform compatible.
 |redux                                    |Redux - Core                                                                         |
 |redux-saga                               |Redux - Side Effects middleware                                                      |
 |reselect                                 |Memoized selector for React components                                               |
+|typeface-roboto                          |UI - Roboto font, adhering to Google Material Design spec                            |
 
 ## Dev Dependencies
 
@@ -147,7 +148,6 @@ These commands are cross-platform compatible.
 |react-test-renderer                      |Test - Works in conjunction with Enzyme                                              |
 |redux-saga-test-plan                     |Test - Utils for testing Redux Saga                                                  |
 |rimraf                                   |Util - `rm -rf` for both Unix and Windows world                                      |
-|roboto-fontface                          |Roboto font, adhering to Google Material Design spec                                 |
 |sass-loader                              |Webpack - SASS loader                                                                |
 |sinon                                    |Test - Standalone test spies, stubs and mocks                                        |
 |style-loader                             |Webpack - Style loader                                                               |
