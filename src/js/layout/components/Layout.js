@@ -1,5 +1,6 @@
 // @flow
 import React, { type Element } from 'react';
+import { connect } from 'react-redux';
 import classNames from 'classnames';
 import { MuiThemeProvider, withStyles } from 'material-ui/styles';
 import AppBar from 'material-ui/AppBar';
@@ -11,53 +12,57 @@ import Avatar from 'material-ui/Avatar';
 import MenuDrawer from './MenuDrawer';
 import userImage from '../../../img/user.jpg';
 import styles from '../styles';
-import env from '../utils/env';
+import env from '../../app/utils/env';
+import { menuLeftOpened, toggleMenu } from '../actions';
+import stateSelector from '../../app/selectors/state-selector';
 
 type Props = {
   children: Element<*>,
   router: Object,
   classes: Object,
+  onMenuLeftOpened: Function,
+  onToggleMenu: Function,
+  isMenuCurrentlyOpened: boolean,
 };
 
 type State = {
-  open: boolean,
   mql: Function,
 };
 
 class Layout extends React.Component<Props, State> {
   state = {
-    open: true,
     mql: window.matchMedia(styles.muiTheme.breakpoints.up('md').replace('@media ', '')),
   };
 
-  // noinspection JSUnusedGlobalSymbols
-  componentWillMount = () => {
+  componentWillMount() {
     this.state.mql.addListener(this.handleMediaQueryChanged);
     this.handleMediaQueryChanged();
-  };
+  }
 
-  // noinspection JSUnusedGlobalSymbols
-  componentWillUnmount = () => this.state.mql.removeListener(this.handleMediaQueryChanged);
+  componentWillUnmount() {
+    this.state.mql.removeListener(this.handleMediaQueryChanged);
+  }
 
   props: Props;
 
-  handleMediaQueryChanged = () => this.setState({ open: this.state.mql.matches });
-
-  handleToggle = () => this.setState({ open: !this.state.open });
+  handleMediaQueryChanged = () => {
+    const openMenu = this.state.mql.matches;
+    this.props.onMenuLeftOpened(openMenu);
+  };
 
   render() {
-    const { router, classes, children } = this.props;
+    const { isMenuCurrentlyOpened, onToggleMenu, router, classes, children } = this.props;
 
     return (
       <MuiThemeProvider theme={styles.muiTheme}>
         <div>
-          <div className={classNames(this.state.open && classes.bodyShift)}>
+          <div className={classNames(isMenuCurrentlyOpened && classes.bodyShift)}>
             <AppBar position="static">
               <Toolbar>
                 <IconButton
-                  className={classNames(classes.menuButton, this.state.open && classes.hide)}
+                  className={classNames(classes.menuButton, isMenuCurrentlyOpened && classes.hide)}
                   color="contrast"
-                  onClick={this.handleToggle}
+                  onClick={() => onToggleMenu()}
                   aria-label="Menu"
                 >
                   <MenuIcon />
@@ -82,11 +87,19 @@ class Layout extends React.Component<Props, State> {
             <div className={classes.content}>{children}</div>
           </div>
 
-          <MenuDrawer open={this.state.open} handleToggle={this.handleToggle} />
+          <MenuDrawer />
         </div>
       </MuiThemeProvider>
     );
   }
 }
 
-export default withStyles(styles.layout)(Layout);
+const mapStateToProps = state => ({
+  isMenuCurrentlyOpened: stateSelector.layout.isMenuCurrentlyOpened(state),
+});
+
+const LayoutContainer = connect(mapStateToProps,
+  { onMenuLeftOpened: menuLeftOpened, onToggleMenu: toggleMenu })(
+  Layout);
+
+export default withStyles(styles.layout)(LayoutContainer);

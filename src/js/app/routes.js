@@ -1,8 +1,8 @@
 // @flow
 import React, { type Element } from 'react';
 import { IndexRoute, Redirect, Route } from 'react-router';
-import Layout from './components/Layout';
-import Home from './components/Home';
+import Layout from '../layout/components/Layout';
+import Home from '../layout/components/Home';
 import TodoManager from '../todo-manager/components/TodoManager';
 import ChuckNorris from '../chuck-norris/components/ChuckNorris';
 import PageNotFoundErrorContainer from '../error/components/PageNotFoundError';

@@ -60,6 +60,7 @@ const layout = () => ({
 const menuDrawer = (theme: Object) => ({
   root: {
     width: drawerWidth,
+    height: '100%',
   },
   chevron: {
     display: 'flex',

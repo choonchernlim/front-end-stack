@@ -1,5 +1,6 @@
 // @flow
 import React from 'react';
+import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
 import Drawer from 'material-ui/Drawer';
 import Divider from 'material-ui/Divider';
@@ -11,28 +12,50 @@ import ChevronLeftIcon from 'material-ui-icons/ChevronLeft';
 import MoodIcon from 'material-ui-icons/Mood';
 import { withStyles } from 'material-ui/styles';
 import styles from '../styles';
+import { toggleMenu } from '../actions';
+import stateSelector from '../../app/selectors/state-selector';
 
 type Props = {
-  open: boolean,
-  handleToggle: Function,
+  isMenuCurrentlyOpened: boolean,
+  shouldMenuLeftOpened: boolean,
+  onToggleMenu: Function,
   router: Object,
   classes: Object,
 };
 
-const MenuDrawer = ({ open, handleToggle, router, classes }: Props) => {
-  const push: Function = path => () => router.push(path);
+const MenuDrawer = (
+  {
+    isMenuCurrentlyOpened, shouldMenuLeftOpened, onToggleMenu, router, classes,
+  }: Props) => {
+  /**
+   * When changing route, determine if there's a need to hide the menu especially when
+   * user uses a small viewing device.
+   *
+   * @param path    Path to switch to
+   */
+  const changeRoute: Function = (path: string) => () => {
+    router.push(path);
+
+    if (!shouldMenuLeftOpened) {
+      onToggleMenu();
+    }
+  };
 
   return (
-    <Drawer type="persistent" open={open} classes={{ paper: classes.root }}>
+    <Drawer
+      type="persistent"
+      open={isMenuCurrentlyOpened}
+      classes={{ paper: classes.root }}
+    >
       <List>
         <div className={classes.chevron}>
-          <ListItemIcon onClick={() => handleToggle()}>
+          <ListItemIcon onClick={() => onToggleMenu()}>
             <ChevronLeftIcon />
           </ListItemIcon>
         </div>
         <Divider />
 
-        <ListItem button onClick={push('/')}>
+        <ListItem button onClick={changeRoute('/')}>
           <ListItemIcon>
             <HomeIcon />
           </ListItemIcon>
@@ -41,14 +64,14 @@ const MenuDrawer = ({ open, handleToggle, router, classes }: Props) => {
 
         <Divider />
 
-        <ListItem button onClick={push('chuck-norris')}>
+        <ListItem button onClick={changeRoute('chuck-norris')}>
           <ListItemIcon>
             <MoodIcon />
           </ListItemIcon>
           <ListItemText primary="Chuck Norris" />
         </ListItem>
 
-        <ListItem button onClick={push('todo-manager')}>
+        <ListItem button onClick={changeRoute('todo-manager')}>
           <ListItemIcon>
             <AssignmentIcon />
           </ListItemIcon>
@@ -83,4 +106,13 @@ const MenuDrawer = ({ open, handleToggle, router, classes }: Props) => {
   );
 };
 
-export default withRouter(withStyles(styles.menuDrawer)(MenuDrawer));
+const mapStateToProps = state => ({
+  shouldMenuLeftOpened: stateSelector.layout.shouldMenuLeftOpened(state),
+  isMenuCurrentlyOpened: stateSelector.layout.isMenuCurrentlyOpened(state),
+});
+
+const MenuDrawerContainer = connect(mapStateToProps,
+  { onToggleMenu: toggleMenu })(
+  MenuDrawer);
+
+export default withRouter(withStyles(styles.menuDrawer)(MenuDrawerContainer));
