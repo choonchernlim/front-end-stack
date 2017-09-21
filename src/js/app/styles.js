@@ -38,9 +38,15 @@ const muiTheme = createMuiTheme({
   },
 });
 
-const menuNavigation = () => ({
+const menuDrawer = (theme: Object) => ({
   root: {
     width: drawerWidth,
+  },
+  chevron: {
+    display: 'flex',
+    justifyContent: 'flex-end',
+    padding: theme.spacing.unit,
+    cursor: 'pointer',
   },
 });
 
@@ -83,7 +89,7 @@ const home = (theme: Object) => ({
 const styles = {
   muiTheme,
   layout,
-  menuNavigation,
+  menuDrawer,
   home,
 };
 

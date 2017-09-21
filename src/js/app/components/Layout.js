@@ -8,7 +8,7 @@ import Typography from 'material-ui/Typography';
 import IconButton from 'material-ui/IconButton';
 import MenuIcon from 'material-ui-icons/Menu';
 import Avatar from 'material-ui/Avatar';
-import MenuNavigation from './MenuNavigation';
+import MenuDrawer from './MenuDrawer';
 import userImage from '../../../img/user.jpg';
 import styles from '../styles';
 import env from '../utils/env';
@@ -55,7 +55,7 @@ class Layout extends React.Component<Props, State> {
             <AppBar position="static">
               <Toolbar>
                 <IconButton
-                  className={classes.menuButton}
+                  className={classNames(classes.menuButton, this.state.open && classes.hide)}
                   color="contrast"
                   onClick={this.handleToggle}
                   aria-label="Menu"
@@ -70,7 +70,7 @@ class Layout extends React.Component<Props, State> {
                   onClick={() => router.push('/')}
                   noWrap
                 >
-                  {`${env.getAppName()} ( ${env.getVersion()} )`}
+                  {`${env.getAppName()} ( v${env.getVersion()} )`}
                 </Typography>
 
                 <Avatar src={userImage} />
@@ -82,7 +82,7 @@ class Layout extends React.Component<Props, State> {
             <div className={classes.content}>{children}</div>
           </div>
 
-          <MenuNavigation open={this.state.open} />
+          <MenuDrawer open={this.state.open} handleToggle={this.handleToggle} />
         </div>
       </MuiThemeProvider>
     );
