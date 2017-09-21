@@ -1,12 +1,11 @@
 // @flow
 import createReducer from '../app/utils/create-reducer';
 import JokeRecord from './models/joke-record';
-import { ACTION_TYPES } from './actions';
-import type { GetJokeAction, GetJokeFailedAction, GetJokeSucceededAction } from './types';
+import { ACTION_TYPES, type GetJokeAction } from './actions';
 
 const handleAction = (
   state: JokeRecord,
-  action: GetJokeAction | GetJokeFailedAction | GetJokeSucceededAction,
+  action: GetJokeAction,
 ): JokeRecord => state.merge(action.state);
 
 export default createReducer(new JokeRecord(), {

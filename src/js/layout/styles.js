@@ -43,8 +43,6 @@ const layout = () => ({
   },
   menuButton: {
     display: 'block',
-    marginLeft: -12,
-    marginRight: 20,
   },
   hide: {
     display: 'none',
@@ -62,11 +60,8 @@ const menuDrawer = (theme: Object) => ({
     width: drawerWidth,
     height: '100%',
   },
-  chevron: {
-    display: 'flex',
-    justifyContent: 'flex-end',
-    padding: theme.spacing.unit,
-    cursor: 'pointer',
+  toolbarHeight: {
+    minHeight: theme.mixins.toolbar.minHeight,
   },
 });
 
@@ -85,11 +80,9 @@ const home = (theme: Object) => ({
   },
 });
 
-const styles = {
+export default {
   muiTheme,
   layout,
   menuDrawer,
   home,
 };
-
-export default styles;
