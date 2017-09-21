@@ -7,48 +7,34 @@ const drawerWidth = 240;
 /**
  * Material UI theme override
  */
-const muiTheme = createMuiTheme({
-  palette: {
-    primary: teal,
-  },
-  typography: {
-    display3: {
-      marginTop: '0.75em',
-      color: grey[700],
-    },
-    display2: {
-      marginTop: '0.75em',
-      color: grey[700],
-    },
-    display1: {
-      marginTop: '0.75em',
-      color: grey[700],
-    },
-    body2: {
-      color: grey[700],
-      fontSize: '1em',
-    },
-    body1: {
-      color: grey[700],
-      fontSize: '1em',
-    },
-    subheading: {
-      color: grey[700],
-    },
-  },
-});
+const muiTheme = (() => {
+  const defaultDisplay = {
+    marginTop: '0.75em',
+    marginBottom: '0.75em',
+    color: grey[700],
+  };
 
-const menuDrawer = (theme: Object) => ({
-  root: {
-    width: drawerWidth,
-  },
-  chevron: {
-    display: 'flex',
-    justifyContent: 'flex-end',
-    padding: theme.spacing.unit,
-    cursor: 'pointer',
-  },
-});
+  const defaultBody = {
+    ...defaultDisplay,
+    fontSize: '1em',
+  };
+
+  return createMuiTheme({
+    palette: {
+      primary: teal,
+    },
+    typography: {
+      display3: defaultDisplay,
+      display2: defaultDisplay,
+      display1: defaultDisplay,
+      body2: defaultBody,
+      body1: defaultBody,
+      subheading: {
+        color: grey[700],
+      },
+    },
+  });
+})();
 
 const layout = () => ({
   title: {
@@ -68,6 +54,18 @@ const layout = () => ({
   },
   content: {
     margin: '0 3rem 5rem 3rem',
+  },
+});
+
+const menuDrawer = (theme: Object) => ({
+  root: {
+    width: drawerWidth,
+  },
+  chevron: {
+    display: 'flex',
+    justifyContent: 'flex-end',
+    padding: theme.spacing.unit,
+    cursor: 'pointer',
   },
 });
 

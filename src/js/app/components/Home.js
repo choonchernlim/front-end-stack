@@ -16,21 +16,20 @@ type Props = {
 
 const Home = ({ classes }: Props): Element<*> => (
   <div>
-    <Typography type="display2" gutterBottom>Welcome!</Typography>
+    <Typography type="display2">Welcome!</Typography>
 
-    <Typography type="body1" paragraph gutterBottom>
+    <Typography type="body1" paragraph>
       You have successfully created a single-page app!
     </Typography>
 
-    <Typography type="display1" gutterBottom>Look and Feel</Typography>
+    <Typography type="display1">Look and Feel</Typography>
 
     <Paper className={classes.paper}>
-      <Typography type="display3" gutterBottom>Display 3</Typography>
-      <Typography type="display2" gutterBottom>Display 2</Typography>
-      <Typography type="display1" gutterBottom>Display 1</Typography>
-      <Typography type="body2" gutterBottom>Body 2</Typography>
-      <Typography gutterBottom>Body 1</Typography>
-      <Typography><a href="https://myshittycode.com/">Link</a></Typography>
+      <Typography type="display3">Display 3</Typography>
+      <Typography type="display2">Display 2</Typography>
+      <Typography type="display1">Display 1</Typography>
+      <Typography type="body2">Body 2</Typography>
+      <Typography>Body 1</Typography>
 
       <br /><br />
 
