@@ -1,10 +1,10 @@
 // @flow
 import { Record } from 'immutable';
 
-const JokeRecord = Record({
+const ChuckNorrisRecord = Record({
   completed: true,
   joke: undefined,
   error: undefined,
 });
 
-export default JokeRecord;
+export default ChuckNorrisRecord;

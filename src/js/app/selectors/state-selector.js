@@ -1,13 +1,13 @@
 // @flow
 import { List } from 'immutable';
-import JokeRecord from '../../chuck-norris/models/joke-record';
+import ChuckNorrisRecord from '../../chuck-norris/models/chuck-norris-record';
 import TodoManagerRecord from '../../todo-manager/models/todo-manager-record';
 import TodoRecord from '../../todo-manager/models/todo-record';
 import LayoutRecord from '../../layout/models/layout-record';
 
 type State = {
   layout: LayoutRecord,
-  chuckNorris: JokeRecord,
+  chuckNorris: ChuckNorrisRecord,
   todoManager: TodoManagerRecord,
   routing: *,
 };
