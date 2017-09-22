@@ -21,8 +21,8 @@ const ChuckNorris = ({ joke, error, completed, onGetJoke }: Props) => (
     <Typography type="display2" gutterBottom>Chuck Norris</Typography>
 
     <Typography gutterBottom>
-      This view demonstrates the use of Saga, an implementation of Side Effects
-      middleware.
+      This view demonstrates async action using redux-observable, RxJS 5-based middleware for
+      Redux.
     </Typography>
 
     <Grid container spacing={24} style={{ textAlign: 'center' }}>
@@ -36,7 +36,12 @@ const ChuckNorris = ({ joke, error, completed, onGetJoke }: Props) => (
       <Grid item md={8} sm={12} style={{ flex: 1 }}>
         {!completed ? <div><br /><CircularProgress /></div> : null}
         {joke ? <Typography type="display1" gutterBottom>{joke}</Typography> : null}
-        {error ? <div>An error has occurred: {error}</div> : null}
+        {error ?
+          <Typography type="display1" gutterBottom color="accent">
+            An error has occurred: {error}
+          </Typography> :
+          null
+        }
       </Grid>
     </Grid>
   </div>
