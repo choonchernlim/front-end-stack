@@ -1,5 +1,5 @@
 // @flow
-import { teal, grey } from 'material-ui/colors';
+import { teal, grey, blue } from 'material-ui/colors';
 import { createMuiTheme } from 'material-ui/styles';
 
 const drawerWidth = 240;
@@ -32,6 +32,11 @@ const muiTheme = (() => {
       subheading: {
         color: grey[700],
       },
+    },
+    // custom attribute
+    link: {
+      color: blue[500],
+      textDecoration: 'underline',
     },
   });
 })();

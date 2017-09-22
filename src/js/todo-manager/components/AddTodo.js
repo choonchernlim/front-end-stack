@@ -61,7 +61,7 @@ class AddTodo extends Component<Props, State> {
     /* eslint-disable no-return-assign */
     return (
       <Grid container spacing={24}>
-        <Grid item md={6} sm={12}>
+        <Grid item md={4} sm={12}>
           <TextField
             inputRef={ref => (this.todoTextField = ref)}
             autoFocus
@@ -73,7 +73,7 @@ class AddTodo extends Component<Props, State> {
             error={this.state.error}
           />
         </Grid>
-        <Grid item md={6} sm={12}>
+        <Grid item md={8} sm={12}>
           <Button raised color="primary" onClick={this.handleButtonClick}>Add Todo</Button>
         </Grid>
       </Grid>
