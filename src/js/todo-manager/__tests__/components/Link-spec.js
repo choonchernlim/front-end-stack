@@ -1,23 +1,36 @@
 // @flow
 import { describe, it } from 'mocha';
 import React from 'react'; // eslint-disable-line no-unused-vars
-import TestUtils from 'react-dom/test-utils';
+import Button from 'material-ui/Button';
+import { shallow } from 'enzyme';
 import { expect } from 'chai';
 import { Link } from '../../components/Link';
 
 describe('Todo Manager', () => {
   describe('Components', () => {
     describe('Link', () => {
-      it('given active link, should be SPAN tag', () => {
-        const span = TestUtils.renderIntoDocument(new Link({
-          active: true,
-          filter: 'Show',
-          children: 'Hello',
-          onSetVisibilityFilter: f => f,
-        }));
+      it('given selected link, should be not a clickable button', () => {
+        const wrapper = shallow(
+          <Link active filter="Show" onSetVisibilityFilter={f => f}>Hello</Link>,
+        );
 
-        expect(span.tagName).to.equal('SPAN');
-        expect(span.textContent).to.equal('Hello');
+        const button = wrapper.find(Button);
+
+        expect(button).to.have.length(1);
+        expect(button.prop('disabled')).to.equal(true);
+        expect(button.prop('onClick')).to.equal(undefined);
+      });
+
+      it('given unselected link, should be clickable button', () => {
+        const wrapper = shallow(
+          <Link active={false} filter="Show" onSetVisibilityFilter={f => f}>Hello</Link>,
+        );
+
+        const button = wrapper.find(Button);
+
+        expect(button).to.have.length(1);
+        expect(button.prop('disabled')).to.equal(undefined);
+        expect(button.prop('onClick')).to.be.a('Function');
       });
     });
   });

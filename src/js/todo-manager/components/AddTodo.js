@@ -1,6 +1,7 @@
 // @flow
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import Grid from 'material-ui/Grid';
 import Button from 'material-ui/Button';
 import TextField from 'material-ui/TextField';
 import { addTodo } from '../actions';
@@ -59,21 +60,23 @@ class AddTodo extends Component<Props, State> {
   render() {
     /* eslint-disable no-return-assign */
     return (
-      <div>
-        <TextField
-          inputRef={ref => (this.todoTextField = ref)}
-          autoFocus
-          placeholder="Enter Todo..."
-          value={this.state.value}
-          onChange={this.handleInputChange}
-          onKeyDown={this.handleInputEnter}
-          error={this.state.error}
-        />
-
-        <br /><br />
-
-        <Button raised color="primary" onClick={this.handleButtonClick}>Add Todo</Button>
-      </div>
+      <Grid container spacing={24}>
+        <Grid item md={6} sm={12}>
+          <TextField
+            inputRef={ref => (this.todoTextField = ref)}
+            autoFocus
+            fullWidth
+            label="Enter Todo..."
+            value={this.state.value}
+            onChange={this.handleInputChange}
+            onKeyDown={this.handleInputEnter}
+            error={this.state.error}
+          />
+        </Grid>
+        <Grid item md={6} sm={12}>
+          <Button raised color="primary" onClick={this.handleButtonClick}>Add Todo</Button>
+        </Grid>
+      </Grid>
     );
     /* eslint-enable no-return-assign */
   }

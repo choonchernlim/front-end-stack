@@ -1,6 +1,7 @@
 // @flow
 import React from 'react';
 import { connect } from 'react-redux';
+import Button from 'material-ui/Button';
 import { setVisibilityFilter } from '../actions';
 
 type Props = {
@@ -12,15 +13,10 @@ type Props = {
 
 export const Link = ({ active, filter, children, onSetVisibilityFilter }: Props) => {
   if (active) {
-    return <span>{children}</span>;
+    return <Button disabled>{children}</Button>;
   }
 
-  const onClick = (e) => {
-    e.preventDefault();
-    onSetVisibilityFilter(filter);
-  };
-
-  return <a href="#link" onClick={onClick}>{children}</a>;
+  return <Button onClick={() => onSetVisibilityFilter(filter)}>{children}</Button>;
 };
 
 const mapStateToProps = (state, ownProps) => ({
