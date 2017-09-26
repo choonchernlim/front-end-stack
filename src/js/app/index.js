@@ -10,7 +10,6 @@ import { syncHistoryWithStore } from 'react-router-redux';
 import configureStore from './store';
 import getRoutes from './routes';
 import { sanitizeContextRoot } from './utils/url-helper';
-import './devtools/chrome-react-perf';
 
 // instead of using `browserHistory` from react-router, create one
 // with basename to allow app to specify different context root

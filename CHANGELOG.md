@@ -17,7 +17,12 @@
   * Removed `redux-saga`.            
   * Removed `isomorphic-fetch`. RxJS provides `Observable.ajax()` out of the box to perform API call.
   * Removed `redux-saga-test-plan`.
-  
+
+* Upgraded `react` to v16.
+  * Added `enzyme-adapter-react-16`.  
+  * Removed `react-addons-perf`. No longer supported.
+
+* Dependency update.
                 
 ## 0.9.2 - 2017-09-08
 

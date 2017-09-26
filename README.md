@@ -13,7 +13,6 @@ Starter kit for building single-page app using modern front-end stack.
 * In Chrome, install the following dev tool extensions:-
   * [React Developer Tools](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=en)
   * [Redux DevTools](https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd)
-  * [React Perf](https://chrome.google.com/webstore/detail/react-perf/hacmcodfllhbnekmghgdlplbdnahmhmm)
 
 * In IntelliJ (ex: IDEA, WebStorm):-
     * Use [intellij-config](https://github.com/choonchernlim/intellij-config) to configure JavaScript code formatter.
@@ -102,6 +101,7 @@ These commands are cross-platform compatible.
 |clean-webpack-plugin                     |Webpack - Clean output dir between builds                                            |
 |css-loader                               |Webpack - CSS loader                                                                 |
 |enzyme                                   |Test - Testing utilities for React                                                   |
+|enzyme-adapter-react-16                  |Test - Enzyme adapter that targets React 16                                          |
 |eslint                                   |ESLint - For enforcing coding style                                                  |
 |eslint-config-airbnb                     |ESLint - Using Airbnb's coding style                                                 |
 |eslint-loader                            |Webpack - ESLint loader                                                              |
@@ -122,7 +122,6 @@ These commands are cross-platform compatible.
 |nodemon                                  |Test - Monitor test files and rerun tests. Needed due to cross-platform test runner because `mocha --watch` doesn't produce run results when executed from `require('child_process').exec` |
 |nyc                                      |Test - Istanbul CLI for code coverage                                                |
 |postcss-loader                           |Webpack - Post CSS loader to run autoprefixer                                        |
-|react-addons-perf                        |Util - Performance profiling tool                                                    |
 |react-test-renderer                      |Test - Works in conjunction with Enzyme                                              |
 |rimraf                                   |Util - `rm -rf` for both Unix and Windows world                                      |
 |sinon                                    |Test - Standalone test spies, stubs and mocks                                        |
