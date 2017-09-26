@@ -2,27 +2,7 @@
 
 > "Sometimes if you want to see a change for the better, you have to take things into your own hands." -- Clint Eastwood
 
-Project template for building single-page app using modern front-end stack. Here are the highlights:-
-
-|Library                                                                        |Description                                                              |
-|-------------------------------------------------------------------------------|-------------------------------------------------------------------------|
-|[Yarn](https://yarnpkg.com/)                                                   |JavaScript package manager                                               |
-|[Node.js](https://nodejs.org)                                                  |Event-driven I/O server-side JavaScript environment (for app dev)        |
-|[Webpack](https://webpack.github.io/) 	                                        |Module bundler                                                           |
-|[Webpack Dev Server](https://github.com/webpack/webpack-dev-server)            |Live reloading server (for app dev)                                      |
-|[ES6](http://www.ecma-international.org/ecma-262/6.0/) and ES7                 |Latest and greatest JavaScript language                                  |
-|[Babel](https://babeljs.io/) 	                                                |Transpiles ES6+ to ES5 to maximize cross browser compatibility           |
-|[React](https://facebook.github.io/react/)                                     |Handles view layer                                                       |
-|[Redux](https://github.com/reactjs/redux)                                      |One-way data flow, inspired by Flux pattern                              |
-|[Reselect](https://github.com/reactjs/reselect)                                |Selector library for Redux                                               |
-|[Saga](https://github.com/yelouafi/redux-saga) 	                              |Side Effects middleware using ES6 Generator                              |
-|[Immutable](https://facebook.github.io/immutable-js/) 	                        |Creates immutable objects                                                |
-|[Material UI](http://www.material-ui.com/) 	                                  |UI components, adhering to [Google Material Design](https://www.google.com/design/spec/material-design/introduction.htm)|
-|[Radium](https://github.com/FormidableLabs/radium) and [Radium Grid](https://github.com/FormidableLabs/radium-grid)|Inline CSS and grid layout           |
-|[Flow](https://flowtype.org/) 	                                                |Static type checker for JavaScript                                       |
-|[ESLint](https://github.com/eslint/eslint) 	                                  |Validates JavaScript, adhering to [Airbnb's JavaScript style guide](https://github.com/airbnb/javascript) |
-|[Mocha](https://mochajs.org/) 	                                                |JavaScript test framework                                                |
-
+Starter kit for building single-page app using modern front-end stack.
 
 ## Getting Started
 
@@ -86,8 +66,8 @@ These commands are cross-platform compatible.
 |classnames                               |UI - Conditionally joining classNames together                                       |
 |history                                  |Managing browser history                                                             |
 |immutable                                |Creating Immutable objects                                                           |
-|isomorphic-fetch                         |Isomorphic WHATWG Fetch API                                                          |
 |material-ui                              |UI - Google's material design UI components built with React                         |
+|material-ui-icons                        |UI - Google Material icons                                                           |
 |moment                                   |Parse, validate, manipulate and display dates                                        |
 |prop-types                               |React - Runtime type checking for React props                                        |
 |react                                    |React - Core                                                                         |
@@ -96,8 +76,9 @@ These commands are cross-platform compatible.
 |react-router                             |React - Router                                                                       |
 |react-router-redux                       |React - Router with Redux integration                                                |
 |redux                                    |Redux - Core                                                                         |
-|redux-saga                               |Redux - Side Effects middleware                                                      |
+|redux-observable                         |Redux - Side Effects middleware using RxJS' Observables                              |
 |reselect                                 |Memoized selector for React components                                               |
+|rxjs                                     |Handling async actions                                                               |
 |typeface-roboto                          |UI - Roboto font, adhering to Google Material Design spec                            |
 
 ## Dev Dependencies
@@ -138,13 +119,11 @@ These commands are cross-platform compatible.
 |mocha                                    |Test - JS test framework                                                             |
 |mocha-junit-reporter                     |Test - Creating JUnit result file for Jenkins                                        |
 |nock                                     |Test - HTTP mocking and expectations library                                         |
-|node-sass                                |Webpack - Required by SASS loader                                                    |
 |nodemon                                  |Test - Monitor test files and rerun tests. Needed due to cross-platform test runner because `mocha --watch` doesn't produce run results when executed from `require('child_process').exec` |
 |nyc                                      |Test - Istanbul CLI for code coverage                                                |
 |postcss-loader                           |Webpack - Post CSS loader to run autoprefixer                                        |
 |react-addons-perf                        |Util - Performance profiling tool                                                    |
 |react-test-renderer                      |Test - Works in conjunction with Enzyme                                              |
-|redux-saga-test-plan                     |Test - Utils for testing Redux Saga                                                  |
 |rimraf                                   |Util - `rm -rf` for both Unix and Windows world                                      |
 |sinon                                    |Test - Standalone test spies, stubs and mocks                                        |
 |style-loader                             |Webpack - Style loader                                                               |
@@ -188,17 +167,3 @@ These commands are cross-platform compatible.
 ├── webpack.dev.config.js       -> Development Webpack config
 └── yarn.lock                   -> Dependency versions lock file used by Yarn
 ```
-
-## Troubleshooting
-
-### Error: dyld: Library not loaded
-
-When running `yarn start`, you get this error...
-
-```
-Module build failed: Error: dyld: Library not loaded: /usr/local/opt/libpng/lib/libpng16.16.dylib
-  Referenced from: /path/to/front-end-stack/node_modules/mozjpeg/vendor/cjpeg
-  Reason: image not found
-```
-
-To fix it, run `brew install libpng` ... [see here for more info](https://github.com/tcoopman/image-webpack-loader/issues/51)

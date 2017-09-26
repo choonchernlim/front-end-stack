@@ -1,13 +1,24 @@
 // @flow
-import { describe, it } from 'mocha';
+import { describe, it, beforeEach, afterEach } from 'mocha';
 import { expect } from 'chai';
-import { server } from '../../../__tests__/nock-helper';
 import { url, sanitizeContextRoot } from '../../utils/url-helper';
+
+const existingContextRoot = process.env.CONTEXT_ROOT;
 
 describe('Common', () => {
   describe('Utils', () => {
     describe('URL Helper', () => {
       describe('Default', () => {
+        const server = 'http://server';
+
+        beforeEach(() => {
+          process.env.CONTEXT_ROOT = server;
+        });
+
+        afterEach(() => {
+          process.env.CONTEXT_ROOT = existingContextRoot;
+        });
+
         it(`given /, should be ${server}/`, () => {
           expect(url('/')).to.deep.equal(`${server}/`);
         });
@@ -23,13 +34,11 @@ describe('Common', () => {
 
       describe('sanitizeContextRoot', () => {
         it('given undefined value, should be CONTEXT_ROOT', () => {
-          const contextRoot = process.env.CONTEXT_ROOT;
-
           process.env.CONTEXT_ROOT = '/abc';
 
           expect(sanitizeContextRoot(undefined)).to.deep.equal('/abc');
 
-          process.env.CONTEXT_ROOT = contextRoot;
+          process.env.CONTEXT_ROOT = existingContextRoot;
         });
 
         it('given /, should be empty string', () => {

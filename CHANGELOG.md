@@ -3,12 +3,22 @@
 ## 0.10.0-beta - 2017-X-X
 
 * Upgraded `material-ui` to v1.0.
-* Replaced `roboto-fontface` with `typeface-roboto`. Worked better with `material-ui`.
-* Added `classnames` to make it easier to work with CSS class names since `material-ui` has switched to `jss`.
-* Added `material-ui-icons` to work with `material-ui`.
-* Removed `radium` and `sass-loader`. Removed SASS configurations.
-* Removed `react-tap-event-plugin`. No longer needed with `material-ui`.
-
+  * Replaced `roboto-fontface` with `typeface-roboto`. Worked better with `material-ui`.
+  * Added `classnames` to make it easier to work with CSS class names since `material-ui` has switched to `jss`.
+  * Added `material-ui-icons`.
+  * Removed `radium`.
+  * Removed `sass-loader`.
+  * Removed `node-sass`.
+  * Removed `react-tap-event-plugin`. No longer needed with `material-ui`.
+                
+* Replaced `redux-saga` with `redux-observable`.
+  * Added `redux-observable`.
+  * Added `rxjs`.
+  * Removed `redux-saga`.            
+  * Removed `isomorphic-fetch`. RxJS provides `Observable.ajax()` out of the box to perform API call.
+  * Removed `redux-saga-test-plan`.
+  
+                
 ## 0.9.2 - 2017-09-08
 
 * `nyc` failed to exclude directories properly.

@@ -3,7 +3,7 @@ import { describe, it, afterEach, beforeEach } from 'mocha';
 import nock from 'nock';
 import { expect } from 'chai';
 import { JSDOM } from 'jsdom';
-import apis, { RANDOM_JOKE_SERVER, RANDOM_JOKE_URI } from '../epic-apis';
+import apis, { RANDOM_JOKE_SERVER, RANDOM_JOKE_URI } from '../apis';
 
 const { window } = new JSDOM('', { url: RANDOM_JOKE_SERVER });
 

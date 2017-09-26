@@ -1,6 +1,6 @@
 // @flow
-// TODO LIMC remove this?
-import fetch from 'isomorphic-fetch';
+import { type AjaxResponse } from 'rxjs';
+import { ajax } from 'rxjs/observable/dom/ajax';
 
 export const RANDOM_JOKE_SERVER = 'https://api.icndb.com';
 export const RANDOM_JOKE_URI = '/jokes/random';
@@ -8,19 +8,22 @@ export const RANDOM_JOKE_URI = '/jokes/random';
 // One way to decode HTML
 // See http://stackoverflow.com/questions/7394748/whats-the-right-way-to-decode-a-string-that-has-special-html-entities-in-it
 const decodeHtml = (html: string): string => {
-  const element: HTMLTextAreaElement = document.createElement('textarea');
+  const element: HTMLTextAreaElement = window.document.createElement('textarea');
   element.innerHTML = html;
   return element.value;
 };
 
-export function getRandomJokeApi(): Promise<string> {
-  return fetch(RANDOM_JOKE_SERVER + RANDOM_JOKE_URI)
-    .then((response) => {
-      if (response.status >= 400) {
-        throw new Error(`Unable to get a random joke: ${response.statusText}`);
-      }
+const getJoke = () => ajax({
+  url: RANDOM_JOKE_SERVER + RANDOM_JOKE_URI,
+  crossDomain: true,
+  createXHR: () => new window.XMLHttpRequest(),
+}).map((e: AjaxResponse) => decodeHtml(e.response.value.joke));
 
-      return response.json();
-    })
-    .then(json => decodeHtml(json.value.joke));
-}
+export type chuckNorrisApisType = {
+  getJoke: Function,
+};
+
+export default {
+  getJoke,
+};
+
