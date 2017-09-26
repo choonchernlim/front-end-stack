@@ -1,38 +1,57 @@
 // @flow
-import { describe, it, beforeEach } from 'mocha';
-import chai from 'chai';
-import chaiAsPromised from 'chai-as-promised';
+import { describe, it, afterEach, beforeEach } from 'mocha';
 import nock from 'nock';
-import { RANDOM_JOKE_SERVER, RANDOM_JOKE_URI, getRandomJokeApi } from '../apis';
+import { expect } from 'chai';
+import { JSDOM } from 'jsdom';
+import apis, { RANDOM_JOKE_SERVER, RANDOM_JOKE_URI } from '../epic-apis';
 
-chai.use(chaiAsPromised);
-
-const expect = chai.expect;
+const { window } = new JSDOM('', { url: RANDOM_JOKE_SERVER });
 
 describe('Chuck Norris', () => {
-  describe('API', () => {
-    describe('getRandomJokeApi', () => {
-      beforeEach(() => nock.cleanAll());
+  describe('APIs', () => {
+    describe('getJoke', () => {
+      beforeEach(() => {
+        global.window = window;
+      });
 
-      it('given valid call, should return value', () => {
+      afterEach(() => {
+        global.window = undefined;
+        nock.cleanAll();
+      });
+
+      it('given successful call, should return value', (done) => {
         nock(RANDOM_JOKE_SERVER).get(RANDOM_JOKE_URI).reply(200, {
           value: {
-            joke: 'ha ha',
+            joke: '&lt;YAY&gt;',
           },
         });
 
-        return expect(getRandomJokeApi()).to.eventually.equal('ha ha');
+        apis.getJoke().subscribe(
+          (actualValue) => {
+            expect(actualValue).to.deep.equal('<YAY>');
+            done();
+          },
+          (error) => {
+            expect(error).to.be.an('undefined');
+            done();
+          },
+        );
       });
 
-      it('given invalid call, should return error', () => {
-        // with `nock v8.0.0`, it doesn't allow `statusText` to be set. So, just throw 400
-        // with specific error message
+      it('given failed call, should not return value', (done) => {
         nock(RANDOM_JOKE_SERVER).get(RANDOM_JOKE_URI).reply(400);
 
-        return expect(getRandomJokeApi()).to.eventually.rejectedWith(Error,
-          'Unable to get a random joke: Bad Request');
+        apis.getJoke().subscribe(
+          (actualValue) => {
+            expect.fail(actualValue, undefined, 'Should not have value');
+            done();
+          },
+          (error) => {
+            expect(error).to.not.be.an('undefined');
+            done();
+          },
+        );
       });
     });
   });
 });
-
