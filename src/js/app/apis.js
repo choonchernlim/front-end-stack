@@ -1,8 +1,8 @@
 // @flow
-import chuckNorrisApis, { type chuckNorrisApisType } from '../chuck-norris/apis';
+import chuckNorrisApis, { type ChuckNorrisApis } from '../chuck-norris/apis';
 
-export type apisType = {
-  chuckNorrisApis: chuckNorrisApisType,
+export type Apis = {
+  chuckNorrisApis: ChuckNorrisApis,
 };
 
 export default {

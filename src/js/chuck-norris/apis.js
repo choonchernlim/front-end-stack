@@ -19,7 +19,7 @@ const getJoke = () => ajax({
   createXHR: () => new window.XMLHttpRequest(),
 }).map((e: AjaxResponse) => decodeHtml(e.response.value.joke));
 
-export type chuckNorrisApisType = {
+export type ChuckNorrisApis = {
   getJoke: Function,
 };
 
