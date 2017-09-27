@@ -2,8 +2,8 @@
 /**
  * Function to configure store and executes sagas.
  */
-import { applyMiddleware, compose, createStore, GenericStoreEnchancer, StoreCreator } from 'redux';
-import { HistoryMiddleware } from 'react-router';
+import type GenericStoreEnchancer from 'redux';
+import { applyMiddleware, compose, createStore, StoreCreator } from 'redux';
 import { routerMiddleware } from 'react-router-redux';
 import { createEpicMiddleware } from 'redux-observable';
 import reduxDevToolsExtension from './devtools/redux-devtools-extension';
@@ -11,7 +11,7 @@ import rootEpic from './epics';
 import reducers from './reducers';
 import env from './utils/env';
 
-const configureStore = (history: HistoryMiddleware): StoreCreator => {
+const configureStore = (history: *): StoreCreator => {
   const epicMiddleware = createEpicMiddleware(rootEpic);
 
   // To allow saga to change use `push(..)` and such to change the routing.
