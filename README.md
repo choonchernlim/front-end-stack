@@ -166,3 +166,17 @@ These commands are cross-platform compatible.
 ├── webpack.dev.config.js       -> Development Webpack config
 └── yarn.lock                   -> Dependency versions lock file used by Yarn
 ```
+
+## Troubleshooting
+
+### Error: dyld: Library not loaded
+
+When running `yarn start`, you get this error...
+
+```
+Module build failed: Error: dyld: Library not loaded: /usr/local/opt/libpng/lib/libpng16.16.dylib
+  Referenced from: /path/to/front-end-stack/node_modules/mozjpeg/vendor/cjpeg
+  Reason: image not found
+```
+
+To fix it, run `brew install libpng` ... [see here for more info](https://github.com/tcoopman/image-webpack-loader/issues/51)
