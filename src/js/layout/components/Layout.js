@@ -1,6 +1,7 @@
 // @flow
 import React, { type Element } from 'react';
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 import classNames from 'classnames';
 import { MuiThemeProvider, withStyles } from 'material-ui/styles';
 import AppBar from 'material-ui/AppBar';
@@ -17,11 +18,11 @@ import stateSelector from '../../app/selectors/state-selector';
 
 type Props = {
   children: Element<*>,
-  router: Object,
   classes: Object,
   onMenuLeftOpened: Function,
   onToggleMenu: Function,
   shouldMenuLeftOpened: boolean,
+  history: Object,
 };
 
 type State = {
@@ -53,9 +54,9 @@ class Layout extends React.Component<Props, State> {
     const {
       shouldMenuLeftOpened,
       onToggleMenu,
-      router,
       classes,
       children,
+      history,
     } = this.props;
 
     return (
@@ -77,7 +78,7 @@ class Layout extends React.Component<Props, State> {
                   type="title"
                   color="inherit"
                   className={classes.title}
-                  onClick={() => router.push('/')}
+                  onClick={() => history.push('/')}
                   noWrap
                 >
                   {`${env.getAppName()} ( ${env.getVersion()} )`}
@@ -126,4 +127,4 @@ const LayoutContainer = connect(
   { onMenuLeftOpened: menuLeftOpened, onToggleMenu: toggleMenu },
 )(Layout);
 
-export default withStyles(styles.layout)(LayoutContainer);
+export default withRouter(withStyles(styles.layout)(LayoutContainer));
