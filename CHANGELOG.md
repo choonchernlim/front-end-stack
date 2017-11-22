@@ -22,9 +22,10 @@
   * Added `enzyme-adapter-react-16`.  
   * Removed `react-addons-perf`. No longer supported.
 
-* Upgraded `react-router-redux` to v5.x.
-* Upgraded `react-router` to v4.x.
-* Upgraded `history` to v4.x.
+* Upgraded `react-router-redux` to v5.
+  * Added `react-router-dom`.
+  * Upgraded `history` to v4.x.
+  * Removed `react-router`.
 
 * Dependency update.
                 
