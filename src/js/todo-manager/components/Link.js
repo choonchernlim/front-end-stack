@@ -17,7 +17,9 @@ const styles = (theme: Object) => ({
   link: theme.link,
 });
 
-export const Link = ({ active, filter, children, onSetVisibilityFilter, classes }: Props) => {
+export const Link = ({
+  active, filter, children, onSetVisibilityFilter, classes,
+}: Props) => {
   if (active) {
     return <Button disabled>{children}</Button>;
   }

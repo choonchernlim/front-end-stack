@@ -21,10 +21,9 @@ type Props = {
   classes: Object,
 };
 
-const MenuDrawer = (
-  {
-    isMenuCurrentlyOpened, shouldMenuLeftOpened, onToggleMenu, router, classes,
-  }: Props) => {
+const MenuDrawer = ({
+  isMenuCurrentlyOpened, shouldMenuLeftOpened, onToggleMenu, router, classes,
+}: Props) => {
   /**
    * When changing route, determine if there's a need to hide the menu especially when
    * user uses a small viewing device.
@@ -81,8 +80,9 @@ const mapStateToProps = state => ({
   isMenuCurrentlyOpened: stateSelector.layout.isMenuCurrentlyOpened(state),
 });
 
-const MenuDrawerContainer = connect(mapStateToProps,
-  { onToggleMenu: toggleMenu })(
-  MenuDrawer);
+const MenuDrawerContainer = connect(
+  mapStateToProps,
+  { onToggleMenu: toggleMenu },
+)(MenuDrawer);
 
 export default withRouter(withStyles(styles.menuDrawer)(MenuDrawerContainer));

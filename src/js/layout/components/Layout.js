@@ -121,8 +121,9 @@ const mapStateToProps = state => ({
   shouldMenuLeftOpened: stateSelector.layout.shouldMenuLeftOpened(state),
 });
 
-const LayoutContainer = connect(mapStateToProps,
-  { onMenuLeftOpened: menuLeftOpened, onToggleMenu: toggleMenu })(
-  Layout);
+const LayoutContainer = connect(
+  mapStateToProps,
+  { onMenuLeftOpened: menuLeftOpened, onToggleMenu: toggleMenu },
+)(Layout);
 
 export default withStyles(styles.layout)(LayoutContainer);

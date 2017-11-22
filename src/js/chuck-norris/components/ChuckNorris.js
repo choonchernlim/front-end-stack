@@ -16,7 +16,9 @@ type Props = {
   onGetJoke: Function
 };
 
-const ChuckNorris = ({ joke, error, completed, onGetJoke }: Props) => (
+const ChuckNorris = ({
+  joke, error, completed, onGetJoke,
+}: Props) => (
   <div>
     <Typography type="display2" gutterBottom>Chuck Norris</Typography>
 

@@ -10,15 +10,14 @@ describe('Todo Manager', () => {
   describe('Components', () => {
     describe('Link', () => {
       it('given selected link, should be not a clickable button', () => {
-        const wrapper = shallow(
-          <Link
+        const wrapper = shallow( // eslint-disable-line function-paren-newline
+          <Link // eslint-disable-line jsx-a11y/anchor-is-valid
             active
             filter="Show"
             onSetVisibilityFilter={f => f}
             classes={{ link: 'link' }}
           >Hello
-          </Link>,
-        );
+          </Link>);
 
         const button = wrapper.find(Button);
 
@@ -28,16 +27,14 @@ describe('Todo Manager', () => {
       });
 
       it('given unselected link, should be clickable button', () => {
-        const wrapper = shallow(
-          <Link
+        const wrapper = shallow( // eslint-disable-line function-paren-newline
+          <Link // eslint-disable-line jsx-a11y/anchor-is-valid
             active={false}
             filter="Show"
             onSetVisibilityFilter={f => f}
             classes={{ link: 'link' }}
-          >
-            Hello
-          </Link>,
-        );
+          >Hello
+          </Link>);
 
         const button = wrapper.find(Button);
 
