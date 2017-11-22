@@ -72,7 +72,7 @@ These commands are cross-platform compatible.
 |react                                    |React - Core                                                                         |
 |react-dom                                |React - DOM                                                                          |
 |react-redux                              |React - Redux integration                                                            |
-|react-router                             |React - Router                                                                       |
+|react-router-dom                         |React - Router                                                                       |
 |react-router-redux                       |React - Router with Redux integration                                                |
 |redux                                    |Redux - Core                                                                         |
 |redux-observable                         |Redux - Side Effects middleware using RxJS' Observables                              |
