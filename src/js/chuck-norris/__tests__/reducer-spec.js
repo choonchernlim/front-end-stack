@@ -23,7 +23,6 @@ describe('Chuck Norris', () => {
         const actualState = reducer(initialState, getJoke());
         const expectedState = new ChuckNorrisRecord({ completed: false });
 
-        // $FlowFixMe: Waiting for ImmutableJS to fix `record.toJS()`
         expect(actualState.toJS()).to.deep.equal(expectedState.toJS());
       });
     });
@@ -41,7 +40,6 @@ describe('Chuck Norris', () => {
           joke: 'new joke',
         });
 
-        // $FlowFixMe: Waiting for ImmutableJS to fix `record.toJS()`
         expect(actualState.toJS()).to.deep.equal(expectedState.toJS());
       });
     });
@@ -60,7 +58,6 @@ describe('Chuck Norris', () => {
           error: 'error',
         });
 
-        // $FlowFixMe: Waiting for ImmutableJS to fix `record.toJS()`
         expect(actualState.toJS()).to.deep.equal(expectedState.toJS());
       });
     });
