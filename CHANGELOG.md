@@ -27,6 +27,8 @@
   * Upgraded `history` to v4.x.
   * Removed `react-router`.
 
+* Replaced `webpack-parallel-uglify-plugin` with `uglifyjs-webpack-plugin` because the latter now supports parallel threads and it is tad faster.
+
 * Dependency update.
                 
 ## 0.9.2 - 2017-09-08

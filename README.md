@@ -126,10 +126,10 @@ These commands are cross-platform compatible.
 |rimraf                                   |Util - `rm -rf` for both Unix and Windows world                                      |
 |sinon                                    |Test - Standalone test spies, stubs and mocks                                        |
 |style-loader                             |Webpack - Style loader                                                               |
+|uglifyjs-webpack-plugin                  |Webpack - Minify JS files                                                            |
 |url-loader                               |Webpack - URL loader                                                                 |
 |webpack                                  |Webpack - Core                                                                       |
 |webpack-dev-server                       |Webpack - Node.js Express server                                                     |
-|webpack-parallel-uglify-plugin           |Webpack - Replacing `webpack.optimize.UglifyJsPlugin` to improve build time          |
 
 ## Project Structure
 
