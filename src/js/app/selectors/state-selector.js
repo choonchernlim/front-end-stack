@@ -1,33 +1,45 @@
 // @flow
 import { List } from 'immutable';
-import JokeRecord from '../../chuck-norris/models/joke-record';
+import ChuckNorrisRecord from '../../chuck-norris/models/chuck-norris-record';
 import TodoManagerRecord from '../../todo-manager/models/todo-manager-record';
 import TodoRecord from '../../todo-manager/models/todo-record';
+import LayoutRecord from '../../layout/models/layout-record';
 
 type State = {
-  chuckNorris: JokeRecord,
+  layout: LayoutRecord,
+  chuckNorris: ChuckNorrisRecord,
   todoManager: TodoManagerRecord,
-  routing: *
+  routing: *,
 };
 
 type StateSelector = {
+  layout: {
+    shouldMenuLeftOpened: Function,
+    isMenuCurrentlyOpened: Function,
+  },
+
   chuckNorris: {
     joke: Function,
     error: Function,
-    completed: Function
+    completed: Function,
   },
 
   todoManager: {
     visibilityFilter: Function,
-    todos: Function
+    todos: Function,
   },
 
   routing: {
-    queryPath: Function
+    queryPath: Function,
   },
 };
 
 const stateSelector: StateSelector = {
+  layout: {
+    shouldMenuLeftOpened: (state: State): string => state.layout.get('shouldMenuLeftOpened'),
+    isMenuCurrentlyOpened: (state: State): string => state.layout.get('isMenuCurrentlyOpened'),
+  },
+
   chuckNorris: {
     joke: (state: State): ?string => state.chuckNorris.get('joke'),
     error: (state: State): ?string => state.chuckNorris.get('error'),

@@ -1,19 +1,17 @@
 // @flow
 import React from 'react';
 import { connect } from 'react-redux';
+import Typography from 'material-ui/Typography';
 import stateSelector from '../../app/selectors/state-selector';
-import Container from '../../app/components/Container';
 
 type Props = {
   path: string,
 };
 
 const PageNotFoundError = ({ path }: Props) => (
-  <Container>
-    <h1>
-      The page you are looking for [ {path} ] does not exist.
-    </h1>
-  </Container>
+  <Typography type="display2" gutterBottom>
+    The page you are looking for [ {path} ] does not exist.
+  </Typography>
 );
 
 const makeMapStateToProps = () => state => ({

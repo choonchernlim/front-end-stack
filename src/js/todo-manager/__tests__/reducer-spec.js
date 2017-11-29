@@ -5,7 +5,7 @@ import { List } from 'immutable';
 import reducer from '../reducer';
 import TodoManagerRecord from '../models/todo-manager-record';
 import TodoRecord from '../models/todo-record';
-import { addTodo, toggleTodo, setVisibilityFilter } from '../actions';
+import { addTodo, setVisibilityFilter, toggleTodo } from '../actions';
 
 describe('Todo Manager', () => {
   describe('Reducer', () => {
@@ -28,7 +28,6 @@ describe('Todo Manager', () => {
           ]),
         });
 
-        // $FlowFixMe: Waiting for ImmutableJS to fix `record.toJS()`
         expect(actualState.toJS()).to.deep.equal(expectedState.toJS());
       });
     });
@@ -51,7 +50,6 @@ describe('Todo Manager', () => {
           ]),
         });
 
-        // $FlowFixMe: Waiting for ImmutableJS to fix `record.toJS()`
         expect(actualState.toJS()).to.deep.equal(expectedState.toJS());
       });
     });
@@ -64,7 +62,6 @@ describe('Todo Manager', () => {
 
         const expectedState = new TodoManagerRecord({ visibilityFilter: 'ALL' });
 
-        // $FlowFixMe: Waiting for ImmutableJS to fix `record.toJS()`
         expect(actualState.toJS()).to.deep.equal(expectedState.toJS());
       });
     });

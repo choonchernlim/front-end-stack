@@ -6,6 +6,7 @@ const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HappyPack = require('happypack');
 const autoprefixer = require('autoprefixer');
+const findCacheDir = require('find-cache-dir');
 const packageJson = require('./package.json');
 
 const vendors = Object.keys(packageJson.dependencies);
@@ -29,7 +30,7 @@ const newHappyPackPlugin = (id, loaders) => new HappyPack({
     {
       loader: 'cache-loader',
       options: {
-        cacheDirectory: path.resolve(__dirname, '.webpack/happypack'),
+        cacheDirectory: findCacheDir({ name: 'happypack' }),
       },
     },
     ...loaders,
@@ -59,10 +60,10 @@ const webpackOptions = {
         exclude: /node_modules/,
       },
       {
-        test: /\.scss$/,
+        test: /\.css$/,
         use: ExtractTextPlugin.extract({
           fallback: 'style-loader',
-          use: 'happypack/loader?id=scss',
+          use: 'happypack/loader?id=css',
         }),
       },
       {
@@ -104,7 +105,7 @@ const webpackOptions = {
   plugins: [
     newHappyPackPlugin('eslint', ['eslint-loader']),
     newHappyPackPlugin('babel', ['babel-loader?cacheDirectory']),
-    newHappyPackPlugin('scss', ['css-loader', 'postcss-loader', 'sass-loader']),
+    newHappyPackPlugin('css', ['css-loader', 'postcss-loader']),
 
     new webpack.LoaderOptionsPlugin({
       minimize: true,

@@ -1,5 +1,38 @@
 # Change Log
 
+## 0.10.0 - 2017-11-29
+
+* Upgraded `material-ui` to v1.0.
+  * Replaced `roboto-fontface` with `typeface-roboto`. Worked better with `material-ui`.
+  * Added `classnames` to make it easier to work with CSS class names since `material-ui` has switched to `jss`.
+  * Added `material-ui-icons`.
+  * Removed `radium`.
+  * Removed `sass-loader`.
+  * Removed `node-sass`.
+  * Removed `react-tap-event-plugin`. No longer needed with `material-ui`.
+                
+* Replaced `redux-saga` with `redux-observable`.
+  * Added `redux-observable`.
+  * Added `rxjs`.
+  * Removed `redux-saga`.            
+  * Removed `isomorphic-fetch`. RxJS provides `Observable.ajax()` out of the box to perform API call.
+  * Removed `redux-saga-test-plan`.
+
+* Upgraded `react` to v16.
+  * Added `enzyme-adapter-react-16`.  
+  * Removed `react-addons-perf`. No longer supported.
+
+* Upgraded `react-router-redux` to v5.
+  * Added `react-router-dom`.
+  * Upgraded `history` to v4.x.
+  * Removed `react-router`.
+
+* Replaced `webpack-parallel-uglify-plugin` with `uglifyjs-webpack-plugin` because the latter now supports parallel threads and it is tad faster.
+
+* Added `find-cache-dir` for consistent cache location under `node_modules/` for easier cleanup.
+
+* Dependency update.
+                
 ## 0.9.2 - 2017-09-08
 
 * `nyc` failed to exclude directories properly.

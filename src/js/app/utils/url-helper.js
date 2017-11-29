@@ -1,4 +1,6 @@
 // @flow
+import env from './env';
+
 /**
  * Removes trailing slash from context root.
  *
@@ -8,7 +10,7 @@
  * @param contextRoot Context root
  * @return Context root without trailing slash
  */
-export const sanitizeContextRoot = (contextRoot: ?string = process.env.CONTEXT_ROOT): string => (
+export const sanitizeContextRoot = (contextRoot: ?string = env.getContextRoot()): string => (
   contextRoot ? contextRoot.replace(/\/$/, '') : ''
 );
 

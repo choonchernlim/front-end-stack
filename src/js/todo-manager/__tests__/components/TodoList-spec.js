@@ -10,29 +10,20 @@ describe('Todo Manager', () => {
   describe('Components', () => {
     describe('TodoList', () => {
       it('Given todos, should render LI items', () => {
-        const actions = [];
-
         const todos = fromJS([
           { id: 1, text: 'Item 1', completed: false },
           { id: 2, text: 'Item 2', completed: true },
         ]);
 
-        const toggleTodo = id => actions.push(id);
+        const wrapper = shallow(<TodoList todos={todos} onToggleTodo={f => f} />);
 
-        const wrapper = shallow(<TodoList todos={todos} onToggleTodo={toggleTodo} />);
+        expect(wrapper.length).to.equal(1);
 
-        const todoTags = wrapper.find('Todo');
+        const todoTags = wrapper.find('ul').props().children;
 
-        expect(todoTags.parent().is('ul')).to.equal(true);
-        expect(todoTags.length).to.equal(2);
-
-        expect(todoTags.at(0).props().text).to.equal('Item 1');
-        expect(todoTags.at(1).props().text).to.equal('Item 2');
-
-        todoTags.at(1).simulate('click');
-        todoTags.at(0).simulate('click');
-
-        expect(actions).to.deep.equal([2, 1]);
+        expect(todoTags.size).to.equal(2);
+        expect(todoTags.get(0).props.text).to.equal('Item 1');
+        expect(todoTags.get(1).props.text).to.equal('Item 2');
       });
     });
   });

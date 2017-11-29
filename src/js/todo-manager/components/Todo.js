@@ -1,5 +1,6 @@
 // @flow
 import React, { type Element } from 'react';
+import Typography from 'material-ui/Typography';
 
 type Props = {
   onClick: Function,
@@ -9,13 +10,15 @@ type Props = {
 
 const Todo = ({ onClick, completed, text }: Props): Element<*> => (
   <li>
-    <a
-      href="#toggle"
-      onClick={onClick}
-      style={{ color: 'inherit', textDecoration: completed ? 'line-through' : 'none' }}
-    >
-      {text}
-    </a>
+    <Typography>
+      <a
+        href="#toggle"
+        onClick={onClick}
+        style={{ color: 'inherit', textDecoration: completed ? 'line-through' : 'none' }}
+      >
+        {text}
+      </a>
+    </Typography>
   </li>
 );
 

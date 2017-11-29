@@ -1,39 +1,16 @@
 # front-end-stack
 
-> "Sometimes if you want to see a change for the better, you have to take things into your own hands." -- Clint Eastwood
-
-Project template for building single-page app using modern front-end stack. Here are the highlights:-
-
-|Library                                                                        |Description                                                              |
-|-------------------------------------------------------------------------------|-------------------------------------------------------------------------|
-|[Yarn](https://yarnpkg.com/)                                                   |JavaScript package manager                                               |
-|[Node.js](https://nodejs.org)                                                  |Event-driven I/O server-side JavaScript environment (for app dev)        |
-|[Webpack](https://webpack.github.io/) 	                                        |Module bundler                                                           |
-|[Webpack Dev Server](https://github.com/webpack/webpack-dev-server)            |Live reloading server (for app dev)                                      |
-|[ES6](http://www.ecma-international.org/ecma-262/6.0/) and ES7                 |Latest and greatest JavaScript language                                  |
-|[Babel](https://babeljs.io/) 	                                                |Transpiles ES6+ to ES5 to maximize cross browser compatibility           |
-|[React](https://facebook.github.io/react/)                                     |Handles view layer                                                       |
-|[Redux](https://github.com/reactjs/redux)                                      |One-way data flow, inspired by Flux pattern                              |
-|[Reselect](https://github.com/reactjs/reselect)                                |Selector library for Redux                                               |
-|[Saga](https://github.com/yelouafi/redux-saga) 	                              |Side Effects middleware using ES6 Generator                              |
-|[Immutable](https://facebook.github.io/immutable-js/) 	                        |Creates immutable objects                                                |
-|[Material UI](http://www.material-ui.com/) 	                                  |UI components, adhering to [Google Material Design](https://www.google.com/design/spec/material-design/introduction.htm)|
-|[Radium](https://github.com/FormidableLabs/radium) and [Radium Grid](https://github.com/FormidableLabs/radium-grid)|Inline CSS and grid layout           |
-|[Flow](https://flowtype.org/) 	                                                |Static type checker for JavaScript                                       |
-|[ESLint](https://github.com/eslint/eslint) 	                                  |Validates JavaScript, adhering to [Airbnb's JavaScript style guide](https://github.com/airbnb/javascript) |
-|[Mocha](https://mochajs.org/) 	                                                |JavaScript test framework                                                |
-
+Starter kit for building single-page app using modern front-end stack.
 
 ## Getting Started
 
 * Install the following tools:-
   * [Node.js](https://github.com/creationix/nvm).
-  * [Yarn](https://yarnpkg.com/en/docs/install) because it is much faster than NPM.
+  * [Yarn](https://yarnpkg.com/en/docs/install) because it is still much faster than NPM v5.
 
 * In Chrome, install the following dev tool extensions:-
   * [React Developer Tools](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=en)
   * [Redux DevTools](https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd)
-  * [React Perf](https://chrome.google.com/webstore/detail/react-perf/hacmcodfllhbnekmghgdlplbdnahmhmm)
 
 * In IntelliJ (ex: IDEA, WebStorm):-
     * Use [intellij-config](https://github.com/choonchernlim/intellij-config) to configure JavaScript code formatter.
@@ -83,22 +60,23 @@ These commands are cross-platform compatible.
 
 |Dependency                               |Description                                                                          |
 |-----------------------------------------|-------------------------------------------------------------------------------------|
+|classnames                               |UI - Conditionally joining classNames together                                       |
 |history                                  |Managing browser history                                                             |
 |immutable                                |Creating Immutable objects                                                           |
-|isomorphic-fetch                         |Isomorphic WHATWG Fetch API                                                          |
 |material-ui                              |UI - Google's material design UI components built with React                         |
-|moment                                   |Parse, validate, manipulate and display dates.                                       |
-|prop-types                               |React - Runtime type checking for React props.                                       |
-|radium                                   |UI - Managing inline styles on React elements                                        |
+|material-ui-icons                        |UI - Google Material icons                                                           |
+|moment                                   |Parse, validate, manipulate and display dates                                        |
+|prop-types                               |React - Runtime type checking for React props                                        |
 |react                                    |React - Core                                                                         |
 |react-dom                                |React - DOM                                                                          |
 |react-redux                              |React - Redux integration                                                            |
-|react-router                             |React - Router                                                                       |
+|react-router-dom                         |React - Router                                                                       |
 |react-router-redux                       |React - Router with Redux integration                                                |
-|react-tap-event-plugin                   |UI - Required by material-ui to listen for touch events                              |
 |redux                                    |Redux - Core                                                                         |
-|redux-saga                               |Redux - Side Effects middleware                                                      |
+|redux-observable                         |Redux - Side Effects middleware using RxJS' Observables                              |
 |reselect                                 |Memoized selector for React components                                               |
+|rxjs                                     |Handling async actions                                                               |
+|typeface-roboto                          |UI - Roboto font, adhering to Google Material Design spec                            |
 
 ## Dev Dependencies
 
@@ -121,6 +99,7 @@ These commands are cross-platform compatible.
 |clean-webpack-plugin                     |Webpack - Clean output dir between builds                                            |
 |css-loader                               |Webpack - CSS loader                                                                 |
 |enzyme                                   |Test - Testing utilities for React                                                   |
+|enzyme-adapter-react-16                  |Test - Enzyme adapter that targets React 16                                          |
 |eslint                                   |ESLint - For enforcing coding style                                                  |
 |eslint-config-airbnb                     |ESLint - Using Airbnb's coding style                                                 |
 |eslint-loader                            |Webpack - ESLint loader                                                              |
@@ -130,6 +109,7 @@ These commands are cross-platform compatible.
 |eslint-plugin-react                      |ESLint - React specific linting rules                                                |
 |extract-text-webpack-plugin              |Webpack - Separate out inlined CSS from JS files                                     |
 |file-loader                              |Webpack - File loader                                                                |
+|find-cache-dir                           |Webpack - Consistent cache location under node_modules/ for easy cleanup             |
 |flow-bin                                 |Flow - Static type checker for JavaScript                                            | 
 |happypack                                |Webpack - Improve Webpack build times                                                |
 |html-webpack-plugin                      |Webpack - Generates `index.html` using hash filenames for cache busting              |
@@ -138,29 +118,22 @@ These commands are cross-platform compatible.
 |mocha                                    |Test - JS test framework                                                             |
 |mocha-junit-reporter                     |Test - Creating JUnit result file for Jenkins                                        |
 |nock                                     |Test - HTTP mocking and expectations library                                         |
-|node-sass                                |Webpack - Required by SASS loader                                                    |
 |nodemon                                  |Test - Monitor test files and rerun tests. Needed due to cross-platform test runner because `mocha --watch` doesn't produce run results when executed from `require('child_process').exec` |
 |nyc                                      |Test - Istanbul CLI for code coverage                                                |
 |postcss-loader                           |Webpack - Post CSS loader to run autoprefixer                                        |
-|react-addons-perf                        |Util - Performance profiling tool                                                    |
 |react-test-renderer                      |Test - Works in conjunction with Enzyme                                              |
-|redux-saga-test-plan                     |Test - Utils for testing Redux Saga                                                  |
 |rimraf                                   |Util - `rm -rf` for both Unix and Windows world                                      |
-|roboto-fontface                          |Roboto font, adhering to Google Material Design spec                                 |
-|sass-loader                              |Webpack - SASS loader                                                                |
 |sinon                                    |Test - Standalone test spies, stubs and mocks                                        |
 |style-loader                             |Webpack - Style loader                                                               |
+|uglifyjs-webpack-plugin                  |Webpack - Minify JS files                                                            |
 |url-loader                               |Webpack - URL loader                                                                 |
 |webpack                                  |Webpack - Core                                                                       |
 |webpack-dev-server                       |Webpack - Node.js Express server                                                     |
-|webpack-parallel-uglify-plugin           |Webpack - Replacing `webpack.optimize.UglifyJsPlugin` to improve build time          |
 
 ## Project Structure
 
 ```
 .
-├── .webpack                    -> Internal dir for Webpack to store processing and cache files
-│   └── ...
 ├── dist                        -> Distribution dir - Production bundle, including index.html
 │   └── ...
 ├── node_modules                -> Installed modules dir

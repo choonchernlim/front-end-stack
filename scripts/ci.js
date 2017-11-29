@@ -27,7 +27,6 @@ const nycExtraExcludes = [
   distDirPath,
   reportDirPath,
   '**/__tests__/',
-  '.webpack/',
   'node/',
   'node_modules/',
   'scripts/',
