@@ -1,14 +1,12 @@
 # front-end-stack
 
-> "Sometimes if you want to see a change for the better, you have to take things into your own hands." -- Clint Eastwood
-
 Starter kit for building single-page app using modern front-end stack.
 
 ## Getting Started
 
 * Install the following tools:-
   * [Node.js](https://github.com/creationix/nvm).
-  * [Yarn](https://yarnpkg.com/en/docs/install) because it is much faster than NPM.
+  * [Yarn](https://yarnpkg.com/en/docs/install) because it is still much faster than NPM v5.
 
 * In Chrome, install the following dev tool extensions:-
   * [React Developer Tools](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=en)
@@ -136,8 +134,6 @@ These commands are cross-platform compatible.
 
 ```
 .
-├── .webpack                    -> Internal dir for Webpack to store processing and cache files
-│   └── ...
 ├── dist                        -> Distribution dir - Production bundle, including index.html
 │   └── ...
 ├── node_modules                -> Installed modules dir
