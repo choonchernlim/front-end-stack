@@ -50,7 +50,7 @@ module.exports = Object.assign({}, baseConfig.webpackOptions, {
     // that handles multi-workers.
     new UglifyJsPlugin({
       parallel: true,
-      cache: '.webpack/uglifyjs-webpack-plugin',
+      cache: true,
       uglifyOptions: {
         compress: {
           warnings: false,

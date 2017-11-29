@@ -29,6 +29,8 @@
 
 * Replaced `webpack-parallel-uglify-plugin` with `uglifyjs-webpack-plugin` because the latter now supports parallel threads and it is tad faster.
 
+* Added `find-cache-dir` for consistent cache location under `node_modules/` for easier cleanup.
+
 * Dependency update.
                 
 ## 0.9.2 - 2017-09-08

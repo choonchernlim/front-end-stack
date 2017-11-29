@@ -111,6 +111,7 @@ These commands are cross-platform compatible.
 |eslint-plugin-react                      |ESLint - React specific linting rules                                                |
 |extract-text-webpack-plugin              |Webpack - Separate out inlined CSS from JS files                                     |
 |file-loader                              |Webpack - File loader                                                                |
+|find-cache-dir                           |Webpack - Consistent cache location under node_modules/ for easy cleanup             |
 |flow-bin                                 |Flow - Static type checker for JavaScript                                            | 
 |happypack                                |Webpack - Improve Webpack build times                                                |
 |html-webpack-plugin                      |Webpack - Generates `index.html` using hash filenames for cache busting              |

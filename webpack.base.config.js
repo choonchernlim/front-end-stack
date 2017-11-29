@@ -6,6 +6,7 @@ const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HappyPack = require('happypack');
 const autoprefixer = require('autoprefixer');
+const findCacheDir = require('find-cache-dir');
 const packageJson = require('./package.json');
 
 const vendors = Object.keys(packageJson.dependencies);
@@ -29,7 +30,7 @@ const newHappyPackPlugin = (id, loaders) => new HappyPack({
     {
       loader: 'cache-loader',
       options: {
-        cacheDirectory: path.resolve(__dirname, '.webpack/happypack'),
+        cacheDirectory: findCacheDir({ name: 'happypack' }),
       },
     },
     ...loaders,
