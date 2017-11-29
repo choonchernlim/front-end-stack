@@ -1,6 +1,6 @@
 # Change Log
 
-## 0.10.0-beta - 2017-X-X
+## 0.10.0 - 2017-11-29
 
 * Upgraded `material-ui` to v1.0.
   * Replaced `roboto-fontface` with `typeface-roboto`. Worked better with `material-ui`.
