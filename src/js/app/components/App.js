@@ -5,8 +5,8 @@ import LayoutContainer from '../../layout/components/Layout';
 import Home from '../../layout/components/Home';
 import TodoManager from '../../todo-manager/components/TodoManager';
 import ChuckNorrisContainer from '../../chuck-norris/components/ChuckNorris';
-import PageNotFoundErrorContainer from '../../error/components/PageNotFoundError';
-import UnexpectedErrorContainer from '../../error/components/UnexpectedError';
+import PageNotFoundError from '../../error/components/PageNotFoundError';
+import UnexpectedError from '../../error/components/UnexpectedError';
 
 const App = (): Element<*> => (
   <LayoutContainer>
@@ -14,9 +14,8 @@ const App = (): Element<*> => (
       <Route exact path="/" component={Home} />
       <Route exact path="/chuck-norris" component={ChuckNorrisContainer} />
       <Route exact path="/todo-manager" component={TodoManager} />
-      <Route exact path="/error/page-not-found" component={PageNotFoundErrorContainer} />
-      <Route exact path="/error/unexpected" component={UnexpectedErrorContainer} />
-      <Route path="*" to="/error/page-not-found" />
+      <Route exact path="/error/unexpected" component={UnexpectedError} />
+      <Route component={PageNotFoundError} />
     </Switch>
   </LayoutContainer>
 );
