@@ -1,5 +1,9 @@
 # Change Log
 
+## 0.11.0 - 2017-XX-XX
+
+* When running `yarn ci`, don't run Flow because it has higher chances of breaking when attempting to run Flow server on CI servers such as Jenkins and TFS Build.
+
 ## 0.10.0 - 2017-11-29
 
 * Upgraded `material-ui` to v1.0.
