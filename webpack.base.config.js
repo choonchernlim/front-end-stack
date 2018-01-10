@@ -9,7 +9,6 @@ const autoprefixer = require('autoprefixer');
 const findCacheDir = require('find-cache-dir');
 const packageJson = require('./package.json');
 
-const vendors = Object.keys(packageJson.dependencies);
 const srcPath = path.join(__dirname, packageJson.config.src_dir_path);
 
 const appPath = path.join(srcPath, '/js/app/index.js');
@@ -43,7 +42,6 @@ const webpackOptions = {
   entry: {
     polyfill: 'babel-polyfill',
     app: appPath,
-    vendor: vendors,
   },
 
   module: {
@@ -122,7 +120,10 @@ const webpackOptions = {
     }),
 
     // Split vendors from app
-    new webpack.optimize.CommonsChunkPlugin({ name: 'vendor' }),
+    new webpack.optimize.CommonsChunkPlugin({
+      name: 'vendor',
+      minChunks: module => /node_modules/.test(module.resource),
+    }),
 
     // It moves every require("style.css") in entry chunks into a separate css output file.
     // So your styles are no longer inlined into the javascript, but separate in a css
