@@ -57,6 +57,14 @@
           "to"
         ]
       }
+    ],
+    // to allow quotes around number... for example: const a = { '1919': 'value' };
+    "quote-props": [
+      "error",
+      "as-needed",
+      {
+        "numbers": true
+      }
     ]
   }
 }
