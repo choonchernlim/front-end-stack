@@ -93,7 +93,6 @@ These commands are cross-platform compatible.
 |babel-preset-es2015                      |Babel - ES6 preset                                                                   |
 |babel-preset-react                       |Babel - React preset                                                                 |
 |babel-preset-stage-0                     |Babel - ES7+ preset                                                                  |
-|cache-loader                             |Webpack - Work in conjunction with Happypack to speed up build process               |
 |chai                                     |Test - Expect lib                                                                    |
 |chai-as-promised                         |Test - Fluent approach to test promises                                              |
 |clean-webpack-plugin                     |Webpack - Clean output dir between builds                                            |
@@ -109,9 +108,8 @@ These commands are cross-platform compatible.
 |eslint-plugin-react                      |ESLint - React specific linting rules                                                |
 |extract-text-webpack-plugin              |Webpack - Separate out inlined CSS from JS files                                     |
 |file-loader                              |Webpack - File loader                                                                |
-|find-cache-dir                           |Webpack - Consistent cache location under node_modules/ for easy cleanup             |
 |flow-bin                                 |Flow - Static type checker for JavaScript                                            | 
-|happypack                                |Webpack - Improve Webpack build times                                                |
+|hard-source-webpack-plugin               |Webpack - Improve Webpack build times                                                |
 |html-webpack-plugin                      |Webpack - Generates `index.html` using hash filenames for cache busting              |
 |image-webpack-loader                     |Webpack - Image loader and handling compression                                      |
 |jsdom                                    |Test - A JavaScript implementation of the WHATWG DOM and HTML standards              |
