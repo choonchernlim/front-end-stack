@@ -1,10 +1,19 @@
 // @flow
-import { Record } from 'immutable';
+import { Record, type RecordFactory, type RecordOf } from 'immutable';
 
-const ChuckNorrisRecord = Record({
+type ChuckNorrisProps = {
+  completed: true,
+  joke?: string,
+  error?: string,
+};
+
+export type ChuckNorrisRecord = RecordOf<ChuckNorrisProps>;
+
+const makeChuckNorrisRecord: RecordFactory<ChuckNorrisProps> = Record({
   completed: true,
   joke: undefined,
   error: undefined,
 });
 
-export default ChuckNorrisRecord;
+export default makeChuckNorrisRecord;
+

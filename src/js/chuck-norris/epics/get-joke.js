@@ -1,6 +1,7 @@
 // @flow
 import { Observable, type AjaxError } from 'rxjs';
-import { ACTION_TYPES, getJokeFailed, getJokeSucceeded } from '../actions';
+import ACTION_TYPES from '../types';
+import { getJokeFailed, getJokeSucceeded } from '../actions';
 import { type Apis } from '../../app/apis';
 
 const getJokeEpic = (action$: Observable, store: *, { chuckNorrisApis }: Apis) => action$
