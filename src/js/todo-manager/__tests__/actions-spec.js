@@ -1,7 +1,8 @@
 // @flow
 import { describe, it } from 'mocha';
 import { expect } from 'chai';
-import { ACTION_TYPES, addTodo, setVisibilityFilter, toggleTodo } from '../actions';
+import { addTodo, setVisibilityFilter, toggleTodo } from '../actions';
+import ACTION_TYPES from '../types';
 
 describe('Todo Manager', () => {
   describe('Actions', () => {
