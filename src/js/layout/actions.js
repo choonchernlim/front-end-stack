@@ -1,25 +1,16 @@
 // @flow
-export type MenuLeftOpenedAction = {
-  type: string,
-  shouldMenuLeftOpened: boolean,
-  isMenuCurrentlyOpened: boolean,
-};
+import type { MenuLeftOpenedAction, ToggleMenuAction } from './types';
+import ACTION_TYPES from './types';
 
-export type ToggleMenuAction = {
-  type: string,
-};
+type MenuLeftOpenedFn = (open: boolean) => MenuLeftOpenedAction;
+type ToggleMenuFn = () => ToggleMenuAction;
 
-export const ACTION_TYPES: { [key: string]: string } = {
-  MENU_LEFT_OPENED: 'layout/MENU_LEFT_OPENED',
-  TOGGLE_MENU: 'layout/TOGGLE_MENU',
-};
-
-export const menuLeftOpened = (open: boolean): MenuLeftOpenedAction => ({
+export const menuLeftOpened: MenuLeftOpenedFn = open => ({
   type: ACTION_TYPES.MENU_LEFT_OPENED,
   shouldMenuLeftOpened: open,
   isMenuCurrentlyOpened: open,
 });
 
-export const toggleMenu = (): ToggleMenuAction => ({
+export const toggleMenu: ToggleMenuFn = () => ({
   type: ACTION_TYPES.TOGGLE_MENU,
 });

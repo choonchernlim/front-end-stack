@@ -3,9 +3,9 @@
 type ActionTypes = { [key: string]: string };
 
 const ACTION_TYPES: ActionTypes = {
-  ADD_TODO: 'todo-manager/addTodo',
-  SET_VISIBILITY_FILTER: 'todo-manager/setVisibilityFilter',
-  TOGGLE_TODO: 'todo-manager/toggleTodo',
+  ADD_TODO: 'TODO_MANAGER/ADD_TODO',
+  SET_VISIBILITY_FILTER: 'TODO_MANAGER/SET_VISIBILITY_FILTER',
+  TOGGLE_TODO: 'TODO_MANAGER/TOGGLE_TODO',
 };
 
 type ActionType = $Keys<typeof ACTION_TYPES>;

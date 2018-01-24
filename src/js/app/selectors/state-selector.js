@@ -3,7 +3,7 @@ import { List } from 'immutable';
 import ChuckNorrisRecord from '../../chuck-norris/models/chuck-norris-record';
 import type { TodoManagerRecord } from '../../todo-manager/models/todo-manager-record';
 import type { TodoRecord } from '../../todo-manager/models/todo-record';
-import LayoutRecord from '../../layout/models/layout-record';
+import type { LayoutRecord } from '../../layout/models/layout-record';
 
 type State = {
   layout: LayoutRecord,
