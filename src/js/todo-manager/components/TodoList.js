@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import { toggleTodo } from '../actions';
 import reselectSelector from '../../app/selectors/reselect-selector';
 import Todo from './Todo';
-import TodoRecord from '../models/todo-record';
+import type { TodoRecord } from '../models/todo-record';
 
 type Props = {
   todos: List<TodoRecord>,

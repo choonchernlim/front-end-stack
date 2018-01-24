@@ -1,15 +1,10 @@
 // @flow
-import ACTION_TYPES, {
-  type AddTodoAction,
-  type SetVisibilityFilterAction,
-  type ToggleTodoAction,
-  type DeleteTodoAction,
-} from './types';
+import type { AddTodoAction, SetVisibilityFilterAction, ToggleTodoAction } from './types';
+import ACTION_TYPES from './types';
 
 type AddTodoFn = (text: string) => AddTodoAction;
 type SetVisibilityFilterFn = (filter: string) => SetVisibilityFilterAction;
 type ToggleTodoFn = (id: number) => ToggleTodoAction;
-type DeleteTodoFn = (id: number) => DeleteTodoAction;
 
 let nextTodoId: number = 0;
 
@@ -29,10 +24,5 @@ export const setVisibilityFilter: SetVisibilityFilterFn = filter => ({
 
 export const toggleTodo: ToggleTodoFn = id => ({
   type: ACTION_TYPES.TOGGLE_TODO,
-  id,
-});
-
-export const deleteTodo: DeleteTodoFn = id => ({
-  type: ACTION_TYPES.DELETE_TODO,
   id,
 });

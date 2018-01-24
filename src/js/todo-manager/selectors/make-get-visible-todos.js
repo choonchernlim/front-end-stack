@@ -2,7 +2,7 @@
 import { createSelector } from 'reselect';
 import { List } from 'immutable';
 import stateSelector from '../../app/selectors/state-selector';
-import TodoRecord from '../models/todo-record';
+import type { TodoRecord } from '../models/todo-record';
 
 const makeGetVisibleTodos = () => createSelector(
   stateSelector.todoManager.visibilityFilter,
