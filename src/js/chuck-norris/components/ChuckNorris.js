@@ -20,7 +20,7 @@ const ChuckNorris = ({
   joke, error, completed, onGetJoke,
 }: Props) => (
   <div>
-    <Typography type="display2" gutterBottom>Chuck Norris</Typography>
+    <Typography variant="display2" gutterBottom>Chuck Norris</Typography>
 
     <Typography gutterBottom>
       This view demonstrates async action using redux-observable, RxJS 5-based middleware for
@@ -33,13 +33,13 @@ const ChuckNorris = ({
 
         <br /><br />
 
-        <Button raised color="primary" onClick={onGetJoke}>Get Joke</Button>
+        <Button variant="raised" color="primary" onClick={onGetJoke}>Get Joke</Button>
       </Grid>
       <Grid item md={8} sm={12} style={{ flex: 1 }}>
         {!completed ? <div><br /><CircularProgress /></div> : null}
-        {joke ? <Typography type="display1" gutterBottom>{joke}</Typography> : null}
+        {joke ? <Typography variant="display1" gutterBottom>{joke}</Typography> : null}
         {error ?
-          <Typography type="display1" gutterBottom color="accent">
+          <Typography variant="display1" gutterBottom color="accent">
             An error has occurred: {error}
           </Typography> :
           null

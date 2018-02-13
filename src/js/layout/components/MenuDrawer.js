@@ -45,7 +45,7 @@ const MenuDrawer = ( // eslint-disable-line function-paren-newline
 
   return (
     <Drawer
-      type={shouldMenuLeftOpened ? 'persistent' : 'temporary'}
+      variant={shouldMenuLeftOpened ? 'persistent' : 'temporary'}
       open={isMenuCurrentlyOpened}
       classes={{ paper: classes.root }}
       onRequestClose={onToggleMenu}
