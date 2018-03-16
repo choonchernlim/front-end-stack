@@ -106,13 +106,12 @@ These commands are cross-platform compatible.
 |eslint-plugin-import                     |ESLint - Linting of ES2015+ (ES6+) import/export syntax                              |
 |eslint-plugin-jsx-a11y                   |ESLint - Static AST checker for accessibility rules on JSX elements                  |
 |eslint-plugin-react                      |ESLint - React specific linting rules                                                |
-|extract-text-webpack-plugin              |Webpack - Separate out inlined CSS from JS files                                     |
 |file-loader                              |Webpack - File loader                                                                |
 |flow-bin                                 |Flow - Static type checker for JavaScript                                            | 
-|hard-source-webpack-plugin               |Webpack - Improve Webpack build times                                                |
 |html-webpack-plugin                      |Webpack - Generates `index.html` using hash filenames for cache busting              |
 |image-webpack-loader                     |Webpack - Image loader and handling compression                                      |
 |jsdom                                    |Test - A JavaScript implementation of the WHATWG DOM and HTML standards              |
+|mini-css-extract-plugin                  |Webpack - Extract CSS into separate files                                            |
 |mocha                                    |Test - JS test framework                                                             |
 |mocha-junit-reporter                     |Test - Creating JUnit result file for Jenkins                                        |
 |nock                                     |Test - HTTP mocking and expectations library                                         |
@@ -122,7 +121,6 @@ These commands are cross-platform compatible.
 |react-test-renderer                      |Test - Works in conjunction with Enzyme                                              |
 |rimraf                                   |Util - `rm -rf` for both Unix and Windows world                                      |
 |sinon                                    |Test - Standalone test spies, stubs and mocks                                        |
-|style-loader                             |Webpack - Style loader                                                               |
 |uglifyjs-webpack-plugin                  |Webpack - Minify JS files                                                            |
 |url-loader                               |Webpack - URL loader                                                                 |
 |webpack                                  |Webpack - Core                                                                       |

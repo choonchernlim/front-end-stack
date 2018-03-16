@@ -2,8 +2,7 @@
 
 const path = require('path');
 const webpack = require('webpack');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const HardSourceWebpackPlugin = require('hard-source-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const autoprefixer = require('autoprefixer');
 const packageJson = require('./package.json');
 
@@ -41,10 +40,10 @@ const webpackOptions = {
       },
       {
         test: /\.css$/,
-        use: ExtractTextPlugin.extract({
-          fallback: 'style-loader',
-          use: 'css-loader',
-        }),
+        use: [
+          MiniCssExtractPlugin.loader,
+          'css-loader',
+        ],
       },
       {
         test: /\.woff(2)?$/,
@@ -82,9 +81,21 @@ const webpackOptions = {
     ],
   },
 
-  plugins: [
-    new HardSourceWebpackPlugin(),
+  // Split vendors from app
+  optimization: {
+    splitChunks: {
+      cacheGroups: {
+        default: false,
+        commons: {
+          test: /[\\/]node_modules[\\/]/,
+          name: "vendor",
+          chunks: "all",
+        },
+      },
+    },
+  },
 
+  plugins: [
     new webpack.LoaderOptionsPlugin({
       minimize: true,
       debug: false,
@@ -99,23 +110,11 @@ const webpackOptions = {
       },
     }),
 
-    // Split vendors from app
-    new webpack.optimize.CommonsChunkPlugin({
-      name: 'vendor',
-      minChunks: module => /node_modules/.test(module.resource),
-    }),
-
-    // It moves every require("style.css") in entry chunks into a separate css output file.
-    // So your styles are no longer inlined into the javascript, but separate in a css
-    // bundle file (styles.css). If your total stylesheet volume is big, it will be faster
-    // because the stylesheet bundle is loaded in parallel to the javascript bundle.
-    new ExtractTextPlugin('css/app.[chunkhash].css'),
+    new MiniCssExtractPlugin(),
   ],
 
   // To suppress this warning when creating the vendor bundle:-
-  //
-  // WARNING in asset size limit: The following asset(s) exceed the recommended size limit (250 kB).
-  // This can impact web performance.
+  // WARNING in asset size limit: The following asset(s) exceed the recommended size limit.
   performance: {
     hints: false,
   },

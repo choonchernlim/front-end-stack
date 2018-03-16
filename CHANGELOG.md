@@ -8,6 +8,10 @@
 * ESLint - Configured rules to allow quotes around number... for example: `const a = { '1919': 'value' };`
 * Mocha - Replaced deprecated `--compilers` with `--require`. See https://github.com/mochajs/mocha/wiki/compilers-deprecation
 
+* Webpack 4 
+  * Replaced `extract-text-webpack-plugin` with `mini-css-extract-plugin`.
+  * Removed `hard-source-webpack-plugin` because Webpack 4 is pretty dang fast.
+
 ## 0.10.0 - 2017-11-29
 
 * Upgraded `material-ui` to v1.0.
