@@ -3,15 +3,15 @@
 ## 0.11.0 - 2017-XX-XX
 
 * When running `yarn ci`, don't run Flow because it has higher chances of breaking when attempting to run Flow server on CI servers such as Jenkins and TFS Build.
-* Webpack - Applied tree-shaking to `vendor.js` to significantly reduce file size from 1.73MB to 768KB.
-* Webpack - Replaced `Happypack` with `HardSourceWebpackPlugin` to further improve build time from 40s to 5s.
 * ESLint - Configured rules to allow quotes around number... for example: `const a = { '1919': 'value' };`
 * Mocha - Replaced deprecated `--compilers` with `--require`. See https://github.com/mochajs/mocha/wiki/compilers-deprecation
 * Flow - Flow-typed files.
 
 * Webpack 4 
   * Replaced `extract-text-webpack-plugin` with `mini-css-extract-plugin`.
-  * Removed `hard-source-webpack-plugin` because Webpack 4 is pretty dang fast.
+  * Removed `Happypack`.
+  * Removed `style-loader`.
+  * Applied tree-shaking to `vendor.js` to significantly reduce file size from 1.73MB to 768KB.
 
 ## 0.10.0 - 2017-11-29
 
