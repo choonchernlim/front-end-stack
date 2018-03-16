@@ -48,7 +48,7 @@ const MenuDrawer = ( // eslint-disable-line function-paren-newline
       variant={shouldMenuLeftOpened ? 'persistent' : 'temporary'}
       open={isMenuCurrentlyOpened}
       classes={{ paper: classes.root }}
-      onRequestClose={onToggleMenu}
+      onClose={onToggleMenu}
     >
       <List>
         <div className={classes.toolbarHeight} />
