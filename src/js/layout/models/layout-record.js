@@ -1,9 +1,16 @@
 // @flow
-import { Record } from 'immutable';
+import { Record, type RecordFactory, type RecordOf } from 'immutable';
 
-const LayoutRecord = Record({
+type LayoutProps = {
+  shouldMenuLeftOpened: boolean,
+  isMenuCurrentlyOpened: boolean,
+};
+
+export type LayoutRecord = RecordOf<LayoutProps>;
+
+const makeLayoutRecord: RecordFactory<LayoutProps> = Record({
   shouldMenuLeftOpened: false,
   isMenuCurrentlyOpened: false,
 });
 
-export default LayoutRecord;
+export default makeLayoutRecord;

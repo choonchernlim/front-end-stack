@@ -1,20 +1,23 @@
 // @flow
 import createReducer from '../app/utils/create-reducer';
-import LayoutRecord from './models/layout-record';
-import { ACTION_TYPES, type MenuLeftOpenedAction } from './actions';
+import makeLayoutRecord, { type LayoutRecord } from './models/layout-record';
+import ACTION_TYPES, { type MenuLeftOpenedAction } from './types';
 
-const menuLeftOpened = (state: LayoutRecord, action: MenuLeftOpenedAction): LayoutRecord => (
+type MenuLeftOpenedFn = (state: LayoutRecord, action: MenuLeftOpenedAction) => LayoutRecord;
+type ToggleMenuFn = (state: LayoutRecord) => LayoutRecord ;
+
+const menuLeftOpened: MenuLeftOpenedFn = (state, action) => (
   state.merge({
     shouldMenuLeftOpened: action.shouldMenuLeftOpened,
     isMenuCurrentlyOpened: action.isMenuCurrentlyOpened,
   })
 );
 
-const toggleMenu = (state: LayoutRecord): LayoutRecord => (
+const toggleMenu: ToggleMenuFn = state => (
   state.set('isMenuCurrentlyOpened', !state.get('isMenuCurrentlyOpened'))
 );
 
-export default createReducer(new LayoutRecord(), {
+export default createReducer(makeLayoutRecord(), {
   [ACTION_TYPES.MENU_LEFT_OPENED]: menuLeftOpened,
   [ACTION_TYPES.TOGGLE_MENU]: toggleMenu,
 });

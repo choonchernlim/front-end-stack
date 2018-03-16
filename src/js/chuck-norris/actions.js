@@ -1,20 +1,11 @@
 // @flow
-export type GetJokeAction = {
-  type: string,
-  state: {
-    completed: boolean,
-    joke?: string,
-    error?: string
-  }
-};
+import ACTION_TYPES, { type GetJokeAction } from './types';
 
-export const ACTION_TYPES: { [key: string]: string } = {
-  GET_JOKE: 'chuck-norris/getJoke',
-  GET_JOKE_FAILED: 'chuck-norris/getJokeFailed',
-  GET_JOKE_SUCCEEDED: 'chuck-norris/getJokeSucceeded',
-};
+type GetJokeFn = () => GetJokeAction;
+type GetJokeFailedFn = (error: string) => GetJokeAction;
+type GetJokeSucceededFn = (joke: string) => GetJokeAction;
 
-export const getJoke = (): GetJokeAction => ({
+export const getJoke: GetJokeFn = () => ({
   type: ACTION_TYPES.GET_JOKE,
   state: {
     completed: false,
@@ -23,7 +14,7 @@ export const getJoke = (): GetJokeAction => ({
   },
 });
 
-export const getJokeFailed = (error: string): GetJokeAction => ({
+export const getJokeFailed: GetJokeFailedFn = error => ({
   type: ACTION_TYPES.GET_JOKE_FAILED,
   state: {
     completed: true,
@@ -32,7 +23,7 @@ export const getJokeFailed = (error: string): GetJokeAction => ({
   },
 });
 
-export const getJokeSucceeded = (joke: string): GetJokeAction => ({
+export const getJokeSucceeded: GetJokeSucceededFn = joke => ({
   type: ACTION_TYPES.GET_JOKE_SUCCEEDED,
   state: {
     completed: true,

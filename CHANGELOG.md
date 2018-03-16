@@ -7,6 +7,7 @@
 * Webpack - Replaced `Happypack` with `HardSourceWebpackPlugin` to further improve build time from 40s to 5s.
 * ESLint - Configured rules to allow quotes around number... for example: `const a = { '1919': 'value' };`
 * Mocha - Replaced deprecated `--compilers` with `--require`. See https://github.com/mochajs/mocha/wiki/compilers-deprecation
+* Flow - Flow-typed files.
 
 * Webpack 4 
   * Replaced `extract-text-webpack-plugin` with `mini-css-extract-plugin`.

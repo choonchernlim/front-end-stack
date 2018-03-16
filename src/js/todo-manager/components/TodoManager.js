@@ -7,7 +7,7 @@ import TodoListContainer from './TodoList';
 
 export default (): Element<*> => (
   <div>
-    <Typography type="display2" gutterBottom>Todo Manager</Typography>
+    <Typography variant="display2" gutterBottom>Todo Manager</Typography>
 
     <Typography gutterBottom>A simple todo app using Redux.</Typography>
 

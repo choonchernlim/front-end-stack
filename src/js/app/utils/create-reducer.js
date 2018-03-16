@@ -13,9 +13,9 @@ type State = List<*> | Map<*, *> | Record<*>;
  * @param initialState  Initial state
  * @param handlers      Action handler
  */
-const createReducer = (initialState: State, handlers: {}) => (
+const createReducer = (initialState: State, handlers: Object) => (
   state: State = initialState,
-  action: { type: string },
+  action: Object,
 ): State => (
   Object.prototype.hasOwnProperty.call(handlers, action.type) ?
     handlers[action.type](state, action) :

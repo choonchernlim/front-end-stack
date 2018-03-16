@@ -1,10 +1,18 @@
 // @flow
-import { Record } from 'immutable';
+import { Record, type RecordFactory, type RecordOf } from 'immutable';
 
-const TodoRecord = Record({
+type TodoProps = {
+  id: number,
+  text: string,
+  completed: boolean,
+};
+
+export type TodoRecord = RecordOf<TodoProps>;
+
+const makeTodoRecord: RecordFactory<TodoProps> = Record({
   id: undefined,
   text: undefined,
   completed: undefined,
 });
 
-export default TodoRecord;
+export default makeTodoRecord;
