@@ -1,5 +1,5 @@
 // @flow
-import { List } from 'immutable';
+import { List, Record } from 'immutable';
 import type { ChuckNorrisRecord } from '../../chuck-norris/models/chuck-norris-record';
 import type { TodoManagerRecord } from '../../todo-manager/models/todo-manager-record';
 import type { TodoRecord } from '../../todo-manager/models/todo-record';
@@ -31,8 +31,20 @@ type StateSelector = {
 
 const stateSelector: StateSelector = {
   layout: {
-    shouldMenuLeftOpened: (state: State): string => state.layout.get('shouldMenuLeftOpened'),
-    isMenuCurrentlyOpened: (state: State): string => state.layout.get('isMenuCurrentlyOpened'),
+    shouldMenuLeftOpened: (state: State): boolean => {
+      if (state.layout instanceof Record) {
+        return state.layout.get('shouldMenuLeftOpened');
+      }
+
+      return false;
+    },
+    isMenuCurrentlyOpened: (state: State): boolean => {
+      if (state.layout instanceof Record) {
+        return state.layout.get('isMenuCurrentlyOpened');
+      }
+
+      return false;
+    },
   },
 
   chuckNorris: {

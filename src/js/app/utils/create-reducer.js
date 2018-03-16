@@ -1,8 +1,9 @@
 // @flow
-import { List, Map, Record } from 'immutable';
 
 // ensure reducer state can be either Immutable List, Immutable Map or Immutable Record.
-type State = List<*> | Map<*, *> | Record<*>;
+// TODO LIMC type as "any" for now
+// type State = List<*> | Map<*, *> | Record<*>;
+type State = any;
 
 /**
  * Creating reducer based on Redux recipe site in effort to create better flow-typed reducer.

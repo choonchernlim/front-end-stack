@@ -2,7 +2,7 @@
 import { Record, type RecordFactory, type RecordOf } from 'immutable';
 
 type ChuckNorrisProps = {
-  completed: true,
+  completed: boolean,
   joke?: string,
   error?: string,
 };

@@ -10,17 +10,13 @@ const ACTION_TYPES: ActionTypes = {
 
 type ActionType = $Keys<typeof ACTION_TYPES>;
 
-type GetJokeAction = {
+export type GetJokeAction = {
   +type: ActionType,
   state: {
     completed: boolean,
     joke?: string,
     error?: string
   }
-};
-
-export type {
-  GetJokeAction,
 };
 
 export default ACTION_TYPES;
