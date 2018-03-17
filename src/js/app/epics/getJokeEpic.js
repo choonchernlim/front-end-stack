@@ -1,12 +1,16 @@
 // @flow
 import { type AjaxError, Observable } from 'rxjs';
 import { chuckNorrisActions } from '../actions';
-import { type Apis } from '../apis';
 
-const getJokeEpic = (action$: Observable, store: *, { chuckNorrisApis }: Apis) => action$
-  .ofType(chuckNorrisActions.ACTION_TYPES.GET_JOKE)
-  .mergeMap(() => chuckNorrisApis.getJoke()
-    .map((value: string) => chuckNorrisActions.getJokeSucceeded(value))
-    .catch((error: AjaxError) => Observable.of(chuckNorrisActions.getJokeFailed(error.message))));
+type Apis = { getJokeApi: Function };
+type GetJokeEpic = (action$: Observable, store: *, apis: Apis) => Observable;
+
+const getJokeEpic: GetJokeEpic = (action$, store, { getJokeApi }) => (
+  action$
+    .ofType(chuckNorrisActions.ACTION_TYPES.GET_JOKE)
+    .mergeMap(() => getJokeApi()
+      .map((value: string) => chuckNorrisActions.getJokeSucceeded(value))
+      .catch((error: AjaxError) => Observable.of(chuckNorrisActions.getJokeFailed(error.message))))
+);
 
 export default getJokeEpic;

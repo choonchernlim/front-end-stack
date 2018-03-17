@@ -13,8 +13,8 @@ import SvgIcon from 'material-ui/SvgIcon';
 import MenuDrawerContainer from './MenuDrawer';
 import styles from './styles';
 import env from '../../app/utils/env';
-import { layoutActions } from '../../app/actions';
-import stateSelector from '../../app/selectors/state';
+import { layoutActions } from '../../app/actions/index';
+import stateSelector from '../../app/selectors/state/index';
 
 type Props = {
   children: Element<*>,

@@ -1,8 +1,8 @@
 // @flow
 import React, { type Element } from 'react';
 import { Route, Switch } from 'react-router-dom';
-import LayoutContainer from './Layout';
-import Home from './Home';
+import LayoutContainer from '../layout/Layout';
+import Home from '../layout/Home';
 import TodoManager from '../todoManager/TodoManager';
 import ChuckNorrisContainer from '../chuckNorris/ChuckNorris';
 import PageNotFoundError from '../error/PageNotFoundError';

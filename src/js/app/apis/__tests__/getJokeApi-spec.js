@@ -3,7 +3,7 @@ import { describe, it, afterEach, beforeEach } from 'mocha';
 import nock from 'nock';
 import { expect } from 'chai';
 import { JSDOM } from 'jsdom';
-import apis, { RANDOM_JOKE_SERVER, RANDOM_JOKE_URI } from '../chuckNorrisApis';
+import getJokeApi, { RANDOM_JOKE_SERVER, RANDOM_JOKE_URI } from '../getJokeApi';
 
 const { window } = new JSDOM('', { url: RANDOM_JOKE_SERVER });
 
@@ -26,7 +26,7 @@ describe('Chuck Norris', () => {
           },
         });
 
-        apis.getJoke().subscribe(
+        getJokeApi().subscribe(
           (actualValue) => {
             expect(actualValue).to.deep.equal('<YAY>');
             done();
@@ -41,7 +41,7 @@ describe('Chuck Norris', () => {
       it('given failed call, should not return value', (done) => {
         nock(RANDOM_JOKE_SERVER).get(RANDOM_JOKE_URI).reply(400);
 
-        apis.getJoke().subscribe(
+        getJokeApi().subscribe(
           (actualValue) => {
             expect.fail(actualValue, undefined, 'Should not have value');
             done();

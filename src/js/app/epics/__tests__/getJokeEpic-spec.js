@@ -12,9 +12,7 @@ describe('Chuck Norris', () => {
       it('given successful call, should return joke succeeded action', () => {
         const action$ = ActionsObservable.of(chuckNorrisActions.getJoke());
         const apis = {
-          chuckNorrisApis: {
-            getJoke: () => Observable.of('test'),
-          },
+          getJokeApi: () => Observable.of('test'),
         };
 
         getJokeEpic(action$, null, apis)
@@ -27,11 +25,9 @@ describe('Chuck Norris', () => {
       it('given failed call, should return joke failed action', () => {
         const action$ = ActionsObservable.of(chuckNorrisActions.getJoke());
         const apis = {
-          chuckNorrisApis: {
-            getJoke: () => Observable.throw({
-              message: 'test',
-            }),
-          },
+          getJokeApi: () => Observable.throw({
+            message: 'test',
+          }),
         };
 
         getJokeEpic(action$, null, apis)

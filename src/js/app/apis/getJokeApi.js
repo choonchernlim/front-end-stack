@@ -2,10 +2,6 @@
 import { type AjaxResponse } from 'rxjs';
 import { ajax } from 'rxjs/observable/dom/ajax';
 
-export type ChuckNorrisApis = {
-  getJoke: Function,
-};
-
 export const RANDOM_JOKE_SERVER: string = 'https://api.icndb.com';
 export const RANDOM_JOKE_URI: string = '/jokes/random';
 
@@ -17,13 +13,11 @@ const decodeHtml = (html: string): string => {
   return element.value;
 };
 
-const getJoke = () => ajax({
+const getJokeApi = () => ajax({
   url: RANDOM_JOKE_SERVER + RANDOM_JOKE_URI,
   crossDomain: true,
   createXHR: () => new window.XMLHttpRequest(),
 }).map((e: AjaxResponse) => decodeHtml(e.response.value.joke));
 
-export default {
-  getJoke,
-};
+export default getJokeApi;
 

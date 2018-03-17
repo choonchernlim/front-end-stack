@@ -3,6 +3,10 @@ import * as chuckNorrisActions from './chuckNorrisActions';
 import * as layoutActions from './layoutActions';
 import * as todoManagerActions from './todoManagerActions';
 
+export type AnyAction = {
+  +type: string,
+};
+
 export type { GetJokeAction } from './chuckNorrisActions';
 export type { MenuLeftOpenedAction, ToggleMenuAction } from './layoutActions';
 export type {

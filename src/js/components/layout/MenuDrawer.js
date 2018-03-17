@@ -9,9 +9,9 @@ import HomeIcon from 'material-ui-icons/Home';
 import AssignmentIcon from 'material-ui-icons/Assignment';
 import MoodIcon from 'material-ui-icons/Mood';
 import { withStyles } from 'material-ui/styles';
-import { layoutActions } from '../../app/actions';
+import { layoutActions } from '../../app/actions/index';
 import styles from './styles';
-import stateSelector from '../../app/selectors/state';
+import stateSelector from '../../app/selectors/state/index';
 
 type Props = {
   isMenuCurrentlyOpened: boolean,
