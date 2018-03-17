@@ -50,9 +50,11 @@ const toggleTodo: ToggleTodoFn = id => ({
   id,
 });
 
-export {
+const todoManagerActions = {
   ACTION_TYPES,
   addTodo,
   setVisibilityFilter,
   toggleTodo,
 };
+
+export default todoManagerActions;

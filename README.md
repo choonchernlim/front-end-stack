@@ -54,7 +54,7 @@ These commands are cross-platform compatible.
 |`yarn reinstall`                         |Clear yarn cache, remove `node_module` and install modules listed in `package.json`                   |
 |`yarn start`                             |Start Node.js Express server with Hot Module Replacement                                              |
 |`yarn stats`                             |Create `stats.json` that be loaded to http://webpack.github.io/analyse/ to visualize build.           |
-|`yarn flow`                              |Static type check.                                                                                    |
+|`yarn flow`                              |Restart Flow server before running static type check.                                                 |
 
 ## Dependencies
 

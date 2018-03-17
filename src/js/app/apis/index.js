@@ -1,7 +1,9 @@
 // @flow
 import getJokeApi from './getJokeApi';
 
-export default {
+const apis = {
   getJokeApi,
 };
+
+export default apis;
 

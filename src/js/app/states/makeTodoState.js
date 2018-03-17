@@ -7,12 +7,12 @@ type TodoProps = {
   completed: boolean,
 };
 
-export type TodoRecord = RecordOf<TodoProps>;
+export type TodoState = RecordOf<TodoProps>;
 
-export const makeTodoRecord: RecordFactory<TodoProps> = Record({
+const makeTodoState: RecordFactory<TodoProps> = Record({
   id: 0,
   text: '',
   completed: false,
 });
 
-export default {};
+export default makeTodoState;

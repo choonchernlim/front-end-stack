@@ -31,8 +31,10 @@ const toggleMenu: ToggleMenuFn = () => ({
   type: ACTION_TYPES.TOGGLE_MENU,
 });
 
-export {
+const layoutActions = {
   ACTION_TYPES,
   menuLeftOpened,
   toggleMenu,
 };
+
+export default layoutActions;

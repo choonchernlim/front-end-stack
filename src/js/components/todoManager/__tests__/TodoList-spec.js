@@ -5,15 +5,15 @@ import { expect } from 'chai';
 import { shallow } from 'enzyme';
 import { List } from 'immutable';
 import { TodoList } from '../TodoList';
-import { makeTodoRecord } from '../../../app/records';
+import { makeTodoState } from '../../../app/states';
 
 describe('Todo Manager', () => {
   describe('Components', () => {
     describe('TodoList', () => {
       it('Given todos, should render LI items', () => {
         const todos = List([
-          makeTodoRecord({ id: 1, text: 'Item 1', completed: false }),
-          makeTodoRecord({ id: 2, text: 'Item 2', completed: true }),
+          makeTodoState({ id: 1, text: 'Item 1', completed: false }),
+          makeTodoState({ id: 2, text: 'Item 2', completed: true }),
         ]);
 
         const wrapper = shallow(<TodoList todos={todos} onToggleTodo={f => f} />);

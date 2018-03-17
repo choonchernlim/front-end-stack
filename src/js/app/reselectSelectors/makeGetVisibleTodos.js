@@ -1,13 +1,13 @@
 // @flow
 import { createSelector } from 'reselect';
 import { List } from 'immutable';
-import stateSelector from '../state';
-import type { TodoRecord } from '../../records/makeTodoRecord';
+import { stateSelector } from '../states/index';
+import type { TodoState } from '../states/makeTodoState';
 
 const makeGetVisibleTodos = () => createSelector(
   stateSelector.todoManager.visibilityFilter,
   stateSelector.todoManager.todos,
-  (filter: string, todos: List<TodoRecord>): List<TodoRecord> => {
+  (filter: string, todos: List<TodoState>): List<TodoState> => {
     switch (filter) {
       case 'SHOW_ALL':
         return todos;

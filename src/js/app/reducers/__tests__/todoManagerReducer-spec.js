@@ -3,7 +3,7 @@ import { describe, it } from 'mocha';
 import { expect } from 'chai';
 import { List } from 'immutable';
 import todoManagerReducer from '../todoManagerReducer';
-import { makeTodoManagerRecord, makeTodoRecord } from '../../records';
+import { makeTodoManagerState, makeTodoState } from '../../states';
 import { todoManagerActions } from '../../actions';
 
 describe('Todo Manager', () => {
@@ -11,20 +11,20 @@ describe('Todo Manager', () => {
     describe('Default', () => {
       it('given unknown action, should return initial state', () => {
         expect(todoManagerReducer(undefined, { type: 'UNKNOWN' })).to.deep
-          .equal(makeTodoManagerRecord());
+          .equal(makeTodoManagerState());
       });
     });
 
     describe('ADD_TODO', () => {
       it('when adding todo, should return new todo', () => {
-        const initialState = makeTodoManagerRecord();
+        const initialState = makeTodoManagerState();
 
         const action = todoManagerActions.addTodo('item 1');
         const actualState = todoManagerReducer(initialState, action);
 
-        const expectedState = makeTodoManagerRecord({
+        const expectedState = makeTodoManagerState({
           todos: List([
-            makeTodoRecord({ id: action.id, text: 'item 1', completed: false }),
+            makeTodoState({ id: action.id, text: 'item 1', completed: false }),
           ]),
         });
 
@@ -34,19 +34,19 @@ describe('Todo Manager', () => {
 
     describe('TOGGLE_TODO', () => {
       it('when toggling incomplete todo, should return completed flag', () => {
-        const initialState = makeTodoManagerRecord({
+        const initialState = makeTodoManagerState({
           todos: List([
-            makeTodoRecord({ id: 1, text: 'item 1', completed: false }),
-            makeTodoRecord({ id: 2, text: 'item 2', completed: false }),
+            makeTodoState({ id: 1, text: 'item 1', completed: false }),
+            makeTodoState({ id: 2, text: 'item 2', completed: false }),
           ]),
         });
 
         const actualState = todoManagerReducer(initialState, todoManagerActions.toggleTodo(1));
 
-        const expectedState = makeTodoManagerRecord({
+        const expectedState = makeTodoManagerState({
           todos: List([
-            makeTodoRecord({ id: 1, text: 'item 1', completed: true }),
-            makeTodoRecord({ id: 2, text: 'item 2', completed: false }),
+            makeTodoState({ id: 1, text: 'item 1', completed: true }),
+            makeTodoState({ id: 2, text: 'item 2', completed: false }),
           ]),
         });
 
@@ -56,14 +56,14 @@ describe('Todo Manager', () => {
 
     describe('SET_VISIBILITY_FILTER', () => {
       it('given a filter, should return action', () => {
-        const initialState = makeTodoManagerRecord();
+        const initialState = makeTodoManagerState();
 
         const actualState = todoManagerReducer(
           initialState,
           todoManagerActions.setVisibilityFilter('ALL'),
         );
 
-        const expectedState = makeTodoManagerRecord({ visibilityFilter: 'ALL' });
+        const expectedState = makeTodoManagerState({ visibilityFilter: 'ALL' });
 
         expect(actualState.toJS()).to.deep.equal(expectedState.toJS());
       });

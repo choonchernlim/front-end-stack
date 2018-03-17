@@ -7,12 +7,12 @@ type ChuckNorrisProps = {
   error?: string,
 };
 
-export type ChuckNorrisRecord = RecordOf<ChuckNorrisProps>;
+export type ChuckNorrisState = RecordOf<ChuckNorrisProps>;
 
-export const makeChuckNorrisRecord: RecordFactory<ChuckNorrisProps> = Record({
+const makeChuckNorrisState: RecordFactory<ChuckNorrisProps> = Record({
   completed: true,
   joke: undefined,
   error: undefined,
 });
 
-export default {};
+export default makeChuckNorrisState;

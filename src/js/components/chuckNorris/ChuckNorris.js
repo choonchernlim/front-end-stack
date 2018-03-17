@@ -7,7 +7,7 @@ import Grid from 'material-ui/Grid';
 import { CircularProgress } from 'material-ui/Progress';
 import chuckNorrisImage from '../../../img/chuck-norris.jpg';
 import { chuckNorrisActions } from '../../app/actions';
-import stateSelector from '../../app/selectors/state';
+import { stateSelector } from '../../app/states';
 
 type Props = {
   joke: ?string,

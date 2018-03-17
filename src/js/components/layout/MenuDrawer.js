@@ -11,7 +11,7 @@ import MoodIcon from 'material-ui-icons/Mood';
 import { withStyles } from 'material-ui/styles';
 import { layoutActions } from '../../app/actions/index';
 import styles from './styles';
-import stateSelector from '../../app/selectors/state/index';
+import { stateSelector } from '../../app/states';
 
 type Props = {
   isMenuCurrentlyOpened: boolean,

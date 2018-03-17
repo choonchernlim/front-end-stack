@@ -14,7 +14,7 @@ import MenuDrawerContainer from './MenuDrawer';
 import styles from './styles';
 import env from '../../app/utils/env';
 import { layoutActions } from '../../app/actions/index';
-import stateSelector from '../../app/selectors/state/index';
+import { stateSelector } from '../../app/states';
 
 type Props = {
   children: Element<*>,

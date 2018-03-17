@@ -1,14 +1,14 @@
 // @flow
 import { List, Record } from 'immutable';
-import type { ChuckNorrisRecord } from '../../records/makeChuckNorrisRecord';
-import type { TodoManagerRecord } from '../../records/makeTodoManagerRecord';
-import type { TodoRecord } from '../../records/makeTodoRecord';
-import type { LayoutRecord } from '../../records/makeLayoutRecord';
+import type { ChuckNorrisState } from './makeChuckNorrisState';
+import type { TodoManagerState } from './makeTodoManagerState';
+import type { TodoState } from './makeTodoState';
+import type { LayoutState } from './makeLayoutState';
 
 type State = {
-  layout: LayoutRecord,
-  chuckNorris: ChuckNorrisRecord,
-  todoManager: TodoManagerRecord,
+  layout: LayoutState,
+  chuckNorris: ChuckNorrisState,
+  todoManager: TodoManagerState,
 };
 
 type StateSelector = {
@@ -55,7 +55,7 @@ const stateSelector: StateSelector = {
 
   todoManager: {
     visibilityFilter: (state: State): string => state.todoManager.get('visibilityFilter'),
-    todos: (state: State): List<TodoRecord> => state.todoManager.get('todos'),
+    todos: (state: State): List<TodoState> => state.todoManager.get('todos'),
   },
 };
 

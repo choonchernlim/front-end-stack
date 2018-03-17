@@ -1,8 +1,4 @@
 // @flow
-import * as chuckNorrisActions from './chuckNorrisActions';
-import * as layoutActions from './layoutActions';
-import * as todoManagerActions from './todoManagerActions';
-
 export type AnyAction = {
   +type: string,
 };
@@ -15,8 +11,6 @@ export type {
   SetVisibilityFilterAction,
 } from './todoManagerActions';
 
-export {
-  chuckNorrisActions,
-  layoutActions,
-  todoManagerActions,
-};
+export { default as chuckNorrisActions } from './chuckNorrisActions';
+export { default as layoutActions } from './layoutActions';
+export { default as todoManagerActions } from './todoManagerActions';

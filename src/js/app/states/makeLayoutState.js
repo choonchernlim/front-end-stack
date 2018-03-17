@@ -6,11 +6,11 @@ type LayoutProps = {
   isMenuCurrentlyOpened: boolean,
 };
 
-export type LayoutRecord = RecordOf<LayoutProps>;
+export type LayoutState = RecordOf<LayoutProps>;
 
-export const makeLayoutRecord: RecordFactory<LayoutProps> = Record({
+const makeLayoutState: RecordFactory<LayoutProps> = Record({
   shouldMenuLeftOpened: false,
   isMenuCurrentlyOpened: false,
 });
 
-export default {};
+export default makeLayoutState;

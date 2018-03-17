@@ -49,9 +49,11 @@ const getJokeSucceeded: GetJokeSucceededFn = joke => ({
   },
 });
 
-export {
+const chuckNorrisActions = {
   ACTION_TYPES,
   getJoke,
   getJokeFailed,
   getJokeSucceeded,
 };
+
+export default chuckNorrisActions;

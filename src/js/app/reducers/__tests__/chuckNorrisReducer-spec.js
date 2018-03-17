@@ -2,7 +2,7 @@
 import { describe, it } from 'mocha';
 import { expect } from 'chai';
 import chuckNorrisReducer from '../chuckNorrisReducer';
-import { makeChuckNorrisRecord } from '../../records';
+import { makeChuckNorrisState } from '../../states';
 import { chuckNorrisActions } from '../../actions';
 
 describe('Chuck Norris', () => {
@@ -10,19 +10,19 @@ describe('Chuck Norris', () => {
     describe('Default', () => {
       it('given unknown action, should return initial state', () => {
         expect(chuckNorrisReducer(undefined, { type: 'UNKNOWN' })).to.deep
-          .equal(makeChuckNorrisRecord());
+          .equal(makeChuckNorrisState());
       });
     });
 
     describe('GET_JOKE', () => {
       it('when getting joke, should set completed to false', () => {
-        const initialState = makeChuckNorrisRecord({
+        const initialState = makeChuckNorrisState({
           completed: true,
           joke: 'joke',
         });
 
         const actualState = chuckNorrisReducer(initialState, chuckNorrisActions.getJoke());
-        const expectedState = makeChuckNorrisRecord({ completed: false });
+        const expectedState = makeChuckNorrisState({ completed: false });
 
         expect(actualState.toJS()).to.deep.equal(expectedState.toJS());
       });
@@ -30,7 +30,7 @@ describe('Chuck Norris', () => {
 
     describe('GET_JOKE_SUCCEEDED', () => {
       it('when invoked, should return new joke', () => {
-        const initialState = makeChuckNorrisRecord({
+        const initialState = makeChuckNorrisState({
           completed: false,
           joke: 'joke',
         });
@@ -40,7 +40,7 @@ describe('Chuck Norris', () => {
           chuckNorrisActions.getJokeSucceeded('new joke'),
         );
 
-        const expectedState = makeChuckNorrisRecord({
+        const expectedState = makeChuckNorrisState({
           completed: true,
           joke: 'new joke',
         });
@@ -51,7 +51,7 @@ describe('Chuck Norris', () => {
 
     describe('GET_JOKE_FAILED', () => {
       it('when invoked, should return error', () => {
-        const initialState = makeChuckNorrisRecord({
+        const initialState = makeChuckNorrisState({
           completed: false,
           joke: 'joke',
         });
@@ -61,7 +61,7 @@ describe('Chuck Norris', () => {
           chuckNorrisActions.getJokeFailed('error'),
         );
 
-        const expectedState = makeChuckNorrisRecord({
+        const expectedState = makeChuckNorrisState({
           completed: true,
           joke: undefined,
           error: 'error',
