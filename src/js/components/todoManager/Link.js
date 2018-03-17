@@ -3,7 +3,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { withStyles } from 'material-ui/styles';
 import Button from 'material-ui/Button';
-import { setVisibilityFilter } from '../../app/actions/todoManagerActions';
+import { todoManagerActions } from '../../app/actions';
 
 type Props = {
   filter: string,
@@ -17,9 +17,8 @@ const styles = (theme: Object) => ({
   link: theme.link,
 });
 
-export const Link = ({
-  active, filter, children, onSetVisibilityFilter, classes,
-}: Props) => {
+// eslint-disable-next-line object-curly-newline
+export const Link = ({ active, filter, children, onSetVisibilityFilter, classes }: Props) => {
   if (active) {
     return <Button disabled>{children}</Button>;
   }
@@ -38,7 +37,7 @@ const mapStateToProps = (state, ownProps) => ({
 
 const LinkContainer = connect(
   mapStateToProps,
-  { onSetVisibilityFilter: setVisibilityFilter },
+  { onSetVisibilityFilter: todoManagerActions.setVisibilityFilter },
 )(Link);
 
 export default withStyles(styles)(LinkContainer);

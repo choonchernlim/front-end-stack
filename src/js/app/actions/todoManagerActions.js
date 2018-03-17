@@ -1,6 +1,29 @@
 // @flow
-import type { AddTodoAction, SetVisibilityFilterAction, ToggleTodoAction } from '../types/todoManagerTypes';
-import ACTION_TYPES from '../types/todoManagerTypes';
+type ActionTypes = { [key: string]: string };
+
+const ACTION_TYPES: ActionTypes = {
+  ADD_TODO: 'TODO-MANAGER/ADD-TODO',
+  SET_VISIBILITY_FILTER: 'TODO-MANAGER/SET-VISIBILITY-FILTER',
+  TOGGLE_TODO: 'TODO-MANAGER/TOGGLE-TODO',
+};
+
+type ActionType = $Keys<typeof ACTION_TYPES>;
+
+export type AddTodoAction = {|
+  +type: ActionType,
+  id: number,
+  text: string,
+|};
+
+export type ToggleTodoAction = {|
+  +type: ActionType,
+  id: number,
+|};
+
+export type SetVisibilityFilterAction = {|
+  +type: ActionType,
+  filter: string,
+|};
 
 type AddTodoFn = (text: string) => AddTodoAction;
 type SetVisibilityFilterFn = (filter: string) => SetVisibilityFilterAction;
@@ -8,7 +31,7 @@ type ToggleTodoFn = (id: number) => ToggleTodoAction;
 
 let nextTodoId: number = 0;
 
-export const addTodo: AddTodoFn = (text) => {
+const addTodo: AddTodoFn = (text) => {
   nextTodoId += 1;
   return {
     type: ACTION_TYPES.ADD_TODO,
@@ -17,12 +40,19 @@ export const addTodo: AddTodoFn = (text) => {
   };
 };
 
-export const setVisibilityFilter: SetVisibilityFilterFn = filter => ({
+const setVisibilityFilter: SetVisibilityFilterFn = filter => ({
   type: ACTION_TYPES.SET_VISIBILITY_FILTER,
   filter,
 });
 
-export const toggleTodo: ToggleTodoFn = id => ({
+const toggleTodo: ToggleTodoFn = id => ({
   type: ACTION_TYPES.TOGGLE_TODO,
   id,
 });
+
+export {
+  ACTION_TYPES,
+  addTodo,
+  setVisibilityFilter,
+  toggleTodo,
+};

@@ -1,11 +1,28 @@
 // @flow
-import ACTION_TYPES, { type GetJokeAction } from '../types/chuckNorrisTypes';
+type ActionTypes = { [key: string]: string };
+
+const ACTION_TYPES: ActionTypes = {
+  GET_JOKE: 'CHUCK-NORRIS/GET-JOKE',
+  GET_JOKE_FAILED: 'CHUCK-NORRIS/GET-JOKE-FAILED',
+  GET_JOKE_SUCCEEDED: 'CHUCK-NORRIS/GET-JOKE-SUCCEEDED',
+};
+
+type ActionType = $Keys<typeof ACTION_TYPES>;
+
+export type GetJokeAction = {|
+  +type: ActionType,
+  state: {
+    completed: boolean,
+    joke?: string,
+    error?: string
+  }
+|};
 
 type GetJokeFn = () => GetJokeAction;
 type GetJokeFailedFn = (error: string) => GetJokeAction;
 type GetJokeSucceededFn = (joke: string) => GetJokeAction;
 
-export const getJoke: GetJokeFn = () => ({
+const getJoke: GetJokeFn = () => ({
   type: ACTION_TYPES.GET_JOKE,
   state: {
     completed: false,
@@ -14,7 +31,7 @@ export const getJoke: GetJokeFn = () => ({
   },
 });
 
-export const getJokeFailed: GetJokeFailedFn = error => ({
+const getJokeFailed: GetJokeFailedFn = error => ({
   type: ACTION_TYPES.GET_JOKE_FAILED,
   state: {
     completed: true,
@@ -23,7 +40,7 @@ export const getJokeFailed: GetJokeFailedFn = error => ({
   },
 });
 
-export const getJokeSucceeded: GetJokeSucceededFn = joke => ({
+const getJokeSucceeded: GetJokeSucceededFn = joke => ({
   type: ACTION_TYPES.GET_JOKE_SUCCEEDED,
   state: {
     completed: true,
@@ -31,3 +48,10 @@ export const getJokeSucceeded: GetJokeSucceededFn = joke => ({
     error: undefined,
   },
 });
+
+export {
+  ACTION_TYPES,
+  getJoke,
+  getJokeFailed,
+  getJokeSucceeded,
+};

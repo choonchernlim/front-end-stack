@@ -1,9 +1,12 @@
 // @flow
 import createReducer from '../utils/createReducer';
-import makeTodoRecord from '../records/makeTodoRecord';
-import makeTodoManagerRecord, { type TodoManagerRecord } from '../records/makeTodoManagerRecord';
-import type { AddTodoAction, SetVisibilityFilterAction, ToggleTodoAction } from '../types/todoManagerTypes';
-import ACTION_TYPES from '../types/todoManagerTypes';
+import { makeTodoManagerRecord, makeTodoRecord, type TodoManagerRecord } from '../records';
+import {
+  type AddTodoAction,
+  type SetVisibilityFilterAction,
+  todoManagerActions,
+  type ToggleTodoAction,
+} from '../actions';
 
 /* eslint-disable max-len */
 // @formatter:off
@@ -34,7 +37,7 @@ const setVisibilityFilter: SetVisibilityFilterFn = (state, action) => (
 );
 
 export default createReducer(makeTodoManagerRecord(), {
-  [ACTION_TYPES.ADD_TODO]: addTodo,
-  [ACTION_TYPES.TOGGLE_TODO]: toggleTodo,
-  [ACTION_TYPES.SET_VISIBILITY_FILTER]: setVisibilityFilter,
+  [todoManagerActions.ACTION_TYPES.ADD_TODO]: addTodo,
+  [todoManagerActions.ACTION_TYPES.TOGGLE_TODO]: toggleTodo,
+  [todoManagerActions.ACTION_TYPES.SET_VISIBILITY_FILTER]: setVisibilityFilter,
 });

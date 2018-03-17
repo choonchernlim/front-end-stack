@@ -9,10 +9,10 @@ type TodoProps = {
 
 export type TodoRecord = RecordOf<TodoProps>;
 
-const makeTodoRecord: RecordFactory<TodoProps> = Record({
+export const makeTodoRecord: RecordFactory<TodoProps> = Record({
   id: 0,
   text: '',
   completed: false,
 });
 
-export default makeTodoRecord;
+export default {};

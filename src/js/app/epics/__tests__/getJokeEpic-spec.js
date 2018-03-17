@@ -3,14 +3,14 @@ import { describe, it } from 'mocha';
 import { ActionsObservable } from 'redux-observable';
 import { Observable } from 'rxjs/Observable';
 import { expect } from 'chai';
-import { getJoke, getJokeSucceeded, getJokeFailed } from '../../actions/chuckNorrisActions';
+import { chuckNorrisActions } from '../../actions';
 import getJokeEpic from '../getJokeEpic';
 
 describe('Chuck Norris', () => {
   describe('Epics', () => {
     describe('getJoke', () => {
       it('given successful call, should return joke succeeded action', () => {
-        const action$ = ActionsObservable.of(getJoke());
+        const action$ = ActionsObservable.of(chuckNorrisActions.getJoke());
         const apis = {
           chuckNorrisApis: {
             getJoke: () => Observable.of('test'),
@@ -20,12 +20,12 @@ describe('Chuck Norris', () => {
         getJokeEpic(action$, null, apis)
           .toArray()
           .subscribe(actions => expect(actions).to.deep.equal([
-            getJokeSucceeded('test'),
+            chuckNorrisActions.getJokeSucceeded('test'),
           ]));
       });
 
       it('given failed call, should return joke failed action', () => {
-        const action$ = ActionsObservable.of(getJoke());
+        const action$ = ActionsObservable.of(chuckNorrisActions.getJoke());
         const apis = {
           chuckNorrisApis: {
             getJoke: () => Observable.throw({
@@ -37,7 +37,7 @@ describe('Chuck Norris', () => {
         getJokeEpic(action$, null, apis)
           .toArray()
           .subscribe(actions => expect(actions).to.deep.equal([
-            getJokeFailed('test'),
+            chuckNorrisActions.getJokeFailed('test'),
           ]));
       });
     });

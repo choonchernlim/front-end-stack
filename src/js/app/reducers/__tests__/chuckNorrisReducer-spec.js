@@ -2,8 +2,8 @@
 import { describe, it } from 'mocha';
 import { expect } from 'chai';
 import chuckNorrisReducer from '../chuckNorrisReducer';
-import makeChuckNorrisRecord from '../../records/makeChuckNorrisRecord';
-import { getJoke, getJokeFailed, getJokeSucceeded } from '../../actions/chuckNorrisActions';
+import { makeChuckNorrisRecord } from '../../records';
+import { chuckNorrisActions } from '../../actions';
 
 describe('Chuck Norris', () => {
   describe('Reducer', () => {
@@ -21,7 +21,7 @@ describe('Chuck Norris', () => {
           joke: 'joke',
         });
 
-        const actualState = chuckNorrisReducer(initialState, getJoke());
+        const actualState = chuckNorrisReducer(initialState, chuckNorrisActions.getJoke());
         const expectedState = makeChuckNorrisRecord({ completed: false });
 
         expect(actualState.toJS()).to.deep.equal(expectedState.toJS());
@@ -35,7 +35,11 @@ describe('Chuck Norris', () => {
           joke: 'joke',
         });
 
-        const actualState = chuckNorrisReducer(initialState, getJokeSucceeded('new joke'));
+        const actualState = chuckNorrisReducer(
+          initialState,
+          chuckNorrisActions.getJokeSucceeded('new joke'),
+        );
+
         const expectedState = makeChuckNorrisRecord({
           completed: true,
           joke: 'new joke',
@@ -52,7 +56,11 @@ describe('Chuck Norris', () => {
           joke: 'joke',
         });
 
-        const actualState = chuckNorrisReducer(initialState, getJokeFailed('error'));
+        const actualState = chuckNorrisReducer(
+          initialState,
+          chuckNorrisActions.getJokeFailed('error'),
+        );
+
         const expectedState = makeChuckNorrisRecord({
           completed: true,
           joke: undefined,

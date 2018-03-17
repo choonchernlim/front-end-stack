@@ -9,11 +9,10 @@ type ChuckNorrisProps = {
 
 export type ChuckNorrisRecord = RecordOf<ChuckNorrisProps>;
 
-const makeChuckNorrisRecord: RecordFactory<ChuckNorrisProps> = Record({
+export const makeChuckNorrisRecord: RecordFactory<ChuckNorrisProps> = Record({
   completed: true,
   joke: undefined,
   error: undefined,
 });
 
-export default makeChuckNorrisRecord;
-
+export default {};

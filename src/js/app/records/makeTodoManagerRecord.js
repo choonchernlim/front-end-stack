@@ -9,9 +9,9 @@ type TodoManagerProps = {
 
 export type TodoManagerRecord = RecordOf<TodoManagerProps>;
 
-const makeTodoManagerRecord: RecordFactory<TodoManagerProps> = Record({
+export const makeTodoManagerRecord: RecordFactory<TodoManagerProps> = Record({
   todos: List(),
   visibilityFilter: 'SHOW_ALL',
 });
 
-export default makeTodoManagerRecord;
+export default {};

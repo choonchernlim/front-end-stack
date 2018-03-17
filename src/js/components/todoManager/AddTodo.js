@@ -4,10 +4,10 @@ import { connect } from 'react-redux';
 import Grid from 'material-ui/Grid';
 import Button from 'material-ui/Button';
 import TextField from 'material-ui/TextField';
-import { addTodo } from '../../app/actions/todoManagerActions';
+import { todoManagerActions } from '../../app/actions';
 
 type Props = {
-  addTodo: Function
+  onAddTodo: Function
 };
 
 type State = {
@@ -49,7 +49,7 @@ class AddTodo extends Component<Props, State> {
   // on button click, add new value, reset state value and set focus on text field
   handleButtonClick = (): void => {
     if (this.state.value) {
-      this.props.addTodo(this.state.value);
+      this.props.onAddTodo(this.state.value);
       this.setState({ value: '', error: false }, () => this.handleInputFocus());
     }
     else {
@@ -74,7 +74,9 @@ class AddTodo extends Component<Props, State> {
           />
         </Grid>
         <Grid item md={8} sm={12}>
-          <Button variant="raised" color="primary" onClick={this.handleButtonClick}>Add Todo</Button>
+          <Button variant="raised" color="primary" onClick={this.handleButtonClick}>
+            Add Todo
+          </Button>
         </Grid>
       </Grid>
     );
@@ -82,6 +84,6 @@ class AddTodo extends Component<Props, State> {
   }
 }
 
-const AddTodoContainer = connect(null, { addTodo })(AddTodo);
+const AddTodoContainer = connect(null, { onAddTodo: todoManagerActions.addTodo })(AddTodo);
 
 export default AddTodoContainer;

@@ -1,21 +1,20 @@
 // @flow
 import { describe, it } from 'mocha';
 import { expect } from 'chai';
-import { addTodo, setVisibilityFilter, toggleTodo } from '../todoManagerActions';
-import ACTION_TYPES from '../../types/todoManagerTypes';
+import { todoManagerActions } from '../../actions';
 
 describe('Todo Manager', () => {
   describe('Actions', () => {
     describe('addTodo', () => {
       it('given 2 todos, should increment id', () => {
-        expect(addTodo('item 1')).to.deep.equal({
-          type: ACTION_TYPES.ADD_TODO,
+        expect(todoManagerActions.addTodo('item 1')).to.deep.equal({
+          type: todoManagerActions.ACTION_TYPES.ADD_TODO,
           id: 1,
           text: 'item 1',
         });
 
-        expect(addTodo('item 2')).to.deep.equal({
-          type: ACTION_TYPES.ADD_TODO,
+        expect(todoManagerActions.addTodo('item 2')).to.deep.equal({
+          type: todoManagerActions.ACTION_TYPES.ADD_TODO,
           id: 2,
           text: 'item 2',
         });
@@ -24,8 +23,8 @@ describe('Todo Manager', () => {
 
     describe('setVisibilityFilter', () => {
       it('given a filter, should return action', () => {
-        expect(setVisibilityFilter('all')).to.deep.equal({
-          type: ACTION_TYPES.SET_VISIBILITY_FILTER,
+        expect(todoManagerActions.setVisibilityFilter('all')).to.deep.equal({
+          type: todoManagerActions.ACTION_TYPES.SET_VISIBILITY_FILTER,
           filter: 'all',
         });
       });
@@ -33,7 +32,8 @@ describe('Todo Manager', () => {
 
     describe('toggleTodo', () => {
       it('given an id, should return action', () => {
-        expect(toggleTodo(1)).to.deep.equal({ type: ACTION_TYPES.TOGGLE_TODO, id: 1 });
+        expect(todoManagerActions.toggleTodo(1)).to.deep
+          .equal({ type: todoManagerActions.ACTION_TYPES.TOGGLE_TODO, id: 1 });
       });
     });
   });

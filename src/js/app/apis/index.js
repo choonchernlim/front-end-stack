@@ -1,12 +1,11 @@
 // @flow
-import chuckNorrisApis, { type ChuckNorrisApis } from './chuckNorrisApi';
+import chuckNorrisApis, { type ChuckNorrisApis } from './chuckNorrisApis';
 
 export type Apis = {
   chuckNorrisApis: ChuckNorrisApis,
 };
 
-const apis = {
+export default {
   chuckNorrisApis,
 };
 
-export default apis;

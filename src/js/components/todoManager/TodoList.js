@@ -2,7 +2,7 @@
 import React, { type Element } from 'react';
 import { List } from 'immutable';
 import { connect } from 'react-redux';
-import { toggleTodo } from '../../app/actions/todoManagerActions';
+import { todoManagerActions } from '../../app/actions';
 import reselectSelector from '../../app/selectors/reselect';
 import type { TodoRecord } from '../../app/records/makeTodoRecord';
 import Todo from './Todo';
@@ -32,6 +32,9 @@ const makeMapStateToProps = () => {
   });
 };
 
-const TodoListContainer = connect(makeMapStateToProps, { onToggleTodo: toggleTodo })(TodoList);
+const TodoListContainer = connect(
+  makeMapStateToProps,
+  { onToggleTodo: todoManagerActions.toggleTodo },
+)(TodoList);
 
 export default TodoListContainer;

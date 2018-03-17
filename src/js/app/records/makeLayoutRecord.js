@@ -8,9 +8,9 @@ type LayoutProps = {
 
 export type LayoutRecord = RecordOf<LayoutProps>;
 
-const makeLayoutRecord: RecordFactory<LayoutProps> = Record({
+export const makeLayoutRecord: RecordFactory<LayoutProps> = Record({
   shouldMenuLeftOpened: false,
   isMenuCurrentlyOpened: false,
 });
 
-export default makeLayoutRecord;
+export default {};

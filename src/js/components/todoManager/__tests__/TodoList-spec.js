@@ -5,7 +5,7 @@ import { expect } from 'chai';
 import { shallow } from 'enzyme';
 import { List } from 'immutable';
 import { TodoList } from '../TodoList';
-import makeTodoRecord from '../../../app/records/makeTodoRecord';
+import { makeTodoRecord } from '../../../app/records';
 
 describe('Todo Manager', () => {
   describe('Components', () => {

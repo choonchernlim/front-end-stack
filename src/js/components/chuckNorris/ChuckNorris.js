@@ -6,7 +6,7 @@ import Button from 'material-ui/Button';
 import Grid from 'material-ui/Grid';
 import { CircularProgress } from 'material-ui/Progress';
 import chuckNorrisImage from '../../../img/chuck-norris.jpg';
-import { getJoke } from '../../app/actions/chuckNorrisActions';
+import { chuckNorrisActions } from '../../app/actions';
 import stateSelector from '../../app/selectors/state';
 
 type Props = {
@@ -16,9 +16,8 @@ type Props = {
   onGetJoke: Function
 };
 
-const ChuckNorris = ({
-  joke, error, completed, onGetJoke,
-}: Props) => (
+// eslint-disable-next-line object-curly-newline
+const ChuckNorris = ({ joke, error, completed, onGetJoke }: Props) => (
   <div>
     <Typography variant="display2" gutterBottom>Chuck Norris</Typography>
 
@@ -55,6 +54,9 @@ const mapStateToProps = state => ({
   completed: stateSelector.chuckNorris.completed(state),
 });
 
-const ChuckNorrisContainer = connect(mapStateToProps, { onGetJoke: getJoke })(ChuckNorris);
+const ChuckNorrisContainer = connect(
+  mapStateToProps,
+  { onGetJoke: chuckNorrisActions.getJoke },
+)(ChuckNorris);
 
 export default ChuckNorrisContainer;

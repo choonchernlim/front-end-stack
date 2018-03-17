@@ -3,9 +3,8 @@ import { describe, it } from 'mocha';
 import { expect } from 'chai';
 import { List } from 'immutable';
 import todoManagerReducer from '../todoManagerReducer';
-import makeTodoManagerRecord from '../../records/makeTodoManagerRecord';
-import makeTodoRecord from '../../records/makeTodoRecord';
-import { addTodo, setVisibilityFilter, toggleTodo } from '../../actions/todoManagerActions';
+import { makeTodoManagerRecord, makeTodoRecord } from '../../records';
+import { todoManagerActions } from '../../actions';
 
 describe('Todo Manager', () => {
   describe('Reducer', () => {
@@ -20,7 +19,7 @@ describe('Todo Manager', () => {
       it('when adding todo, should return new todo', () => {
         const initialState = makeTodoManagerRecord();
 
-        const action = addTodo('item 1');
+        const action = todoManagerActions.addTodo('item 1');
         const actualState = todoManagerReducer(initialState, action);
 
         const expectedState = makeTodoManagerRecord({
@@ -42,7 +41,7 @@ describe('Todo Manager', () => {
           ]),
         });
 
-        const actualState = todoManagerReducer(initialState, toggleTodo(1));
+        const actualState = todoManagerReducer(initialState, todoManagerActions.toggleTodo(1));
 
         const expectedState = makeTodoManagerRecord({
           todos: List([
@@ -59,7 +58,10 @@ describe('Todo Manager', () => {
       it('given a filter, should return action', () => {
         const initialState = makeTodoManagerRecord();
 
-        const actualState = todoManagerReducer(initialState, setVisibilityFilter('ALL'));
+        const actualState = todoManagerReducer(
+          initialState,
+          todoManagerActions.setVisibilityFilter('ALL'),
+        );
 
         const expectedState = makeTodoManagerRecord({ visibilityFilter: 'ALL' });
 
