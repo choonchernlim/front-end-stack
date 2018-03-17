@@ -2,14 +2,14 @@
 /**
  * Function to configure store and executes sagas.
  */
-import type GenericStoreEnchancer from 'redux';
+import type { GenericStoreEnchancer } from 'redux';
 import { applyMiddleware, compose, createStore, StoreCreator } from 'redux';
 import { routerMiddleware } from 'react-router-redux';
 import { createEpicMiddleware } from 'redux-observable';
-import reduxDevToolsExtension from './devtools';
-import rootEpic from './epics';
-import reducers from './reducers';
-import env from './utils/env';
+import reduxDevToolsExtension from './reduxDevtoolsExtension';
+import rootEpic from '../epics/index';
+import reducers from '../reducers/index';
+import env from '../utils/env';
 
 const configureStore = (history: *): StoreCreator => {
   const epicMiddleware = createEpicMiddleware(rootEpic);

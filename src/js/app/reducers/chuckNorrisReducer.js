@@ -1,5 +1,5 @@
 // @flow
-import createReducer from '../utils/createReducer';
+import createReducer from './createReducer';
 import { type ChuckNorrisRecord, makeChuckNorrisRecord } from '../records';
 import { chuckNorrisActions, type GetJokeAction } from '../actions';
 

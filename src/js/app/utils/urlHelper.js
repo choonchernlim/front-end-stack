@@ -23,8 +23,3 @@ export const sanitizeContextRoot = (contextRoot: ?string = env.getContextRoot())
  * @return URL with context root prefix.
  */
 export const url = (uri: string): string => sanitizeContextRoot() + uri;
-
-export default {
-  url,
-  sanitizeContextRoot,
-};

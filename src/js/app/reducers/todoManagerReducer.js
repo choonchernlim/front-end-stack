@@ -1,5 +1,5 @@
 // @flow
-import createReducer from '../utils/createReducer';
+import createReducer from './createReducer';
 import { makeTodoManagerRecord, makeTodoRecord, type TodoManagerRecord } from '../records';
 import {
   type AddTodoAction,

@@ -1,5 +1,5 @@
 // @flow
-import createReducer from '../utils/createReducer';
+import createReducer from './createReducer';
 import { type LayoutRecord, makeLayoutRecord } from '../records';
 import { layoutActions, type MenuLeftOpenedAction } from '../actions';
 

@@ -6,7 +6,7 @@ import { StoreCreator } from 'redux';
 import { Provider } from 'react-redux';
 import createBrowserHistory from 'history/createBrowserHistory';
 import { ConnectedRouter } from 'react-router-redux';
-import configureStore from './store';
+import configureStore from './store/index';
 import App from '../components/app/App';
 import { sanitizeContextRoot } from './utils/urlHelper';
 
