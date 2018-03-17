@@ -6,7 +6,7 @@ import type GenericStoreEnchancer from 'redux';
 import { applyMiddleware, compose, createStore, StoreCreator } from 'redux';
 import { routerMiddleware } from 'react-router-redux';
 import { createEpicMiddleware } from 'redux-observable';
-import reduxDevToolsExtension from './devtools/redux-devtools-extension';
+import reduxDevToolsExtension from './devtools';
 import rootEpic from './epics';
 import reducers from './reducers';
 import env from './utils/env';
