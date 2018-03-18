@@ -1,9 +1,6 @@
 // @flow
 import React, { type Element } from 'react';
 import { List } from 'immutable';
-import { connect } from 'react-redux';
-import { todoManager } from '../../app/actions';
-import { makeGetVisibleTodos } from '../../app/reselectSelectors';
 import type { TodoState } from '../../app/states/makeTodoState';
 import Todo from './Todo';
 
@@ -12,7 +9,7 @@ type Props = {
   onToggleTodo: Function
 };
 
-export const TodoList = ({ todos, onToggleTodo }: Props): Element<*> => (
+const TodoList = ({ todos, onToggleTodo }: Props): Element<*> => (
   <ul>
     {todos.map(todo => (
       <Todo
@@ -25,16 +22,4 @@ export const TodoList = ({ todos, onToggleTodo }: Props): Element<*> => (
   </ul>
 );
 
-const makeMapStateToProps = () => {
-  const getVisibleTodos: Function = makeGetVisibleTodos();
-  return state => ({
-    todos: getVisibleTodos(state),
-  });
-};
-
-const TodoListContainer = connect(
-  makeMapStateToProps,
-  { onToggleTodo: todoManager.toggleTodo },
-)(TodoList);
-
-export default TodoListContainer;
+export default TodoList;

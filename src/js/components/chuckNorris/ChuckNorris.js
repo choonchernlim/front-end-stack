@@ -1,13 +1,10 @@
 // @flow
 import React from 'react';
 import Typography from 'material-ui/Typography';
-import { connect } from 'react-redux';
 import Button from 'material-ui/Button';
 import Grid from 'material-ui/Grid';
 import { CircularProgress } from 'material-ui/Progress';
 import chuckNorrisImage from '../../../img/chuck-norris.jpg';
-import { chuckNorris } from '../../app/actions';
-import { stateSelector } from '../../app/states';
 
 type Props = {
   joke: ?string,
@@ -48,15 +45,4 @@ const ChuckNorris = ({ joke, error, completed, onGetJoke }: Props) => (
   </div>
 );
 
-const mapStateToProps = state => ({
-  joke: stateSelector.chuckNorris.joke(state),
-  error: stateSelector.chuckNorris.error(state),
-  completed: stateSelector.chuckNorris.completed(state),
-});
-
-const ChuckNorrisContainer = connect(
-  mapStateToProps,
-  { onGetJoke: chuckNorris.getJoke },
-)(ChuckNorris);
-
-export default ChuckNorrisContainer;
+export default ChuckNorris;

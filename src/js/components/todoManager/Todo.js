@@ -8,6 +8,7 @@ type Props = {
   text: string
 };
 
+// noinspection HtmlUnknownAnchorTarget
 const Todo = ({ onClick, completed, text }: Props): Element<*> => (
   <li>
     <Typography>

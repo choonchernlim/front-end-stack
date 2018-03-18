@@ -1,9 +1,6 @@
 // @flow
 import React from 'react';
-import { connect } from 'react-redux';
-import { withStyles } from 'material-ui/styles';
 import Button from 'material-ui/Button';
-import { todoManager } from '../../app/actions';
 
 type Props = {
   filter: string,
@@ -13,12 +10,12 @@ type Props = {
   classes: Object,
 };
 
-const styles = (theme: Object) => ({
+export const styles = (theme: Object) => ({
   link: theme.link,
 });
 
 // eslint-disable-next-line object-curly-newline
-export const Link = ({ active, filter, children, onSetVisibilityFilter, classes }: Props) => {
+const Link = ({ active, filter, children, onSetVisibilityFilter, classes }: Props) => {
   if (active) {
     return <Button disabled>{children}</Button>;
   }
@@ -30,14 +27,4 @@ export const Link = ({ active, filter, children, onSetVisibilityFilter, classes 
   );
 };
 
-const mapStateToProps = (state, ownProps) => ({
-  filter: ownProps.filter,
-  active: ownProps.filter === state.todoManager.get('visibilityFilter'),
-});
-
-const LinkContainer = connect(
-  mapStateToProps,
-  { onSetVisibilityFilter: todoManager.setVisibilityFilter },
-)(Link);
-
-export default withStyles(styles)(LinkContainer);
+export default Link;

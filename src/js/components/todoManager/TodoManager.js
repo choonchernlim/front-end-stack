@@ -2,10 +2,10 @@
 import React, { type Element } from 'react';
 import Typography from 'material-ui/Typography';
 import Footer from './Footer';
-import AddTodoContainer from './AddTodo';
-import TodoListContainer from './TodoList';
+import AddTodoConnected from './AddTodoConnected';
+import TodoListConnected from './TodoListConnected';
 
-export default (): Element<*> => (
+const TodoManager = (): Element<*> => (
   <div>
     <Typography variant="display2" gutterBottom>Todo Manager</Typography>
 
@@ -13,8 +13,10 @@ export default (): Element<*> => (
 
     <br /><br />
 
-    <AddTodoContainer />
-    <TodoListContainer />
+    <AddTodoConnected />
+    <TodoListConnected />
     <Footer />
   </div>
 );
+
+export default TodoManager;

@@ -4,7 +4,7 @@ import React from 'react'; // eslint-disable-line no-unused-vars
 import Button from 'material-ui/Button';
 import { shallow } from 'enzyme';
 import { expect } from 'chai';
-import { Link } from '../Link';
+import Link from '../Link';
 
 describe('Todo Manager', () => {
   describe('Components', () => {

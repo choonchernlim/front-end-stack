@@ -4,7 +4,7 @@ import React from 'react';
 import { expect } from 'chai';
 import { shallow } from 'enzyme';
 import { List } from 'immutable';
-import { TodoList } from '../TodoList';
+import TodoList from '../TodoList';
 import { makeTodoState } from '../../../app/states';
 
 describe('Todo Manager', () => {

@@ -1,5 +1,6 @@
 // @flow
 import React, { type Element } from 'react';
+import { grey } from 'material-ui/colors';
 import { withStyles } from 'material-ui/styles';
 import Typography from 'material-ui/Typography';
 import Paper from 'material-ui/Paper';
@@ -8,11 +9,25 @@ import TextField from 'material-ui/TextField';
 import Checkbox from 'material-ui/Checkbox';
 import Radio from 'material-ui/Radio';
 import { FormControlLabel } from 'material-ui/Form';
-import styles from './styles';
 
 type Props = {
   classes: Object,
 };
+
+const styles = (theme: Object) => ({
+  paper: {
+    padding: theme.spacing.unit * 3,
+    color: grey[700],
+  },
+  textField: {
+    width: 200,
+    margin: theme.spacing.unit,
+  },
+  button: {
+    width: 200,
+    margin: theme.spacing.unit,
+  },
+});
 
 const Home = ({ classes }: Props): Element<*> => (
   <div>
@@ -60,4 +75,4 @@ const Home = ({ classes }: Props): Element<*> => (
   </div>
 );
 
-export default withStyles(styles.home)(Home);
+export default withStyles(styles)(Home);

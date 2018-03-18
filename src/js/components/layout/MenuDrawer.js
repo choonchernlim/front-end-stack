@@ -1,17 +1,11 @@
 // @flow
 import React from 'react';
-import { connect } from 'react-redux';
-import { withRouter } from 'react-router-dom';
 import Drawer from 'material-ui/Drawer';
 import Divider from 'material-ui/Divider';
 import List, { ListItem, ListItemIcon, ListItemText } from 'material-ui/List';
 import HomeIcon from 'material-ui-icons/Home';
 import AssignmentIcon from 'material-ui-icons/Assignment';
 import MoodIcon from 'material-ui-icons/Mood';
-import { withStyles } from 'material-ui/styles';
-import { layout } from '../../app/actions/index';
-import styles from './styles';
-import { stateSelector } from '../../app/states';
 
 type Props = {
   isMenuCurrentlyOpened: boolean,
@@ -80,14 +74,4 @@ const MenuDrawer = ( // eslint-disable-line function-paren-newline
   );
 };
 
-const mapStateToProps = state => ({
-  shouldMenuLeftOpened: stateSelector.layout.shouldMenuLeftOpened(state),
-  isMenuCurrentlyOpened: stateSelector.layout.isMenuCurrentlyOpened(state),
-});
-
-const MenuDrawerContainer = connect(
-  mapStateToProps,
-  { onToggleMenu: layout.toggleMenu },
-)(MenuDrawer);
-
-export default withRouter(withStyles(styles.menuDrawer)(MenuDrawerContainer));
+export default MenuDrawer;

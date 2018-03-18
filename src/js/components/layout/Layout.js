@@ -1,20 +1,16 @@
 // @flow
 import React, { type Element } from 'react';
-import { connect } from 'react-redux';
-import { withRouter } from 'react-router-dom';
 import classNames from 'classnames';
-import { MuiThemeProvider, withStyles } from 'material-ui/styles';
+import { MuiThemeProvider } from 'material-ui/styles';
 import AppBar from 'material-ui/AppBar';
 import Toolbar from 'material-ui/Toolbar';
 import Typography from 'material-ui/Typography';
 import IconButton from 'material-ui/IconButton';
 import MenuIcon from 'material-ui-icons/Menu';
 import SvgIcon from 'material-ui/SvgIcon';
-import MenuDrawerContainer from './MenuDrawer';
+import MenuDrawerConnected from './MenuDrawerConnected';
 import styles from './styles';
 import env from '../../app/utils/env';
-import { layout } from '../../app/actions/index';
-import { stateSelector } from '../../app/states';
 
 type Props = {
   children: Element<*>,
@@ -110,20 +106,11 @@ class Layout extends React.Component<Props, State> {
             <div className={classes.content}>{children}</div>
           </div>
 
-          <MenuDrawerContainer />
+          <MenuDrawerConnected />
         </div>
       </MuiThemeProvider>
     );
   }
 }
 
-const mapStateToProps = state => ({
-  shouldMenuLeftOpened: stateSelector.layout.shouldMenuLeftOpened(state),
-});
-
-const LayoutContainer = connect(
-  mapStateToProps,
-  { onMenuLeftOpened: layout.menuLeftOpened, onToggleMenu: layout.toggleMenu },
-)(Layout);
-
-export default withRouter(withStyles(styles.layout)(LayoutContainer));
+export default Layout;

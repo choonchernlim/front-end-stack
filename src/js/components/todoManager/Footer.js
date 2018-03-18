@@ -1,17 +1,17 @@
 // @flow
 import React, { type Element } from 'react';
 import Typography from 'material-ui/Typography';
-import LinkContainer from './Link';
+import LinkConnected from './LinkConnected';
 
 const Footer = (): Element<*> => (
   <Typography>
     Show:
     {' '}
-    <LinkContainer filter="SHOW_ALL">All</LinkContainer>
+    <LinkConnected filter="SHOW_ALL">All</LinkConnected>
     {' '}
-    <LinkContainer filter="SHOW_ACTIVE">Active</LinkContainer>
+    <LinkConnected filter="SHOW_ACTIVE">Active</LinkConnected>
     {' '}
-    <LinkContainer filter="SHOW_COMPLETED">Completed</LinkContainer>
+    <LinkConnected filter="SHOW_COMPLETED">Completed</LinkConnected>
   </Typography>
 );
 
