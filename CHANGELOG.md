@@ -1,6 +1,6 @@
 # Change Log
 
-## 0.11.0 - 2017-XX-XX
+## 0.11.0 - 2018-03-18
 
 * Webpack 4 
   * Replaced `extract-text-webpack-plugin` with `mini-css-extract-plugin`.
