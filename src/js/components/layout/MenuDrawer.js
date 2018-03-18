@@ -9,7 +9,7 @@ import HomeIcon from 'material-ui-icons/Home';
 import AssignmentIcon from 'material-ui-icons/Assignment';
 import MoodIcon from 'material-ui-icons/Mood';
 import { withStyles } from 'material-ui/styles';
-import { layoutAction } from '../../app/actions/index';
+import { layout } from '../../app/actions/index';
 import styles from './styles';
 import { stateSelector } from '../../app/states';
 
@@ -87,7 +87,7 @@ const mapStateToProps = state => ({
 
 const MenuDrawerContainer = connect(
   mapStateToProps,
-  { onToggleMenu: layoutAction.toggleMenu },
+  { onToggleMenu: layout.toggleMenu },
 )(MenuDrawer);
 
 export default withRouter(withStyles(styles.menuDrawer)(MenuDrawerContainer));

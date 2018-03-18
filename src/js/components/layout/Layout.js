@@ -13,7 +13,7 @@ import SvgIcon from 'material-ui/SvgIcon';
 import MenuDrawerContainer from './MenuDrawer';
 import styles from './styles';
 import env from '../../app/utils/env';
-import { layoutAction } from '../../app/actions/index';
+import { layout } from '../../app/actions/index';
 import { stateSelector } from '../../app/states';
 
 type Props = {
@@ -123,7 +123,7 @@ const mapStateToProps = state => ({
 
 const LayoutContainer = connect(
   mapStateToProps,
-  { onMenuLeftOpened: layoutAction.menuLeftOpened, onToggleMenu: layoutAction.toggleMenu },
+  { onMenuLeftOpened: layout.menuLeftOpened, onToggleMenu: layout.toggleMenu },
 )(Layout);
 
 export default withRouter(withStyles(styles.layout)(LayoutContainer));

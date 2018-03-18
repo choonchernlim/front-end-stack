@@ -1,7 +1,7 @@
 // @flow
 import type { AnyAction } from '../actions';
 
-type State = any;
+type State = *;
 type HandleActionFn = (state: State, action: AnyAction) => State;
 type CreateReducerFn = (initialState: State, handlers: Object) => HandleActionFn;
 

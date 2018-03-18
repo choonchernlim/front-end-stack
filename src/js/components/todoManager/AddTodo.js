@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import Grid from 'material-ui/Grid';
 import Button from 'material-ui/Button';
 import TextField from 'material-ui/TextField';
-import { todoManagerAction } from '../../app/actions';
+import { todoManager } from '../../app/actions';
 
 type Props = {
   onAddTodo: Function
@@ -84,6 +84,6 @@ class AddTodo extends Component<Props, State> {
   }
 }
 
-const AddTodoContainer = connect(null, { onAddTodo: todoManagerAction.addTodo })(AddTodo);
+const AddTodoContainer = connect(null, { onAddTodo: todoManager.addTodo })(AddTodo);
 
 export default AddTodoContainer;

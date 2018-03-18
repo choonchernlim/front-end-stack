@@ -1,13 +1,13 @@
 // @flow
 import { combineReducers } from 'redux';
-import { routerReducer } from 'react-router-redux';
-import layoutReducer from './layoutReducer';
-import todoManagerReducer from './todoManagerReducer';
-import chuckNorrisReducer from './chuckNorrisReducer';
+import { routerReducer as routing } from 'react-router-redux';
+import layout from './layout';
+import todoManager from './todoManager';
+import chuckNorris from './chuckNorris';
 
 export default combineReducers({
-  layout: layoutReducer,
-  todoManager: todoManagerReducer,
-  chuckNorris: chuckNorrisReducer,
-  routing: routerReducer,
+  layout,
+  todoManager,
+  chuckNorris,
+  routing,
 });

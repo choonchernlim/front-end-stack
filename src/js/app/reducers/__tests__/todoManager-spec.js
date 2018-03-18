@@ -2,9 +2,9 @@
 import { describe, it } from 'mocha';
 import { expect } from 'chai';
 import { List } from 'immutable';
-import todoManagerReducer from '../todoManagerReducer';
+import todoManagerReducer from '../todoManager';
 import { makeTodoManagerState, makeTodoState } from '../../states';
-import { todoManagerAction } from '../../actions';
+import { todoManager } from '../../actions';
 
 describe('Todo Manager', () => {
   describe('Reducer', () => {
@@ -19,7 +19,7 @@ describe('Todo Manager', () => {
       it('when adding todo, should return new todo', () => {
         const initialState = makeTodoManagerState();
 
-        const action = todoManagerAction.addTodo('item 1');
+        const action = todoManager.addTodo('item 1');
         const actualState = todoManagerReducer(initialState, action);
 
         const expectedState = makeTodoManagerState({
@@ -41,7 +41,7 @@ describe('Todo Manager', () => {
           ]),
         });
 
-        const actualState = todoManagerReducer(initialState, todoManagerAction.toggleTodo(1));
+        const actualState = todoManagerReducer(initialState, todoManager.toggleTodo(1));
 
         const expectedState = makeTodoManagerState({
           todos: List([
@@ -60,7 +60,7 @@ describe('Todo Manager', () => {
 
         const actualState = todoManagerReducer(
           initialState,
-          todoManagerAction.setVisibilityFilter('ALL'),
+          todoManager.setVisibilityFilter('ALL'),
         );
 
         const expectedState = makeTodoManagerState({ visibilityFilter: 'ALL' });

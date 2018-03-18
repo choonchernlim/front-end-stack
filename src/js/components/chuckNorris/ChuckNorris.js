@@ -6,7 +6,7 @@ import Button from 'material-ui/Button';
 import Grid from 'material-ui/Grid';
 import { CircularProgress } from 'material-ui/Progress';
 import chuckNorrisImage from '../../../img/chuck-norris.jpg';
-import { chuckNorrisAction } from '../../app/actions';
+import { chuckNorris } from '../../app/actions';
 import { stateSelector } from '../../app/states';
 
 type Props = {
@@ -56,7 +56,7 @@ const mapStateToProps = state => ({
 
 const ChuckNorrisContainer = connect(
   mapStateToProps,
-  { onGetJoke: chuckNorrisAction.getJoke },
+  { onGetJoke: chuckNorris.getJoke },
 )(ChuckNorris);
 
 export default ChuckNorrisContainer;

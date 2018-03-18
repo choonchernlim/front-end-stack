@@ -1,9 +1,9 @@
 // @flow
 import { describe, it } from 'mocha';
 import { expect } from 'chai';
-import chuckNorrisReducer from '../chuckNorrisReducer';
+import chuckNorrisReducer from '../chuckNorris';
 import { makeChuckNorrisState } from '../../states';
-import { chuckNorrisAction } from '../../actions';
+import { chuckNorris } from '../../actions';
 
 describe('Chuck Norris', () => {
   describe('Reducer', () => {
@@ -21,7 +21,7 @@ describe('Chuck Norris', () => {
           joke: 'joke',
         });
 
-        const actualState = chuckNorrisReducer(initialState, chuckNorrisAction.getJoke());
+        const actualState = chuckNorrisReducer(initialState, chuckNorris.getJoke());
         const expectedState = makeChuckNorrisState({ completed: false });
 
         expect(actualState.toJS()).to.deep.equal(expectedState.toJS());
@@ -37,7 +37,7 @@ describe('Chuck Norris', () => {
 
         const actualState = chuckNorrisReducer(
           initialState,
-          chuckNorrisAction.getJokeSucceeded('new joke'),
+          chuckNorris.getJokeSucceeded('new joke'),
         );
 
         const expectedState = makeChuckNorrisState({
@@ -58,7 +58,7 @@ describe('Chuck Norris', () => {
 
         const actualState = chuckNorrisReducer(
           initialState,
-          chuckNorrisAction.getJokeFailed('error'),
+          chuckNorris.getJokeFailed('error'),
         );
 
         const expectedState = makeChuckNorrisState({

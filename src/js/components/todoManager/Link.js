@@ -3,7 +3,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { withStyles } from 'material-ui/styles';
 import Button from 'material-ui/Button';
-import { todoManagerAction } from '../../app/actions';
+import { todoManager } from '../../app/actions';
 
 type Props = {
   filter: string,
@@ -37,7 +37,7 @@ const mapStateToProps = (state, ownProps) => ({
 
 const LinkContainer = connect(
   mapStateToProps,
-  { onSetVisibilityFilter: todoManagerAction.setVisibilityFilter },
+  { onSetVisibilityFilter: todoManager.setVisibilityFilter },
 )(Link);
 
 export default withStyles(styles)(LinkContainer);
