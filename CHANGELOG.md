@@ -13,6 +13,8 @@
   * Removed `style-loader`.
   * Applied tree-shaking to `vendor.js` to significantly reduce file size from 1.73MB to 768KB.
 
+* Restructured file organization.
+
 ## 0.10.0 - 2017-11-29
 
 * Upgraded `material-ui` to v1.0.
