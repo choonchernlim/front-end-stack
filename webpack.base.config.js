@@ -1,15 +1,11 @@
 // @flow
 
 const path = require('path');
-const os = require('os');
 const webpack = require('webpack');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const HappyPack = require('happypack');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const autoprefixer = require('autoprefixer');
-const findCacheDir = require('find-cache-dir');
 const packageJson = require('./package.json');
 
-const vendors = Object.keys(packageJson.dependencies);
 const srcPath = path.join(__dirname, packageJson.config.src_dir_path);
 
 const appPath = path.join(srcPath, '/js/app/index.js');
@@ -22,28 +18,11 @@ const htmlWebpackPluginOptions = {
   favicon: path.join(srcPath, '/img/favicon.png'),
 };
 
-const threadPool = HappyPack.ThreadPool({ size: os.cpus().length });
-
-const newHappyPackPlugin = (id, loaders) => new HappyPack({
-  id,
-  loaders: [
-    {
-      loader: 'cache-loader',
-      options: {
-        cacheDirectory: findCacheDir({ name: 'happypack' }),
-      },
-    },
-    ...loaders,
-  ],
-  threadPool,
-});
-
 // Base options for WebPack
 const webpackOptions = {
   entry: {
     polyfill: 'babel-polyfill',
     app: appPath,
-    vendor: vendors,
   },
 
   module: {
@@ -51,20 +30,20 @@ const webpackOptions = {
       {
         enforce: 'pre',
         test: /\.js?$/,
-        use: 'happypack/loader?id=eslint',
+        use: 'eslint-loader',
         exclude: /node_modules/,
       },
       {
         test: /\.js$/,
-        use: 'happypack/loader?id=babel',
+        use: 'babel-loader',
         exclude: /node_modules/,
       },
       {
         test: /\.css$/,
-        use: ExtractTextPlugin.extract({
-          fallback: 'style-loader',
-          use: 'happypack/loader?id=css',
-        }),
+        use: [
+          MiniCssExtractPlugin.loader,
+          'css-loader',
+        ],
       },
       {
         test: /\.woff(2)?$/,
@@ -102,11 +81,21 @@ const webpackOptions = {
     ],
   },
 
-  plugins: [
-    newHappyPackPlugin('eslint', ['eslint-loader']),
-    newHappyPackPlugin('babel', ['babel-loader?cacheDirectory']),
-    newHappyPackPlugin('css', ['css-loader', 'postcss-loader']),
+  // Split vendors from app
+  optimization: {
+    splitChunks: {
+      cacheGroups: {
+        default: false,
+        commons: {
+          test: /[\\/]node_modules[\\/]/,
+          name: "vendor",
+          chunks: "all",
+        },
+      },
+    },
+  },
 
+  plugins: [
     new webpack.LoaderOptionsPlugin({
       minimize: true,
       debug: false,
@@ -121,20 +110,11 @@ const webpackOptions = {
       },
     }),
 
-    // Split vendors from app
-    new webpack.optimize.CommonsChunkPlugin({ name: 'vendor' }),
-
-    // It moves every require("style.css") in entry chunks into a separate css output file.
-    // So your styles are no longer inlined into the javascript, but separate in a css
-    // bundle file (styles.css). If your total stylesheet volume is big, it will be faster
-    // because the stylesheet bundle is loaded in parallel to the javascript bundle.
-    new ExtractTextPlugin('css/app.[chunkhash].css'),
+    new MiniCssExtractPlugin(),
   ],
 
   // To suppress this warning when creating the vendor bundle:-
-  //
-  // WARNING in asset size limit: The following asset(s) exceed the recommended size limit (250 kB).
-  // This can impact web performance.
+  // WARNING in asset size limit: The following asset(s) exceed the recommended size limit.
   performance: {
     hints: false,
   },

@@ -1,5 +1,25 @@
 # Change Log
 
+## 0.11.0 - 2018-03-18
+
+* Webpack 4 
+  * Replaced `extract-text-webpack-plugin` with `mini-css-extract-plugin`.
+  * Removed `Happypack`.
+  * Removed `style-loader`.
+  * Applied tree-shaking to `vendor.js` to significantly reduce file size from 1.73MB to 768KB.
+
+* Restructured file organization.
+
+* When running `yarn ci`, don't run Flow because it has higher chances of breaking when attempting to run Flow server on CI servers such as Jenkins and TFS Build.
+
+* ESLint - Configured rules to allow quotes around number... for example: `const a = { '1919': 'value' };`
+
+* Mocha - Replaced deprecated `--compilers` with `--require`. See https://github.com/mochajs/mocha/wiki/compilers-deprecation
+
+* Flow - Flow-typed files.
+
+* Dependency update.
+
 ## 0.10.0 - 2017-11-29
 
 * Upgraded `material-ui` to v1.0.

@@ -17,7 +17,6 @@ const mochaFilePath = path.join(reportDirPath, 'test-results.xml');
 
 process.env.NODE_ENV = 'test';
 
-const flow = 'flow --color always';
 const eslint = `eslint ${srcDirPath} ${testDirPath} --color`;
 
 // In addition to the `exclude` patterns defined in package.json, add user defined paths.
@@ -39,10 +38,9 @@ const mocha = `node_modules/mocha/bin/_mocha ${testDirPath} ${mochaOpts} --repor
 const removeReportDir = `rimraf ${reportDirPath}`;
 const removeNycOutputDir = 'rimraf .nyc_output/';
 
-script.run(`${removeReportDir} && ${flow} && ${eslint} && ${nyc} ${mocha} && ${removeNycOutputDir}`,
+script.run(`${removeReportDir} && ${eslint} && ${nyc} ${mocha} && ${removeNycOutputDir}`,
   [
     `Rimraf   : Remove ${reportDirPath}`,
-    'Flow     : Static type check',
     'ESLint   : Code linting',
     'Mocha    : Run tests and create JUnit report file',
     'Istanbul : Run code coverage and create HTML and Cobertura report files',
