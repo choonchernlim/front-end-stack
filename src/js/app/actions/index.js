@@ -3,14 +3,14 @@ export type AnyAction = {
   +type: string,
 };
 
-export type { GetJokeAction } from './chuckNorrisActions';
-export type { MenuLeftOpenedAction, ToggleMenuAction } from './layoutActions';
+export type { GetJokeAction } from './chuckNorrisAction';
+export type { MenuLeftOpenedAction, ToggleMenuAction } from './layoutAction';
 export type {
   ToggleTodoAction,
   AddTodoAction,
   SetVisibilityFilterAction,
-} from './todoManagerActions';
+} from './todoManagerAction';
 
-export { default as chuckNorrisActions } from './chuckNorrisActions';
-export { default as layoutActions } from './layoutActions';
-export { default as todoManagerActions } from './todoManagerActions';
+export { default as chuckNorrisAction } from './chuckNorrisAction';
+export { default as layoutAction } from './layoutAction';
+export { default as todoManagerAction } from './todoManagerAction';

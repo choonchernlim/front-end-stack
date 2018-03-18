@@ -10,7 +10,7 @@ import configureStore from './store/index';
 import App from '../components/app/App';
 import { sanitizeContextRoot } from './utils/urlHelper';
 
-const history: * = createBrowserHistory({
+const history = createBrowserHistory({
   basename: sanitizeContextRoot(),
 });
 

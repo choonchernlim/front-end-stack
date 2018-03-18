@@ -4,7 +4,7 @@ import { expect } from 'chai';
 import { List } from 'immutable';
 import todoManagerReducer from '../todoManagerReducer';
 import { makeTodoManagerState, makeTodoState } from '../../states';
-import { todoManagerActions } from '../../actions';
+import { todoManagerAction } from '../../actions';
 
 describe('Todo Manager', () => {
   describe('Reducer', () => {
@@ -19,7 +19,7 @@ describe('Todo Manager', () => {
       it('when adding todo, should return new todo', () => {
         const initialState = makeTodoManagerState();
 
-        const action = todoManagerActions.addTodo('item 1');
+        const action = todoManagerAction.addTodo('item 1');
         const actualState = todoManagerReducer(initialState, action);
 
         const expectedState = makeTodoManagerState({
@@ -41,7 +41,7 @@ describe('Todo Manager', () => {
           ]),
         });
 
-        const actualState = todoManagerReducer(initialState, todoManagerActions.toggleTodo(1));
+        const actualState = todoManagerReducer(initialState, todoManagerAction.toggleTodo(1));
 
         const expectedState = makeTodoManagerState({
           todos: List([
@@ -60,7 +60,7 @@ describe('Todo Manager', () => {
 
         const actualState = todoManagerReducer(
           initialState,
-          todoManagerActions.setVisibilityFilter('ALL'),
+          todoManagerAction.setVisibilityFilter('ALL'),
         );
 
         const expectedState = makeTodoManagerState({ visibilityFilter: 'ALL' });

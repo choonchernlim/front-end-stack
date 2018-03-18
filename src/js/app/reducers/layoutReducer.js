@@ -1,7 +1,7 @@
 // @flow
 import createReducer from './createReducer';
 import { type LayoutState, makeLayoutState } from '../states';
-import { layoutActions, type MenuLeftOpenedAction } from '../actions';
+import { layoutAction, type MenuLeftOpenedAction } from '../actions';
 
 type MenuLeftOpenedFn = (state: LayoutState, action: MenuLeftOpenedAction) => LayoutState;
 type ToggleMenuFn = (state: LayoutState) => LayoutState ;
@@ -18,6 +18,6 @@ const toggleMenu: ToggleMenuFn = state => (
 );
 
 export default createReducer(makeLayoutState(), {
-  [layoutActions.ACTION_TYPES.MENU_LEFT_OPENED]: menuLeftOpened,
-  [layoutActions.ACTION_TYPES.TOGGLE_MENU]: toggleMenu,
+  [layoutAction.ACTION_TYPES.MENU_LEFT_OPENED]: menuLeftOpened,
+  [layoutAction.ACTION_TYPES.TOGGLE_MENU]: toggleMenu,
 });

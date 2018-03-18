@@ -4,7 +4,7 @@ import { makeTodoManagerState, makeTodoState, type TodoManagerState } from '../s
 import {
   type AddTodoAction,
   type SetVisibilityFilterAction,
-  todoManagerActions,
+  todoManagerAction,
   type ToggleTodoAction,
 } from '../actions';
 
@@ -37,7 +37,7 @@ const setVisibilityFilter: SetVisibilityFilterFn = (state, action) => (
 );
 
 export default createReducer(makeTodoManagerState(), {
-  [todoManagerActions.ACTION_TYPES.ADD_TODO]: addTodo,
-  [todoManagerActions.ACTION_TYPES.TOGGLE_TODO]: toggleTodo,
-  [todoManagerActions.ACTION_TYPES.SET_VISIBILITY_FILTER]: setVisibilityFilter,
+  [todoManagerAction.ACTION_TYPES.ADD_TODO]: addTodo,
+  [todoManagerAction.ACTION_TYPES.TOGGLE_TODO]: toggleTodo,
+  [todoManagerAction.ACTION_TYPES.SET_VISIBILITY_FILTER]: setVisibilityFilter,
 });
