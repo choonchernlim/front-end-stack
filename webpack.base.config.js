@@ -30,8 +30,11 @@ const webpackOptions = {
       {
         enforce: 'pre',
         test: /\.js?$/,
-        use: 'eslint-loader',
+        loader: 'eslint-loader',
         exclude: /node_modules/,
+        options: {
+          fix: true,
+        },
       },
       {
         test: /\.js$/,

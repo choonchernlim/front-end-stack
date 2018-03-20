@@ -1,5 +1,9 @@
 # Change Log
 
+## 0.12.0 - 2018-03-18
+
+* Webpack - Configured ESLint to automatically fix "soft" errors.
+
 ## 0.11.0 - 2018-03-18
 
 * Webpack 4 
