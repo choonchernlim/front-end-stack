@@ -1,8 +1,8 @@
 # Change Log
 
-## 0.12.0 - 2018-03-18
+## 0.12.0 - 2018-X-X
 
-* Webpack - Configured ESLint to automatically fix "soft" errors.
+* ESLint - Configured to automatically fix "soft" errors when running any Webpack commands and `yarn test`.
 
 ## 0.11.0 - 2018-03-18
 
