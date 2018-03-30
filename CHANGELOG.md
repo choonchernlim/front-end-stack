@@ -1,5 +1,8 @@
 # Change Log
 
+TODO - Add `recompose` to facilitate HOC from `material-ui`.
+TODO - Change `mql` from `Layout` to `Hidden`.
+
 ## 0.12.0 - 2018-X-X
 
 * ESLint - Configured to automatically fix "soft" errors when running any Webpack commands and `yarn test`.
