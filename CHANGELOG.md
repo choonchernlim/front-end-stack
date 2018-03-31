@@ -2,6 +2,8 @@
 
 TODO - Add `recompose` to facilitate HOC from `material-ui`.
 TODO - Change `mql` from `Layout` to `Hidden`.
+TODO - Generates GZIP compression files with CompressionPlugin
+TODO - react-helmet
 
 ## 0.12.0 - 2018-X-X
 
