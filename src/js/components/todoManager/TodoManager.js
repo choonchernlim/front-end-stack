@@ -1,6 +1,6 @@
 // @flow
 import React, { type Element } from 'react';
-import Typography from 'material-ui/Typography';
+import { Typography } from '@material-ui/core';
 import Footer from './Footer';
 import AddTodoConnected from './AddTodoConnected';
 import TodoListConnected from './TodoListConnected';

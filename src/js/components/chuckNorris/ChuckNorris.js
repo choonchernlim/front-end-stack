@@ -1,9 +1,6 @@
 // @flow
 import React from 'react';
-import Typography from 'material-ui/Typography';
-import Button from 'material-ui/Button';
-import Grid from 'material-ui/Grid';
-import { CircularProgress } from 'material-ui/Progress';
+import { Typography, Button, Grid, CircularProgress } from '@material-ui/core';
 import chuckNorrisImage from '../../../img/chuck-norris.jpg';
 
 type Props = {

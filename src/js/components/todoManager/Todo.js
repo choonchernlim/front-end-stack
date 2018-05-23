@@ -1,6 +1,6 @@
 // @flow
 import React, { type Element } from 'react';
-import Typography from 'material-ui/Typography';
+import { Typography } from '@material-ui/core';
 
 type Props = {
   onClick: Function,

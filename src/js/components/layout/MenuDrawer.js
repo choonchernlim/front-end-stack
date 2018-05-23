@@ -1,11 +1,11 @@
 // @flow
 import React from 'react';
-import Drawer from 'material-ui/Drawer';
-import Divider from 'material-ui/Divider';
-import List, { ListItem, ListItemIcon, ListItemText } from 'material-ui/List';
-import HomeIcon from 'material-ui-icons/Home';
-import AssignmentIcon from 'material-ui-icons/Assignment';
-import MoodIcon from 'material-ui-icons/Mood';
+import { Drawer, Divider, List, ListItem, ListItemIcon, ListItemText } from '@material-ui/core';
+import {
+  Mood as MoodIcon,
+  Assignment as AssignmentIcon,
+  Home as HomeIcon,
+} from '@material-ui/icons';
 
 type Props = {
   isMenuCurrentlyOpened: boolean,

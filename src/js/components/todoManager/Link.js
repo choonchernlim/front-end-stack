@@ -1,6 +1,6 @@
 // @flow
 import React from 'react';
-import Button from 'material-ui/Button';
+import { Button } from '@material-ui/core';
 
 type Props = {
   filter: string,

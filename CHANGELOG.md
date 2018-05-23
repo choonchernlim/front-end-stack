@@ -10,7 +10,8 @@ TODO - react-helmet
 * Webpack - Configured CompressionPlugin to generate GZIP compression on asset files.
 * Replaced `moment` with `date-fns` because the latter has smaller bundle and it creates immutable objects. 
 * Added `recompose` that contains useful React utility function components and HOCs.
- 
+* Upgraded `material-ui` to v1.0 (Release).
+
 ## 0.11.0 - 2018-03-18
 
 * Webpack 4 
