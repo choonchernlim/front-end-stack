@@ -36,9 +36,9 @@
     "react-router-redux": "5.0.0-alpha.9",
     "recompose": "^0.27.1",
     "redux": "4.0.0",
-    "redux-observable": "0.18.0",
+    "redux-observable": "1.0.0-alpha.2",
     "reselect": "3.0.1",
-    "rxjs": "5.5.7",
+    "rxjs": "6.2.0",
     "typeface-roboto": "0.0.54"
   },
   "devDependencies": {
@@ -85,7 +85,7 @@
     "uglifyjs-webpack-plugin": "1.2.5",
     "url-loader": "1.0.1",
     "webpack": "4.8.3",
-    "webpack-cli": "2.1.3",
+    "webpack-cli": "2.1.4",
     "webpack-dev-server": "3.1.4"
   }
 }
