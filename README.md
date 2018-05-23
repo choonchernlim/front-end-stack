@@ -72,6 +72,7 @@ These commands are cross-platform compatible.
 |react-redux                              |React - Redux integration                                                            |
 |react-router-dom                         |React - Router                                                                       |
 |react-router-redux                       |React - Router with Redux integration                                                |
+|recompose                                |React - Useful utility function components and HOCs.                                 |
 |redux                                    |Redux - Core                                                                         |
 |redux-observable                         |Redux - Side Effects middleware using RxJS' Observables                              |
 |reselect                                 |Memoized selector for React components                                               |

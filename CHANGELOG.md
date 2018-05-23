@@ -9,6 +9,7 @@ TODO - react-helmet
 * ESLint - Configured to automatically fix "soft" errors when running any Webpack commands and `yarn test`.
 * Webpack - Configured CompressionPlugin to generate GZIP compression on asset files.
 * Replaced `moment` with `date-fns` because the latter has smaller bundle and it creates immutable objects. 
+* Added `recompose` that contains useful React utility function components and HOCs.
  
 ## 0.11.0 - 2018-03-18
 
