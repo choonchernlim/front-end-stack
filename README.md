@@ -96,6 +96,7 @@ These commands are cross-platform compatible.
 |chai                                     |Test - Expect lib                                                                    |
 |chai-as-promised                         |Test - Fluent approach to test promises                                              |
 |clean-webpack-plugin                     |Webpack - Clean output dir between builds                                            |
+|compression-webpack-plugin               |Webpack - Generate GZip asset files                                                  |
 |css-loader                               |Webpack - CSS loader                                                                 |
 |enzyme                                   |Test - Testing utilities for React                                                   |
 |enzyme-adapter-react-16                  |Test - Enzyme adapter that targets React 16                                          |

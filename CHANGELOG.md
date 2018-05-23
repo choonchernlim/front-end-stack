@@ -2,12 +2,12 @@
 
 TODO - Add `recompose` to facilitate HOC from `material-ui`.
 TODO - Change `mql` from `Layout` to `Hidden`.
-TODO - Generates GZIP compression files with CompressionPlugin
 TODO - react-helmet
 
 ## 0.12.0 - 2018-X-X
 
 * ESLint - Configured to automatically fix "soft" errors when running any Webpack commands and `yarn test`.
+* Webpack - Configured CompressionPlugin to generate GZIP compression on asset files.
 
 ## 0.11.0 - 2018-03-18
 
