@@ -1,6 +1,6 @@
 # Change Log
 
-## 0.12.0 - 2018-X-X
+## 0.12.0 - 2018-05-23
 
 * ESLint - Configured to automatically fix "soft" errors when running any Webpack commands and `yarn test`.
 * Webpack - Configured CompressionPlugin to generate GZIP compression on asset files.
