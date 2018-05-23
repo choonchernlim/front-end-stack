@@ -1,5 +1,15 @@
 # Change Log
 
+## 0.12.0 - 2018-05-23
+
+* ESLint - Configured to automatically fix "soft" errors when running any Webpack commands and `yarn test`.
+* Webpack - Configured CompressionPlugin to generate GZIP compression on asset files.
+* Replaced `moment` with `date-fns` because the latter has smaller bundle and it creates immutable objects. 
+* Added `recompose` that contains useful React utility function components and HOCs.
+* Upgraded `material-ui` to v1.0 (Release).
+* Upgraded `rxjs` to v6.x.
+* Added `flow:restart` package.json script that will stop Flow server before re-running it.
+
 ## 0.11.0 - 2018-03-18
 
 * Webpack 4 

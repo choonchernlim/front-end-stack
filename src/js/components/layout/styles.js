@@ -1,6 +1,6 @@
 // @flow
-import { teal, grey, blue } from 'material-ui/colors';
-import { createMuiTheme } from 'material-ui/styles';
+import { teal, grey, blue } from '@material-ui/core/colors';
+import { createMuiTheme } from '@material-ui/core';
 
 const drawerWidth = 240;
 

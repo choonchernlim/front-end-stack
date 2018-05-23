@@ -54,29 +54,33 @@ These commands are cross-platform compatible.
 |`yarn reinstall`                         |Clear yarn cache, remove `node_module` and install modules listed in `package.json`                   |
 |`yarn start`                             |Start Node.js Express server with Hot Module Replacement                                              |
 |`yarn stats`                             |Create `stats.json` that be loaded to http://webpack.github.io/analyse/ to visualize build.           |
-|`yarn flow`                              |Restart Flow server before running static type check.                                                 |
+|`yarn flow`                              |Run Flow static type check.                                                                           |
+|`yarn flow:restart`                      |Restart Flow server before running static type check.                                                 |
+
 
 ## Dependencies
 
 |Dependency                               |Description                                                                          |
 |-----------------------------------------|-------------------------------------------------------------------------------------|
+|@material-ui/core                        |UI - Google's material design UI components built with React                         |
+|@material-ui/icons                       |UI - Google Material icons                                                           |
 |classnames                               |UI - Conditionally joining classNames together                                       |
+|date-fns                                 |Parse, validate, manipulate and display dates                                        |
 |history                                  |Managing browser history                                                             |
 |immutable                                |Creating Immutable objects                                                           |
-|material-ui                              |UI - Google's material design UI components built with React                         |
-|material-ui-icons                        |UI - Google Material icons                                                           |
-|moment                                   |Parse, validate, manipulate and display dates                                        |
 |prop-types                               |React - Runtime type checking for React props                                        |
 |react                                    |React - Core                                                                         |
 |react-dom                                |React - DOM                                                                          |
 |react-redux                              |React - Redux integration                                                            |
 |react-router-dom                         |React - Router                                                                       |
 |react-router-redux                       |React - Router with Redux integration                                                |
+|recompose                                |React - Useful utility function components and HOCs.                                 |
 |redux                                    |Redux - Core                                                                         |
 |redux-observable                         |Redux - Side Effects middleware using RxJS' Observables                              |
 |reselect                                 |Memoized selector for React components                                               |
 |rxjs                                     |Handling async actions                                                               |
 |typeface-roboto                          |UI - Roboto font, adhering to Google Material Design spec                            |
+
 
 ## Dev Dependencies
 
@@ -96,6 +100,7 @@ These commands are cross-platform compatible.
 |chai                                     |Test - Expect lib                                                                    |
 |chai-as-promised                         |Test - Fluent approach to test promises                                              |
 |clean-webpack-plugin                     |Webpack - Clean output dir between builds                                            |
+|compression-webpack-plugin               |Webpack - Generate GZip asset files                                                  |
 |css-loader                               |Webpack - CSS loader                                                                 |
 |enzyme                                   |Test - Testing utilities for React                                                   |
 |enzyme-adapter-react-16                  |Test - Enzyme adapter that targets React 16                                          |

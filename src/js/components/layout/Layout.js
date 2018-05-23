@@ -1,13 +1,15 @@
 // @flow
 import React, { type Element } from 'react';
 import classNames from 'classnames';
-import { MuiThemeProvider } from 'material-ui/styles';
-import AppBar from 'material-ui/AppBar';
-import Toolbar from 'material-ui/Toolbar';
-import Typography from 'material-ui/Typography';
-import IconButton from 'material-ui/IconButton';
-import MenuIcon from 'material-ui-icons/Menu';
-import SvgIcon from 'material-ui/SvgIcon';
+import {
+  MuiThemeProvider,
+  AppBar,
+  Toolbar,
+  Typography,
+  IconButton,
+  SvgIcon,
+} from '@material-ui/core';
+import { Menu as MenuIcon } from '@material-ui/icons';
 import MenuDrawerConnected from './MenuDrawerConnected';
 import styles from './styles';
 import env from '../../app/utils/env';
@@ -70,7 +72,7 @@ class Layout extends React.Component<Props, State> {
                 </IconButton>
 
                 <Typography
-                  type="headline"
+                  variant="title"
                   color="inherit"
                   className={classes.title}
                   onClick={() => history.push('/')}

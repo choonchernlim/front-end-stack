@@ -1,7 +1,7 @@
 // @flow
 import { describe, it } from 'mocha';
-import React from 'react'; // eslint-disable-line no-unused-vars
-import Button from 'material-ui/Button';
+import React from 'react';
+import { Button } from '@material-ui/core';
 import { shallow } from 'enzyme';
 import { expect } from 'chai';
 import Link from '../Link';

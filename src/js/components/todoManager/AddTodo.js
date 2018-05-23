@@ -1,8 +1,6 @@
 // @flow
 import React, { Component } from 'react';
-import Grid from 'material-ui/Grid';
-import Button from 'material-ui/Button';
-import TextField from 'material-ui/TextField';
+import { Grid, Button, TextField } from '@material-ui/core';
 
 type Props = {
   onAddTodo: Function

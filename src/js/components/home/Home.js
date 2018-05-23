@@ -1,14 +1,16 @@
 // @flow
 import React, { type Element } from 'react';
-import { grey } from 'material-ui/colors';
-import { withStyles } from 'material-ui/styles';
-import Typography from 'material-ui/Typography';
-import Paper from 'material-ui/Paper';
-import Button from 'material-ui/Button';
-import TextField from 'material-ui/TextField';
-import Checkbox from 'material-ui/Checkbox';
-import Radio from 'material-ui/Radio';
-import { FormControlLabel } from 'material-ui/Form';
+import { grey } from '@material-ui/core/colors';
+import {
+  withStyles,
+  Button,
+  Checkbox,
+  FormControlLabel,
+  Paper,
+  Radio,
+  TextField,
+  Typography,
+} from '@material-ui/core';
 
 type Props = {
   classes: Object,
@@ -55,7 +57,9 @@ const Home = ({ classes }: Props): Element<*> => (
       <br /><br />
 
       <Button className={classes.button} variant="raised" color="primary">Primary Button</Button>
-      <Button className={classes.button} variant="raised" color="secondary">Secondary Button</Button>
+      <Button className={classes.button} variant="raised" color="secondary">Secondary
+        Button
+      </Button>
       <Button className={classes.button} variant="raised">Default Button</Button>
       <Button className={classes.button} variant="raised" disabled>Disabled Button</Button>
 

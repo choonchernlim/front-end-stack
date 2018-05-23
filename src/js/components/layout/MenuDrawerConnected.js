@@ -1,7 +1,7 @@
 // @flow
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-import { withStyles } from 'material-ui/styles';
+import { withStyles } from '@material-ui/core';
 import { layout } from '../../app/actions/index';
 import { stateSelector } from '../../app/states';
 import MenuDrawer from './MenuDrawer';
