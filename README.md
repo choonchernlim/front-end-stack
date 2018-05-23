@@ -54,7 +54,9 @@ These commands are cross-platform compatible.
 |`yarn reinstall`                         |Clear yarn cache, remove `node_module` and install modules listed in `package.json`                   |
 |`yarn start`                             |Start Node.js Express server with Hot Module Replacement                                              |
 |`yarn stats`                             |Create `stats.json` that be loaded to http://webpack.github.io/analyse/ to visualize build.           |
-|`yarn flow`                              |Restart Flow server before running static type check.                                                 |
+|`yarn flow`                              |Run Flow static type check.                                                                           |
+|`yarn flow:restart`                      |Restart Flow server before running static type check.                                                 |
+
 
 ## Dependencies
 
@@ -78,6 +80,7 @@ These commands are cross-platform compatible.
 |reselect                                 |Memoized selector for React components                                               |
 |rxjs                                     |Handling async actions                                                               |
 |typeface-roboto                          |UI - Roboto font, adhering to Google Material Design spec                            |
+
 
 ## Dev Dependencies
 

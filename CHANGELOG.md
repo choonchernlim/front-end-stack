@@ -1,9 +1,5 @@
 # Change Log
 
-TODO - Add `recompose` to facilitate HOC from `material-ui`.
-TODO - Change `mql` from `Layout` to `Hidden`.
-TODO - react-helmet
-
 ## 0.12.0 - 2018-X-X
 
 * ESLint - Configured to automatically fix "soft" errors when running any Webpack commands and `yarn test`.
@@ -12,6 +8,7 @@ TODO - react-helmet
 * Added `recompose` that contains useful React utility function components and HOCs.
 * Upgraded `material-ui` to v1.0 (Release).
 * Upgraded `rxjs` to v6.x.
+* Added `flow:restart` package.json script that will stop Flow server before re-running it.
 
 ## 0.11.0 - 2018-03-18
 

@@ -19,7 +19,8 @@
     "reinstall": "yarn cache clean && rimraf node_modules/ && yarn",
     "start": "webpack-dev-server --mode development --config webpack.dev.config.js --progress",
     "stats": "webpack --profile --json > stats.json",
-    "flow": "flow stop && flow"
+    "flow": "flow",
+    "flow:restart": "flow stop && flow"
   },
   "dependencies": {
     "@material-ui/core": "^1.0.0",
