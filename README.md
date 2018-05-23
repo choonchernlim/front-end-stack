@@ -61,11 +61,11 @@ These commands are cross-platform compatible.
 |Dependency                               |Description                                                                          |
 |-----------------------------------------|-------------------------------------------------------------------------------------|
 |classnames                               |UI - Conditionally joining classNames together                                       |
+|date-fns                                 |Parse, validate, manipulate and display dates                                        |
 |history                                  |Managing browser history                                                             |
 |immutable                                |Creating Immutable objects                                                           |
 |material-ui                              |UI - Google's material design UI components built with React                         |
 |material-ui-icons                        |UI - Google Material icons                                                           |
-|moment                                   |Parse, validate, manipulate and display dates                                        |
 |prop-types                               |React - Runtime type checking for React props                                        |
 |react                                    |React - Core                                                                         |
 |react-dom                                |React - DOM                                                                          |
