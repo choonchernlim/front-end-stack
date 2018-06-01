@@ -1,11 +1,11 @@
 // @flow
-import React, { type Element } from 'react';
+import * as React from 'react';
 import Typography from '@material-ui/core/Typography';
 import Footer from './Footer';
 import AddTodoConnected from './AddTodoConnected';
 import TodoListConnected from './TodoListConnected';
 
-const TodoManager = (): Element<*> => (
+const TodoManager = (): React.Element<*> => (
   <div>
     <Typography variant="display2" gutterBottom>Todo Manager</Typography>
 

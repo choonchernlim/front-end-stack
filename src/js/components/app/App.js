@@ -1,13 +1,14 @@
 // @flow
-import React, { type Element } from 'react';
-import { Route, Switch } from 'react-router-dom';
+import * as React from 'react';
+import Route from 'react-router-dom/Route';
+import Switch from 'react-router-dom/Switch';
 import LayoutConnected from '../layout';
 import Home from '../home';
 import TodoManager from '../todoManager';
 import ChuckNorrisConnected from '../chuckNorris/ChuckNorrisConnected';
 import { PageNotFoundError, UnexpectedError } from '../error';
 
-const App = (): Element<*> => (
+const App = (): React.Element<*> => (
   <LayoutConnected>
     <Switch>
       <Route exact path="/" component={Home} />

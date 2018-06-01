@@ -1,5 +1,5 @@
 // @flow
-import React, { type Element } from 'react';
+import * as React from 'react';
 import classNames from 'classnames';
 import MuiThemeProvider from '@material-ui/core/styles/MuiThemeProvider';
 import AppBar from '@material-ui/core/AppBar';
@@ -13,7 +13,7 @@ import styles from './styles';
 import env from '../../app/utils/env';
 
 type Props = {
-  children: Element<*>,
+  children: React.Element<*>,
   classes: Object,
   onMenuLeftOpened: Function,
   onToggleMenu: Function,

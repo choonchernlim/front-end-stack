@@ -1,5 +1,5 @@
 // @flow
-import React, { type Element } from 'react';
+import * as React from 'react';
 import grey from '@material-ui/core/colors/grey';
 import withStyles from '@material-ui/core/styles/withStyles';
 import Button from '@material-ui/core/Button';
@@ -29,7 +29,7 @@ const styles = (theme: Object) => ({
   },
 });
 
-const Home = ({ classes }: Props): Element<*> => (
+const Home = ({ classes }: Props): React.Element<*> => (
   <div>
     <Typography variant="display2">Welcome!</Typography>
 

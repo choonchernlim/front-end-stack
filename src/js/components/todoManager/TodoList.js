@@ -1,5 +1,5 @@
 // @flow
-import React, { type Element } from 'react';
+import * as React from 'react';
 import { List } from 'immutable';
 import type { TodoState } from '../../app/states/makeTodoState';
 import Todo from './Todo';
@@ -9,7 +9,7 @@ type Props = {
   onToggleTodo: Function
 };
 
-const TodoList = ({ todos, onToggleTodo }: Props): Element<*> => (
+const TodoList = ({ todos, onToggleTodo }: Props): React.Element<*> => (
   <ul>
     {todos.map(todo => (
       <Todo

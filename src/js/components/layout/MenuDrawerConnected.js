@@ -1,6 +1,6 @@
 // @flow
 import { connect } from 'react-redux';
-import { withRouter } from 'react-router-dom';
+import withRouter from 'react-router-dom/withRouter';
 import withStyles from '@material-ui/core/styles/withStyles';
 import { layout } from '../../app/actions/index';
 import { stateSelector } from '../../app/states';
