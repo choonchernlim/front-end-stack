@@ -1,6 +1,6 @@
 // @flow
 import React, { type Element } from 'react';
-import { Typography } from '@material-ui/core';
+import Typography from '@material-ui/core/Typography';
 import LinkConnected from './LinkConnected';
 
 const Footer = (): Element<*> => (

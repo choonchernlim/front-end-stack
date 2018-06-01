@@ -1,7 +1,7 @@
 // @flow
 import { describe, it } from 'mocha';
 import React from 'react';
-import { Button } from '@material-ui/core';
+import Button from '@material-ui/core/Button';
 import { shallow } from 'enzyme';
 import { expect } from 'chai';
 import Link from '../Link';

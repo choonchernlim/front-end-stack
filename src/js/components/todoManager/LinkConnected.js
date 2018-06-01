@@ -1,6 +1,6 @@
 // @flow
 import { connect } from 'react-redux';
-import { withStyles } from '@material-ui/core';
+import withStyles from '@material-ui/core/styles/withStyles';
 import { todoManager } from '../../app/actions';
 import Link, { styles } from './Link';
 

@@ -1,6 +1,6 @@
 // @flow
 import React from 'react';
-import { Typography } from '@material-ui/core';
+import Typography from '@material-ui/core/Typography';
 
 const PageNotFoundError = () => (
   <Typography variant="display2" gutterBottom>

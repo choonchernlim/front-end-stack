@@ -1,15 +1,13 @@
 // @flow
 import React, { type Element } from 'react';
 import classNames from 'classnames';
-import {
-  MuiThemeProvider,
-  AppBar,
-  Toolbar,
-  Typography,
-  IconButton,
-  SvgIcon,
-} from '@material-ui/core';
-import { Menu as MenuIcon } from '@material-ui/icons';
+import MuiThemeProvider from '@material-ui/core/styles/MuiThemeProvider';
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
+import Typography from '@material-ui/core/Typography';
+import IconButton from '@material-ui/core/IconButton';
+import SvgIcon from '@material-ui/core/SvgIcon';
+import MenuIcon from '@material-ui/icons/Menu';
 import MenuDrawerConnected from './MenuDrawerConnected';
 import styles from './styles';
 import env from '../../app/utils/env';

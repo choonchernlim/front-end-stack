@@ -1,16 +1,14 @@
 // @flow
 import React, { type Element } from 'react';
-import { grey } from '@material-ui/core/colors';
-import {
-  withStyles,
-  Button,
-  Checkbox,
-  FormControlLabel,
-  Paper,
-  Radio,
-  TextField,
-  Typography,
-} from '@material-ui/core';
+import grey from '@material-ui/core/colors/grey';
+import withStyles from '@material-ui/core/styles/withStyles';
+import Button from '@material-ui/core/Button';
+import Checkbox from '@material-ui/core/Checkbox';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import Paper from '@material-ui/core/Paper';
+import Radio from '@material-ui/core/Radio';
+import TextField from '@material-ui/core/TextField';
+import Typography from '@material-ui/core/Typography';
 
 type Props = {
   classes: Object,
