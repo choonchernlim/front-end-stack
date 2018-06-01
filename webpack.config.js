@@ -43,11 +43,7 @@ module.exports = Object.assign({}, baseConfig.webpackOptions, {
     new UglifyJsPlugin({
       parallel: true,
       cache: true,
-      uglifyOptions: {
-        compress: {
-          warnings: false,
-        },
-      },
+      extractComments: true,
     }),
 
     // To prevent the following warnings in browser console:-

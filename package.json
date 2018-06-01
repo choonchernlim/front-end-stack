@@ -2,6 +2,7 @@
   "name": "front-end-stack",
   "version": "0.12.0",
   "private": true,
+  "sideEffects": false,
   "config": {
     "context_root": "/",
     "dist_uri": "/assets/",
