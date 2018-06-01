@@ -14,7 +14,7 @@ import env from '../utils/env';
 const configureStore = (history: *): StoreCreator => {
   const epicMiddleware = createEpicMiddleware(rootEpic);
 
-  // To allow saga to change use `push(..)` and such to change the routing.
+  // To allow epic to change use `push(..)` and such to change the routing.
   // See https://github.com/reactjs/react-router-redux#pushlocation-replacelocation-gonumber-goback-goforward
   const routerHistoryMiddleware = routerMiddleware(history);
 

@@ -19,8 +19,7 @@ const ChuckNorris = ({ joke, error, completed, onGetJoke }: Props) => (
     <Typography variant="display2" gutterBottom>Chuck Norris</Typography>
 
     <Typography gutterBottom>
-      This view demonstrates async action using redux-observable, RxJS 5-based middleware for
-      Redux.
+      This view demonstrates async action using epics and RxJS.
     </Typography>
 
     <Grid container spacing={24} style={{ textAlign: 'center' }}>
