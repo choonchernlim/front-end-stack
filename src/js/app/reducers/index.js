@@ -1,6 +1,6 @@
 // @flow
 import { combineReducers } from 'redux';
-import { routerReducer as routing } from 'react-router-redux';
+import routing from 'react-router-redux/reducer';
 import layout from './layout';
 import todoManager from './todoManager';
 import chuckNorris from './chuckNorris';
