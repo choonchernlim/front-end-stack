@@ -3611,9 +3611,9 @@ eslint-module-utils@^2.2.0:
     debug "^2.6.8"
     pkg-dir "^1.0.0"
 
-eslint-plugin-flowtype@2.49.0:
-  version "2.49.0"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-flowtype/-/eslint-plugin-flowtype-2.49.0.tgz#eee3d3c1b1bcff3c508947d5a4cebed215c43f53"
+eslint-plugin-flowtype@2.49.3:
+  version "2.49.3"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-flowtype/-/eslint-plugin-flowtype-2.49.3.tgz#ccca6ee5ba2027eb3ed36bc2ec8c9a842feee841"
   dependencies:
     lodash "^4.17.10"
 
@@ -10417,7 +10417,38 @@ webpack-addons@^1.1.5:
   dependencies:
     jscodeshift "^0.4.0"
 
-webpack-cli@2.1.4, webpack-cli@^2.1.3:
+webpack-cli@2.1.5:
+  version "2.1.5"
+  resolved "https://registry.yarnpkg.com/webpack-cli/-/webpack-cli-2.1.5.tgz#3081fdeb2f205f0a54aa397986880b0c20a71f7a"
+  dependencies:
+    chalk "^2.4.1"
+    cross-spawn "^6.0.5"
+    diff "^3.5.0"
+    enhanced-resolve "^4.0.0"
+    envinfo "^5.7.0"
+    glob-all "^3.1.0"
+    global-modules "^1.0.0"
+    got "^8.3.1"
+    import-local "^1.0.0"
+    inquirer "^5.2.0"
+    interpret "^1.1.0"
+    jscodeshift "^0.5.0"
+    listr "^0.14.1"
+    loader-utils "^1.1.0"
+    lodash "^4.17.10"
+    log-symbols "^2.2.0"
+    mkdirp "^0.5.1"
+    p-each-series "^1.0.0"
+    p-lazy "^1.0.0"
+    prettier "^1.12.1"
+    supports-color "^5.4.0"
+    v8-compile-cache "^2.0.0"
+    webpack-addons "^1.1.5"
+    yargs "^11.1.0"
+    yeoman-environment "^2.1.1"
+    yeoman-generator "^2.0.5"
+
+webpack-cli@^2.1.3:
   version "2.1.4"
   resolved "https://registry.yarnpkg.com/webpack-cli/-/webpack-cli-2.1.4.tgz#cab81e79249127384fb69b2fdfe2055f9c771b76"
   dependencies:
