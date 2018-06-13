@@ -1,13 +1,11 @@
 // @flow
-type ActionTypes = { [key: string]: string };
-
-const ACTION_TYPES: ActionTypes = {
+const ACTION_TYPES = Object.freeze({
   ADD_TODO: 'TODO-MANAGER/ADD-TODO',
   SET_VISIBILITY_FILTER: 'TODO-MANAGER/SET-VISIBILITY-FILTER',
   TOGGLE_TODO: 'TODO-MANAGER/TOGGLE-TODO',
-};
+});
 
-type ActionType = $Keys<typeof ACTION_TYPES>;
+type ActionType = $Values<typeof ACTION_TYPES>;
 
 export type AddTodoAction = {|
   +type: ActionType,

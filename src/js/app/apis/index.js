@@ -1,6 +1,8 @@
 // @flow
 import getJokeApi from './getJokeApi';
 
+export type { GetJokeApiFn } from './getJokeApi';
+
 const apis = {
   getJokeApi,
 };

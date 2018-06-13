@@ -1,4 +1,5 @@
 // @flow
+import { Observable } from 'rxjs';
 import { ajax, type AjaxResponse } from 'rxjs/ajax';
 import { map } from 'rxjs/operators';
 
@@ -13,11 +14,15 @@ const decodeHtml = (html: string): string => {
   return element.value;
 };
 
-const getJokeApi = () => ajax({
-  url: RANDOM_JOKE_SERVER + RANDOM_JOKE_URI,
-  crossDomain: true,
-  createXHR: () => new window.XMLHttpRequest(),
-}).pipe(map((e: AjaxResponse) => decodeHtml(e.response.value.joke)));
+export type GetJokeApiFn = () => Observable;
+
+const getJokeApi: GetJokeApiFn = () => (
+  ajax({
+    url: RANDOM_JOKE_SERVER + RANDOM_JOKE_URI,
+    crossDomain: true,
+    createXHR: () => new window.XMLHttpRequest(),
+  }).pipe(map((e: AjaxResponse) => decodeHtml(e.response.value.joke)))
+);
 
 export default getJokeApi;
 
