@@ -6,9 +6,9 @@ import { StoreCreator } from 'redux';
 import { Provider } from 'react-redux';
 import createBrowserHistory from 'history/createBrowserHistory';
 import ConnectedRouter from 'react-router-redux/ConnectedRouter';
-import configureStore from './store/index';
-import App from '../components/app/App';
-import { sanitizeContextRoot } from './utils/urlHelper';
+import configureStore from './app/store/index';
+import App from './components/app/App';
+import { sanitizeContextRoot } from './app/utils/urlHelper';
 
 const history = createBrowserHistory({
   basename: sanitizeContextRoot(),

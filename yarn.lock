@@ -6472,9 +6472,9 @@ no-case@^2.2.0:
   dependencies:
     lower-case "^1.1.1"
 
-nock@9.3.2:
-  version "9.3.2"
-  resolved "https://registry.yarnpkg.com/nock/-/nock-9.3.2.tgz#f2f52a784a8a33d7496f4ab5b28c3b879091e6d6"
+nock@9.3.3:
+  version "9.3.3"
+  resolved "https://registry.yarnpkg.com/nock/-/nock-9.3.3.tgz#d9f4cd3c011afeadaf5ccf1b243f6e353781cda0"
   dependencies:
     chai "^4.1.2"
     debug "^3.1.0"
@@ -7970,9 +7970,9 @@ reduce-function-call@^1.0.1:
   dependencies:
     balanced-match "^0.4.2"
 
-redux-observable@1.0.0-alpha.2:
-  version "1.0.0-alpha.2"
-  resolved "https://registry.yarnpkg.com/redux-observable/-/redux-observable-1.0.0-alpha.2.tgz#86ac0d04f17992ad7aff6023d8b3ecc034c7de2f"
+redux-observable@1.0.0-beta.1:
+  version "1.0.0-beta.1"
+  resolved "https://registry.yarnpkg.com/redux-observable/-/redux-observable-1.0.0-beta.1.tgz#6b4b5d4bff69539b12c0f12cbbbaa6a6c28997b6"
 
 redux@4.0.0:
   version "4.0.0"
@@ -9688,9 +9688,9 @@ webidl-conversions@^4.0.1, webidl-conversions@^4.0.2:
   version "4.0.2"
   resolved "https://registry.yarnpkg.com/webidl-conversions/-/webidl-conversions-4.0.2.tgz#a855980b1f0b6b359ba1d5d9fb39ae941faa63ad"
 
-webpack-cli@3.0.6:
-  version "3.0.6"
-  resolved "https://registry.yarnpkg.com/webpack-cli/-/webpack-cli-3.0.6.tgz#5d414e66c6576d4050c1e6b7ab3ecf9969106525"
+webpack-cli@3.0.7:
+  version "3.0.7"
+  resolved "https://registry.yarnpkg.com/webpack-cli/-/webpack-cli-3.0.7.tgz#d4171aa6a52f28d3a40048db3d0764e1c601c029"
   dependencies:
     chalk "^2.4.1"
     cross-spawn "^6.0.5"

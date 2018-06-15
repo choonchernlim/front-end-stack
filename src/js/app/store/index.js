@@ -12,7 +12,7 @@ import reducers from '../reducers/index';
 import env from '../utils/env';
 
 const configureStore = (history: *): StoreCreator => {
-  const epicMiddleware = createEpicMiddleware(rootEpic);
+  const epicMiddleware = createEpicMiddleware();
 
   // To allow epic to change use `push(..)` and such to change the routing.
   // See https://github.com/reactjs/react-router-redux#pushlocation-replacelocation-gonumber-goback-goforward
@@ -27,7 +27,11 @@ const configureStore = (history: *): StoreCreator => {
     enhancer = compose(enhancer, reduxDevToolsExtension());
   }
 
-  return createStore(reducers, enhancer);
+  const store = createStore(reducers, enhancer);
+
+  epicMiddleware.run(rootEpic);
+
+  return store;
 };
 
 export default configureStore;
