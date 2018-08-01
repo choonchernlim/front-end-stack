@@ -1,5 +1,7 @@
 // @flow
-import { List, Record, type RecordFactory, type RecordOf } from 'immutable';
+import {
+  List, Record, type RecordFactory, type RecordOf,
+} from 'immutable';
 import type { TodoState } from './makeTodoState';
 
 type TodoManagerProps = {

@@ -31,20 +31,25 @@ class Layout extends React.Component<Props, State> {
   };
 
   componentWillMount() {
-    this.state.mql.addListener(this.handleMediaQueryChanged);
+    const { mql } = this.state;
+    mql.addListener(this.handleMediaQueryChanged);
     this.handleMediaQueryChanged();
   }
 
   componentWillUnmount() {
-    this.state.mql.removeListener(this.handleMediaQueryChanged);
+    const { mql } = this.state;
+    mql.removeListener(this.handleMediaQueryChanged);
   }
 
-  props: Props;
-
   handleMediaQueryChanged = () => {
-    const openMenu = this.state.mql.matches;
-    this.props.onMenuLeftOpened(openMenu);
+    const { mql } = this.state;
+    const { onMenuLeftOpened } = this.props;
+
+    const openMenu = mql.matches;
+    onMenuLeftOpened(openMenu);
   };
+
+  props: Props;
 
   render() {
     const {
@@ -103,7 +108,9 @@ class Layout extends React.Component<Props, State> {
 
             <br />
 
-            <div className={classes.content}>{children}</div>
+            <div className={classes.content}>
+              {children}
+            </div>
           </div>
 
           <MenuDrawerConnected />

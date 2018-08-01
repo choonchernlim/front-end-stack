@@ -3,7 +3,9 @@
  * Function to configure store and executes sagas.
  */
 import type { GenericStoreEnchancer } from 'redux';
-import { applyMiddleware, compose, createStore, StoreCreator } from 'redux';
+import {
+  applyMiddleware, compose, createStore, StoreCreator,
+} from 'redux';
 import routerMiddleware from 'react-router-redux/middleware';
 import { createEpicMiddleware } from 'redux-observable';
 import reduxDevToolsExtension from './reduxDevtoolsExtension';

@@ -16,8 +16,10 @@ describe('Todo Manager', () => {
             filter="Show"
             onSetVisibilityFilter={f => f}
             classes={{ link: 'link' }}
-          >Hello
-          </Link>);
+          >
+Hello
+          </Link>,
+        );
 
         const button = wrapper.find(Button);
 
@@ -33,8 +35,10 @@ describe('Todo Manager', () => {
             filter="Show"
             onSetVisibilityFilter={f => f}
             classes={{ link: 'link' }}
-          >Hello
-          </Link>);
+          >
+Hello
+          </Link>,
+        );
 
         const button = wrapper.find(Button);
 

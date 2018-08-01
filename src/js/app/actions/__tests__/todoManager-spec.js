@@ -1,7 +1,7 @@
 // @flow
 import { describe, it } from 'mocha';
 import { expect } from 'chai';
-import { todoManager } from '../../actions';
+import { todoManager } from '..';
 
 describe('Todo Manager', () => {
   describe('Actions', () => {

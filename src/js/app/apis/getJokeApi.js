@@ -25,4 +25,3 @@ const getJokeApi: GetJokeApiFn = () => (
 );
 
 export default getJokeApi;
-

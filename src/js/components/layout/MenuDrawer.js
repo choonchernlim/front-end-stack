@@ -25,7 +25,8 @@ const MenuDrawer = ( // eslint-disable-line function-paren-newline
     onToggleMenu,
     history,
     classes,
-  }: Props) => {
+  }: Props,
+) => {
   /**
    * When changing route, determine if there's a need to hide the menu especially when
    * user uses a small viewing device.

@@ -16,7 +16,9 @@ type Props = {
 // eslint-disable-next-line object-curly-newline
 const ChuckNorris = ({ joke, error, completed, onGetJoke }: Props) => (
   <div>
-    <Typography variant="display2" gutterBottom>Chuck Norris</Typography>
+    <Typography variant="display2" gutterBottom>
+Chuck Norris
+    </Typography>
 
     <Typography gutterBottom>
       This view demonstrates async action using epics and RxJS.
@@ -26,18 +28,34 @@ const ChuckNorris = ({ joke, error, completed, onGetJoke }: Props) => (
       <Grid item md={4} sm={12}>
         <img src={chuckNorrisImage} alt="Chuck Norris" />
 
-        <br /><br />
+        <br />
+        <br />
 
-        <Button variant="raised" color="primary" onClick={onGetJoke}>Get Joke</Button>
+        <Button variant="raised" color="primary" onClick={onGetJoke}>
+Get Joke
+        </Button>
       </Grid>
       <Grid item md={8} sm={12} style={{ flex: 1 }}>
-        {!completed ? <div><br /><CircularProgress /></div> : null}
-        {joke ? <Typography variant="display1" gutterBottom>{joke}</Typography> : null}
-        {error ?
-          <Typography variant="display1" gutterBottom color="accent">
-            An error has occurred: {error}
-          </Typography> :
-          null
+        {!completed ? (
+          <div>
+            <br />
+            <CircularProgress />
+          </div>
+        ) : null}
+        {joke ? (
+          <Typography variant="display1" gutterBottom>
+            {joke}
+          </Typography>
+        ) : null}
+        {error
+          ? (
+            <Typography variant="display1" gutterBottom color="accent">
+            An error has occurred:
+              {' '}
+              {error}
+            </Typography>
+          )
+          : null
         }
       </Grid>
     </Grid>

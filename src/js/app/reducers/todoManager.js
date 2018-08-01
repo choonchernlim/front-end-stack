@@ -26,9 +26,9 @@ const addTodo: AddTodoFn = (state, action) => (
 
 const toggleTodo: ToggleTodoFn = (state, action) => (
   state.set('todos', state.get('todos').map(todo => (
-    todo.get('id') === action.id ?
-      todo.set('completed', !todo.get('completed')) :
-      todo
+    todo.get('id') === action.id
+      ? todo.set('completed', !todo.get('completed'))
+      : todo
   )))
 );
 
