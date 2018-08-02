@@ -1,5 +1,7 @@
 // @flow
-import { describe, it, afterEach, beforeEach } from 'mocha';
+import {
+  describe, it, afterEach, beforeEach,
+} from 'mocha';
 import nock from 'nock';
 import { expect } from 'chai';
 import { JSDOM } from 'jsdom';

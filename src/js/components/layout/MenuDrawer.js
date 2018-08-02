@@ -1,11 +1,14 @@
 // @flow
 import React from 'react';
-import { Drawer, Divider, List, ListItem, ListItemIcon, ListItemText } from '@material-ui/core';
-import {
-  Mood as MoodIcon,
-  Assignment as AssignmentIcon,
-  Home as HomeIcon,
-} from '@material-ui/icons';
+import Drawer from '@material-ui/core/Drawer';
+import Divider from '@material-ui/core/Divider';
+import List from '@material-ui/core/List';
+import ListItem from '@material-ui/core/ListItem';
+import ListItemIcon from '@material-ui/core/ListItemIcon';
+import ListItemText from '@material-ui/core/ListItemText';
+import MoodIcon from '@material-ui/icons/Mood';
+import AssignmentIcon from '@material-ui/icons/Assignment';
+import HomeIcon from '@material-ui/icons/Home';
 
 type Props = {
   isMenuCurrentlyOpened: boolean,
@@ -22,7 +25,8 @@ const MenuDrawer = ( // eslint-disable-line function-paren-newline
     onToggleMenu,
     history,
     classes,
-  }: Props) => {
+  }: Props,
+) => {
   /**
    * When changing route, determine if there's a need to hide the menu especially when
    * user uses a small viewing device.

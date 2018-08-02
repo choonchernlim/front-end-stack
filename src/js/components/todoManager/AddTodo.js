@@ -1,6 +1,8 @@
 // @flow
-import React, { Component } from 'react';
-import { Grid, Button, TextField } from '@material-ui/core';
+import React from 'react';
+import Grid from '@material-ui/core/Grid';
+import Button from '@material-ui/core/Button';
+import TextField from '@material-ui/core/TextField';
 
 type Props = {
   onAddTodo: Function
@@ -11,7 +13,7 @@ type State = {
   error: boolean
 };
 
-class AddTodo extends Component<Props, State> {
+class AddTodo extends React.Component<Props, State> {
   state = {
     value: '',
     error: false,
@@ -21,9 +23,6 @@ class AddTodo extends Component<Props, State> {
   componentDidMount(): void {
     this.handleInputFocus();
   }
-
-  props: Props;
-  todoTextField: Function;
 
   // triggers focus on text field
   handleInputFocus = (): void => {
@@ -44,8 +43,11 @@ class AddTodo extends Component<Props, State> {
 
   // on button click, add new value, reset state value and set focus on text field
   handleButtonClick = (): void => {
-    if (this.state.value) {
-      this.props.onAddTodo(this.state.value);
+    const { value } = this.state;
+    const { onAddTodo } = this.props;
+
+    if (value) {
+      onAddTodo(value);
       this.setState({ value: '', error: false }, () => this.handleInputFocus());
     }
     else {
@@ -53,7 +55,13 @@ class AddTodo extends Component<Props, State> {
     }
   };
 
+  props: Props;
+
+  todoTextField: Function;
+
   render() {
+    const { value, error } = this.state;
+
     /* eslint-disable no-return-assign */
     return (
       <Grid container spacing={24}>
@@ -63,10 +71,10 @@ class AddTodo extends Component<Props, State> {
             autoFocus
             fullWidth
             label="Enter Todo..."
-            value={this.state.value}
+            value={value}
             onChange={this.handleInputChange}
             onKeyDown={this.handleInputEnter}
-            error={this.state.error}
+            error={error}
           />
         </Grid>
         <Grid item md={8} sm={12}>

@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.13.0 - 2018-08-02
+
+* `Package.json` - `"sideEffects": false` for tree-shaking purpose. See https://webpack.js.org/guides/tree-shaking/
+* Webpack - When bundling JS files, move comments into separate files to further reduce file size.
+* Dependency update.
+
 ## 0.12.0 - 2018-05-23
 
 * ESLint - Configured to automatically fix "soft" errors when running any Webpack commands and `yarn test`.

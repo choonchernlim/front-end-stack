@@ -1,21 +1,19 @@
 // @flow
-import React, { type Element } from 'react';
+import * as React from 'react';
 import classNames from 'classnames';
-import {
-  MuiThemeProvider,
-  AppBar,
-  Toolbar,
-  Typography,
-  IconButton,
-  SvgIcon,
-} from '@material-ui/core';
-import { Menu as MenuIcon } from '@material-ui/icons';
+import MuiThemeProvider from '@material-ui/core/styles/MuiThemeProvider';
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
+import Typography from '@material-ui/core/Typography';
+import IconButton from '@material-ui/core/IconButton';
+import SvgIcon from '@material-ui/core/SvgIcon';
+import MenuIcon from '@material-ui/icons/Menu';
 import MenuDrawerConnected from './MenuDrawerConnected';
 import styles from './styles';
 import env from '../../app/utils/env';
 
 type Props = {
-  children: Element<*>,
+  children: React.Element<*>,
   classes: Object,
   onMenuLeftOpened: Function,
   onToggleMenu: Function,
@@ -33,20 +31,25 @@ class Layout extends React.Component<Props, State> {
   };
 
   componentWillMount() {
-    this.state.mql.addListener(this.handleMediaQueryChanged);
+    const { mql } = this.state;
+    mql.addListener(this.handleMediaQueryChanged);
     this.handleMediaQueryChanged();
   }
 
   componentWillUnmount() {
-    this.state.mql.removeListener(this.handleMediaQueryChanged);
+    const { mql } = this.state;
+    mql.removeListener(this.handleMediaQueryChanged);
   }
 
-  props: Props;
-
   handleMediaQueryChanged = () => {
-    const openMenu = this.state.mql.matches;
-    this.props.onMenuLeftOpened(openMenu);
+    const { mql } = this.state;
+    const { onMenuLeftOpened } = this.props;
+
+    const openMenu = mql.matches;
+    onMenuLeftOpened(openMenu);
   };
+
+  props: Props;
 
   render() {
     const {
@@ -105,7 +108,9 @@ class Layout extends React.Component<Props, State> {
 
             <br />
 
-            <div className={classes.content}>{children}</div>
+            <div className={classes.content}>
+              {children}
+            </div>
           </div>
 
           <MenuDrawerConnected />

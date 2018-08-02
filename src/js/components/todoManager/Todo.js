@@ -1,6 +1,6 @@
 // @flow
-import React, { type Element } from 'react';
-import { Typography } from '@material-ui/core';
+import * as React from 'react';
+import Typography from '@material-ui/core/Typography';
 
 type Props = {
   onClick: Function,
@@ -9,7 +9,7 @@ type Props = {
 };
 
 // noinspection HtmlUnknownAnchorTarget
-const Todo = ({ onClick, completed, text }: Props): Element<*> => (
+const Todo = ({ onClick, completed, text }: Props): React.Element<*> => (
   <li>
     <Typography>
       <a

@@ -1,6 +1,9 @@
 // @flow
 import React from 'react';
-import { Typography, Button, Grid, CircularProgress } from '@material-ui/core';
+import Typography from '@material-ui/core/Typography';
+import Button from '@material-ui/core/Button';
+import Grid from '@material-ui/core/Grid';
+import CircularProgress from '@material-ui/core/CircularProgress';
 import chuckNorrisImage from '../../../img/chuck-norris.jpg';
 
 type Props = {
@@ -13,29 +16,46 @@ type Props = {
 // eslint-disable-next-line object-curly-newline
 const ChuckNorris = ({ joke, error, completed, onGetJoke }: Props) => (
   <div>
-    <Typography variant="display2" gutterBottom>Chuck Norris</Typography>
+    <Typography variant="display2" gutterBottom>
+Chuck Norris
+    </Typography>
 
     <Typography gutterBottom>
-      This view demonstrates async action using redux-observable, RxJS 5-based middleware for
-      Redux.
+      This view demonstrates async action using epics and RxJS.
     </Typography>
 
     <Grid container spacing={24} style={{ textAlign: 'center' }}>
       <Grid item md={4} sm={12}>
         <img src={chuckNorrisImage} alt="Chuck Norris" />
 
-        <br /><br />
+        <br />
+        <br />
 
-        <Button variant="raised" color="primary" onClick={onGetJoke}>Get Joke</Button>
+        <Button variant="raised" color="primary" onClick={onGetJoke}>
+Get Joke
+        </Button>
       </Grid>
       <Grid item md={8} sm={12} style={{ flex: 1 }}>
-        {!completed ? <div><br /><CircularProgress /></div> : null}
-        {joke ? <Typography variant="display1" gutterBottom>{joke}</Typography> : null}
-        {error ?
-          <Typography variant="display1" gutterBottom color="accent">
-            An error has occurred: {error}
-          </Typography> :
-          null
+        {!completed ? (
+          <div>
+            <br />
+            <CircularProgress />
+          </div>
+        ) : null}
+        {joke ? (
+          <Typography variant="display1" gutterBottom>
+            {joke}
+          </Typography>
+        ) : null}
+        {error
+          ? (
+            <Typography variant="display1" gutterBottom color="accent">
+            An error has occurred:
+              {' '}
+              {error}
+            </Typography>
+          )
+          : null
         }
       </Grid>
     </Grid>

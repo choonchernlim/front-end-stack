@@ -8,7 +8,7 @@ const packageJson = require('./package.json');
 
 const srcPath = path.join(__dirname, packageJson.config.src_dir_path);
 
-const appPath = path.join(srcPath, '/js/app/index.js');
+const appPath = path.join(srcPath, '/js/index.js');
 
 // Base options for HtmlWebpackPlugin for generating `index.html`
 // This allows production bundle to have possibly different entry file path than webpack-dev-server

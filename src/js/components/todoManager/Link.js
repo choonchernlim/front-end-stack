@@ -1,6 +1,6 @@
 // @flow
 import React from 'react';
-import { Button } from '@material-ui/core';
+import Button from '@material-ui/core/Button';
 
 type Props = {
   filter: string,
@@ -17,7 +17,11 @@ export const styles = (theme: Object) => ({
 // eslint-disable-next-line object-curly-newline
 const Link = ({ active, filter, children, onSetVisibilityFilter, classes }: Props) => {
   if (active) {
-    return <Button disabled>{children}</Button>;
+    return (
+      <Button disabled>
+        {children}
+      </Button>
+    );
   }
 
   return (

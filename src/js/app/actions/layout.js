@@ -1,12 +1,10 @@
 // @flow
-type ActionTypes = { [key: string]: string };
-
-const ACTION_TYPES: ActionTypes = {
+const ACTION_TYPES = Object.freeze({
   MENU_LEFT_OPENED: 'LAYOUT/MENU-LEFT-OPENED',
   TOGGLE_MENU: 'LAYOUT/TOGGLE-MENU',
-};
+});
 
-type ActionType = $Keys<typeof ACTION_TYPES>;
+type ActionType = $Values<typeof ACTION_TYPES>;
 
 export type MenuLeftOpenedAction = {|
   +type: ActionType,

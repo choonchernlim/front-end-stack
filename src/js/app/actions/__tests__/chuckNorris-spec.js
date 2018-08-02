@@ -1,7 +1,7 @@
 // @flow
 import { describe, it } from 'mocha';
 import { expect } from 'chai';
-import { chuckNorris } from '../../actions';
+import { chuckNorris } from '..';
 
 describe('Chuck Norris', () => {
   describe('Actions', () => {

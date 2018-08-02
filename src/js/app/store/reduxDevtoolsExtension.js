@@ -6,9 +6,9 @@
  */
 const reduxDevtoolsExtension = (): Function => (
   /* eslint-disable no-underscore-dangle */
-  typeof window === 'object' && typeof window.__REDUX_DEVTOOLS_EXTENSION__ !== 'undefined' ?
-    window.__REDUX_DEVTOOLS_EXTENSION__() :
-    f => f
+  typeof window === 'object' && typeof window.__REDUX_DEVTOOLS_EXTENSION__ !== 'undefined'
+    ? window.__REDUX_DEVTOOLS_EXTENSION__()
+    : f => f
   /* eslint-enable no-underscore-dangle */
 );
 
