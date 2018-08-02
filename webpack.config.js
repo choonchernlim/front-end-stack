@@ -19,6 +19,8 @@ const contextRoot = process.env.CONTEXT_ROOT || packageJson.config.context_root;
 const distUri = path.posix.join(contextRoot, packageJson.config.dist_uri, '/');
 
 module.exports = Object.assign({}, baseConfig.webpackOptions, {
+  mode: 'production',
+
   output: {
     path: distPath,
 
