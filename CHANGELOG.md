@@ -1,6 +1,6 @@
 # Change Log
 
-## 0.x.x - 2018-x-x
+## 0.13.0 - 2018-08-02
 
 * `Package.json` - `"sideEffects": false` for tree-shaking purpose. See https://webpack.js.org/guides/tree-shaking/
 * Webpack - When bundling JS files, move comments into separate files to further reduce file size.
