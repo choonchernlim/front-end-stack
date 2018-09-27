@@ -43,93 +43,95 @@ Starter kit for building single-page app using modern front-end stack.
 
 These commands are cross-platform compatible.
 
-|Command                                  |Description                                                                                           |
-|-----------------------------------------|------------------------------------------------------------------------------------------------------|
-|`yarn test`                              |Static type check, lint src/test files and run entire tests.                                          |
-|`yarn test [./path/to/test/module]`      |Static type check, lint src/test files and run only tests within `[./path/to/test/module]`            |
-|`yarn test:watch`                        |Watch for changes in all test files and rerun `yarn test`                                             |
-|`yarn test:watch [./path/to/test/module]`|Watch for changes in selected test files and rerun `yarn test [./path/to/test/module]`                |
-|`yarn build`                             |Build production bundle (compressed cache busting asset files)                                        |
-|`yarn ci`                                |Remove report dir, static type check, lint src/test files, run tests, run code coverage and generate result files for CI |
-|`yarn reinstall`                         |Clear yarn cache, remove `node_module` and install modules listed in `package.json`                   |
-|`yarn start`                             |Start Node.js Express server with Hot Module Replacement                                              |
-|`yarn stats`                             |Create `stats.json` that be loaded to http://webpack.github.io/analyse/ to visualize build.           |
-|`yarn flow`                              |Run Flow static type check.                                                                           |
-|`yarn flow:restart`                      |Restart Flow server before running static type check.                                                 |
+|Command                                    |Description                                                                                           |
+|-------------------------------------------|------------------------------------------------------------------------------------------------------|
+|`yarn test`                                |Static type check, lint src/test files and run entire tests                                           |
+|`yarn test [./path/to/test/module]`        |Static type check, lint src/test files and run only tests within `[./path/to/test/module]`            |
+|`yarn test:watch`                          |Watch for changes in all test files and rerun `yarn test`                                             |
+|`yarn test:watch [./path/to/test/module]`  |Watch for changes in selected test files and rerun `yarn test [./path/to/test/module]`                |
+|`yarn build`                               |Build production bundle (compressed cache busting asset files)                                        |
+|`yarn ci`                                  |Remove report dir, static type check, lint src/test files, run tests, run code coverage and generate result files for CI |
+|`yarn reinstall`                           |Clear yarn cache, remove `node_module` and install modules listed in `package.json`                   |
+|`yarn start`                               |Start Node.js Express server with Hot Module Replacement                                              |
+|`yarn stats`                               |Create `stats.json` that be loaded to http://webpack.github.io/analyse/ to visualize build            |
+|`yarn flow`                                |Run Flow static type check                                                                            |
+|`yarn flow:restart`                        |Restart Flow server before running static type check                                                  |
 
 
 ## Dependencies
 
-|Dependency                               |Description                                                                          |
-|-----------------------------------------|-------------------------------------------------------------------------------------|
-|@material-ui/core                        |UI - Google's material design UI components built with React                         |
-|@material-ui/icons                       |UI - Google Material icons                                                           |
-|classnames                               |UI - Conditionally joining classNames together                                       |
-|date-fns                                 |Parse, validate, manipulate and display dates                                        |
-|history                                  |Managing browser history                                                             |
-|immutable                                |Creating Immutable objects                                                           |
-|prop-types                               |React - Runtime type checking for React props                                        |
-|react                                    |React - Core                                                                         |
-|react-dom                                |React - DOM                                                                          |
-|react-redux                              |React - Redux integration                                                            |
-|react-router-dom                         |React - Router                                                                       |
-|react-router-redux                       |React - Router with Redux integration                                                |
-|recompose                                |React - Useful utility function components and HOCs.                                 |
-|redux                                    |Redux - Core                                                                         |
-|redux-observable                         |Redux - Side Effects middleware using RxJS' Observables                              |
-|reselect                                 |Memoized selector for React components                                               |
-|rxjs                                     |Handling async actions                                                               |
-|typeface-roboto                          |UI - Roboto font, adhering to Google Material Design spec                            |
+|Dependency                                 |Description                                                                          |
+|-------------------------------------------|-------------------------------------------------------------------------------------|
+|@material-ui/core                          |UI - Google's material design UI components built with React                         |
+|@material-ui/icons                         |UI - Google Material icons                                                           |
+|classnames                                 |UI - Conditionally joining classNames together                                       |
+|date-fns                                   |Parse, validate, manipulate and display dates                                        |
+|history                                    |Managing browser history                                                             |
+|immutable                                  |Creating Immutable objects                                                           |
+|prop-types                                 |React - Runtime type checking for React props                                        |
+|react                                      |React - Core                                                                         |
+|react-dom                                  |React - DOM                                                                          |
+|react-redux                                |React - Redux integration                                                            |
+|react-router-dom                           |React - Router                                                                       |
+|react-router-redux                         |React - Router with Redux integration                                                |
+|recompose                                  |React - Useful utility function components and HOCs.                                 |
+|redux                                      |Redux - Core                                                                         |
+|redux-observable                           |Redux - Side Effects middleware using RxJS' Observables                              |
+|reselect                                   |Memoized selector for React components                                               |
+|rxjs                                       |Handling async actions                                                               |
+|typeface-roboto                            |UI - Roboto font, adhering to Google Material Design spec                            |
 
 
 ## Dev Dependencies
 
-|Dependency                               |Description                                                                          |
-|-----------------------------------------|-------------------------------------------------------------------------------------|
-|autoprefixer                             |Webpack - Add vendor prefixes in CSS                                                 |
-|babel-cli                                |Babel - CLI commands                                                                 |
-|babel-core                               |Babel - Core compiler                                                                |
-|babel-eslint                             |Babel - For linting ES7 syntax... ex: `static` properties                            |
-|babel-loader                             |Babel - Loader for transpiling                                                       |
-|babel-plugin-istanbul                    |Babel - Istanbul instrumentation to ES6 code. Used in conjunction with `nyc`.        |
-|babel-plugin-transform-decorators-legacy |Babel - To fix "Decorators are not supported yet in 6.x pending proposal update."    |
-|babel-polyfill                           |Babel - Emulate a full ES2015 environment                                            |
-|babel-preset-es2015                      |Babel - ES6 preset                                                                   |
-|babel-preset-react                       |Babel - React preset                                                                 |
-|babel-preset-stage-0                     |Babel - ES7+ preset                                                                  |
-|chai                                     |Test - Expect lib                                                                    |
-|chai-as-promised                         |Test - Fluent approach to test promises                                              |
-|clean-webpack-plugin                     |Webpack - Clean output dir between builds                                            |
-|compression-webpack-plugin               |Webpack - Generate GZip asset files                                                  |
-|css-loader                               |Webpack - CSS loader                                                                 |
-|enzyme                                   |Test - Testing utilities for React                                                   |
-|enzyme-adapter-react-16                  |Test - Enzyme adapter that targets React 16                                          |
-|eslint                                   |ESLint - For enforcing coding style                                                  |
-|eslint-config-airbnb                     |ESLint - Using Airbnb's coding style                                                 |
-|eslint-loader                            |Webpack - ESLint loader                                                              |
-|eslint-plugin-flowtype                   |ESLint - Flow type linting                                                           |
-|eslint-plugin-import                     |ESLint - Linting of ES2015+ (ES6+) import/export syntax                              |
-|eslint-plugin-jsx-a11y                   |ESLint - Static AST checker for accessibility rules on JSX elements                  |
-|eslint-plugin-react                      |ESLint - React specific linting rules                                                |
-|file-loader                              |Webpack - File loader                                                                |
-|flow-bin                                 |Flow - Static type checker for JavaScript                                            | 
-|html-webpack-plugin                      |Webpack - Generates `index.html` using hash filenames for cache busting              |
-|image-webpack-loader                     |Webpack - Image loader and handling compression                                      |
-|jsdom                                    |Test - A JavaScript implementation of the WHATWG DOM and HTML standards              |
-|mini-css-extract-plugin                  |Webpack - Extract CSS into separate files                                            |
-|mocha                                    |Test - JS test framework                                                             |
-|mocha-junit-reporter                     |Test - Creating JUnit result file for Jenkins                                        |
-|nock                                     |Test - HTTP mocking and expectations library                                         |
-|nodemon                                  |Test - Monitor test files and rerun tests. Needed due to cross-platform test runner because `mocha --watch` doesn't produce run results when executed from `require('child_process').exec` |
-|nyc                                      |Test - Istanbul CLI for code coverage                                                |
-|postcss-loader                           |Webpack - Post CSS loader to run autoprefixer                                        |
-|react-test-renderer                      |Test - Works in conjunction with Enzyme                                              |
-|rimraf                                   |Util - `rm -rf` for both Unix and Windows world                                      |
-|sinon                                    |Test - Standalone test spies, stubs and mocks                                        |
-|uglifyjs-webpack-plugin                  |Webpack - Minify JS files                                                            |
-|url-loader                               |Webpack - URL loader                                                                 |
-|webpack                                  |Webpack - Core                                                                       |
-|webpack-dev-server                       |Webpack - Node.js Express server                                                     |
+|Dependency                                 |Description                                                                          |
+|-------------------------------------------|-------------------------------------------------------------------------------------|
+|@babel/cli                                 |Babel - CLI commands                                                                 |
+|@babel/core                                |Babel - Core compiler                                                                |
+|@babel/plugin-proposal-class-properties    |Babel - https://babeljs.io/docs/en/babel-plugin-proposal-class-properties            |
+|@babel/plugin-proposal-export-default-from |Babel - https://babeljs.io/docs/en/babel-plugin-proposal-export-default-from         |
+|@babel/polyfill                            |Babel - Emulate a full ES2015+ environment                                           |
+|@babel/preset-env                          |Babel - To use latest JavaScript                                                     |
+|@babel/preset-flow                         |Babel - Flow preset                                                                  |
+|@babel/preset-react                        |Babel - React preset                                                                 |
+|@babel/register                            |Babel - Provide `require` hook                                                       |
+|autoprefixer                               |Webpack - Add vendor prefixes in CSS                                                 |
+|babel-eslint                               |Babel - For linting ES7 syntax... ex: `static` properties                            |
+|babel-loader                               |Babel - Loader for transpiling                                                       |
+|babel-plugin-istanbul                      |Babel - Istanbul instrumentation to ES6 code. Used in conjunction with `nyc`.        |
+|chai                                       |Test - Expect lib                                                                    |
+|chai-as-promised                           |Test - Fluent approach to test promises                                              |
+|clean-webpack-plugin                       |Webpack - Clean output dir between builds                                            |
+|compression-webpack-plugin                 |Webpack - Generate GZip asset files                                                  |
+|css-loader                                 |Webpack - CSS loader                                                                 |
+|enzyme                                     |Test - Testing utilities for React                                                   |
+|enzyme-adapter-react-16                    |Test - Enzyme adapter that targets React 16                                          |
+|eslint                                     |ESLint - For enforcing coding style                                                  |
+|eslint-config-airbnb                       |ESLint - Using Airbnb's coding style                                                 |
+|eslint-loader                              |Webpack - ESLint loader                                                              |
+|eslint-plugin-flowtype                     |ESLint - Flow type linting                                                           |
+|eslint-plugin-import                       |ESLint - Linting of ES2015+ (ES6+) import/export syntax                              |
+|eslint-plugin-jsx-a11y                     |ESLint - Static AST checker for accessibility rules on JSX elements                  |
+|eslint-plugin-react                        |ESLint - React specific linting rules                                                |
+|file-loader                                |Webpack - File loader                                                                |
+|flow-bin                                   |Flow - Static type checker for JavaScript                                            | 
+|html-webpack-plugin                        |Webpack - Generates `index.html` using hash filenames for cache busting              |
+|image-webpack-loader                       |Webpack - Image loader and handling compression                                      |
+|jsdom                                      |Test - A JavaScript implementation of the WHATWG DOM and HTML standards              |
+|mini-css-extract-plugin                    |Webpack - Extract CSS into separate files                                            |
+|mocha                                      |Test - JS test framework                                                             |
+|mocha-junit-reporter                       |Test - Creating JUnit result file for Jenkins                                        |
+|nock                                       |Test - HTTP mocking and expectations library                                         |
+|nodemon                                    |Test - Monitor test files and rerun tests. Needed due to cross-platform test runner because `mocha --watch` doesn't produce run results when executed from `require('child_process').exec` |
+|nyc                                        |Test - Istanbul CLI for code coverage                                                |
+|postcss-loader                             |Webpack - Post CSS loader to run autoprefixer                                        |
+|react-test-renderer                        |Test - Works in conjunction with Enzyme                                              |
+|rimraf                                     |Util - `rm -rf` for both Unix and Windows world                                      |
+|sinon                                      |Test - Standalone test spies, stubs and mocks                                        |
+|uglifyjs-webpack-plugin                    |Webpack - Minify JS files                                                            |
+|url-loader                                 |Webpack - URL loader                                                                 |
+|webpack                                    |Webpack - Core                                                                       |
+|webpack-dev-server                         |Webpack - Node.js Express server                                                     |
 
 ## Project Structure
 

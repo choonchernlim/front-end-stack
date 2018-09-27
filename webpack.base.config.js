@@ -21,7 +21,7 @@ const htmlWebpackPluginOptions = {
 // Base options for WebPack
 const webpackOptions = {
   entry: {
-    polyfill: 'babel-polyfill',
+    polyfill: '@babel/polyfill',
     app: appPath,
   },
 

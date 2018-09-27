@@ -1,5 +1,12 @@
 # Change Log
 
+
+## 0.14.0 - 2018-XX-XX
+ 
+* Babel - Upgrade to v7.
+* `yarn reinstall` - Added `--network-timeout 1000000` to fix "There appears to be trouble with your network connection. Retrying..." error.
+
+
 ## 0.13.0 - 2018-08-02
 
 * `Package.json` - `"sideEffects": false` for tree-shaking purpose. See https://webpack.js.org/guides/tree-shaking/
