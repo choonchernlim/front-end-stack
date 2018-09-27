@@ -4,6 +4,7 @@
 ## 0.14.0 - 2018-XX-XX
  
 * Babel - Upgrade to v7.
+* Material-UI - Upgrade to v3.
 * `yarn reinstall` - Added `--network-timeout 1000000` to fix "There appears to be trouble with your network connection. Retrying..." error.
 
 
