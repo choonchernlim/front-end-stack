@@ -24,7 +24,7 @@
     "flow:restart": "flow stop && flow"
   },
   "dependencies": {
-    "@material-ui/core": "3.1.1",
+    "@material-ui/core": "3.1.2",
     "@material-ui/icons": "3.0.1",
     "classnames": "2.2.6",
     "date-fns": "1.29.0",
@@ -39,13 +39,13 @@
     "recompose": "0.30.0",
     "redux": "4.0.0",
     "redux-observable": "1.0.0",
-    "reselect": "3.0.1",
+    "reselect": "4.0.0",
     "rxjs": "6.3.3",
     "typeface-roboto": "0.0.54"
   },
   "devDependencies": {
-    "@babel/cli": "7.1.0",
-    "@babel/core": "7.1.0",
+    "@babel/cli": "7.1.2",
+    "@babel/core": "7.1.2",
     "@babel/plugin-proposal-class-properties": "7.1.0",
     "@babel/plugin-proposal-export-default-from": "7.0.0",
     "@babel/polyfill": "7.0.0",
@@ -64,7 +64,7 @@
     "css-loader": "1.0.0",
     "enzyme": "3.6.0",
     "enzyme-adapter-react-16": "1.5.0",
-    "eslint": "5.6.0",
+    "eslint": "5.6.1",
     "eslint-config-airbnb": "17.1.0",
     "eslint-loader": "2.1.1",
     "eslint-plugin-flowtype": "2.50.3",
@@ -72,10 +72,10 @@
     "eslint-plugin-jsx-a11y": "6.1.1",
     "eslint-plugin-react": "7.11.1",
     "file-loader": "2.0.0",
-    "flow-bin": "0.81.0",
+    "flow-bin": "0.82.0",
     "html-webpack-plugin": "3.2.0",
     "image-webpack-loader": "4.3.1",
-    "jsdom": "12.0.0",
+    "jsdom": "12.1.0",
     "mini-css-extract-plugin": "0.4.3",
     "mocha": "5.2.0",
     "mocha-junit-reporter": "1.18.0",
@@ -89,7 +89,7 @@
     "uglifyjs-webpack-plugin": "2.0.1",
     "url-loader": "1.1.1",
     "webpack": "4.20.2",
-    "webpack-cli": "3.1.1",
+    "webpack-cli": "3.1.2",
     "webpack-dev-server": "3.1.9"
   }
 }
