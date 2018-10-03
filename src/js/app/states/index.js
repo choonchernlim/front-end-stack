@@ -1,12 +1,32 @@
 // @flow
-export type { ChuckNorrisState } from './makeChuckNorrisState';
-export type { LayoutState } from './makeLayoutState';
-export type { TodoManagerState } from './makeTodoManagerState';
-export type { TodoState } from './makeTodoState';
+import type { ChuckNorrisState, State, TodoState } from './types';
 
-export { default as makeChuckNorrisState } from './makeChuckNorrisState';
-export { default as makeLayoutState } from './makeLayoutState';
-export { default as makeTodoManagerState } from './makeTodoManagerState';
-export { default as makeTodoState } from './makeTodoState';
+type States = {
+  layout: {
+    shouldMenuLeftOpened: (state: State) => boolean,
+    isMenuCurrentlyOpened: (state: State) => boolean,
+  },
 
-export { default as stateSelector } from './stateSelector';
+  chuckNorris: (state: State) => ChuckNorrisState,
+
+  todoManager: {
+    visibilityFilter: (state: State) => string,
+    todos: (state: State) => Array<TodoState>,
+  },
+};
+
+const states: States = {
+  layout: {
+    shouldMenuLeftOpened: state => state.layout.shouldMenuLeftOpened,
+    isMenuCurrentlyOpened: state => state.layout.isMenuCurrentlyOpened,
+  },
+
+  chuckNorris: state => state.chuckNorris,
+
+  todoManager: {
+    visibilityFilter: state => state.todoManager.visibilityFilter,
+    todos: state => state.todoManager.todos,
+  },
+};
+
+export default states;

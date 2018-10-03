@@ -10,9 +10,9 @@ import Radio from '@material-ui/core/Radio';
 import TextField from '@material-ui/core/TextField';
 import Typography from '@material-ui/core/Typography';
 
-type Props = {
+type Props = $ReadOnly<{|
   classes: Object,
-};
+|}>;
 
 const styles = (theme: Object) => ({
   paper: {
@@ -32,7 +32,7 @@ const styles = (theme: Object) => ({
 const Home = ({ classes }: Props): React.Element<*> => (
   <div>
     <Typography variant="display2">
-Welcome!
+      Welcome!
     </Typography>
 
     <Typography variant="body1" paragraph>
@@ -40,24 +40,24 @@ Welcome!
     </Typography>
 
     <Typography variant="display1">
-Look and Feel
+      Look and Feel
     </Typography>
 
     <Paper className={classes.paper}>
       <Typography variant="display3">
-Display 3
+        Display 3
       </Typography>
       <Typography variant="display2">
-Display 2
+        Display 2
       </Typography>
       <Typography variant="display1">
-Display 1
+        Display 1
       </Typography>
       <Typography variant="body2">
-Body 2
+        Body 2
       </Typography>
       <Typography>
-Body 1
+        Body 1
       </Typography>
 
       <br />
@@ -71,17 +71,17 @@ Body 1
       <br />
 
       <Button className={classes.button} variant="raised" color="primary">
-Primary Button
+        Primary Button
       </Button>
       <Button className={classes.button} variant="raised" color="secondary">
-Secondary
+        Secondary
         Button
       </Button>
       <Button className={classes.button} variant="raised">
-Default Button
+        Default Button
       </Button>
       <Button className={classes.button} variant="raised" disabled>
-Disabled Button
+        Disabled Button
       </Button>
 
       <br />

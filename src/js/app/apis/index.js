@@ -1,9 +1,8 @@
 // @flow
 import getJokeApi from './getJokeApi';
+import type { Apis } from './types';
 
-export type { GetJokeApiFn } from './getJokeApi';
-
-const apis = {
+const apis: Apis = {
   getJokeApi,
 };
 

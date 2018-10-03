@@ -1,18 +1,20 @@
 // @flow
 import { connect } from 'react-redux';
-import { todoManager } from '../../app/actions';
-import { makeGetVisibleTodos } from '../../app/reselectSelectors';
+import actions from '../../app/actions';
 import TodoList from './TodoList';
+import { makeVisibleTodosSelector } from '../../app/selectors';
+import type { VisibleTodosSelectorFn } from '../../app/selectors/types';
 
 const makeMapStateToProps = () => {
-  const getVisibleTodos: Function = makeGetVisibleTodos();
+  const visibleTodosSelector: VisibleTodosSelectorFn = makeVisibleTodosSelector();
+
   return state => ({
-    todos: getVisibleTodos(state),
+    todos: visibleTodosSelector(state),
   });
 };
 
 const mapDispatchToProps = {
-  onToggleTodo: todoManager.toggleTodo,
+  onToggleTodo: actions.toggleTodo,
 };
 
 const TodoListConnected = connect(makeMapStateToProps, mapDispatchToProps)(TodoList);

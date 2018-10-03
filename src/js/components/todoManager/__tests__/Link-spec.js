@@ -5,6 +5,7 @@ import Button from '@material-ui/core/Button';
 import { shallow } from 'enzyme';
 import { expect } from 'chai';
 import Link from '../Link';
+import actions from '../../../app/actions';
 
 describe('Todo Manager', () => {
   describe('Components', () => {
@@ -14,10 +15,10 @@ describe('Todo Manager', () => {
           <Link // eslint-disable-line jsx-a11y/anchor-is-valid
             active
             filter="Show"
-            onSetVisibilityFilter={f => f}
+            onSetVisibilityFilter={actions.setVisibilityFilter}
             classes={{ link: 'link' }}
           >
-Hello
+            Hello
           </Link>,
         );
 
@@ -33,10 +34,10 @@ Hello
           <Link // eslint-disable-line jsx-a11y/anchor-is-valid
             active={false}
             filter="Show"
-            onSetVisibilityFilter={f => f}
+            onSetVisibilityFilter={actions.setVisibilityFilter}
             classes={{ link: 'link' }}
           >
-Hello
+            Hello
           </Link>,
         );
 

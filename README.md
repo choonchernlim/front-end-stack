@@ -67,7 +67,7 @@ These commands are cross-platform compatible.
 |classnames                                 |UI - Conditionally joining classNames together                                       |
 |date-fns                                   |Parse, validate, manipulate and display dates                                        |
 |history                                    |Managing browser history                                                             |
-|immutable                                  |Creating Immutable objects                                                           |
+|immer                                      |Handling immutable objects                                                           |
 |prop-types                                 |React - Runtime type checking for React props                                        |
 |react                                      |React - Core                                                                         |
 |react-dom                                  |React - DOM                                                                          |

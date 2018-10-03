@@ -65,6 +65,17 @@
       {
         "numbers": true
       }
+    ],
+    // To allow Immer to mutate `draft` object
+    // See https://github.com/mweststrate/immer/issues/189
+    "no-param-reassign": [
+      "error",
+      {
+        "props": true,
+        "ignorePropertyModificationsFor": [
+          "draft"
+        ]
+      }
     ]
   }
 }

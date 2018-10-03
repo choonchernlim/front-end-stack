@@ -1,12 +1,15 @@
 # Change Log
 
-
 ## 0.14.0 - 2018-XX-XX
  
 * Babel - Upgrade to v7.
 * Material-UI - Upgrade to v3.
 * `yarn reinstall` - Added `--network-timeout 1000000` to fix "There appears to be trouble with your network connection. Retrying..." error.
-
+* Replaced `immutableJs` with `immer` because...
+  * Works great with Flow out of the box.
+  * Straight up JS when mutating properties.
+  * No loss of performance. 
+  * ImmutableJS is somewhat defunct.
 
 ## 0.13.0 - 2018-08-02
 

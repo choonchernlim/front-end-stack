@@ -1,12 +1,13 @@
 // @flow
 import * as React from 'react';
 import Typography from '@material-ui/core/Typography';
+import type { ToggleTodoFn } from '../../app/actions/types';
 
-type Props = {
-  onClick: Function,
+type Props = $ReadOnly<{|
+  onClick: ToggleTodoFn,
   completed: boolean,
   text: string
-};
+|}>;
 
 // noinspection HtmlUnknownAnchorTarget
 const Todo = ({ onClick, completed, text }: Props): React.Element<*> => (

@@ -1,14 +1,15 @@
 // @flow
 import React from 'react';
 import Button from '@material-ui/core/Button';
+import type { SetVisibilityFilterFn } from '../../app/actions/types';
 
-type Props = {
+type Props = $ReadOnly<{|
   filter: string,
   active: boolean,
   children: string,
-  onSetVisibilityFilter: Function,
+  onSetVisibilityFilter: SetVisibilityFilterFn,
   classes: Object,
-};
+|}>;
 
 export const styles = (theme: Object) => ({
   link: theme.link,

@@ -3,7 +3,7 @@ import { combineEpics } from 'redux-observable';
 import getJokeEpic from './getJokeEpic';
 import apis from '../apis';
 
-const epics: Function[] = [
+const epics: Array<Function> = [
   getJokeEpic,
 ];
 

@@ -1,7 +1,7 @@
 // @flow
-import { Observable } from 'rxjs';
 import { ajax, type AjaxResponse } from 'rxjs/ajax';
 import { map } from 'rxjs/operators';
+import type { GetJokeApiFn } from './types';
 
 export const RANDOM_JOKE_SERVER: string = 'https://api.icndb.com';
 export const RANDOM_JOKE_URI: string = '/jokes/random';
@@ -13,8 +13,6 @@ const decodeHtml = (html: string): string => {
   element.innerHTML = html;
   return element.value;
 };
-
-export type GetJokeApiFn = () => Observable;
 
 const getJokeApi: GetJokeApiFn = () => (
   ajax({
