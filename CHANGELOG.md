@@ -6,7 +6,7 @@
 * Material-UI - Upgrade to v3.
 * `yarn reinstall` - Added `--network-timeout 1000000` to fix "There appears to be trouble with your network connection. Retrying..." error.
 * Replaced `immutableJs` with `immer` because...
-  * Works great with Flow out of the box.
+  * Works great with Flow out of the box. Flow type for `Record` in `immutableJs` is still broken.
   * Straight up JS when mutating properties.
   * No loss of performance. 
   * ImmutableJS is somewhat defunct.
