@@ -6,7 +6,7 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const CleanPlugin = require('clean-webpack-plugin');
-const CompressionPlugin = require("compression-webpack-plugin");
+const CompressionPlugin = require('compression-webpack-plugin');
 const packageJson = require('./package.json');
 const process = require('process');
 
@@ -62,9 +62,11 @@ module.exports = Object.assign({}, baseConfig.webpackOptions, {
     }),
 
     // Generates `index.html` at the location specified by the user
-    new HtmlWebpackPlugin(Object.assign({}, baseConfig.htmlWebpackPluginOptions, {
-      filename: path.join(__dirname, packageJson.config.entry_file_path),
-    })),
+    new HtmlWebpackPlugin(
+      Object.assign({}, baseConfig.htmlWebpackPluginOptions, {
+        filename: path.join(__dirname, packageJson.config.entry_file_path),
+      }),
+    ),
 
     // Generates GZIP compression files
     new CompressionPlugin(),

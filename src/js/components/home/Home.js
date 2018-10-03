@@ -31,34 +31,20 @@ const styles = (theme: Object) => ({
 
 const Home = ({ classes }: Props): React.Element<*> => (
   <div>
-    <Typography variant="display2">
-      Welcome!
-    </Typography>
+    <Typography variant="display2">Welcome!</Typography>
 
     <Typography variant="body1" paragraph>
       You have successfully created a single-page app!
     </Typography>
 
-    <Typography variant="display1">
-      Look and Feel
-    </Typography>
+    <Typography variant="display1">Look and Feel</Typography>
 
     <Paper className={classes.paper}>
-      <Typography variant="display3">
-        Display 3
-      </Typography>
-      <Typography variant="display2">
-        Display 2
-      </Typography>
-      <Typography variant="display1">
-        Display 1
-      </Typography>
-      <Typography variant="body2">
-        Body 2
-      </Typography>
-      <Typography>
-        Body 1
-      </Typography>
+      <Typography variant="display3">Display 3</Typography>
+      <Typography variant="display2">Display 2</Typography>
+      <Typography variant="display1">Display 1</Typography>
+      <Typography variant="body2">Body 2</Typography>
+      <Typography>Body 1</Typography>
 
       <br />
       <br />
@@ -74,8 +60,7 @@ const Home = ({ classes }: Props): React.Element<*> => (
         Primary Button
       </Button>
       <Button className={classes.button} variant="raised" color="secondary">
-        Secondary
-        Button
+        Secondary Button
       </Button>
       <Button className={classes.button} variant="raised">
         Default Button
@@ -98,7 +83,6 @@ const Home = ({ classes }: Props): React.Element<*> => (
       <FormControlLabel label="Checked Radio" control={<Radio checked />} />
       <FormControlLabel label="Disabled Radio" control={<Radio disabled />} />
     </Paper>
-
   </div>
 );
 

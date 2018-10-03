@@ -63,7 +63,7 @@ const toggleMenu: ToggleMenuFn = () => ({
   type: ACTIONS.TOGGLE_MENU,
 });
 
-const addTodo: AddTodoFn = (text) => {
+const addTodo: AddTodoFn = text => {
   nextTodoId += 1;
   return {
     type: ACTIONS.ADD_TODO,

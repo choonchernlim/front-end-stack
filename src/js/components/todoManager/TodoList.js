@@ -6,7 +6,7 @@ import type { ToggleTodoFn } from '../../app/actions/types';
 
 type Props = $ReadOnly<{|
   todos: Array<TodoState>,
-  onToggleTodo: ToggleTodoFn
+  onToggleTodo: ToggleTodoFn,
 |}>;
 
 const TodoList = ({ todos, onToggleTodo }: Props): React.Element<*> => (
@@ -17,8 +17,8 @@ const TodoList = ({ todos, onToggleTodo }: Props): React.Element<*> => (
         text={todo.text}
         completed={todo.completed}
         onClick={() => onToggleTodo(todo.id)}
-      />))
-    }
+      />
+    ))}
   </ul>
 );
 

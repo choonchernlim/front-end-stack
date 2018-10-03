@@ -8,16 +8,15 @@ import type { Apis } from '../apis/types';
 
 type GetJokeEpicFn = (action$: Observable, store: *, apis: Apis) => Observable;
 
-const getJokeEpic: GetJokeEpicFn = (action$, store, { getJokeApi }) => (
+const getJokeEpic: GetJokeEpicFn = (action$, store, { getJokeApi }) =>
   action$.pipe(
     ofType(ACTIONS.GET_JOKE),
-    mergeMap(() => (
-      getJokeApi()
-        .pipe(
-          map((value: string) => actions.getJokeSucceeded(value)),
-          catchError((error: AjaxError) => of(actions.getJokeFailed(error.message))),
-        )
-    )),
-  ));
+    mergeMap(() =>
+      getJokeApi().pipe(
+        map((value: string) => actions.getJokeSucceeded(value)),
+        catchError((error: AjaxError) => of(actions.getJokeFailed(error.message))),
+      ),
+    ),
+  );
 
 export default getJokeEpic;

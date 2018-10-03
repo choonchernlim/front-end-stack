@@ -14,12 +14,11 @@ const decodeHtml = (html: string): string => {
   return element.value;
 };
 
-const getJokeApi: GetJokeApiFn = () => (
+const getJokeApi: GetJokeApiFn = () =>
   ajax({
     url: RANDOM_JOKE_SERVER + RANDOM_JOKE_URI,
     crossDomain: true,
     createXHR: () => new window.XMLHttpRequest(),
-  }).pipe(map((e: AjaxResponse) => decodeHtml(e.response.value.joke)))
-);
+  }).pipe(map((e: AjaxResponse) => decodeHtml(e.response.value.joke)));
 
 export default getJokeApi;

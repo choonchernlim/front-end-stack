@@ -19,14 +19,9 @@ type Props = $ReadOnly<{|
   classes: Object,
 |}>;
 
-const MenuDrawer = ( // eslint-disable-line function-paren-newline
-  {
-    isMenuCurrentlyOpened,
-    shouldMenuLeftOpened,
-    onToggleMenu,
-    history,
-    classes,
-  }: Props,
+const MenuDrawer = (
+  // eslint-disable-line function-paren-newline
+  { isMenuCurrentlyOpened, shouldMenuLeftOpened, onToggleMenu, history, classes }: Props,
 ) => {
   /**
    * When changing route, determine if there's a need to hide the menu especially when

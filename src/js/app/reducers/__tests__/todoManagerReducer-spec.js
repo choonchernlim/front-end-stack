@@ -8,8 +8,7 @@ describe('Todo Manager', () => {
   describe('Reducer', () => {
     describe('Default', () => {
       it('given unknown action, should return initial state', () => {
-        expect(todoManagerReducer(undefined, { type: ACTIONS.GET_JOKE }))
-          .to.equal(initialState);
+        expect(todoManagerReducer(undefined, { type: ACTIONS.GET_JOKE })).to.equal(initialState);
       });
     });
 
@@ -77,10 +76,7 @@ describe('Todo Manager', () => {
 
     describe('SET_VISIBILITY_FILTER', () => {
       it('given a filter, should return action', () => {
-        const actualState = todoManagerReducer(
-          initialState,
-          actions.setVisibilityFilter('ALL'),
-        );
+        const actualState = todoManagerReducer(initialState, actions.setVisibilityFilter('ALL'));
 
         const expectedState = {
           ...initialState,

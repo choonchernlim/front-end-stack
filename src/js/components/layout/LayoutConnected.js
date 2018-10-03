@@ -16,6 +16,9 @@ const mapDispatchToProps = {
   onToggleMenu: actions.toggleMenu,
 };
 
-const LayoutConnected = connect(mapStateToProps, mapDispatchToProps)(Layout);
+const LayoutConnected = connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(Layout);
 
 export default withRouter(withStyles(styles.layout)(LayoutConnected));

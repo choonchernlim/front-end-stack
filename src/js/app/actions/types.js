@@ -13,8 +13,8 @@ export type GetJokeAction = $ReadOnly<{|
   state: {
     completed: boolean,
     joke: ?string,
-    error: ?string
-  }
+    error: ?string,
+  },
 |}>;
 
 export type MenuLeftOpenedAction = $ReadOnly<{|

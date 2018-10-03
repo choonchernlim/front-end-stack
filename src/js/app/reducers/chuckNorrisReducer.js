@@ -22,13 +22,14 @@ export const initialState: ChuckNorrisState = Object.freeze({
 /**
  * Action handlers.
  */
-const handleAction: HandleActionFn = (state, action) => produce(state, (draft) => {
-  const { completed, joke, error } = action.state;
+const handleAction: HandleActionFn = (state, action) =>
+  produce(state, draft => {
+    const { completed, joke, error } = action.state;
 
-  draft.completed = completed;
-  draft.joke = joke;
-  draft.error = error;
-});
+    draft.completed = completed;
+    draft.joke = joke;
+    draft.error = error;
+  });
 
 /**
  * Reducer.

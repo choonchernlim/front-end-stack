@@ -13,14 +13,13 @@ type Props = $ReadOnly<{|
   onGetJoke: GetJokeFn,
 |}>;
 
-// eslint-disable-next-line object-curly-newline
 const ChuckNorris = ({ chuckNorris, onGetJoke }: Props) => (
   <div>
-    <Typography variant="display2" gutterBottom>Chuck Norris</Typography>
-
-    <Typography gutterBottom>
-      This view demonstrates async action using epics and RxJS.
+    <Typography variant="display2" gutterBottom>
+      Chuck Norris
     </Typography>
+
+    <Typography gutterBottom>This view demonstrates async action using epics and RxJS.</Typography>
 
     <Grid container spacing={24} style={{ textAlign: 'center' }}>
       <Grid item md={4} sm={12}>
@@ -29,7 +28,9 @@ const ChuckNorris = ({ chuckNorris, onGetJoke }: Props) => (
         <br />
         <br />
 
-        <Button variant="raised" color="primary" onClick={onGetJoke}>Get Joke</Button>
+        <Button variant="raised" color="primary" onClick={onGetJoke}>
+          Get Joke
+        </Button>
       </Grid>
       <Grid item md={8} sm={12} style={{ flex: 1 }}>
         {!chuckNorris.completed ? (
@@ -43,16 +44,11 @@ const ChuckNorris = ({ chuckNorris, onGetJoke }: Props) => (
             {chuckNorris.joke}
           </Typography>
         ) : null}
-        {chuckNorris.error
-          ? (
-            <Typography variant="display1" gutterBottom color="accent">
-              An error has occurred:
-              {' '}
-              {chuckNorris.error}
-            </Typography>
-          )
-          : null
-        }
+        {chuckNorris.error ? (
+          <Typography variant="display1" gutterBottom color="accent">
+            An error has occurred: {chuckNorris.error}
+          </Typography>
+        ) : null}
       </Grid>
     </Grid>
   </div>

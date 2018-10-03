@@ -5,10 +5,8 @@ import type { VisibleTodosSelectorFn } from './types';
 
 type MakeVisibleTodosSelectorFn = () => VisibleTodosSelectorFn;
 
-const makeVisibleTodosSelector: MakeVisibleTodosSelectorFn = () => createSelector(
-  states.todoManager.visibilityFilter,
-  states.todoManager.todos,
-  (filter, todos) => {
+const makeVisibleTodosSelector: MakeVisibleTodosSelectorFn = () =>
+  createSelector(states.todoManager.visibilityFilter, states.todoManager.todos, (filter, todos) => {
     switch (filter) {
       case 'SHOW_ALL':
         return todos;
@@ -19,7 +17,6 @@ const makeVisibleTodosSelector: MakeVisibleTodosSelectorFn = () => createSelecto
       default:
         return todos;
     }
-  },
-);
+  });
 
 export default makeVisibleTodosSelector;

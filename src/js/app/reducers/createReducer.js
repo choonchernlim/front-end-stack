@@ -14,13 +14,9 @@ type CreateReducerFn = (initialState: State, handlers: Object) => HandleActionFn
  * @param initialState  Initial state
  * @param handlers      Action handler
  */
-const createReducer: CreateReducerFn = (initialState, handlers) => (
-  state = initialState,
-  action,
-) => (
+const createReducer: CreateReducerFn = (initialState, handlers) => (state = initialState, action) =>
   Object.prototype.hasOwnProperty.call(handlers, action.type)
     ? handlers[action.type](state, action)
-    : state
-);
+    : state;
 
 export default createReducer;
