@@ -1,7 +1,7 @@
 // @flow
 import { describe, it } from 'mocha';
 import { expect } from 'chai';
-import chuckNorrisReducer, { initialState } from '../chuckNorris';
+import chuckNorrisReducer, { initialState } from '../chuckNorrisReducer';
 import actions, { ACTIONS } from '../../actions';
 
 describe('Chuck Norris', () => {

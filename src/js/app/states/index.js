@@ -1,39 +1,31 @@
 // @flow
-import type { State, TodoState } from './types';
+import type { ChuckNorrisState, State, TodoState } from './types';
 
 type StateSelector = {
   layout: {
-    shouldMenuLeftOpened: Function,
-    isMenuCurrentlyOpened: Function,
+    shouldMenuLeftOpened: (state: State) => boolean,
+    isMenuCurrentlyOpened: (state: State) => boolean,
   },
 
-  chuckNorris: {
-    joke: Function,
-    error: Function,
-    completed: Function,
-  },
+  chuckNorris: (state: State) => ChuckNorrisState,
 
   todoManager: {
-    visibilityFilter: Function,
-    todos: Function,
+    visibilityFilter: (state: State) => string,
+    todos: (state: State) => Array<TodoState>,
   },
 };
 
 const stateSelector: StateSelector = {
   layout: {
-    shouldMenuLeftOpened: (state: State): boolean => state.layout.shouldMenuLeftOpened,
-    isMenuCurrentlyOpened: (state: State): boolean => state.layout.isMenuCurrentlyOpened,
+    shouldMenuLeftOpened: state => state.layout.shouldMenuLeftOpened,
+    isMenuCurrentlyOpened: state => state.layout.isMenuCurrentlyOpened,
   },
 
-  chuckNorris: {
-    joke: (state: State): ?string => state.chuckNorris.joke,
-    error: (state: State): ?string => state.chuckNorris.error,
-    completed: (state: State): boolean => state.chuckNorris.completed,
-  },
+  chuckNorris: state => state.chuckNorris,
 
   todoManager: {
-    visibilityFilter: (state: State): string => state.todoManager.visibilityFilter,
-    todos: (state: State): Array<TodoState> => state.todoManager.todos,
+    visibilityFilter: state => state.todoManager.visibilityFilter,
+    todos: state => state.todoManager.todos,
   },
 };
 

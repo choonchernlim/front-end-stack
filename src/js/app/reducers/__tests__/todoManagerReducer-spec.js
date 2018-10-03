@@ -1,7 +1,7 @@
 // @flow
 import { describe, it } from 'mocha';
 import { expect } from 'chai';
-import todoManagerReducer, { initialState } from '../todoManager';
+import todoManagerReducer, { initialState } from '../todoManagerReducer';
 import actions, { ACTIONS } from '../../actions';
 
 describe('Todo Manager', () => {
