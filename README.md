@@ -51,9 +51,9 @@ These commands are cross-platform compatible.
 | Command                                   | Description                                                                                                                           |
 | ----------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------- |
 | `yarn test`                               | Format code, static type check, lint src/test files and run entire tests                                                              |
-| `yarn test [./path/to/test/module]`       | Format code, static type check, lint src/test files and run only tests within `[./path/to/test/module]`                               |
+| `yarn test <./path>`                      | Format code, static type check, lint src/test files and run only tests within `<./path>`                                              |
 | `yarn test:watch`                         | Watch for changes in all test files and rerun `yarn test`                                                                             |
-| `yarn test:watch [./path/to/test/module]` | Watch for changes in selected test files and rerun `yarn test [./path/to/test/module]`                                                |
+| `yarn test:watch <./path>`                | Watch for changes in selected test files and rerun `yarn test <./path>`                                                               |
 | `yarn build`                              | Build production bundle (compressed cache busting asset files)                                                                        |
 | `yarn ci`                                 | Remove report dir, format code, static type check, lint src/test files, run tests, run code coverage and generate result files for CI |
 | `yarn reinstall`                          | Clear yarn cache, remove `node_module` and install modules listed in `package.json`                                                   |
@@ -162,6 +162,7 @@ These commands are cross-platform compatible.
 ├── .gitattributes              -> Custom Git configuration
 ├── .gitignore                  -> Git ignore list
 ├── .nycrc                      -> Istanbul CLI configuration
+├── .prettierignore             -> Prettier ignore list
 ├── .prettierrc                 -> Prettier configuration
 ├── CHANGELOG.md                -> Change logs
 ├── LICENSE.md                  -> License, if needed
