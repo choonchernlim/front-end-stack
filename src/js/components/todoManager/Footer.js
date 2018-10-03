@@ -8,17 +8,18 @@ const Footer = (): React.Element<*> => (
     Show:
     {' '}
     <LinkConnected filter="SHOW_ALL">
-All
+      All
     </LinkConnected>
     {' '}
     <LinkConnected filter="SHOW_ACTIVE">
-Active
+      Active
     </LinkConnected>
     {' '}
     <LinkConnected filter="SHOW_COMPLETED">
-Completed
+      Completed
     </LinkConnected>
   </Typography>
 );
 
 export default Footer;
+

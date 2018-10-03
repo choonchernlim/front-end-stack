@@ -6,13 +6,13 @@ import TextField from '@material-ui/core/TextField';
 import type { AddTodoFn } from '../../app/actions/types';
 
 type Props = $ReadOnly<{|
-  onAddTodo: AddTodoFn
+  onAddTodo: AddTodoFn,
 |}>;
 
-type State = {
+type State = {|
   value: string,
-  error: boolean
-};
+  error: boolean,
+|};
 
 class AddTodo extends React.Component<Props, State> {
   state = {

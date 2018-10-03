@@ -2,8 +2,8 @@
 import { connect } from 'react-redux';
 import actions from '../../app/actions';
 import TodoList from './TodoList';
-import { makeVisibleTodosSelector } from '../../app/reselectSelectors';
-import type { VisibleTodosSelectorFn } from '../../app/reselectSelectors/types';
+import { makeVisibleTodosSelector } from '../../app/selectors';
+import type { VisibleTodosSelectorFn } from '../../app/selectors/types';
 
 const makeMapStateToProps = () => {
   const visibleTodosSelector: VisibleTodosSelectorFn = makeVisibleTodosSelector();

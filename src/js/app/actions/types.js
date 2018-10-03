@@ -3,7 +3,7 @@ import { ACTIONS } from './index';
 
 type ActionType = $Values<typeof ACTIONS>;
 
-// don't seal the object
+// This cannot be an exact type
 export type AnyAction = $ReadOnly<{
   type: ActionType,
 }>;

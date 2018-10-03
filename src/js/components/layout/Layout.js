@@ -22,9 +22,9 @@ type Props = $ReadOnly<{|
   history: Object,
 |}>;
 
-type State = {
+type State = {|
   mql: Function,
-};
+|};
 
 class Layout extends React.Component<Props, State> {
   state = {
