@@ -3,14 +3,12 @@ import { Observable, of } from 'rxjs';
 import type { AjaxError } from 'rxjs/ajax';
 import { catchError, map, mergeMap } from 'rxjs/operators';
 import { ofType } from 'redux-observable';
-import type { GetJokeApiFn } from '../apis';
 import actions, { ACTIONS } from '../actions';
+import type { Apis } from '../apis/types';
 
-type Apis = { getJokeApi: GetJokeApiFn };
+type GetJokeEpicFn = (action$: Observable, store: *, apis: Apis) => Observable;
 
-type GetJokeEpic = (action$: Observable, store: *, apis: Apis) => Observable;
-
-const getJokeEpic: GetJokeEpic = (action$, store, { getJokeApi }) => (
+const getJokeEpic: GetJokeEpicFn = (action$, store, { getJokeApi }) => (
   action$.pipe(
     ofType(ACTIONS.GET_JOKE),
     mergeMap(() => (
