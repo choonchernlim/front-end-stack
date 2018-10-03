@@ -3,7 +3,9 @@
   "extends": [
     "airbnb",
     "plugin:flowtype/recommended",
-    "plugin:prettier/recommended"
+    "plugin:prettier/recommended",
+    "prettier/flowtype",
+    "prettier/react"
   ],
   // to handle ES7's static properties in React component
   // https://github.com/gajus/eslint-plugin-flowtype#installation
@@ -23,18 +25,17 @@
   "rules": {
     // allow `else` on new line
     // http://eslint.org/docs/rules/brace-style
-    "brace-style": [
-      "error",
-      "stroustrup"
-    ],
+    //    "brace-style": [
+    //      "error",
+    //      "stroustrup"
+    //    ],
     // Allow JSX on `.js`
     // See https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-filename-extension.md
     "react/jsx-filename-extension": [
       1,
       {
         "extensions": [
-          ".js",
-          ".jsx"
+          ".js"
         ]
       }
     ],
@@ -46,27 +47,27 @@
         "annotationStyle": "line"
       }
     ],
-    // To prevent this error: The href attribute is required on an anchor.
-    // See https://github.com/evcohen/eslint-plugin-jsx-a11y/issues/340
-    "jsx-a11y/anchor-is-valid": [
-      "error",
-      {
-        "components": [
-          "Link"
-        ],
-        "specialLink": [
-          "to"
-        ]
-      }
-    ],
-    // to allow quotes around number... for example: const a = { '1919': 'value' };
-    "quote-props": [
-      "error",
-      "as-needed",
-      {
-        "numbers": true
-      }
-    ],
+    //    // To prevent this error: The href attribute is required on an anchor.
+    //    // See https://github.com/evcohen/eslint-plugin-jsx-a11y/issues/340
+    //    "jsx-a11y/anchor-is-valid": [
+    //      "error",
+    //      {
+    //        "components": [
+    //          "Link"
+    //        ],
+    //        "specialLink": [
+    //          "to"
+    //        ]
+    //      }
+    //    ],
+    //    // to allow quotes around number... for example: const a = { '1919': 'value' };
+    //    "quote-props": [
+    //      "error",
+    //      "as-needed",
+    //      {
+    //        "numbers": true
+    //      }
+    //    ],
     // To allow Immer to mutate `draft` object
     // See https://github.com/mweststrate/immer/issues/189
     "no-param-reassign": [

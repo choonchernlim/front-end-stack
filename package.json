@@ -22,7 +22,7 @@
     "stats": "webpack --profile --json > stats.json",
     "flow": "flow",
     "flow:restart": "flow stop && flow",
-    "format": "prettier --write '**/*.{js,css,md}'"
+    "prettier": "prettier --write '**/*.{js,json,md}'"
   },
   "dependencies": {
     "@material-ui/core": "3.1.2",
