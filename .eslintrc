@@ -2,7 +2,8 @@
   // using Airbnb and Flow best recommendations
   "extends": [
     "airbnb",
-    "plugin:flowtype/recommended"
+    "plugin:flowtype/recommended",
+    "plugin:prettier/recommended"
   ],
   // to handle ES7's static properties in React component
   // https://github.com/gajus/eslint-plugin-flowtype#installation
