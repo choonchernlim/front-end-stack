@@ -7,14 +7,14 @@ const ACTION_TYPES = Object.freeze({
 
 type ActionType = $Values<typeof ACTION_TYPES>;
 
-export type GetJokeAction = {|
-  +type: ActionType,
+export type GetJokeAction = $ReadOnly<{|
+  type: ActionType,
   state: {
     completed: boolean,
-    joke?: string,
-    error?: string
+    joke: ?string,
+    error: ?string
   }
-|};
+|}>;
 
 type GetJokeFn = () => GetJokeAction;
 type GetJokeFailedFn = (error: string) => GetJokeAction;
@@ -24,8 +24,8 @@ const getJoke: GetJokeFn = () => ({
   type: ACTION_TYPES.GET_JOKE,
   state: {
     completed: false,
-    joke: undefined,
-    error: undefined,
+    joke: null,
+    error: null,
   },
 });
 
@@ -33,7 +33,7 @@ const getJokeFailed: GetJokeFailedFn = error => ({
   type: ACTION_TYPES.GET_JOKE_FAILED,
   state: {
     completed: true,
-    joke: undefined,
+    joke: null,
     error,
   },
 });
@@ -43,7 +43,7 @@ const getJokeSucceeded: GetJokeSucceededFn = joke => ({
   state: {
     completed: true,
     joke,
-    error: undefined,
+    error: null,
   },
 });
 

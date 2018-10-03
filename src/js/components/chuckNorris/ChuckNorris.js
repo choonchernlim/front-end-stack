@@ -16,9 +16,7 @@ type Props = {
 // eslint-disable-next-line object-curly-newline
 const ChuckNorris = ({ joke, error, completed, onGetJoke }: Props) => (
   <div>
-    <Typography variant="display2" gutterBottom>
-Chuck Norris
-    </Typography>
+    <Typography variant="display2" gutterBottom>Chuck Norris</Typography>
 
     <Typography gutterBottom>
       This view demonstrates async action using epics and RxJS.
@@ -31,9 +29,7 @@ Chuck Norris
         <br />
         <br />
 
-        <Button variant="raised" color="primary" onClick={onGetJoke}>
-Get Joke
-        </Button>
+        <Button variant="raised" color="primary" onClick={onGetJoke}>Get Joke</Button>
       </Grid>
       <Grid item md={8} sm={12} style={{ flex: 1 }}>
         {!completed ? (
@@ -50,7 +46,7 @@ Get Joke
         {error
           ? (
             <Typography variant="display1" gutterBottom color="accent">
-            An error has occurred:
+              An error has occurred:
               {' '}
               {error}
             </Typography>

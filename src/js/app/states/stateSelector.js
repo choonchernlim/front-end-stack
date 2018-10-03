@@ -1,6 +1,6 @@
 // @flow
 import { List, Record } from 'immutable';
-import type { ChuckNorrisState } from './makeChuckNorrisState';
+import type { ChuckNorrisState } from './initialChuckNorrisState';
 import type { TodoManagerState } from './makeTodoManagerState';
 import type { TodoState } from './makeTodoState';
 import type { LayoutState } from './makeLayoutState';
@@ -48,9 +48,9 @@ const stateSelector: StateSelector = {
   },
 
   chuckNorris: {
-    joke: (state: State): ?string => state.chuckNorris.get('joke'),
-    error: (state: State): ?string => state.chuckNorris.get('error'),
-    completed: (state: State): boolean => state.chuckNorris.get('completed'),
+    joke: (state: State): ?string => state.chuckNorris.joke,
+    error: (state: State): ?string => state.chuckNorris.error,
+    completed: (state: State): boolean => state.chuckNorris.completed,
   },
 
   todoManager: {

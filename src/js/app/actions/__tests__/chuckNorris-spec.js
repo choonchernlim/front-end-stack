@@ -11,8 +11,8 @@ describe('Chuck Norris', () => {
           type: chuckNorris.ACTION_TYPES.GET_JOKE,
           state: {
             completed: false,
-            joke: undefined,
-            error: undefined,
+            joke: null,
+            error: null,
           },
         });
       });
@@ -24,7 +24,7 @@ describe('Chuck Norris', () => {
           type: chuckNorris.ACTION_TYPES.GET_JOKE_FAILED,
           state: {
             completed: true,
-            joke: undefined,
+            joke: null,
             error: 'error',
           },
         });
@@ -38,7 +38,7 @@ describe('Chuck Norris', () => {
           state: {
             completed: true,
             joke: 'joke',
-            error: undefined,
+            error: null,
           },
         });
       });
