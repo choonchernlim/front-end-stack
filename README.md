@@ -140,7 +140,6 @@ These commands are cross-platform compatible.
 | webpack                                    | Webpack - Core                                                                                                                                                                             |
 | webpack-dev-server                         | Webpack - Node.js Express server                                                                                                                                                           |
 
-   
 ## Project Structure
 
 ```
