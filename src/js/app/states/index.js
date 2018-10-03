@@ -1,11 +1,11 @@
 // @flow
 export type { ChuckNorrisState } from './initialChuckNorrisState';
-export type { LayoutState } from './makeLayoutState';
+export type { LayoutState } from './initialLayoutState';
 export type { TodoManagerState } from './makeTodoManagerState';
 export type { TodoState } from './makeTodoState';
 
 export { default as initialChuckNorrisState } from './initialChuckNorrisState';
-export { default as makeLayoutState } from './makeLayoutState';
+export { default as initialLayoutState } from './initialLayoutState';
 export { default as makeTodoManagerState } from './makeTodoManagerState';
 export { default as makeTodoState } from './makeTodoState';
 

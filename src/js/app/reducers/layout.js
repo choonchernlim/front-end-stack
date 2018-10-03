@@ -1,23 +1,24 @@
 // @flow
+import produce from 'immer';
 import createReducer from './createReducer';
-import { type LayoutState, makeLayoutState } from '../states';
+import { initialLayoutState, type LayoutState } from '../states';
 import { layout, type MenuLeftOpenedAction } from '../actions';
 
 type MenuLeftOpenedFn = (state: LayoutState, action: MenuLeftOpenedAction) => LayoutState;
-type ToggleMenuFn = (state: LayoutState) => LayoutState ;
+type ToggleMenuFn = (state: LayoutState) => LayoutState;
 
-const menuLeftOpened: MenuLeftOpenedFn = (state, action) => (
-  state.merge({
-    shouldMenuLeftOpened: action.shouldMenuLeftOpened,
-    isMenuCurrentlyOpened: action.isMenuCurrentlyOpened,
-  })
-);
+const menuLeftOpened: MenuLeftOpenedFn = (state, action) => produce(state, (draft) => {
+  const { shouldMenuLeftOpened, isMenuCurrentlyOpened } = action;
 
-const toggleMenu: ToggleMenuFn = state => (
-  state.set('isMenuCurrentlyOpened', !state.get('isMenuCurrentlyOpened'))
-);
+  draft.shouldMenuLeftOpened = shouldMenuLeftOpened;
+  draft.isMenuCurrentlyOpened = isMenuCurrentlyOpened;
+});
 
-export default createReducer(makeLayoutState(), {
+const toggleMenu: ToggleMenuFn = state => produce(state, (draft) => {
+  draft.isMenuCurrentlyOpened = !draft.isMenuCurrentlyOpened;
+});
+
+export default createReducer(initialLayoutState, {
   [layout.ACTION_TYPES.MENU_LEFT_OPENED]: menuLeftOpened,
   [layout.ACTION_TYPES.TOGGLE_MENU]: toggleMenu,
 });
