@@ -10,6 +10,8 @@
   - Straight up JS when mutating properties.
   - No loss of performance.
   - ImmutableJS is somewhat defunct.
+- Introduced Prettier to format the code.
+  - Configured to play well with ESLint and Airbnb rules so that less time spent on fixing linter errors.
 
 ## 0.13.0 - 2018-08-02
 

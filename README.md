@@ -48,20 +48,20 @@ Starter kit for building single-page app using modern front-end stack.
 
 These commands are cross-platform compatible.
 
-| Command                                   | Description                                                                                                                           |
-| ----------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------- |
-| `yarn test`                               | Format code, static type check, lint src/test files and run entire tests                                                              |
-| `yarn test <./path>`                      | Format code, static type check, lint src/test files and run only tests within `<./path>`                                              |
-| `yarn test:watch`                         | Watch for changes in all test files and rerun `yarn test`                                                                             |
-| `yarn test:watch <./path>`                | Watch for changes in selected test files and rerun `yarn test <./path>`                                                               |
-| `yarn build`                              | Build production bundle (compressed cache busting asset files)                                                                        |
-| `yarn ci`                                 | Remove report dir, format code, static type check, lint src/test files, run tests, run code coverage and generate result files for CI |
-| `yarn reinstall`                          | Clear yarn cache, remove `node_module` and install modules listed in `package.json`                                                   |
-| `yarn start`                              | Start Node.js Express server with Hot Module Replacement                                                                              |
-| `yarn stats`                              | Create `stats.json` that be loaded to http://webpack.github.io/analyse/ to visualize build                                            |
-| `yarn flow`                               | Run Flow static type check                                                                                                            |
-| `yarn flow:restart`                       | Restart Flow server before running static type check                                                                                  |
-| `yarn prettier`                           | Format code                                                                                                                           |
+| Command                    | Description                                                                                                                           |
+| -------------------------- | ------------------------------------------------------------------------------------------------------------------------------------- |
+| `yarn test`                | Format code, static type check, lint src/test files and run entire tests                                                              |
+| `yarn test <./path>`       | Format code, static type check, lint src/test files and run only tests within `<./path>`                                              |
+| `yarn test:watch`          | Watch for changes in all test files and rerun `yarn test`                                                                             |
+| `yarn test:watch <./path>` | Watch for changes in selected test files and rerun `yarn test <./path>`                                                               |
+| `yarn build`               | Build production bundle (compressed cache busting asset files)                                                                        |
+| `yarn ci`                  | Remove report dir, format code, static type check, lint src/test files, run tests, run code coverage and generate result files for CI |
+| `yarn reinstall`           | Clear yarn cache, remove `node_module` and install modules listed in `package.json`                                                   |
+| `yarn start`               | Start Node.js Express server with Hot Module Replacement                                                                              |
+| `yarn stats`               | Create `stats.json` that be loaded to http://webpack.github.io/analyse/ to visualize build                                            |
+| `yarn flow`                | Run Flow static type check                                                                                                            |
+| `yarn flow:restart`        | Restart Flow server before running static type check                                                                                  |
+| `yarn prettier`            | Format code                                                                                                                           |
 
 ## Dependencies
 
