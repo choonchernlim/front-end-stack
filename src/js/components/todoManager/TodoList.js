@@ -1,11 +1,10 @@
 // @flow
 import * as React from 'react';
-import { List } from 'immutable';
-import type { TodoState } from '../../app/states/makeTodoState';
+import type { TodoState } from '../../app/states/initialTodoState';
 import Todo from './Todo';
 
 type Props = {
-  todos: List<TodoState>,
+  todos: Array<TodoState>,
   onToggleTodo: Function
 };
 
@@ -13,10 +12,10 @@ const TodoList = ({ todos, onToggleTodo }: Props): React.Element<*> => (
   <ul>
     {todos.map(todo => (
       <Todo
-        key={todo.get('id')}
-        text={todo.get('text')}
-        completed={todo.get('completed')}
-        onClick={() => onToggleTodo(todo.get('id'))}
+        key={todo.id}
+        text={todo.text}
+        completed={todo.completed}
+        onClick={() => onToggleTodo(todo.id)}
       />))
     }
   </ul>

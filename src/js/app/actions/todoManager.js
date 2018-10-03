@@ -7,21 +7,21 @@ const ACTION_TYPES = Object.freeze({
 
 type ActionType = $Values<typeof ACTION_TYPES>;
 
-export type AddTodoAction = {|
-  +type: ActionType,
+export type AddTodoAction = $ReadOnly<{|
+  type: ActionType,
   id: number,
   text: string,
-|};
+|}>;
 
-export type ToggleTodoAction = {|
-  +type: ActionType,
+export type ToggleTodoAction = $ReadOnly<{|
+  type: ActionType,
   id: number,
-|};
+|}>;
 
-export type SetVisibilityFilterAction = {|
-  +type: ActionType,
+export type SetVisibilityFilterAction = $ReadOnly<{|
+  type: ActionType,
   filter: string,
-|};
+|}>;
 
 type AddTodoFn = (text: string) => AddTodoAction;
 type SetVisibilityFilterFn = (filter: string) => SetVisibilityFilterAction;

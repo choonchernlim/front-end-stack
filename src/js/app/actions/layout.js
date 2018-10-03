@@ -6,15 +6,15 @@ const ACTION_TYPES = Object.freeze({
 
 type ActionType = $Values<typeof ACTION_TYPES>;
 
-export type MenuLeftOpenedAction = {|
-  +type: ActionType,
+export type MenuLeftOpenedAction = $ReadOnly<{|
+  type: ActionType,
   shouldMenuLeftOpened: boolean,
   isMenuCurrentlyOpened: boolean,
-|};
+|}>;
 
-export type ToggleMenuAction = {|
-  +type: ActionType,
-|};
+export type ToggleMenuAction = $ReadOnly<{|
+  type: ActionType,
+|}>;
 
 type MenuLeftOpenedFn = (open: boolean) => MenuLeftOpenedAction;
 type ToggleMenuFn = () => ToggleMenuAction;

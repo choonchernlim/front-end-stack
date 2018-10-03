@@ -1,8 +1,7 @@
 // @flow
-import { List } from 'immutable';
 import type { ChuckNorrisState } from './initialChuckNorrisState';
-import type { TodoManagerState } from './makeTodoManagerState';
-import type { TodoState } from './makeTodoState';
+import type { TodoManagerState } from './initialTodoManagerState';
+import type { TodoState } from './initialTodoState';
 import type { LayoutState } from './initialLayoutState';
 
 type State = {
@@ -42,8 +41,8 @@ const stateSelector: StateSelector = {
   },
 
   todoManager: {
-    visibilityFilter: (state: State): string => state.todoManager.get('visibilityFilter'),
-    todos: (state: State): List<TodoState> => state.todoManager.get('todos'),
+    visibilityFilter: (state: State): string => state.todoManager.visibilityFilter,
+    todos: (state: State): Array<TodoState> => state.todoManager.todos,
   },
 };
 

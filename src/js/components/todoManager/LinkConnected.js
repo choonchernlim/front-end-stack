@@ -6,7 +6,7 @@ import Link, { styles } from './Link';
 
 const mapStateToProps = (state, ownProps) => ({
   filter: ownProps.filter,
-  active: ownProps.filter === state.todoManager.get('visibilityFilter'),
+  active: ownProps.filter === state.todoManager.visibilityFilter,
 });
 
 const mapDispatchToProps = {
