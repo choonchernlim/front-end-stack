@@ -1,7 +1,7 @@
 // @flow
 import type { ChuckNorrisState, State, TodoState } from './types';
 
-type StateSelector = {
+type States = {
   layout: {
     shouldMenuLeftOpened: (state: State) => boolean,
     isMenuCurrentlyOpened: (state: State) => boolean,
@@ -15,7 +15,7 @@ type StateSelector = {
   },
 };
 
-const stateSelector: StateSelector = {
+const states: States = {
   layout: {
     shouldMenuLeftOpened: state => state.layout.shouldMenuLeftOpened,
     isMenuCurrentlyOpened: state => state.layout.isMenuCurrentlyOpened,
@@ -29,4 +29,4 @@ const stateSelector: StateSelector = {
   },
 };
 
-export default stateSelector;
+export default states;

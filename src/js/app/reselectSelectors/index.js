@@ -1,5 +1,5 @@
 // @flow
-export { default as makeGetVisibleTodos } from './makeGetVisibleTodos';
+export { default as makeVisibleTodosSelector } from './makeVisibleTodosSelector';
 
 // noinspection JSUnusedGlobalSymbols
 export default null;

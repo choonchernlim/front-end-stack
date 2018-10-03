@@ -9,14 +9,15 @@ import ListItemText from '@material-ui/core/ListItemText';
 import MoodIcon from '@material-ui/icons/Mood';
 import AssignmentIcon from '@material-ui/icons/Assignment';
 import HomeIcon from '@material-ui/icons/Home';
+import type { ToggleMenuFn } from '../../app/actions/types';
 
-type Props = {
+type Props = $ReadOnly<{|
   isMenuCurrentlyOpened: boolean,
   shouldMenuLeftOpened: boolean,
-  onToggleMenu: Function,
+  onToggleMenu: ToggleMenuFn,
   history: Object,
   classes: Object,
-};
+|}>;
 
 const MenuDrawer = ( // eslint-disable-line function-paren-newline
   {

@@ -3,13 +3,13 @@ import { connect } from 'react-redux';
 import withRouter from 'react-router-dom/withRouter';
 import withStyles from '@material-ui/core/styles/withStyles';
 import actions from '../../app/actions';
-import stateSelector from '../../app/states';
+import states from '../../app/states';
 import MenuDrawer from './MenuDrawer';
 import styles from './styles';
 
 const mapStateToProps = state => ({
-  shouldMenuLeftOpened: stateSelector.layout.shouldMenuLeftOpened(state),
-  isMenuCurrentlyOpened: stateSelector.layout.isMenuCurrentlyOpened(state),
+  shouldMenuLeftOpened: states.layout.shouldMenuLeftOpened(state),
+  isMenuCurrentlyOpened: states.layout.isMenuCurrentlyOpened(state),
 });
 
 const mapDispatchToProps = {

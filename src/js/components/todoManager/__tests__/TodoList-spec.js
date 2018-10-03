@@ -4,6 +4,7 @@ import React from 'react';
 import { expect } from 'chai';
 import { shallow } from 'enzyme';
 import TodoList from '../TodoList';
+import actions from '../../../app/actions';
 
 describe('Todo Manager', () => {
   describe('Components', () => {
@@ -22,7 +23,7 @@ describe('Todo Manager', () => {
           },
         ];
 
-        const wrapper = shallow(<TodoList todos={todos} onToggleTodo={f => f} />);
+        const wrapper = shallow(<TodoList todos={todos} onToggleTodo={actions.toggleTodo} />);
 
         expect(wrapper.length).to.equal(1);
 

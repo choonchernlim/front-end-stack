@@ -2,11 +2,12 @@
 import * as React from 'react';
 import Todo from './Todo';
 import type { TodoState } from '../../app/states/types';
+import type { ToggleTodoFn } from '../../app/actions/types';
 
-type Props = {
+type Props = $ReadOnly<{|
   todos: Array<TodoState>,
-  onToggleTodo: Function
-};
+  onToggleTodo: ToggleTodoFn
+|}>;
 
 const TodoList = ({ todos, onToggleTodo }: Props): React.Element<*> => (
   <ul>

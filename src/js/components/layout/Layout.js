@@ -11,15 +11,16 @@ import MenuIcon from '@material-ui/icons/Menu';
 import MenuDrawerConnected from './MenuDrawerConnected';
 import styles from './styles';
 import env from '../../app/utils/env';
+import type { MenuLeftOpenedFn, ToggleMenuFn } from '../../app/actions/types';
 
-type Props = {
+type Props = $ReadOnly<{|
   children: React.Element<*>,
   classes: Object,
-  onMenuLeftOpened: Function,
-  onToggleMenu: Function,
+  onMenuLeftOpened: MenuLeftOpenedFn,
+  onToggleMenu: ToggleMenuFn,
   shouldMenuLeftOpened: boolean,
   history: Object,
-};
+|}>;
 
 type State = {
   mql: Function,

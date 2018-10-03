@@ -3,10 +3,11 @@ import React from 'react';
 import Grid from '@material-ui/core/Grid';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
+import type { AddTodoFn } from '../../app/actions/types';
 
-type Props = {
-  onAddTodo: Function
-};
+type Props = $ReadOnly<{|
+  onAddTodo: AddTodoFn
+|}>;
 
 type State = {
   value: string,

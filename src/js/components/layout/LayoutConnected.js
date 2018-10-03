@@ -3,12 +3,12 @@ import { connect } from 'react-redux';
 import withRouter from 'react-router-dom/withRouter';
 import withStyles from '@material-ui/core/styles/withStyles';
 import actions from '../../app/actions';
-import stateSelector from '../../app/states';
+import states from '../../app/states';
 import Layout from './Layout';
 import styles from './styles';
 
 const mapStateToProps = state => ({
-  shouldMenuLeftOpened: stateSelector.layout.shouldMenuLeftOpened(state),
+  shouldMenuLeftOpened: states.layout.shouldMenuLeftOpened(state),
 });
 
 const mapDispatchToProps = {
