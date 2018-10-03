@@ -18,7 +18,7 @@
     "node": true,
     "mocha": true
   },
-  // overriding certain rules because it drives me nuts
+  // overriding certain rules
   "rules": {
     // Allow JSX on `.js`
     // See https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-filename-extension.md

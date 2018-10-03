@@ -13,7 +13,6 @@ type Props = $ReadOnly<{|
   onGetJoke: GetJokeFn,
 |}>;
 
-// eslint-disable-next-line object-curly-newline
 const ChuckNorris = ({ chuckNorris, onGetJoke }: Props) => (
   <div>
     <Typography variant="display2" gutterBottom>

@@ -48,20 +48,20 @@ Starter kit for building single-page app using modern front-end stack.
 
 These commands are cross-platform compatible.
 
-| Command                                   | Description                                                                                                              |
-| ----------------------------------------- | ------------------------------------------------------------------------------------------------------------------------ |
-| `yarn test`                               | Format code, static type check, lint src/test files and run entire tests                                                 |
-| `yarn test [./path/to/test/module]`       | Format code, static type check, lint src/test files and run only tests within `[./path/to/test/module]`                  |
-| `yarn test:watch`                         | Watch for changes in all test files and rerun `yarn test`                                                                |
-| `yarn test:watch [./path/to/test/module]` | Watch for changes in selected test files and rerun `yarn test [./path/to/test/module]`                                   |
-| `yarn build`                              | Build production bundle (compressed cache busting asset files)                                                           |
+| Command                                   | Description                                                                                                                           |
+| ----------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------- |
+| `yarn test`                               | Format code, static type check, lint src/test files and run entire tests                                                              |
+| `yarn test [./path/to/test/module]`       | Format code, static type check, lint src/test files and run only tests within `[./path/to/test/module]`                               |
+| `yarn test:watch`                         | Watch for changes in all test files and rerun `yarn test`                                                                             |
+| `yarn test:watch [./path/to/test/module]` | Watch for changes in selected test files and rerun `yarn test [./path/to/test/module]`                                                |
+| `yarn build`                              | Build production bundle (compressed cache busting asset files)                                                                        |
 | `yarn ci`                                 | Remove report dir, format code, static type check, lint src/test files, run tests, run code coverage and generate result files for CI |
-| `yarn reinstall`                          | Clear yarn cache, remove `node_module` and install modules listed in `package.json`                                      |
-| `yarn start`                              | Start Node.js Express server with Hot Module Replacement                                                                 |
-| `yarn stats`                              | Create `stats.json` that be loaded to http://webpack.github.io/analyse/ to visualize build                               |
-| `yarn flow`                               | Run Flow static type check                                                                                               |
-| `yarn flow:restart`                       | Restart Flow server before running static type check                                                                     |
-| `yarn prettier`                           | Format code                                                                                                              |
+| `yarn reinstall`                          | Clear yarn cache, remove `node_module` and install modules listed in `package.json`                                                   |
+| `yarn start`                              | Start Node.js Express server with Hot Module Replacement                                                                              |
+| `yarn stats`                              | Create `stats.json` that be loaded to http://webpack.github.io/analyse/ to visualize build                                            |
+| `yarn flow`                               | Run Flow static type check                                                                                                            |
+| `yarn flow:restart`                       | Restart Flow server before running static type check                                                                                  |
+| `yarn prettier`                           | Format code                                                                                                                           |
 
 ## Dependencies
 
@@ -112,10 +112,12 @@ These commands are cross-platform compatible.
 | enzyme-adapter-react-16                    | Test - Enzyme adapter that targets React 16                                                                                                                                                |
 | eslint                                     | ESLint - For enforcing coding style                                                                                                                                                        |
 | eslint-config-airbnb                       | ESLint - Using Airbnb's coding style                                                                                                                                                       |
+| eslint-config-prettier                     | Prettier - Turns off unnecessary ESLint rules or might conflict with Prettier                                                                                                              |
 | eslint-loader                              | Webpack - ESLint loader                                                                                                                                                                    |
 | eslint-plugin-flowtype                     | ESLint - Flow type linting                                                                                                                                                                 |
 | eslint-plugin-import                       | ESLint - Linting of ES2015+ (ES6+) import/export syntax                                                                                                                                    |
 | eslint-plugin-jsx-a11y                     | ESLint - Static AST checker for accessibility rules on JSX elements                                                                                                                        |
+| eslint-plugin-prettier                     | ESLint - Runs Prettier as an ESLint rule                                                                                                                                                   |
 | eslint-plugin-react                        | ESLint - React specific linting rules                                                                                                                                                      |
 | file-loader                                | Webpack - File loader                                                                                                                                                                      |
 | flow-bin                                   | Flow - Static type checker for JavaScript                                                                                                                                                  |
@@ -129,6 +131,7 @@ These commands are cross-platform compatible.
 | nodemon                                    | Test - Monitor test files and rerun tests. Needed due to cross-platform test runner because `mocha --watch` doesn't produce run results when executed from `require('child_process').exec` |
 | nyc                                        | Test - Istanbul CLI for code coverage                                                                                                                                                      |
 | postcss-loader                             | Webpack - Post CSS loader to run autoprefixer                                                                                                                                              |
+| prettier                                   | Prettier - Opinionated code formatter                                                                                                                                                      |
 | react-test-renderer                        | Test - Works in conjunction with Enzyme                                                                                                                                                    |
 | rimraf                                     | Util - `rm -rf` for both Unix and Windows world                                                                                                                                            |
 | sinon                                      | Test - Standalone test spies, stubs and mocks                                                                                                                                              |
@@ -137,6 +140,7 @@ These commands are cross-platform compatible.
 | webpack                                    | Webpack - Core                                                                                                                                                                             |
 | webpack-dev-server                         | Webpack - Node.js Express server                                                                                                                                                           |
 
+   
 ## Project Structure
 
 ```
@@ -156,9 +160,10 @@ These commands are cross-platform compatible.
 ├── .eslintignore               -> ESLint ignore list
 ├── .eslintrc                   -> ESLint configuration
 ├── .flowconfig                 -> Flow configuration
-├── .gitattributes              -> Custom Git config
+├── .gitattributes              -> Custom Git configuration
 ├── .gitignore                  -> Git ignore list
 ├── .nycrc                      -> Istanbul CLI configuration
+├── .prettierrc                 -> Prettier configuration
 ├── CHANGELOG.md                -> Change logs
 ├── LICENSE.md                  -> License, if needed
 ├── package.json                -> NPM scripts and dependencies
