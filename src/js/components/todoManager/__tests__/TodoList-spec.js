@@ -4,7 +4,6 @@ import React from 'react';
 import { expect } from 'chai';
 import { shallow } from 'enzyme';
 import TodoList from '../TodoList';
-import { initialTodoState } from '../../../app/states';
 
 describe('Todo Manager', () => {
   describe('Components', () => {
@@ -12,13 +11,11 @@ describe('Todo Manager', () => {
       it('Given todos, should render LI items', () => {
         const todos = [
           {
-            ...initialTodoState,
             id: 1,
             text: 'Item 1',
             completed: false,
           },
           {
-            ...initialTodoState,
             id: 2,
             text: 'Item 2',
             completed: true,

@@ -1,30 +1,32 @@
 // @flow
 import { describe, it } from 'mocha';
 import { expect } from 'chai';
-import chuckNorrisReducer from '../chuckNorris';
-import { initialChuckNorrisState } from '../../states';
-import { chuckNorris } from '../../actions';
+import chuckNorrisReducer, { initialState } from '../chuckNorris';
+import actions, { ACTIONS } from '../../actions';
 
 describe('Chuck Norris', () => {
   describe('Reducer', () => {
     describe('Default', () => {
       it('given unknown action, should return initial state', () => {
-        expect(chuckNorrisReducer(undefined, { type: 'UNKNOWN' }))
-          .to.equal(initialChuckNorrisState);
+        expect(chuckNorrisReducer(undefined, { type: ACTIONS.MENU_LEFT_OPENED }))
+          .to.equal(initialState);
       });
     });
 
     describe('GET_JOKE', () => {
       it('when getting joke, should set completed to false', () => {
-        const initialState = {
-          ...initialChuckNorrisState,
+        const currentState = {
+          ...initialState,
           joke: 'joke',
         };
 
-        const actualState = chuckNorrisReducer(initialState, chuckNorris.getJoke());
+        const actualState = chuckNorrisReducer(
+          currentState,
+          actions.getJoke(),
+        );
 
         const expectedState = {
-          ...initialChuckNorrisState,
+          ...initialState,
           completed: false,
         };
 
@@ -34,19 +36,19 @@ describe('Chuck Norris', () => {
 
     describe('GET_JOKE_SUCCEEDED', () => {
       it('when invoked, should return new joke', () => {
-        const initialState = {
-          ...initialChuckNorrisState,
+        const currentState = {
+          ...initialState,
           completed: false,
           joke: 'joke',
         };
 
         const actualState = chuckNorrisReducer(
-          initialState,
-          chuckNorris.getJokeSucceeded('new joke'),
+          currentState,
+          actions.getJokeSucceeded('new joke'),
         );
 
         const expectedState = {
-          ...initialChuckNorrisState,
+          ...initialState,
           joke: 'new joke',
         };
 
@@ -56,19 +58,19 @@ describe('Chuck Norris', () => {
 
     describe('GET_JOKE_FAILED', () => {
       it('when invoked, should return error', () => {
-        const initialState = {
-          ...initialChuckNorrisState,
+        const currentState = {
+          ...initialState,
           completed: false,
           joke: 'joke',
         };
 
         const actualState = chuckNorrisReducer(
-          initialState,
-          chuckNorris.getJokeFailed('error'),
+          currentState,
+          actions.getJokeFailed('error'),
         );
 
         const expectedState = {
-          ...initialChuckNorrisState,
+          ...initialState,
           error: 'error',
         };
 

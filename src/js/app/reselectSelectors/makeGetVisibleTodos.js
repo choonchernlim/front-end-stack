@@ -1,7 +1,7 @@
 // @flow
 import { createSelector } from 'reselect';
-import { stateSelector } from '../states/index';
-import type { TodoState } from '../states/initialTodoState';
+import stateSelector from '../states';
+import type { TodoState } from '../states/types';
 
 const makeGetVisibleTodos = () => createSelector(
   stateSelector.todoManager.visibilityFilter,

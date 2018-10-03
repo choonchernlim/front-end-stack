@@ -1,14 +1,13 @@
 // @flow
 import produce from 'immer';
 import createReducer from './createReducer';
-import { initialTodoManagerState, type TodoManagerState } from '../states';
-import {
-  type AddTodoAction,
-  type SetVisibilityFilterAction,
-  todoManager,
-  type ToggleTodoAction,
-} from '../actions';
+import { ACTIONS } from '../actions';
+import type { AddTodoAction, SetVisibilityFilterAction, ToggleTodoAction } from '../actions/types';
+import type { TodoManagerState } from '../states/types';
 
+/**
+ * Types.
+ */
 /* eslint-disable max-len */
 // @formatter:off
 type AddTodoFn = (state: TodoManagerState, action: AddTodoAction) => TodoManagerState;
@@ -17,6 +16,17 @@ type ToggleTodoFn = (state: TodoManagerState, action: ToggleTodoAction) => TodoM
 // @formatter:on
 /* eslint-enable max-len */
 
+/**
+ * Initial State.
+ */
+export const initialState: TodoManagerState = Object.freeze({
+  todos: [],
+  visibilityFilter: 'SHOW_ALL',
+});
+
+/**
+ * Action handlers.
+ */
 const addTodo: AddTodoFn = (state, action) => produce(state, (draft) => {
   draft.todos.push({
     id: action.id,
@@ -35,8 +45,11 @@ const setVisibilityFilter: SetVisibilityFilterFn = (state, action) => produce(st
   draft.visibilityFilter = action.filter;
 });
 
-export default createReducer(initialTodoManagerState, {
-  [todoManager.ACTION_TYPES.ADD_TODO]: addTodo,
-  [todoManager.ACTION_TYPES.TOGGLE_TODO]: toggleTodo,
-  [todoManager.ACTION_TYPES.SET_VISIBILITY_FILTER]: setVisibilityFilter,
+/**
+ * Reducer.
+ */
+export default createReducer(initialState, {
+  [ACTIONS.ADD_TODO]: addTodo,
+  [ACTIONS.TOGGLE_TODO]: toggleTodo,
+  [ACTIONS.SET_VISIBILITY_FILTER]: setVisibilityFilter,
 });

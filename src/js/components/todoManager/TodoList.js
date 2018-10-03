@@ -1,7 +1,7 @@
 // @flow
 import * as React from 'react';
-import type { TodoState } from '../../app/states/initialTodoState';
 import Todo from './Todo';
+import type { TodoState } from '../../app/states/types';
 
 type Props = {
   todos: Array<TodoState>,

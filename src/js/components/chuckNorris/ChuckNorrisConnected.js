@@ -1,7 +1,7 @@
 // @flow
 import { connect } from 'react-redux';
-import { chuckNorris } from '../../app/actions';
-import { stateSelector } from '../../app/states';
+import actions from '../../app/actions';
+import stateSelector from '../../app/states';
 import ChuckNorris from './ChuckNorris';
 
 const mapStateToProps = state => ({
@@ -11,7 +11,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = {
-  onGetJoke: chuckNorris.getJoke,
+  onGetJoke: actions.getJoke,
 };
 
 const ChuckNorrisConnected = connect(mapStateToProps, mapDispatchToProps)(ChuckNorris);

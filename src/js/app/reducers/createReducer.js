@@ -1,5 +1,5 @@
 // @flow
-import type { AnyAction } from '../actions';
+import type { AnyAction } from '../actions/types';
 
 type State = *;
 type HandleActionFn = (state: State, action: AnyAction) => State;

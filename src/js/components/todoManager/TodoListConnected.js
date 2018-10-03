@@ -1,6 +1,6 @@
 // @flow
 import { connect } from 'react-redux';
-import { todoManager } from '../../app/actions';
+import actions from '../../app/actions';
 import { makeGetVisibleTodos } from '../../app/reselectSelectors';
 import TodoList from './TodoList';
 
@@ -12,7 +12,7 @@ const makeMapStateToProps = () => {
 };
 
 const mapDispatchToProps = {
-  onToggleTodo: todoManager.toggleTodo,
+  onToggleTodo: actions.toggleTodo,
 };
 
 const TodoListConnected = connect(makeMapStateToProps, mapDispatchToProps)(TodoList);

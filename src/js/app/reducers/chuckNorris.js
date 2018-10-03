@@ -1,11 +1,27 @@
 // @flow
 import produce from 'immer';
 import createReducer from './createReducer';
-import { chuckNorris, type GetJokeAction } from '../actions';
-import { type ChuckNorrisState, initialChuckNorrisState } from '../states';
+import { ACTIONS } from '../actions';
+import type { GetJokeAction } from '../actions/types';
+import type { ChuckNorrisState } from '../states/types';
 
+/**
+ * Types.
+ */
 type HandleActionFn = (state: ChuckNorrisState, action: GetJokeAction) => ChuckNorrisState;
 
+/**
+ * Initial State.
+ */
+export const initialState: ChuckNorrisState = Object.freeze({
+  completed: true,
+  joke: null,
+  error: null,
+});
+
+/**
+ * Action handlers.
+ */
 const handleAction: HandleActionFn = (state, action) => produce(state, (draft) => {
   const { completed, joke, error } = action.state;
 
@@ -14,8 +30,11 @@ const handleAction: HandleActionFn = (state, action) => produce(state, (draft) =
   draft.error = error;
 });
 
-export default createReducer(initialChuckNorrisState, {
-  [chuckNorris.ACTION_TYPES.GET_JOKE]: handleAction,
-  [chuckNorris.ACTION_TYPES.GET_JOKE_SUCCEEDED]: handleAction,
-  [chuckNorris.ACTION_TYPES.GET_JOKE_FAILED]: handleAction,
+/**
+ * Reducer.
+ */
+export default createReducer(initialState, {
+  [ACTIONS.GET_JOKE]: handleAction,
+  [ACTIONS.GET_JOKE_SUCCEEDED]: handleAction,
+  [ACTIONS.GET_JOKE_FAILED]: handleAction,
 });
