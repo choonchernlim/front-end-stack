@@ -50,8 +50,7 @@ class AddTodo extends React.Component<Props, State> {
     if (value) {
       onAddTodo(value);
       this.setState({ value: '', error: false }, () => this.handleInputFocus());
-    }
-    else {
+    } else {
       this.setState({ error: true }, () => this.handleInputFocus());
     }
   };

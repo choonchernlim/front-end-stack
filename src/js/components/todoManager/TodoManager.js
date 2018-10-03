@@ -11,9 +11,7 @@ const TodoManager = (): React.Element<*> => (
       Todo Manager
     </Typography>
 
-    <Typography gutterBottom>
-      A simple todo app using Redux.
-    </Typography>
+    <Typography gutterBottom>A simple todo app using Redux.</Typography>
 
     <br />
     <br />

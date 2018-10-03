@@ -43,10 +43,7 @@ const webpackOptions = {
       },
       {
         test: /\.css$/,
-        use: [
-          MiniCssExtractPlugin.loader,
-          'css-loader',
-        ],
+        use: [MiniCssExtractPlugin.loader, 'css-loader'],
       },
       {
         test: /\.woff(2)?$/,
@@ -91,8 +88,8 @@ const webpackOptions = {
         default: false,
         commons: {
           test: /[\\/]node_modules[\\/]/,
-          name: "vendor",
-          chunks: "all",
+          name: 'vendor',
+          chunks: 'all',
         },
       },
     },

@@ -10,9 +10,8 @@ import env from './env';
  * @param contextRoot Context root
  * @return Context root without trailing slash
  */
-export const sanitizeContextRoot = (contextRoot: ?string = env.getContextRoot()): string => (
-  contextRoot ? contextRoot.replace(/\/$/, '') : ''
-);
+export const sanitizeContextRoot = (contextRoot: ?string = env.getContextRoot()): string =>
+  contextRoot ? contextRoot.replace(/\/$/, '') : '';
 
 /**
  * Returns URL with context root prefix.

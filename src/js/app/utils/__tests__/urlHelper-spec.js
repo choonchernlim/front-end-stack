@@ -1,7 +1,5 @@
 // @flow
-import {
-  describe, it, beforeEach, afterEach,
-} from 'mocha';
+import { describe, it, beforeEach, afterEach } from 'mocha';
 import { expect } from 'chai';
 import { url, sanitizeContextRoot } from '../urlHelper';
 

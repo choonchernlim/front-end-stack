@@ -16,7 +16,7 @@ const trailingSlashContextRoot = path.posix.join(contextRoot, '/');
 module.exports = Object.assign({}, baseConfig.webpackOptions, {
   devtool: 'eval',
   mode: 'development',
-  
+
   output: {
     path: distPath,
 

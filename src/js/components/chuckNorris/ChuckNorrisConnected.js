@@ -12,6 +12,9 @@ const mapDispatchToProps = {
   onGetJoke: actions.getJoke,
 };
 
-const ChuckNorrisConnected = connect(mapStateToProps, mapDispatchToProps)(ChuckNorris);
+const ChuckNorrisConnected = connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(ChuckNorris);
 
 export default ChuckNorrisConnected;

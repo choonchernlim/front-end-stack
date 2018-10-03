@@ -20,14 +20,16 @@ const testDirPath = args.length ? args[0] : process.env.npm_package_config_test_
 
 const srcDirPath = process.env.npm_package_config_src_dir_path;
 
-const flow = 'flow --color always';
+const prettier = 'yarn prettier';
+const flow = 'yarn flow';
 const eslint = `eslint ${srcDirPath} ${testDirPath} --fix --color`;
 const mocha = `mocha ${testDirPath} ${mochaOpts} --colors`;
 
 process.env.NODE_ENV = 'test';
 
-script.run(`${flow} && ${eslint} && ${mocha}`, [
-  'Flow   : Static type check',
-  'ESLint : Code linting with autofix enabled',
-  'Mocha  : Run tests',
+script.run(`${prettier} && ${flow} && ${eslint} && ${mocha}`, [
+  'Prettier : Format code',
+  'Flow     : Static type check',
+  'ESLint   : Code linting',
+  'Mocha    : Run tests',
 ]);

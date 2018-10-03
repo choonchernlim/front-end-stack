@@ -17,6 +17,9 @@ const mapDispatchToProps = {
   onToggleTodo: actions.toggleTodo,
 };
 
-const TodoListConnected = connect(makeMapStateToProps, mapDispatchToProps)(TodoList);
+const TodoListConnected = connect(
+  makeMapStateToProps,
+  mapDispatchToProps,
+)(TodoList);
 
 export default TodoListConnected;

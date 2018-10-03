@@ -18,24 +18,25 @@ describe('Chuck Norris', () => {
 
         getJokeEpic(action$, null, apis)
           .pipe(toArray())
-          .subscribe(actualActions => expect(actualActions).to.deep.equal([
-            actions.getJokeSucceeded('test'),
-          ]));
+          .subscribe(actualActions =>
+            expect(actualActions).to.deep.equal([actions.getJokeSucceeded('test')]),
+          );
       });
 
       it('given failed call, should return joke failed action', () => {
         const action$ = ActionsObservable.of(actions.getJoke());
         const apis = {
-          getJokeApi: () => throwError({
-            message: 'test',
-          }),
+          getJokeApi: () =>
+            throwError({
+              message: 'test',
+            }),
         };
 
         getJokeEpic(action$, null, apis)
           .pipe(toArray())
-          .subscribe(actualActions => expect(actualActions).to.deep.equal([
-            actions.getJokeFailed('test'),
-          ]));
+          .subscribe(actualActions =>
+            expect(actualActions).to.deep.equal([actions.getJokeFailed('test')]),
+          );
       });
     });
   });

@@ -8,8 +8,9 @@ describe('Chuck Norris', () => {
   describe('Reducer', () => {
     describe('Default', () => {
       it('given unknown action, should return initial state', () => {
-        expect(chuckNorrisReducer(undefined, { type: ACTIONS.MENU_LEFT_OPENED }))
-          .to.equal(initialState);
+        expect(chuckNorrisReducer(undefined, { type: ACTIONS.MENU_LEFT_OPENED })).to.equal(
+          initialState,
+        );
       });
     });
 
@@ -20,10 +21,7 @@ describe('Chuck Norris', () => {
           joke: 'joke',
         };
 
-        const actualState = chuckNorrisReducer(
-          currentState,
-          actions.getJoke(),
-        );
+        const actualState = chuckNorrisReducer(currentState, actions.getJoke());
 
         const expectedState = {
           ...initialState,
@@ -42,10 +40,7 @@ describe('Chuck Norris', () => {
           joke: 'joke',
         };
 
-        const actualState = chuckNorrisReducer(
-          currentState,
-          actions.getJokeSucceeded('new joke'),
-        );
+        const actualState = chuckNorrisReducer(currentState, actions.getJokeSucceeded('new joke'));
 
         const expectedState = {
           ...initialState,
@@ -64,10 +59,7 @@ describe('Chuck Norris', () => {
           joke: 'joke',
         };
 
-        const actualState = chuckNorrisReducer(
-          currentState,
-          actions.getJokeFailed('error'),
-        );
+        const actualState = chuckNorrisReducer(currentState, actions.getJokeFailed('error'));
 
         const expectedState = {
           ...initialState,

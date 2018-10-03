@@ -6,7 +6,7 @@ import type { ToggleTodoFn } from '../../app/actions/types';
 type Props = $ReadOnly<{|
   onClick: ToggleTodoFn,
   completed: boolean,
-  text: string
+  text: string,
 |}>;
 
 // noinspection HtmlUnknownAnchorTarget
