@@ -89,7 +89,7 @@
     "prettier": "1.14.3",
     "react-test-renderer": "16.5.2",
     "rimraf": "2.6.2",
-    "sinon": "6.3.4",
+    "sinon": "6.3.5",
     "uglifyjs-webpack-plugin": "2.0.1",
     "url-loader": "1.1.1",
     "webpack": "4.20.2",

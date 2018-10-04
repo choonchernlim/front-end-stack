@@ -13,6 +13,7 @@
 - Introduced Prettier to format the code.
   - Configured to play well with ESLint and Airbnb rules so that less time spent on fixing linter errors.
 - `yarn reinstall` - Don't clear global cache... just the app's `node_modules` before re-installing it.
+- Note: `react-router-redux` is deprecated now, but it's left in here until there is a better way to programmatically change routes from middleware instead of pushing `history` object into actions as recommended by https://reacttraining.com/react-router/web/guides/redux-integration
 
 ## 0.13.0 - 2018-08-02
 

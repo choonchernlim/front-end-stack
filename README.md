@@ -36,6 +36,7 @@ Starter kit for building single-page app using modern front-end stack.
     - Click "Relaunch Now".
 
 - To package for production, run `yarn build`.
+
   - This script will clean the distribution directory and create minified bundle files.
 
 - To package for production with a different context root than the one defined in `package.json`, run `CONTEXT_ROOT=/new-context-root yarn build`.
