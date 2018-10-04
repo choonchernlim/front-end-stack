@@ -15,7 +15,6 @@ export const styles = (theme: Object) => ({
   link: theme.link,
 });
 
-// eslint-disable-next-line object-curly-newline
 const Link = ({ active, filter, children, onSetVisibilityFilter, classes }: Props) => {
   if (active) {
     return <Button disabled>{children}</Button>;

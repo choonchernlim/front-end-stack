@@ -8,16 +8,12 @@ import type { TodoManagerState } from '../states/types';
 /**
  * Types.
  */
-/* eslint-disable max-len */
-// @formatter:off
 type AddTodoFn = (state: TodoManagerState, action: AddTodoAction) => TodoManagerState;
 type SetVisibilityFilterFn = (
   state: TodoManagerState,
   action: SetVisibilityFilterAction,
 ) => TodoManagerState;
 type ToggleTodoFn = (state: TodoManagerState, action: ToggleTodoAction) => TodoManagerState;
-// @formatter:on
-/* eslint-enable max-len */
 
 /**
  * Initial State.

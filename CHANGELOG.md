@@ -33,6 +33,7 @@
 ## 0.11.0 - 2018-03-18
 
 - Webpack 4
+
   - Replaced `extract-text-webpack-plugin` with `mini-css-extract-plugin`.
   - Removed `Happypack`.
   - Removed `style-loader`.
