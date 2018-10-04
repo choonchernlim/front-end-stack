@@ -14,14 +14,14 @@ Starter kit for building single-page app using modern front-end stack.
   - [React Developer Tools](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=en)
   - [Redux DevTools](https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd)
 
-- In IntelliJ (ex: IDEA, WebStorm):-
+- If you are using JetBrains products (ex: IntelliJ IDEA, WebStorm):-
 
-  - Use [intellij-config](https://github.com/choonchernlim/intellij-config) to configure JavaScript code formatter.
+  - Install and configure [File Watcher](https://prettier.io/docs/en/webstorm.html#running-prettier-on-save-using-file-watcher) to format code on save using Prettier.
   - Enable "ESLint" in your IDE, which will pick up `.eslintrc` from the project and enforce it.
 
 - Clone or download/unzip this project template.
 
-- Run `yarn install` to install dependencies.
+- Run `yarn` to install dependencies.
 
 - To start app development, run `yarn start`.
 
@@ -36,7 +36,6 @@ Starter kit for building single-page app using modern front-end stack.
     - Click "Relaunch Now".
 
 - To package for production, run `yarn build`.
-
   - This script will clean the distribution directory and create minified bundle files.
 
 - To package for production with a different context root than the one defined in `package.json`, run `CONTEXT_ROOT=/new-context-root yarn build`.
