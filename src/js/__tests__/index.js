@@ -4,7 +4,7 @@
  *
  * IMPORTANT: Don't pollute `global.*` to prevent any side effects when running tests!
  */
-import 'babel-polyfill';
+import '@babel/polyfill';
 import { configure } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 

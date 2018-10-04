@@ -5,19 +5,20 @@ import Button from '@material-ui/core/Button';
 import { shallow } from 'enzyme';
 import { expect } from 'chai';
 import Link from '../Link';
+import actions from '../../../app/actions';
 
 describe('Todo Manager', () => {
   describe('Components', () => {
     describe('Link', () => {
       it('given selected link, should be not a clickable button', () => {
-        const wrapper = shallow( // eslint-disable-line function-paren-newline
+        const wrapper = shallow(
           <Link // eslint-disable-line jsx-a11y/anchor-is-valid
             active
             filter="Show"
-            onSetVisibilityFilter={f => f}
+            onSetVisibilityFilter={actions.setVisibilityFilter}
             classes={{ link: 'link' }}
           >
-Hello
+            Hello
           </Link>,
         );
 
@@ -29,14 +30,14 @@ Hello
       });
 
       it('given unselected link, should be clickable button', () => {
-        const wrapper = shallow( // eslint-disable-line function-paren-newline
+        const wrapper = shallow(
           <Link // eslint-disable-line jsx-a11y/anchor-is-valid
             active={false}
             filter="Show"
-            onSetVisibilityFilter={f => f}
+            onSetVisibilityFilter={actions.setVisibilityFilter}
             classes={{ link: 'link' }}
           >
-Hello
+            Hello
           </Link>,
         );
 

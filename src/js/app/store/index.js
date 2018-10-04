@@ -3,9 +3,7 @@
  * Function to configure store and executes sagas.
  */
 import type { GenericStoreEnchancer } from 'redux';
-import {
-  applyMiddleware, compose, createStore, StoreCreator,
-} from 'redux';
+import { applyMiddleware, compose, createStore, StoreCreator } from 'redux';
 import routerMiddleware from 'react-router-redux/middleware';
 import { createEpicMiddleware } from 'redux-observable';
 import reduxDevToolsExtension from './reduxDevtoolsExtension';
@@ -20,13 +18,13 @@ const configureStore = (history: *): StoreCreator => {
   // See https://github.com/reactjs/react-router-redux#pushlocation-replacelocation-gonumber-goback-goforward
   const routerHistoryMiddleware = routerMiddleware(history);
 
-  let enhancer: GenericStoreEnchancer = applyMiddleware(
-    epicMiddleware,
-    routerHistoryMiddleware,
-  );
+  let enhancer: GenericStoreEnchancer = applyMiddleware(epicMiddleware, routerHistoryMiddleware);
 
   if (!env.isProduction()) {
-    enhancer = compose(enhancer, reduxDevToolsExtension());
+    enhancer = compose(
+      enhancer,
+      reduxDevToolsExtension(),
+    );
   }
 
   const store = createStore(reducers, enhancer);

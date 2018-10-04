@@ -36,5 +36,5 @@ const testBootstrap = path.join(srcDirPath, 'js', '__tests__', 'index.js');
 
 module.exports = {
   run,
-  mochaOpts: `--recursive --require babel-register --require ${testBootstrap}`,
+  mochaOpts: `--recursive --require @babel/register --require ${testBootstrap}`,
 };

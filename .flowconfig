@@ -1,15 +1,14 @@
 [ignore]
-<PROJECT_ROOT>/node_modules/webpack-cli/.*
-<PROJECT_ROOT>/node_modules/config-chain/.*
+# Example to ignore problematic modules that cause Flow errors
+# <PROJECT_ROOT>/node_modules/problematic-module/.*
 
 [options]
 module.file_ext=.js
 module.file_ext=.jsx
 module.file_ext=.json
 
-# To fix "Required module not found" error after ignoring dependencies above due to flow validation error
-module.name_mapper='^webpack-cli$' -> '<PROJECT_ROOT>/src/flow/general-stub.js.flow'
-module.name_mapper='^config-chain$' -> '<PROJECT_ROOT>/src/flow/general-stub.js.flow'
+# Example to fix "Required module not found" error after ignoring dependencies above due to flow validation error
+# module.name_mapper='^problematic-module$' -> '<PROJECT_ROOT>/src/flow/general-stub.js.flow'
 
 esproposal.class_static_fields=enable
 esproposal.class_instance_fields=enable

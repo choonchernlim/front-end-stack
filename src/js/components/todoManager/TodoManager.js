@@ -8,12 +8,10 @@ import TodoListConnected from './TodoListConnected';
 const TodoManager = (): React.Element<*> => (
   <div>
     <Typography variant="display2" gutterBottom>
-Todo Manager
+      Todo Manager
     </Typography>
 
-    <Typography gutterBottom>
-A simple todo app using Redux.
-    </Typography>
+    <Typography gutterBottom>A simple todo app using Redux.</Typography>
 
     <br />
     <br />
