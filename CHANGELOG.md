@@ -1,6 +1,6 @@
 # Change Log
 
-## 0.14.0 - 2018-XX-XX
+## 0.14.0 - 2018-10-04
 
 - Babel - Upgrade to v7.
 - Material-UI - Upgrade to v3.
