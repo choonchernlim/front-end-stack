@@ -17,7 +17,7 @@
     "test:watch": "nodemon --exec 'yarn test'",
     "build": "webpack",
     "ci": "node ./scripts/ci",
-    "reinstall": "yarn cache clean && rimraf node_modules/ && yarn --network-timeout 1000000",
+    "reinstall": "rimraf node_modules/ && yarn --network-timeout 1000000",
     "start": "webpack-dev-server --config webpack.dev.config.js",
     "stats": "webpack --profile --json > stats.json",
     "flow": "flow --color always",

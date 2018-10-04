@@ -12,6 +12,7 @@
   - ImmutableJS is somewhat defunct.
 - Introduced Prettier to format the code.
   - Configured to play well with ESLint and Airbnb rules so that less time spent on fixing linter errors.
+- `yarn reinstall` - Don't clear global cache... just the app's `node_modules` before re-installing it.
 
 ## 0.13.0 - 2018-08-02
 
@@ -32,7 +33,6 @@
 ## 0.11.0 - 2018-03-18
 
 - Webpack 4
-
   - Replaced `extract-text-webpack-plugin` with `mini-css-extract-plugin`.
   - Removed `Happypack`.
   - Removed `style-loader`.

@@ -56,7 +56,7 @@ These commands are cross-platform compatible.
 | `yarn test:watch <./path>` | Watch for changes in selected test files and rerun `yarn test <./path>`                                                               |
 | `yarn build`               | Build production bundle (compressed cache busting asset files)                                                                        |
 | `yarn ci`                  | Remove report dir, format code, static type check, lint src/test files, run tests, run code coverage and generate result files for CI |
-| `yarn reinstall`           | Clear yarn cache, remove `node_module` and install modules listed in `package.json`                                                   |
+| `yarn reinstall`           | Remove `node_module` and install modules listed in `package.json`                                                                     |
 | `yarn start`               | Start Node.js Express server with Hot Module Replacement                                                                              |
 | `yarn stats`               | Create `stats.json` that be loaded to http://webpack.github.io/analyse/ to visualize build                                            |
 | `yarn flow`                | Run Flow static type check                                                                                                            |
