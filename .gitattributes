@@ -17,6 +17,7 @@
 .gitattributes  text
 .gitignore      text
 .nycrc          text
+.prettierignore text
 .prettierrc     text
 yarn.lock       text
 
