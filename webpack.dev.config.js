@@ -45,6 +45,9 @@ module.exports = Object.assign({}, baseConfig.webpackOptions, {
     // use HTTPS to ensure client side can read server side generated cookie containing CSRF token
     https: true,
 
+    // to ensure the app can be view from other devices
+    host: '0.0.0.0',
+
     hot: true,
 
     // automatically open the browser link
