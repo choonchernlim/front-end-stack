@@ -2,7 +2,6 @@ const baseConfig = require('./webpack.base.config');
 const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const CleanPlugin = require('clean-webpack-plugin');
 const CompressionPlugin = require('compression-webpack-plugin');
 const packageJson = require('./package.json');
@@ -36,14 +35,6 @@ module.exports = Object.assign({}, baseConfig.webpackOptions, {
     new CleanPlugin(['css', 'font', 'img', 'js'], {
       root: distPath,
       verbose: false,
-    }),
-
-    // Speed up JS minification by replacing `webpack.optimize.UglifyJsPlugin` with a plugin
-    // that handles multi-workers.
-    new UglifyJsPlugin({
-      parallel: true,
-      cache: true,
-      extractComments: true,
     }),
 
     // To prevent the following warnings in browser console:-

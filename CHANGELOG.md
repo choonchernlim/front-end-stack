@@ -4,6 +4,7 @@
 
 - Replaced `react-router-redux` with `connected-react-router` because the earlier won't work with Redux v6.
 - Run Prettier on Git pre commit.
+- Removed `uglifyjs-webpack-plugin` to use Webpack's built-in `terser-webpack-plugin`.
 
 ## 0.14.0 - 2018-10-04
 
