@@ -1,5 +1,3 @@
-// @flow
-
 const baseConfig = require('./webpack.base.config');
 const path = require('path');
 const webpack = require('webpack');
@@ -47,6 +45,9 @@ module.exports = Object.assign({}, baseConfig.webpackOptions, {
 
     // to ensure the app can be view from other devices
     host: '0.0.0.0',
+
+    // to prevent "Invalid host header" when being viewed from other devices
+    disableHostCheck: true,
 
     hot: true,
 

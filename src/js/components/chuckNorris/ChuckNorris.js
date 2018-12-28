@@ -15,7 +15,7 @@ type Props = $ReadOnly<{|
 
 const ChuckNorris = ({ chuckNorris, onGetJoke }: Props) => (
   <div>
-    <Typography variant="display2" gutterBottom>
+    <Typography variant="h3" gutterBottom>
       Chuck Norris
     </Typography>
 
@@ -28,7 +28,7 @@ const ChuckNorris = ({ chuckNorris, onGetJoke }: Props) => (
         <br />
         <br />
 
-        <Button variant="raised" color="primary" onClick={onGetJoke}>
+        <Button variant="contained" color="primary" onClick={onGetJoke}>
           Get Joke
         </Button>
       </Grid>
@@ -40,12 +40,12 @@ const ChuckNorris = ({ chuckNorris, onGetJoke }: Props) => (
           </div>
         ) : null}
         {chuckNorris.joke ? (
-          <Typography variant="display1" gutterBottom>
+          <Typography variant="h4" gutterBottom>
             {chuckNorris.joke}
           </Typography>
         ) : null}
         {chuckNorris.error ? (
-          <Typography variant="display1" gutterBottom color="accent">
+          <Typography variant="h4" gutterBottom color="accent">
             An error has occurred: {chuckNorris.error}
           </Typography>
         ) : null}
