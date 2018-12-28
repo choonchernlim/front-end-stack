@@ -1,5 +1,3 @@
-// @flow
-
 const baseConfig = require('./webpack.base.config');
 const path = require('path');
 const webpack = require('webpack');

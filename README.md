@@ -65,26 +65,26 @@ These commands are cross-platform compatible.
 
 ## Dependencies
 
-| Dependency         | Description                                                  |
-| ------------------ | ------------------------------------------------------------ |
-| @material-ui/core  | UI - Google's material design UI components built with React |
-| @material-ui/icons | UI - Google Material icons                                   |
-| classnames         | UI - Conditionally joining classNames together               |
-| date-fns           | Parse, validate, manipulate and display dates                |
-| history            | Managing browser history                                     |
-| immer              | Handling immutable objects                                   |
-| prop-types         | React - Runtime type checking for React props                |
-| react              | React - Core                                                 |
-| react-dom          | React - DOM                                                  |
-| react-redux        | React - Redux integration                                    |
-| react-router-dom   | React - Router                                               |
-| react-router-redux | React - Router with Redux integration                        |
-| recompose          | React - Useful utility function components and HOCs.         |
-| redux              | Redux - Core                                                 |
-| redux-observable   | Redux - Side Effects middleware using RxJS' Observables      |
-| reselect           | Memoized selector for React components                       |
-| rxjs               | Handling async actions                                       |
-| typeface-roboto    | UI - Roboto font, adhering to Google Material Design spec    |
+| Dependency             | Description                                                  |
+| ---------------------- | ------------------------------------------------------------ |
+| @material-ui/core      | UI - Google's material design UI components built with React |
+| @material-ui/icons     | UI - Google Material icons                                   |
+| classnames             | UI - Conditionally joining classNames together               |
+| connected-react-router | React - Router with Redux integration                        |
+| date-fns               | Parse, validate, manipulate and display dates                |
+| history                | Managing browser history                                     |
+| immer                  | Handling immutable objects                                   |
+| prop-types             | React - Runtime type checking for React props                |
+| react                  | React - Core                                                 |
+| react-dom              | React - DOM                                                  |
+| react-redux            | React - Redux integration                                    |
+| react-router-dom       | React - Router                                               |
+| recompose              | React - Useful utility function components and HOCs.         |
+| redux                  | Redux - Core                                                 |
+| redux-observable       | Redux - Side Effects middleware using RxJS' Observables      |
+| reselect               | Memoized selector for React components                       |
+| rxjs                   | Handling async actions                                       |
+| typeface-roboto        | UI - Roboto font, adhering to Google Material Design spec    |
 
 ## Dev Dependencies
 
@@ -122,8 +122,10 @@ These commands are cross-platform compatible.
 | file-loader                                | Webpack - File loader                                                                                                                                                                      |
 | flow-bin                                   | Flow - Static type checker for JavaScript                                                                                                                                                  |
 | html-webpack-plugin                        | Webpack - Generates `index.html` using hash filenames for cache busting                                                                                                                    |
+| husky                                      | Git - Provides Git hooks to run Prettier                                                                                                                                                   |
 | image-webpack-loader                       | Webpack - Image loader and handling compression                                                                                                                                            |
 | jsdom                                      | Test - A JavaScript implementation of the WHATWG DOM and HTML standards                                                                                                                    |
+| lint-staged                                | Git - Run Prettier on staged files                                                                                                                                                         |
 | mini-css-extract-plugin                    | Webpack - Extract CSS into separate files                                                                                                                                                  |
 | mocha                                      | Test - JS test framework                                                                                                                                                                   |
 | mocha-junit-reporter                       | Test - Creating JUnit result file for Jenkins                                                                                                                                              |

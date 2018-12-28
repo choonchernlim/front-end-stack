@@ -1,5 +1,10 @@
 # Change Log
 
+## 0.15.0 - 2018-10-04
+
+- Replaced `react-router-redux` with `connected-react-router` because the earlier won't work with Redux v6.
+- Run Prettier on Git pre commit.
+
 ## 0.14.0 - 2018-10-04
 
 - Babel - Upgrade to v7.

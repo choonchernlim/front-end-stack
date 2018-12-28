@@ -7,7 +7,7 @@ import TodoListConnected from './TodoListConnected';
 
 const TodoManager = (): React.Element<*> => (
   <div>
-    <Typography variant="display2" gutterBottom>
+    <Typography variant="h3" gutterBottom>
       Todo Manager
     </Typography>
 

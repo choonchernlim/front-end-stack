@@ -26,12 +26,14 @@ const muiTheme = (() => {
       primary: teal,
     },
     typography: {
-      display3: defaultDisplay,
-      display2: defaultDisplay,
-      display1: defaultDisplay,
-      body2: defaultBody,
+      useNextVariants: true,
+      h1: defaultDisplay,
+      h2: defaultDisplay,
+      h3: defaultDisplay,
+      h4: defaultDisplay,
       body1: defaultBody,
-      subheading: {
+      body2: defaultBody,
+      subtitle1: {
         color: grey[700],
       },
     },

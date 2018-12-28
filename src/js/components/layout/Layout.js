@@ -70,7 +70,7 @@ class Layout extends React.Component<Props, State> {
                 </IconButton>
 
                 <Typography
-                  variant="title"
+                  variant="h6"
                   color="inherit"
                   className={classes.title}
                   onClick={() => history.push('/')}

@@ -78,7 +78,7 @@ class AddTodo extends React.Component<Props, State> {
           />
         </Grid>
         <Grid item md={8} sm={12}>
-          <Button variant="raised" color="primary" onClick={this.handleButtonClick}>
+          <Button variant="contained" color="primary" onClick={this.handleButtonClick}>
             Add Todo
           </Button>
         </Grid>

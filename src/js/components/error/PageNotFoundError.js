@@ -3,7 +3,7 @@ import React from 'react';
 import Typography from '@material-ui/core/Typography';
 
 const PageNotFoundError = () => (
-  <Typography variant="display2" gutterBottom>
+  <Typography variant="h3" gutterBottom>
     The page you are looking for does not exist.
   </Typography>
 );

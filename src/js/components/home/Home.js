@@ -31,20 +31,21 @@ const styles = (theme: Object) => ({
 
 const Home = ({ classes }: Props): React.Element<*> => (
   <div>
-    <Typography variant="display2">Welcome!</Typography>
+    <Typography variant="h3">Welcome!</Typography>
 
     <Typography variant="body1" paragraph>
       You have successfully created a single-page app!
     </Typography>
 
-    <Typography variant="display1">Look and Feel</Typography>
+    <Typography variant="h4">Look and Feel</Typography>
 
     <Paper className={classes.paper}>
-      <Typography variant="display3">Display 3</Typography>
-      <Typography variant="display2">Display 2</Typography>
-      <Typography variant="display1">Display 1</Typography>
-      <Typography variant="body2">Body 2</Typography>
-      <Typography>Body 1</Typography>
+      <Typography variant="h1">h1</Typography>
+      <Typography variant="h2">h2</Typography>
+      <Typography variant="h3">h3</Typography>
+      <Typography variant="h4">h4</Typography>
+      <Typography variant="body1">Body 1</Typography>
+      <Typography>Body 2</Typography>
 
       <br />
       <br />
@@ -56,16 +57,16 @@ const Home = ({ classes }: Props): React.Element<*> => (
       <br />
       <br />
 
-      <Button className={classes.button} variant="raised" color="primary">
+      <Button className={classes.button} variant="contained" color="primary">
         Primary Button
       </Button>
-      <Button className={classes.button} variant="raised" color="secondary">
+      <Button className={classes.button} variant="contained" color="secondary">
         Secondary Button
       </Button>
-      <Button className={classes.button} variant="raised">
+      <Button className={classes.button} variant="contained">
         Default Button
       </Button>
-      <Button className={classes.button} variant="raised" disabled>
+      <Button className={classes.button} variant="contained" disabled>
         Disabled Button
       </Button>
 
