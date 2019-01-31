@@ -46,6 +46,9 @@ module.exports = Object.assign({}, baseConfig.webpackOptions, {
     // to ensure the app can be view from other devices
     host: '0.0.0.0',
 
+    // to prevent "Invalid host header" when being viewed from other devices
+    disableHostCheck: true,
+
     hot: true,
 
     // automatically open the browser link
