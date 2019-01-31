@@ -16,6 +16,8 @@
 .flowconfig     text
 .gitattributes  text
 .gitignore      text
+.huskyrc        text
+.lintstagedrc   text
 .nycrc          text
 .prettierignore text
 .prettierrc     text
