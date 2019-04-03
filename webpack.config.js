@@ -2,7 +2,7 @@ const baseConfig = require('./webpack.base.config');
 const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const CleanPlugin = require('clean-webpack-plugin');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 const CompressionPlugin = require('compression-webpack-plugin');
 const packageJson = require('./package.json');
 const process = require('process');
@@ -30,12 +30,7 @@ module.exports = Object.assign({}, baseConfig.webpackOptions, {
   },
 
   plugins: baseConfig.webpackOptions.plugins.concat([
-    // Instead of cleaning whole dist dir between builds, clean only dirs that may contain
-    // hashed filenames
-    new CleanPlugin(['css', 'font', 'img', 'js'], {
-      root: distPath,
-      verbose: false,
-    }),
+    new CleanWebpackPlugin(),
 
     // To prevent the following warnings in browser console:-
     // "It looks like you're using a minified copy of the development build of React.
