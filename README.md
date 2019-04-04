@@ -139,6 +139,7 @@ These commands are cross-platform compatible.
 | sinon                                      | Test - Standalone test spies, stubs and mocks                                                                                                                                              |
 | url-loader                                 | Webpack - URL loader                                                                                                                                                                       |
 | webpack                                    | Webpack - Core                                                                                                                                                                             |
+| webpack-cli                                | Webpack - CLI                                                                                                                                                                              |
 | webpack-dev-server                         | Webpack - Node.js Express server                                                                                                                                                           |
 
 ## Project Structure
@@ -162,6 +163,8 @@ These commands are cross-platform compatible.
 ├── .flowconfig                 -> Flow configuration
 ├── .gitattributes              -> Custom Git configuration
 ├── .gitignore                  -> Git ignore list
+├── .huskyrc                    -> Husky configuration
+├── .lintstagedrc               -> Lint staged configuration
 ├── .nycrc                      -> Istanbul CLI configuration
 ├── .prettierignore             -> Prettier ignore list
 ├── .prettierrc                 -> Prettier configuration

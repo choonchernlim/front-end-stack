@@ -1,5 +1,10 @@
 # Change Log
 
+## 0.16.0 - 2019-04-03
+
+- Externalized husky config from `package.json` into `.huskyrc` and `.lintstagedrc`.
+- Dependency update.
+
 ## 0.15.0 - 2018-12-28
 
 - Replaced `react-router-redux` with `connected-react-router` because the earlier won't work with Redux v6.
