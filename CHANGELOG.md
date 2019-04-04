@@ -1,8 +1,9 @@
 # Change Log
 
-## X.X.X - 2019-XX-XX
+## 0.16.0 - 2019-04-03
 
 - Externalized husky config from `package.json` into `.huskyrc` and `.lintstagedrc`.
+- Dependency update.
 
 ## 0.15.0 - 2018-12-28
 
