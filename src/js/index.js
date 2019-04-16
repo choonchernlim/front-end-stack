@@ -4,7 +4,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { StoreCreator } from 'redux';
 import { Provider } from 'react-redux';
-import createBrowserHistory from 'history/createBrowserHistory';
+import { createBrowserHistory } from 'history';
 import { ConnectedRouter } from 'connected-react-router';
 import configureStore from './app/store/index';
 import App from './components/app/App';
