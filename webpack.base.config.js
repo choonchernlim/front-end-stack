@@ -79,20 +79,6 @@ const webpackOptions = {
     ],
   },
 
-  // Split vendors from app
-  optimization: {
-    splitChunks: {
-      cacheGroups: {
-        default: false,
-        commons: {
-          test: /[\\/]node_modules[\\/]/,
-          name: 'vendor',
-          chunks: 'all',
-        },
-      },
-    },
-  },
-
   plugins: [
     new webpack.LoaderOptionsPlugin({
       minimize: true,
@@ -108,7 +94,9 @@ const webpackOptions = {
       },
     }),
 
-    new MiniCssExtractPlugin(),
+    new MiniCssExtractPlugin({
+      filename: 'css/[name].[hash].css',
+    }),
   ],
 
   // To suppress this warning when creating the vendor bundle:-

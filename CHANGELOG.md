@@ -1,5 +1,10 @@
 # Change Log
 
+## 0.17.0 - 2019-XX-XX
+
+- Webpack - Removed `optimization` block because it is redundant.
+- Webpack - Configured `MiniCssExtractPlugin` to create CSS files under `css/` for consistency.
+
 ## 0.16.0 - 2019-04-03
 
 - Externalized husky config from `package.json` into `.huskyrc` and `.lintstagedrc`.
