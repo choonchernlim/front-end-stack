@@ -27,11 +27,12 @@ type State = {|
 |};
 
 class Layout extends React.Component<Props, State> {
-  state = {
-    mql: window.matchMedia(styles.muiTheme.breakpoints.up('md').replace('@media ', '')),
-  };
-
-  props: Props;
+  constructor(props: Props) {
+    super(props);
+    this.state = {
+      mql: window.matchMedia(styles.muiTheme.breakpoints.up('md').replace('@media ', '')),
+    };
+  }
 
   componentWillMount() {
     const { mql } = this.state;

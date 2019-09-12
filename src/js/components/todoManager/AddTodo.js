@@ -15,14 +15,15 @@ type State = {|
 |};
 
 class AddTodo extends React.Component<Props, State> {
-  state = {
-    value: '',
-    error: false,
-  };
-
-  props: Props;
-
   todoTextField: Function;
+
+  constructor(props: Props) {
+    super(props);
+    this.state = {
+      value: '',
+      error: false,
+    };
+  }
 
   // on render, set focus on text field
   componentDidMount(): void {
