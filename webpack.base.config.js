@@ -1,7 +1,5 @@
 const path = require('path');
-const webpack = require('webpack');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const autoprefixer = require('autoprefixer');
 const packageJson = require('./package.json');
 
 const srcPath = path.join(__dirname, packageJson.config.src_dir_path);
@@ -41,7 +39,11 @@ const webpackOptions = {
       },
       {
         test: /\.css$/,
-        use: [MiniCssExtractPlugin.loader, 'css-loader'],
+        use: [
+          MiniCssExtractPlugin.loader,
+          { loader: 'css-loader', options: { importLoaders: 1 } },
+          'postcss-loader',
+        ],
       },
       {
         test: /\.woff(2)?$/,
@@ -80,20 +82,6 @@ const webpackOptions = {
   },
 
   plugins: [
-    new webpack.LoaderOptionsPlugin({
-      minimize: true,
-      debug: false,
-      options: {
-        // create vendor prefixes to maximize compatibility. Recommended by Google:
-        // https://developers.google.com/web/tools/setup/setup-buildtools#dont-trip-up-with-vendor-prefixes
-        postcss: [
-          autoprefixer({
-            browsers: ['last 2 versions'],
-          }),
-        ],
-      },
-    }),
-
     new MiniCssExtractPlugin({
       filename: 'css/[name].[hash].css',
     }),

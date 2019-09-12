@@ -31,6 +31,8 @@ class Layout extends React.Component<Props, State> {
     mql: window.matchMedia(styles.muiTheme.breakpoints.up('md').replace('@media ', '')),
   };
 
+  props: Props;
+
   componentWillMount() {
     const { mql } = this.state;
     mql.addListener(this.handleMediaQueryChanged);
@@ -49,8 +51,6 @@ class Layout extends React.Component<Props, State> {
     const openMenu = mql.matches;
     onMenuLeftOpened(openMenu);
   };
-
-  props: Props;
 
   render() {
     const { shouldMenuLeftOpened, onToggleMenu, classes, children, history } = this.props;

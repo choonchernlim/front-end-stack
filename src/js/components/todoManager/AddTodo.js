@@ -20,6 +20,10 @@ class AddTodo extends React.Component<Props, State> {
     error: false,
   };
 
+  props: Props;
+
+  todoTextField: Function;
+
   // on render, set focus on text field
   componentDidMount(): void {
     this.handleInputFocus();
@@ -54,10 +58,6 @@ class AddTodo extends React.Component<Props, State> {
       this.setState({ error: true }, () => this.handleInputFocus());
     }
   };
-
-  props: Props;
-
-  todoTextField: Function;
 
   render() {
     const { value, error } = this.state;

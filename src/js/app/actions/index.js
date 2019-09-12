@@ -10,19 +10,7 @@ import type {
   ToggleMenuFn,
   ToggleTodoFn,
 } from './types';
-
-export const ACTIONS = Object.freeze({
-  GET_JOKE: 'CHUCK-NORRIS/GET-JOKE',
-  GET_JOKE_FAILED: 'CHUCK-NORRIS/GET-JOKE-FAILED',
-  GET_JOKE_SUCCEEDED: 'CHUCK-NORRIS/GET-JOKE-SUCCEEDED',
-
-  MENU_LEFT_OPENED: 'LAYOUT/MENU-LEFT-OPENED',
-  TOGGLE_MENU: 'LAYOUT/TOGGLE-MENU',
-
-  ADD_TODO: 'TODO-MANAGER/ADD-TODO',
-  SET_VISIBILITY_FILTER: 'TODO-MANAGER/SET-VISIBILITY-FILTER',
-  TOGGLE_TODO: 'TODO-MANAGER/TOGGLE-TODO',
-});
+import ACTIONS from './actions';
 
 let nextTodoId: number = 0;
 
@@ -91,5 +79,7 @@ const actions = {
   setVisibilityFilter,
   toggleTodo,
 };
+
+export { ACTIONS };
 
 export default actions;
