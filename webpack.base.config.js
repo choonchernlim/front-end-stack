@@ -71,8 +71,8 @@ const webpackOptions = {
                 optimizationLevel: 4,
               },
               pngquant: {
-                quality: '75-90',
-                speed: 3,
+                quality: [0.65, 0.9],
+                speed: 4,
               },
             },
           },
