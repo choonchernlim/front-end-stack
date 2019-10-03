@@ -16,7 +16,6 @@ describe('Todo Manager', () => {
             active
             filter="Show"
             onSetVisibilityFilter={actions.setVisibilityFilter}
-            classes={{ link: 'link' }}
           >
             Hello
           </Link>,
@@ -35,7 +34,6 @@ describe('Todo Manager', () => {
             active={false}
             filter="Show"
             onSetVisibilityFilter={actions.setVisibilityFilter}
-            classes={{ link: 'link' }}
           >
             Hello
           </Link>,

@@ -18,10 +18,13 @@ const ChuckNorris = ({ chuckNorris, onGetJoke }: Props) => (
     <Typography variant="h3" gutterBottom>
       Chuck Norris
     </Typography>
+    <br />
 
     <Typography gutterBottom>This view demonstrates async action using epics and RxJS.</Typography>
+    <br />
+    <br />
 
-    <Grid container spacing={24} style={{ textAlign: 'center' }}>
+    <Grid container style={{ textAlign: 'center' }}>
       <Grid item md={4} sm={12}>
         <img src={chuckNorrisImage} alt="Chuck Norris" />
 

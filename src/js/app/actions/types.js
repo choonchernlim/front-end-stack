@@ -1,5 +1,5 @@
 // @flow
-import { ACTIONS } from './index';
+import ACTIONS from './actions';
 
 type ActionType = $Values<typeof ACTIONS>;
 

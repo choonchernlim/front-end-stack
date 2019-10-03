@@ -10,6 +10,7 @@ const TodoManager = (): React.Element<*> => (
     <Typography variant="h3" gutterBottom>
       Todo Manager
     </Typography>
+    <br />
 
     <Typography gutterBottom>A simple todo app using Redux.</Typography>
 

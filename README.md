@@ -69,6 +69,7 @@ These commands are cross-platform compatible.
 | ---------------------- | ------------------------------------------------------------ |
 | @material-ui/core      | UI - Google's material design UI components built with React |
 | @material-ui/icons     | UI - Google Material icons                                   |
+| @material-ui/styles    | UI - Style hooks                                             |
 | classnames             | UI - Conditionally joining classNames together               |
 | connected-react-router | React - Router with Redux integration                        |
 | date-fns               | Parse, validate, manipulate and display dates                |

@@ -1,24 +1,23 @@
 // @flow
 import { connect } from 'react-redux';
-import withRouter from 'react-router-dom/withRouter';
-import withStyles from '@material-ui/core/styles/withStyles';
+import { push } from 'connected-react-router';
 import actions from '../../app/actions';
 import states from '../../app/states';
 import Layout from './Layout';
-import styles from './styles';
 
 const mapStateToProps = state => ({
   shouldMenuLeftOpened: states.layout.shouldMenuLeftOpened(state),
 });
 
-const mapDispatchToProps = {
-  onMenuLeftOpened: actions.menuLeftOpened,
-  onToggleMenu: actions.toggleMenu,
-};
+const mapDispatchToProps = dispatch => ({
+  onMenuLeftOpened: (open: boolean) => dispatch(actions.menuLeftOpened(open)),
+  onToggleMenu: () => dispatch(actions.toggleMenu()),
+  onRouteChange: (location: string) => dispatch(push(location)),
+});
 
 const LayoutConnected = connect(
   mapStateToProps,
   mapDispatchToProps,
 )(Layout);
 
-export default withRouter(withStyles(styles.layout)(LayoutConnected));
+export default LayoutConnected;
