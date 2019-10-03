@@ -9,23 +9,33 @@ import ListItemText from '@material-ui/core/ListItemText';
 import MoodIcon from '@material-ui/icons/Mood';
 import AssignmentIcon from '@material-ui/icons/Assignment';
 import HomeIcon from '@material-ui/icons/Home';
-import type { ToggleMenuFn } from '../../app/actions/types';
+import makeStyles from '@material-ui/core/styles/makeStyles';
 
 type Props = $ReadOnly<{|
   isMenuCurrentlyOpened: boolean,
   shouldMenuLeftOpened: boolean,
-  onToggleMenu: ToggleMenuFn,
-  history: Object,
-  classes: Object,
+  onToggleMenu: Function,
+  onRouteChange: Function,
 |}>;
+
+const useStyles = makeStyles(theme => ({
+  root: {
+    width: 240,
+    height: '100%',
+  },
+  toolbarHeight: {
+    minHeight: theme.mixins.toolbar.minHeight,
+  },
+}));
 
 const MenuDrawer = ({
   isMenuCurrentlyOpened,
   shouldMenuLeftOpened,
   onToggleMenu,
-  history,
-  classes,
+  onRouteChange,
 }: Props) => {
+  const classes = useStyles();
+
   /**
    * When changing route, determine if there's a need to hide the menu especially when
    * user uses a small viewing device.
@@ -33,7 +43,7 @@ const MenuDrawer = ({
    * @param path    Path to switch to
    */
   const changeRoute: Function = (path: string) => () => {
-    history.push(path);
+    onRouteChange(path);
 
     if (!shouldMenuLeftOpened) {
       onToggleMenu();
