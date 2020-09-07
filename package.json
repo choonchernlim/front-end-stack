@@ -1,6 +1,6 @@
 {
   "name": "front-end-stack",
-  "version": "0.17.0",
+  "version": "0.17.1",
   "private": true,
   "sideEffects": false,
   "config": {
