@@ -23,15 +23,15 @@ export const initialState: LayoutState = Object.freeze({
  * Action handlers.
  */
 const menuLeftOpened: MenuLeftOpenedFn = (state, action) =>
-  produce(state, draft => {
+  produce(state, (draft) => {
     const { shouldMenuLeftOpened, isMenuCurrentlyOpened } = action;
 
     draft.shouldMenuLeftOpened = shouldMenuLeftOpened;
     draft.isMenuCurrentlyOpened = isMenuCurrentlyOpened;
   });
 
-const toggleMenu: ToggleMenuFn = state =>
-  produce(state, draft => {
+const toggleMenu: ToggleMenuFn = (state) =>
+  produce(state, (draft) => {
     draft.isMenuCurrentlyOpened = !draft.isMenuCurrentlyOpened;
   });
 

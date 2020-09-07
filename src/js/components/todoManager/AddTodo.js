@@ -55,7 +55,7 @@ const AddTodo = ({ onAddTodo }: Props) => {
     <Grid container>
       <Grid item md={4} sm={12}>
         <TextField
-          inputRef={ref => (todoTextField = ref)}
+          inputRef={(ref) => (todoTextField = ref)}
           autoFocus
           fullWidth
           label="Enter Todo..."

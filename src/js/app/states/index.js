@@ -17,15 +17,15 @@ type States = {
 
 const states: States = {
   layout: {
-    shouldMenuLeftOpened: state => state.layout.shouldMenuLeftOpened,
-    isMenuCurrentlyOpened: state => state.layout.isMenuCurrentlyOpened,
+    shouldMenuLeftOpened: (state) => state.layout.shouldMenuLeftOpened,
+    isMenuCurrentlyOpened: (state) => state.layout.isMenuCurrentlyOpened,
   },
 
-  chuckNorris: state => state.chuckNorris,
+  chuckNorris: (state) => state.chuckNorris,
 
   todoManager: {
-    visibilityFilter: state => state.todoManager.visibilityFilter,
-    todos: state => state.todoManager.todos,
+    visibilityFilter: (state) => state.todoManager.visibilityFilter,
+    todos: (state) => state.todoManager.todos,
   },
 };
 

@@ -8,7 +8,7 @@ import type { VisibleTodosSelectorFn } from '../../app/selectors/types';
 const makeMapStateToProps = () => {
   const visibleTodosSelector: VisibleTodosSelectorFn = makeVisibleTodosSelector();
 
-  return state => ({
+  return (state) => ({
     todos: visibleTodosSelector(state),
   });
 };
@@ -17,9 +17,6 @@ const mapDispatchToProps = {
   onToggleTodo: actions.toggleTodo,
 };
 
-const TodoListConnected = connect(
-  makeMapStateToProps,
-  mapDispatchToProps,
-)(TodoList);
+const TodoListConnected = connect(makeMapStateToProps, mapDispatchToProps)(TodoList);
 
 export default TodoListConnected;

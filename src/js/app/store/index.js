@@ -19,10 +19,7 @@ const configureStore = (history: *): StoreCreator => {
   let enhancer: GenericStoreEnchancer = applyMiddleware(epicMiddleware, routerHistoryMiddleware);
 
   if (!env.isProduction()) {
-    enhancer = compose(
-      enhancer,
-      reduxDevToolsExtension(),
-    );
+    enhancer = compose(enhancer, reduxDevToolsExtension());
   }
 
   const store = createStore(reducers(history), enhancer);

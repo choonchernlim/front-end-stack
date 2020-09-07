@@ -53,7 +53,7 @@ const Layout = ({
 
   // this effect will execute exactly 1 time (by passing [] as 2nd arg)
   useEffect(() => {
-    const handleMediaQueryChanged = e => onMenuLeftOpened(e.matches);
+    const handleMediaQueryChanged = (e) => onMenuLeftOpened(e.matches);
 
     const mql = window.matchMedia(muiTheme.breakpoints.up('xl').replace('@media ', ''));
 

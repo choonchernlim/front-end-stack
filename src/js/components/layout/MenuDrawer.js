@@ -18,7 +18,7 @@ type Props = $ReadOnly<{|
   onRouteChange: Function,
 |}>;
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
   root: {
     width: 240,
     height: '100%',
