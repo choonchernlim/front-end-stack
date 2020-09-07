@@ -23,7 +23,7 @@ export const initialState: ChuckNorrisState = Object.freeze({
  * Action handlers.
  */
 const handleAction: HandleActionFn = (state, action) =>
-  produce(state, draft => {
+  produce(state, (draft) => {
     const { completed, joke, error } = action.state;
 
     draft.completed = completed;

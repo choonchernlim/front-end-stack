@@ -12,9 +12,6 @@ const mapDispatchToProps = {
   onSetVisibilityFilter: actions.setVisibilityFilter,
 };
 
-const LinkConnected = connect(
-  mapStateToProps,
-  mapDispatchToProps,
-)(Link);
+const LinkConnected = connect(mapStateToProps, mapDispatchToProps)(Link);
 
 export default LinkConnected;

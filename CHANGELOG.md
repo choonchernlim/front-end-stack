@@ -1,5 +1,9 @@
 # Change Log
 
+## 0.17.1 - 2020-09-07
+
+- Dependency updates.
+
 ## 0.17.0 - 2019-10-03
 
 - Webpack - Removed `optimization` block because it is redundant.

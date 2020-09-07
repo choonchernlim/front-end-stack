@@ -11,7 +11,7 @@ type Props = $ReadOnly<{|
   onSetVisibilityFilter: SetVisibilityFilterFn,
 |}>;
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
   link: theme.link,
 }));
 

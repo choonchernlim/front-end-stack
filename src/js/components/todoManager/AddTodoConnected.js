@@ -9,9 +9,6 @@ const mapDispatchToProps = {
   onAddTodo: actions.addTodo,
 };
 
-const AddTodoConnected = connect(
-  mapStateToProps,
-  mapDispatchToProps,
-)(AddTodo);
+const AddTodoConnected = connect(mapStateToProps, mapDispatchToProps)(AddTodo);
 
 export default AddTodoConnected;

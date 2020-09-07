@@ -23,7 +23,7 @@ const getJoke: GetJokeFn = () => ({
   },
 });
 
-const getJokeFailed: GetJokeFailedFn = error => ({
+const getJokeFailed: GetJokeFailedFn = (error) => ({
   type: ACTIONS.GET_JOKE_FAILED,
   state: {
     completed: true,
@@ -32,7 +32,7 @@ const getJokeFailed: GetJokeFailedFn = error => ({
   },
 });
 
-const getJokeSucceeded: GetJokeSucceededFn = joke => ({
+const getJokeSucceeded: GetJokeSucceededFn = (joke) => ({
   type: ACTIONS.GET_JOKE_SUCCEEDED,
   state: {
     completed: true,
@@ -41,7 +41,7 @@ const getJokeSucceeded: GetJokeSucceededFn = joke => ({
   },
 });
 
-const menuLeftOpened: MenuLeftOpenedFn = open => ({
+const menuLeftOpened: MenuLeftOpenedFn = (open) => ({
   type: ACTIONS.MENU_LEFT_OPENED,
   shouldMenuLeftOpened: open,
   isMenuCurrentlyOpened: open,
@@ -51,7 +51,7 @@ const toggleMenu: ToggleMenuFn = () => ({
   type: ACTIONS.TOGGLE_MENU,
 });
 
-const addTodo: AddTodoFn = text => {
+const addTodo: AddTodoFn = (text) => {
   nextTodoId += 1;
   return {
     type: ACTIONS.ADD_TODO,
@@ -60,12 +60,12 @@ const addTodo: AddTodoFn = text => {
   };
 };
 
-const setVisibilityFilter: SetVisibilityFilterFn = filter => ({
+const setVisibilityFilter: SetVisibilityFilterFn = (filter) => ({
   type: ACTIONS.SET_VISIBILITY_FILTER,
   filter,
 });
 
-const toggleTodo: ToggleTodoFn = id => ({ type: ACTIONS.TOGGLE_TODO, id });
+const toggleTodo: ToggleTodoFn = (id) => ({ type: ACTIONS.TOGGLE_TODO, id });
 
 const actions = {
   getJoke,

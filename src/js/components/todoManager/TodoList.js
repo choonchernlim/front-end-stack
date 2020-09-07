@@ -11,7 +11,7 @@ type Props = $ReadOnly<{|
 
 const TodoList = ({ todos, onToggleTodo }: Props): React.Element<*> => (
   <ul>
-    {todos.map(todo => (
+    {todos.map((todo) => (
       <Todo
         key={todo.id}
         text={todo.text}

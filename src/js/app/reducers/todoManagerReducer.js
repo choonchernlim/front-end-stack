@@ -27,7 +27,7 @@ export const initialState: TodoManagerState = Object.freeze({
  * Action handlers.
  */
 const addTodo: AddTodoFn = (state, action) =>
-  produce(state, draft => {
+  produce(state, (draft) => {
     draft.todos.push({
       id: action.id,
       text: action.text,
@@ -36,14 +36,14 @@ const addTodo: AddTodoFn = (state, action) =>
   });
 
 const toggleTodo: ToggleTodoFn = (state, action) =>
-  produce(state, draft => {
-    const i = draft.todos.findIndex(todo => todo.id === action.id);
+  produce(state, (draft) => {
+    const i = draft.todos.findIndex((todo) => todo.id === action.id);
 
     draft.todos[i].completed = !draft.todos[i].completed;
   });
 
 const setVisibilityFilter: SetVisibilityFilterFn = (state, action) =>
-  produce(state, draft => {
+  produce(state, (draft) => {
     draft.visibilityFilter = action.filter;
   });
 
